@@ -9,8 +9,15 @@
 </head>
 <body>
 <div>
-    <a href="{% url 'add_gear' %}"><button>Add GEAR</button></a>
-    <a href="{% url 'add_cost' %}"><button>Add COST</button></a>
+    <a href="{% url 'index' %}">
+        <button>HOME</button>
+    </a>
+
+    <div id="add"><br>
+        <a href="{% url 'add_gear' %}"><button>Add GEAR</button></a>
+        <a href="{% url 'add_cost' %}"><button>Add COST</button></a>
+    </div>
+
 </div>
 {% block content %}
 {% endblock %}
