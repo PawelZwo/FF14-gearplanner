@@ -1,10 +1,14 @@
 from django.db import models
-# from accounts.models import Accounts
 from random import randint
+# from django.urls import reverse
+# from accounts.models import Accounts
 
 
 class Job(models.Model):
     name = models.CharField(max_length=50)
+
+    # def get_absolute_url(self):
+    #     return reverse('job_update', kwargs={'pk': self.id})
 
     def __str__(self):
         return self.name
@@ -12,6 +16,9 @@ class Job(models.Model):
 
 class Content(models.Model):
     name = models.CharField(max_length=50)
+
+    # def get_absolute_url(self):
+    #     return reverse('content_update', kwargs={'pk': self.id})
 
     def __str__(self):
         return self.name
@@ -42,7 +49,6 @@ class Cost(models.Model):
     mythos_2 = models.SmallIntegerField(null=True)
     mythos_3 = models.SmallIntegerField(null=True)
     mythos_4 = models.SmallIntegerField(null=True)
-    unsung_1 = models.SmallIntegerField(null=True)
     unsung_body = models.SmallIntegerField(null=True)
     unsung_head = models.SmallIntegerField(null=True)
     unsung_legs = models.SmallIntegerField(null=True)
@@ -59,10 +65,11 @@ class Cost(models.Model):
 
 
 class Gear(models.Model):
-    type = models.ForeignKey(Type, on_delete=models.CASCADE)
     cost = models.ForeignKey(Cost, on_delete=models.CASCADE)
     job = models.ManyToManyField(Job)
+    craftable = models.BooleanField(null=True)
     name = models.CharField(max_length=100)
+    item_level = models.SmallIntegerField()
     physical_dmg = models.SmallIntegerField(null=True)
     magical_dmg = models.SmallIntegerField(null=True)
     auto_attack = models.DecimalField(null=True, max_digits=5, decimal_places=2)
@@ -84,8 +91,9 @@ class Gear(models.Model):
     determination = models.SmallIntegerField(null=True)
     skill_speed = models.SmallIntegerField(null=True)
     spell_speed = models.SmallIntegerField(null=True)
-    craftable = models.NullBooleanField
-    item_level = models.SmallIntegerField()
+
+    # def get_absolute_url(self):
+    #     return reverse('gear_update', kwargs={'pk': self.id})
 
     def __str__(self):
         return str(self.name)
@@ -105,6 +113,9 @@ class Gearset(models.Model):
     left_ring = models.ForeignKey(Gear, related_name='gearleft_ring', on_delete=models.CASCADE)
     right_ring = models.ForeignKey(Gear, related_name='gearright_ring', on_delete=models.CASCADE)
 
+    # def get_absolute_url(self):
+    #     return reverse('gearset_update', kwargs={'pk': self.id})
+
 
 class PlayerGearset(models.Model):
     name = models.CharField(max_length=50)
@@ -113,11 +124,11 @@ class PlayerGearset(models.Model):
     race = models.ForeignKey(Race, on_delete=models.CASCADE)
     gearset = models.ForeignKey(Gearset, on_delete=models.CASCADE, default=None)
     content = models.ManyToManyField(Content)
-    unique_id = models.CharField(max_length=50, unique=True, blank=True)
+    unique_name = models.CharField(max_length=50, unique=True, blank=True)
 
     def save(self, *args, **kwargs):
-        if not self.unique_id:
-            self.unique_id = f'gear{str(randint(0, 2000))}{self.job.lower()}'
+        if not self.unique_name:
+            self.unique_name = f'gear{str(randint(0, 200))}{str(randint(200, 400))}'
         super(PlayerGearset, self).save(*args, **kwargs)
 
     def __str__(self):
