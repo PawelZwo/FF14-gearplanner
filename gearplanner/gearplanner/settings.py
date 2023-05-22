@@ -78,8 +78,8 @@ WSGI_APPLICATION = 'gearplanner.wsgi.application'
 try:
     from .local_settings import DATABASES
 except ModuleNotFoundError:
-    print("Brak konfiguracji bazy danych w pliku local_settings.py!")
-    print("Uzupełnij dane i spróbuj ponownie!")
+    print("Please configure your database connection in local_settings.py!")
+    print("Put your credentials and continue.")
     exit(0)
 
 
