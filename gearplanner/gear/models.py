@@ -1,5 +1,7 @@
 from django.db import models
 from random import randint
+
+
 # from django.urls import reverse
 # from accounts.models import Accounts
 
@@ -7,18 +9,12 @@ from random import randint
 class Job(models.Model):
     name = models.CharField(max_length=50)
 
-    # def get_absolute_url(self):
-    #     return reverse('job_update', kwargs={'pk': self.id})
-
     def __str__(self):
         return self.name
 
 
 class Content(models.Model):
     name = models.CharField(max_length=50)
-
-    # def get_absolute_url(self):
-    #     return reverse('content_update', kwargs={'pk': self.id})
 
     def __str__(self):
         return self.name
@@ -91,9 +87,6 @@ class Gear(models.Model):
     determination = models.SmallIntegerField(null=True)
     skill_speed = models.SmallIntegerField(null=True)
     spell_speed = models.SmallIntegerField(null=True)
-
-    # def get_absolute_url(self):
-    #     return reverse('gear_update', kwargs={'pk': self.id})
 
     def __str__(self):
         return str(self.name)
