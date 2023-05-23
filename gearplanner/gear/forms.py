@@ -61,3 +61,24 @@ class AddCostForm(forms.ModelForm):
     class Meta:
         model = Cost
         fields = '__all__'
+
+
+class AddGearsetForm(forms.ModelForm):
+    def clean(self):
+        cleaned_data = super().clean()
+        weapon = cleaned_data['weapon']
+        shield = cleaned_data['shield']
+        body = cleaned_data['body']
+        legs = cleaned_data['legs']
+        helmet = cleaned_data['helmet']
+        hands = cleaned_data['hands']
+        feet = cleaned_data['feet']
+        earrings = cleaned_data['earrings']
+        necklace = cleaned_data['necklace']
+        bracelet = cleaned_data['bracelet']
+        left_ring = cleaned_data['left_ring']
+        right_ring = cleaned_data['right_ring']
+
+        class Meta:
+            model = Gearset
+            fields = '__all__'

@@ -16,8 +16,17 @@
     <div id="add"><br>
         <a href="{% url 'add_gear' %}"><button>Add GEAR</button></a>
         <a href="{% url 'add_cost' %}"><button>Add COST</button></a>
+        <a href="{% url 'add_gearset' %}"><button>Add GEARSET</button></a>
     </div>
-
+    <div id="add"><br>
+        <a href="{% url 'gear_list' %}"><button>GEAR</button></a>
+        <a href="{% url 'cost_list' %}"><button>COST</button></a>
+        <a href="{% url 'gearset_list' %}"><button>GEARSET</button></a>
+        <a href="{% url 'job_list' %}"><button>JOB</button></a>
+        <a href="{% url 'race_list' %}"><button>RACE</button></a>
+        <a href="{% url 'content_list' %}"><button>CONTENT</button></a>
+        <a href="{% url 'type_list' %}"><button>TYPE</button></a>
+    </div><br>
 </div>
 {% block content %}
 {% endblock %}
