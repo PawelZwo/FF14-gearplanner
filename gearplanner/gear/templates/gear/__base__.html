@@ -22,9 +22,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarToggle">
                 <div class="navbar-nav mr-auto">
-                    <a class="nav-item nav-link" href="{% url 'add_gear' %}">Add GEAR</a>
-                    <a class="nav-item nav-link" href="{% url 'add_cost' %}">Add COST</a>
-                    <a class="nav-item nav-link" href="{% url 'add_gearset' %}">Add GEARSET</a>
                     <a class="nav-item nav-link" href="{% url 'gear_list' %}">GEAR</a>
                     <a class="nav-item nav-link" href="{% url 'cost_list' %}">COST</a>
                     <a class="nav-item nav-link" href="{% url 'job_list' %}">JOB</a>
@@ -33,10 +30,21 @@
                     <a class="nav-item nav-link" href="{% url 'content_list' %}">CONTENT</a>
                     <a class="nav-item nav-link" href="{% url 'type_list' %}">TYPE</a>
                 </div>
+                {% if user.is_authenticated and user.is_superuser %}
+                <div class="navbar-nav mr-auto">
+                    <a class="nav-item nav-link" href="{% url 'add_gear' %}">Add GEAR</a>
+                    <a class="nav-item nav-link" href="{% url 'add_cost' %}">Add COST</a>
+                    <a class="nav-item nav-link" href="{% url 'add_gearset' %}">Add GEARSET</a>
+                </div>
+                {% endif %}
                 <!-- Navbar Right Side -->
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="#">Login</a>
-                    <a class="nav-item nav-link" href="#">Register</a>
+                <div class="navbar-nav mr-right">
+                    {% if user.is_authenticated %}
+                        <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+                    {% else %}
+                        <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                        <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                    {% endif %}
                 </div>
             </div>
         </div>

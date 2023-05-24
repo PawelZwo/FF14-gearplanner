@@ -1,4 +1,8 @@
 {% extends 'gear/__base__.html' %}
 {% block content %}
-    <h1>Hello, Warrior of Light. How vewy gwib of you.</h1>
+    {% if user.is_authenticated %}
+        <h1>Welcome, {{ user.username|title}}</h1>
+    {% else %}
+        <h1>Welcome, Warrior of Light</h1>
+    {% endif %}
 {% endblock %}
