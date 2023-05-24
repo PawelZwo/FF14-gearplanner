@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView, DetailView
 from .forms import *
 
 
@@ -17,9 +17,16 @@ class AddGear(CreateView):
     success_url = reverse_lazy('add_gear')
 
 
-class GearList(ListView):
-    model = Gear
-    template_name = 'gear/__list__.html'
+class GearList(View):
+    def get(self, request):
+        obj = Gear.objects.all().order_by('id')
+        return render(request, 'gear/list.html', {'obj': obj})
+
+
+class GearDetails(View):
+    def get(self, request, pk):
+        item = Gear.objects.get(id=pk)
+        return render(request, 'gear/gear_details.html', {'item': item})
 
 
 class AddCost(CreateView):
@@ -32,13 +39,21 @@ class AddCost(CreateView):
 class CostList(ListView):
     model = Cost
     template_name = 'gear/__list__.html'
+    ordering = ['-tomestones', 'type_id']
 
 
 class AddGearset(CreateView):
     model = Gearset
     fields = '__all__'
     template_name = 'gear/__form__.html'
-    success_url = reverse_lazy('add_gearset')
+    success_url = reverse_lazy('gearset_list')
+
+
+class UpdateGearset(UpdateView):
+    model = Gearset
+    fields = '__all__'
+    template_name = 'gear/__form__.html'
+    success_url = reverse_lazy('gearset_list')
 
 
 class GearsetList(ListView):
@@ -49,11 +64,13 @@ class GearsetList(ListView):
 class JobList(ListView):
     model = Job
     template_name = 'gear/__list__.html'
+    ordering = ['id']
 
 
 class RaceList(ListView):
     model = Race
     template_name = 'gear/__list__.html'
+    ordering = ['name']
 
 
 class ContentList(ListView):

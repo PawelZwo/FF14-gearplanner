@@ -1,6 +1,8 @@
 from django.db import models
 from random import randint
 
+from django.urls import reverse
+
 
 # from django.urls import reverse
 # from accounts.models import Accounts
@@ -105,9 +107,13 @@ class Gearset(models.Model):
     bracelet = models.ForeignKey(Gear, related_name='gearbracelet', on_delete=models.CASCADE)
     left_ring = models.ForeignKey(Gear, related_name='gearleft_ring', on_delete=models.CASCADE)
     right_ring = models.ForeignKey(Gear, related_name='gearright_ring', on_delete=models.CASCADE)
+    name = models.CharField(max_length=50)
 
-    # def get_absolute_url(self):
-    #     return reverse('gearset_update', kwargs={'pk': self.id})
+    def __str__(self):
+        return str(self.name)
+
+    def get_absolute_url(self):
+        return reverse('update_gearset', kwargs={'pk': self.id})
 
 
 class PlayerGearset(models.Model):

@@ -66,6 +66,7 @@ class AddCostForm(forms.ModelForm):
 class AddGearsetForm(forms.ModelForm):
     def clean(self):
         cleaned_data = super().clean()
+        name = cleaned_data['name']
         weapon = cleaned_data['weapon']
         shield = cleaned_data['shield']
         body = cleaned_data['body']
