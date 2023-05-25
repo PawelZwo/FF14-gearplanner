@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import ListView, CreateView, UpdateView, DetailView
+from django.views.generic import ListView, CreateView, UpdateView
 from .forms import *
 
 
@@ -20,7 +20,7 @@ class AddGear(CreateView):
 class GearList(View):
     def get(self, request):
         obj = Gear.objects.all().order_by('id')
-        return render(request, 'gear/list.html', {'obj': obj})
+        return render(request, 'gear/gear_list.html', {'obj': obj})
 
 
 class GearDetails(View):
@@ -58,7 +58,7 @@ class UpdateGearset(UpdateView):
 
 class GearsetList(ListView):
     model = Gearset
-    template_name = 'gear/__list__.html'
+    template_name = 'gear/gearset_list.html'
 
 
 class JobList(ListView):

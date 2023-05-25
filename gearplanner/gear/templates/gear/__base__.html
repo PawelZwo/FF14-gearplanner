@@ -21,14 +21,16 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarToggle">
-                <div class="navbar-nav mr-auto">
+                <div class="navbar-nav">
                     <a class="nav-item nav-link" href="{% url 'gear_list' %}">GEAR</a>
-                    <a class="nav-item nav-link" href="{% url 'cost_list' %}">COST</a>
-                    <a class="nav-item nav-link" href="{% url 'job_list' %}">JOB</a>
                     <a class="nav-item nav-link" href="{% url 'gearset_list' %}">GEARSET</a>
                     <a class="nav-item nav-link" href="{% url 'race_list' %}">RACE</a>
-                    <a class="nav-item nav-link" href="{% url 'content_list' %}">CONTENT</a>
-                    <a class="nav-item nav-link" href="{% url 'type_list' %}">TYPE</a>
+                    {% if user.is_authenticated and user.is_superuser %}
+                        <a class="nav-item nav-link" href="{% url 'content_list' %}">CONTENT</a>
+                        <a class="nav-item nav-link" href="{% url 'cost_list' %}">COST</a>
+                        <a class="nav-item nav-link" href="{% url 'job_list' %}">JOB</a>
+                        <a class="nav-item nav-link" href="{% url 'type_list' %}">TYPE</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -40,7 +42,7 @@
         <div class="col-md-8">
             {% block content %}{% endblock %}
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="content-section">
                 {% if user.is_authenticated %}
                     <h1>Welcome,<br></h1>
@@ -48,29 +50,28 @@
                 {% else %}
                     <h1>Welcome,<br></h1>
                     <h3>Warrior of Light</h3>
+                {% endif %}<br>
+
+                {% if user.is_authenticated %}
+                    <a class='btn btn-outline-primary' href="#">Profile</a>
+                    <a class='btn btn-outline-danger' href="{% url 'logout' %}">Logout</a>
+
+                    {% if user.is_authenticated and user.is_superuser %}
+                        <div class="navbar-nav"><br>
+                            <a href="{% url 'add_gear' %}">Add GEAR</a>
+                            <a href="{% url 'add_cost' %}">Add COST</a>
+                            <a href="{% url 'add_gearset' %}">Add GEARSET</a>
+                        </div>
+                    {% endif %}
+
+                {% else %}
+                    <a class='btn btn-outline-primary' href="{% url 'login' %}"
+                       style="color: #333333; text-decoration: none">Login</a>
+                    <a class='btn btn-outline-primary' href="{% url 'register' %}"
+                       style="color: #333333; text-decoration: none">Register</a>
+
                 {% endif %}
 
-                <ul class="list-group">
-                    {% if user.is_authenticated %}
-                        <li class="list-group-item list-group-item-light"><a href="{% url 'logout' %}"
-                                                                             style="color: #333333; text-decoration: none">Logout</a>
-                        </li>
-                        {% if user.is_authenticated and user.is_superuser %}
-                            <div class="navbar-nav"><br>
-                                <a href="{% url 'add_gear' %}">Add GEAR</a>
-                                <a href="{% url 'add_cost' %}">Add COST</a>
-                                <a href="{% url 'add_gearset' %}">Add GEARSET</a>
-                            </div>
-                        {% endif %}
-                    {% else %}
-                        <li class="list-group-item list-group-item-light"><a href="{% url 'login' %}"
-                                                                             style="color: #333333; text-decoration: none">Login</a>
-                        </li>
-                        <li class="list-group-item list-group-item-light"><a href="{% url 'register' %}"
-                                                                             style="color: #333333; text-decoration: none">Register</a>
-                        </li>
-                    {% endif %}
-                </ul>
             </div>
         </div>
     </div>
