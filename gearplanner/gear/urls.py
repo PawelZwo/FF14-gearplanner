@@ -6,6 +6,9 @@ urlpatterns = [
 
     path('add-gear', AddGear.as_view(), name='add_gear'),
     path('gear-list-all', GearList.as_view(), name='gear_list_all'),
+    path('gear-list-tank', TankGearList.as_view(), name='gear_list_tank'),
+    path('gear-list-healer', HealerGearList.as_view(), name='gear_list_healer'),
+    path('gear-list-dps', DpsGearList.as_view(), name='gear_list_dps'),
     path('gear-details/<int:pk>', GearDetails.as_view(), name='gear_details'),
 
     path('add-cost', AddCost.as_view(), name='add_cost'),

@@ -1,0 +1,126 @@
+{% extends 'gear/__base__.html' %}
+{% load static %}
+{% block content %}
+    <h3><img src="{% static 'gear/media/HealerRole.png' %}" alt="Healing gear"
+             style="width: 35px; height: 35px"> Healing</h3><br>
+    <div class="row">
+        <div class="col" id="gear">
+            <h6>Head</h6>
+            <ul>
+                {% for item in healing_head %}
+                    <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a>
+                    </li>
+                {% empty %}
+                    No gear.
+                {% endfor %}
+            </ul>
+            <br>
+
+            <h6>Body</h6>
+            <ul>
+                {% for item in healing_body %}
+                    <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a>
+                    </li>
+                {% empty %}
+                    No gear.
+                {% endfor %}
+            </ul>
+            <br>
+
+            <h6>Legs</h6>
+            <ul>
+                {% for item in healing_legs %}
+                    <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a>
+                    </li>
+                {% empty %}
+                    No gear.
+                {% endfor %}
+            </ul>
+            <br>
+
+            <h6>Hands</h6>
+            <ul>
+                {% for item in healing_hands %}
+                    <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a>
+                    </li>
+                {% empty %}
+                    No gear.
+                {% endfor %}
+            </ul>
+            <br>
+
+            <h6>Feet</h6>
+            <ul>
+                {% for item in healing_feet %}
+                    <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a>
+                    </li>
+                {% empty %}
+                    No gear.
+                {% endfor %}
+            </ul>
+            <br>
+        </div>
+
+        <div class="col">
+            <h6>Weapons</h6>
+            <ul id="weapons">
+                {% for item in healer_weapon %}
+                    <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} ({{ item.job.all.last }},
+                        i{{ item.item_level }})</a>
+                    </li>
+                {% empty %}
+                    No weapons.
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col" id="accessories">
+
+            <h6>Earrings</h6>
+            <ul>
+                {% for item in healing_earrings %}
+                    <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a>
+                    </li>
+                {% empty %}
+                    No earrings.
+                {% endfor %}
+            </ul>
+            <br>
+
+            <h6>Necklace</h6>
+            <ul>
+                {% for item in healing_necklace %}
+                    <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a>
+                    </li>
+                {% empty %}
+                    No necklace.
+                {% endfor %}
+            </ul>
+            <br>
+
+            <h6>Bracelet</h6>
+            <ul>
+                {% for item in healing_bracelet %}
+                    <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a>
+                    </li>
+                {% empty %}
+                    No gear.
+                {% endfor %}
+            </ul>
+            <br>
+
+            <h6>Ring</h6>
+            <ul>
+                {% for item in healing_ring %}
+                    <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a>
+                    </li>
+                {% empty %}
+                    No gear.
+                {% endfor %}
+            </ul>
+            <br>
+        </div>
+
+    </div>
+{% endblock %}

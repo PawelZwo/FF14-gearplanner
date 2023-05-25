@@ -22,14 +22,23 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarToggle">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-item active nav-link" href="{% url 'gear_list_all' %}">GEAR</a>
+                                        <li class="nav-item">
+                        <a class="nav-item active nav-link" href="{% url 'gear_list_tank' %}"> Tank gear</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-item active nav-link" href="{% url 'gearset_list' %}">GEARSET</a>
+                        <a class="nav-item active nav-link" href="{% url 'gear_list_healer' %}"> Healer gear</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-item active nav-link" href="{% url 'race_list' %}">RACE</a>
+                        <a class="nav-item active nav-link" href="{% url 'gear_list_dps' %}"> DPS gear</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item active nav-link" href="{% url 'gear_list_all' %}"> All gear</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item active nav-link" href="{% url 'gearset_list' %}">Gearsets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item active nav-link" href="{% url 'race_list' %}">Races</a>
                     </li>
                 </ul>
 
