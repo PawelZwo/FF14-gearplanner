@@ -19,8 +19,16 @@ class AddGear(CreateView):
 
 class GearList(View):
     def get(self, request):
-        obj = Gear.objects.all().order_by('id')
-        return render(request, 'gear/gear_list.html', {'obj': obj})
+        context = {
+            'fending': Gear.objects.filter(name__contains='Fending').order_by('id'),
+            'healing': Gear.objects.filter(name__contains='healing').order_by('id'),
+            'striking': Gear.objects.filter(name__contains='striking').order_by('id'),
+            'maiming': Gear.objects.filter(name__contains='maiming').order_by('id'),
+            'scouting': Gear.objects.filter(name__contains='scouting').order_by('id'),
+            'aiming': Gear.objects.filter(name__contains='aiming').order_by('id'),
+            'casting': Gear.objects.filter(name__contains='casting').order_by('id'),
+        }
+        return render(request, 'gear/gear_list.html', context)
 
 
 class GearDetails(View):

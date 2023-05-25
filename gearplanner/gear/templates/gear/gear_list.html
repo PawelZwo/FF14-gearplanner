@@ -1,9 +1,93 @@
 {% extends 'gear/__base__.html' %}
+{% load static %}
 {% block content %}
     <br>
-    <ul>
-    {% for item in obj %}
-        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
-    {% endfor %}
-    </ul>
+    <div class="container">
+
+        <div class="row">
+            <div class="col">
+                <h3><img src="{% static 'gear/media/TankRole.png' %}" alt="Fending gear"
+                         style="width: 35px; height: 35px"> Fending</h3>
+                <ul>
+                    {% for item in fending %}
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
+                    {% empty %}
+                        <h4>No gear.</h4>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="col">
+                <h3><img src="{% static 'gear/media/HealerRole.png' %}" alt="Healing gear"
+                         style="width: 35px; height: 35px"> Healing</h3>
+                <ul>
+                    {% for item in healing %}
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
+                    {% empty %}
+                        <h4>No gear.</h4>
+                    {% endfor %}
+                </ul>
+            </div>
+
+        </div>
+        <br>
+
+        <div class="row">
+
+            <div class="col">
+                <h3><img src="{% static 'gear/media/DPSRole.png' %}" alt="Striking gear"
+                         style="width: 35px; height: 35px"> Striking</h3>
+                <ul>
+                    {% for item in striking %}
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
+                    {% empty %}
+                        <h4>No gear.</h4>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="col">
+                <h3><img src="{% static 'gear/media/DPSRole.png' %}" alt="Scouting gear"
+                         style="width: 35px; height: 35px"> Scouting</h3>
+                <ul>
+                    {% for item in scouting %}
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
+                    {% empty %}
+                        <h4>No gear.</h4>
+                    {% endfor %}
+                </ul>
+            </div>
+
+        </div>
+        <br>
+
+
+        <div class="row">
+
+            <div class="col">
+                <h3><img src="{% static 'gear/media/DPSRole.png' %}" alt="Maiming gear"
+                         style="width: 35px; height: 35px"> Maiming</h3>
+                <ul>
+                    {% for item in maiming %}
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
+                    {% empty %}
+                        <h4>No gear.</h4>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="col">
+                <h3><img src="{% static 'gear/media/DPSRole.png' %}" alt="Casting gear"
+                         style="width: 35px; height: 35px"> Casting</h3>
+                <ul>
+                    {% for item in  casting %}
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
+                    {% empty %}
+                        <h4>No gear.</h4>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+    </div>
 {% endblock %}
