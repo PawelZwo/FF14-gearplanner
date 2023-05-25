@@ -1,8 +1,6 @@
 {% extends 'gear/__base__.html' %}
+{% load static %}
 {% block content %}
-    {% if user.is_authenticated %}
-        <h1>Welcome, {{ user.username|title}}</h1>
-    {% else %}
-        <h1>Welcome, Warrior of Light</h1>
-    {% endif %}
+    <img src="{% static 'gear/media/the_dark_throne_ff14_6_4.jpg' %}" class="img-fluid" alt="Patch banner">
+    <br><br>
 {% endblock %}

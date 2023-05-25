@@ -30,22 +30,6 @@
                     <a class="nav-item nav-link" href="{% url 'content_list' %}">CONTENT</a>
                     <a class="nav-item nav-link" href="{% url 'type_list' %}">TYPE</a>
                 </div>
-                {% if user.is_authenticated and user.is_superuser %}
-                <div class="navbar-nav mr-auto">
-                    <a class="nav-item nav-link" href="{% url 'add_gear' %}">Add GEAR</a>
-                    <a class="nav-item nav-link" href="{% url 'add_cost' %}">Add COST</a>
-                    <a class="nav-item nav-link" href="{% url 'add_gearset' %}">Add GEARSET</a>
-                </div>
-                {% endif %}
-                <!-- Navbar Right Side -->
-                <div class="navbar-nav mr-right">
-                    {% if user.is_authenticated %}
-                        <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
-                    {% else %}
-                        <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
-                        <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
-                    {% endif %}
-                </div>
             </div>
         </div>
     </nav>
@@ -56,8 +40,38 @@
         <div class="col-md-8">
             {% block content %}{% endblock %}
         </div>
+        <div class="col-md-4">
+            <div class="content-section">
+                <p class='text-muted'>
+                    {% if user.is_authenticated %}
+                        <h1>Welcome,<br></h1>
+                        <h3>{{ user.username|title }}</h3>
+                    {% else %}
+                        <h1>Welcome,<br></h1>
+                        <h3>Warrior of Light</h3>
+                    {% endif %}
+                </p>
+                <ul class="list-group">
+                    {% if user.is_authenticated %}
+                        <li class="list-group-item list-group-item-light"><a href="{% url 'logout' %}">Logout</a></li>
+                        {% if user.is_authenticated and user.is_superuser %}
+                            <div class="navbar-nav">
+                                <a class="nav-item nav-link" href="{% url 'add_gear' %}">Add GEAR</a>
+                                <a class="nav-item nav-link" href="{% url 'add_cost' %}">Add COST</a>
+                                <a class="nav-item nav-link" href="{% url 'add_gearset' %}">Add GEARSET</a>
+                            </div>
+                        {% endif %}
+                    {% else %}
+                        <li class="list-group-item list-group-item-light"><a href="{% url 'login' %}">Login</a></li>
+                        <li class="list-group-item list-group-item-light"><a href="{% url 'register' %}">Register</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
     </div>
 </main>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
