@@ -91,7 +91,7 @@ class Gear(models.Model):
     spell_speed = models.SmallIntegerField(null=True)
 
     def __str__(self):
-        return self.name, self.job
+        return str(self.name)
 
 
 class Gearset(models.Model):
