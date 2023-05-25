@@ -12,6 +12,10 @@ ul {
   margin: 0;
 }
 
+ul a {
+  color: black;
+}
+
 .bg-steel {
   background-color: #5f788a;
 }
@@ -35,3 +39,4 @@ ul {
   border-radius: 3px;
   margin-bottom: 20px;
 }
+
