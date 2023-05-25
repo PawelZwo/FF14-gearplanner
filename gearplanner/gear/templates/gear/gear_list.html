@@ -7,24 +7,80 @@
         <div class="row">
             <div class="col">
                 <h3><img src="{% static 'gear/media/TankRole.png' %}" alt="Fending gear"
-                         style="width: 35px; height: 35px"> Fending</h3>
-                <ul>
+                         style="width: 35px; height: 35px"> Fending</h3><br>
+
+                <h6>Gear</h6>
+                <ul id="gear">
                     {% for item in fending %}
                         <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
                     {% empty %}
                         <h4>No gear.</h4>
                     {% endfor %}
                 </ul>
+                <br>
+
+                <h6>Weapons</h6>
+                <ul id="weapons">
+                    {% for item in tank_weapon %}
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} ({{ item.job.all.last }})</a>
+                        </li>
+                    {% empty %}
+                        <h4>No weapons.</h4>
+                    {% endfor %}
+                </ul>
+                <br>
+
+                <h6>Accessories</h6>
+                <ul id="accessories">
+                    {% for item in fending_acc %}
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
+                    {% empty %}
+                        <h4>No accessories.</h4>
+                    {% endfor %}
+                </ul>
+                <br>
+
+                <h6>Shields</h6>
+                <ul id="shields">
+                    {% for item in shield %}
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
+                    {% empty %}
+                        <h4>No shields.</h4>
+                    {% endfor %}
+                </ul>
             </div>
 
             <div class="col">
                 <h3><img src="{% static 'gear/media/HealerRole.png' %}" alt="Healing gear"
-                         style="width: 35px; height: 35px"> Healing</h3>
-                <ul>
+                         style="width: 35px; height: 35px"> Healing</h3><br>
+
+                <h6>Gear</h6>
+                <ul id="gear">
                     {% for item in healing %}
                         <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
                     {% empty %}
                         <h4>No gear.</h4>
+                    {% endfor %}
+                </ul>
+                <br>
+
+                <h6>Weapons</h6>
+                <ul id="weapons">
+                    {% for item in healer_weapon %}
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} ({{ item.job.all.last }})</a>
+                        </li>
+                    {% empty %}
+                        <h4>No weapons.</h4>
+                    {% endfor %}
+                </ul>
+                <br>
+
+                <h6>Accessories</h6>
+                <ul id="accessories">
+                    {% for item in healing_acc %}
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
+                    {% empty %}
+                        <h4>No accessories.</h4>
                     {% endfor %}
                 </ul>
             </div>
@@ -37,11 +93,34 @@
             <div class="col">
                 <h3><img src="{% static 'gear/media/DPSRole.png' %}" alt="Striking gear"
                          style="width: 35px; height: 35px"> Striking</h3>
-                <ul>
+
+                <h6>Gear</h6>
+                <ul id="gear">
                     {% for item in striking %}
                         <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
                     {% empty %}
                         <h4>No gear.</h4>
+                    {% endfor %}
+                </ul>
+                <br>
+
+                <h6>Weapons</h6>
+                <ul id="weapons">
+                    {% for item in mnksam_weapon %}
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} ({{ item.job.all.last }})</a>
+                        </li>
+                    {% empty %}
+                        <h4>No weapons.</h4>
+                    {% endfor %}
+                </ul>
+                <br>
+
+                <h6>Accessories</h6>
+                <ul id="accessories">
+                    {% for item in slaying_acc %}
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
+                    {% empty %}
+                        <h4>No accessories.</h4>
                     {% endfor %}
                 </ul>
             </div>
@@ -49,11 +128,34 @@
             <div class="col">
                 <h3><img src="{% static 'gear/media/DPSRole.png' %}" alt="Scouting gear"
                          style="width: 35px; height: 35px"> Scouting</h3>
-                <ul>
+
+                <h6>Gear</h6>
+                <ul id="gear">
                     {% for item in scouting %}
                         <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
                     {% empty %}
                         <h4>No gear.</h4>
+                    {% endfor %}
+                </ul>
+                <br>
+
+                <h6>Weapons</h6>
+                <ul id="weapons">
+                    {% for item in nin_weapon %}
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} ({{ item.job.all.last }})</a>
+                        </li>
+                    {% empty %}
+                        <h4>No weapons.</h4>
+                    {% endfor %}
+                </ul>
+                <br>
+
+                <h6>Accessories</h6>
+                <ul id="accessories">
+                    {% for item in aiming_acc %}
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
+                    {% empty %}
+                        <h4>No accessories.</h4>
                     {% endfor %}
                 </ul>
             </div>
@@ -67,11 +169,34 @@
             <div class="col">
                 <h3><img src="{% static 'gear/media/DPSRole.png' %}" alt="Maiming gear"
                          style="width: 35px; height: 35px"> Maiming</h3>
-                <ul>
+
+                <h6>Gear</h6>
+                <ul id="gear">
                     {% for item in maiming %}
                         <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
                     {% empty %}
                         <h4>No gear.</h4>
+                    {% endfor %}
+                </ul>
+                <br>
+
+                <h6>Weapons</h6>
+                <ul id="weapons">
+                    {% for item in drgrpr_weapon %}
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} ({{ item.job.all.last }})</a>
+                        </li>
+                    {% empty %}
+                        <h4>No weapons.</h4>
+                    {% endfor %}
+                </ul>
+                <br>
+
+                <h6>Accessories</h6>
+                <ul id="accessories">
+                    {% for item in slaying_acc %}
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
+                    {% empty %}
+                        <h4>No accessories.</h4>
                     {% endfor %}
                 </ul>
             </div>
@@ -79,11 +204,34 @@
             <div class="col">
                 <h3><img src="{% static 'gear/media/DPSRole.png' %}" alt="Casting gear"
                          style="width: 35px; height: 35px"> Casting</h3>
-                <ul>
-                    {% for item in  casting %}
+
+                <h6>Gear</h6>
+                <ul id="gear">
+                    {% for item in casting %}
                         <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
                     {% empty %}
                         <h4>No gear.</h4>
+                    {% endfor %}
+                </ul>
+                <br>
+
+                <h6>Weapons</h6>
+                <ul id="weapons">
+                    {% for item in caster_weapon %}
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} ({{ item.job.all.last }})</a>
+                        </li>
+                    {% empty %}
+                        <h4>No weapons.</h4>
+                    {% endfor %}
+                </ul>
+                <br>
+
+                <h6>Accessories</h6>
+                <ul id="accessories">
+                    {% for item in casting_acc %}
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
+                    {% empty %}
+                        <h4>No accessories.</h4>
                     {% endfor %}
                 </ul>
             </div>

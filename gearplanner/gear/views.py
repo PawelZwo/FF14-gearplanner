@@ -20,13 +20,50 @@ class AddGear(CreateView):
 class GearList(View):
     def get(self, request):
         context = {
-            'fending': Gear.objects.filter(name__contains='Fending').order_by('id'),
-            'healing': Gear.objects.filter(name__contains='healing').order_by('id'),
-            'striking': Gear.objects.filter(name__contains='striking').order_by('id'),
-            'maiming': Gear.objects.filter(name__contains='maiming').order_by('id'),
-            'scouting': Gear.objects.filter(name__contains='scouting').order_by('id'),
-            'aiming': Gear.objects.filter(name__contains='aiming').order_by('id'),
-            'casting': Gear.objects.filter(name__contains='casting').order_by('id'),
+            'fending':
+                Gear.objects.filter(name__contains='Fending').filter(cost_id__in=[6, 7, 9, 10, 11]).order_by('id'),
+            'tank_weapon':
+                Gear.objects.filter(cost=4).filter(job__in=[1, 2, 3, 4]).order_by('job'),
+            'shield':
+                Gear.objects.filter(cost=8).order_by('id'),
+            'fending_acc':
+                Gear.objects.filter(name__contains='Fending').filter(cost_id__in=[12, 13, 14, 15]).order_by('id'),
+
+            'healing':
+                Gear.objects.filter(name__contains='Healing').filter(cost_id__in=[6, 7, 9, 10, 11]).order_by('id'),
+            'healer_weapon':
+                Gear.objects.filter(cost=4).filter(job__in=[5, 6, 7, 8]).order_by('job'),
+            'healing_acc':
+                Gear.objects.filter(name__contains='Healing').filter(cost_id__in=[12, 13, 14, 15]).order_by('id'),
+
+            'striking':
+                Gear.objects.filter(name__contains='Striking').filter(cost_id__in=[6, 7, 9, 10, 11]).order_by('id'),
+            'maiming':
+                Gear.objects.filter(name__contains='Maiming').filter(cost_id__in=[6, 7, 9, 10, 11]).order_by('id'),
+            'scouting':
+                Gear.objects.filter(name__contains='Scouting').filter(cost_id__in=[6, 7, 9, 10, 11]).order_by('id'),
+            'mnksam_weapon':
+                Gear.objects.filter(cost=4).filter(job__in=[9, 12]).order_by('job'),
+            'nin_weapon':
+                Gear.objects.filter(cost=4).filter(job__in=[11]).order_by('job'),
+            'drgrpr_weapon':
+                Gear.objects.filter(cost=4).filter(job__in=[10, 13]).order_by('job'),
+            'slaying_acc':
+                Gear.objects.filter(name__contains='Slaying').filter(cost_id__in=[12, 13, 14, 15]).order_by('id'),
+
+            'aiming':
+                Gear.objects.filter(name__contains='Aiming').filter(cost_id__in=[6, 7, 9, 10, 11]).order_by('id'),
+            'ranged_weapon':
+                Gear.objects.filter(cost=4).filter(job__in=[14, 15, 16]).order_by('job'),
+            'aiming_acc':
+                Gear.objects.filter(name__contains='Aiming').filter(cost_id__in=[12, 13, 14, 15]).order_by('id'),
+
+            'casting':
+                Gear.objects.filter(name__contains='Casting').filter(cost_id__in=[6, 7, 9, 10, 11]).order_by('id'),
+            'caster_weapon':
+                Gear.objects.filter(cost=4).filter(job__in=[17, 18, 19]).order_by('job'),
+            'casting_acc':
+                Gear.objects.filter(name__contains='Casting').filter(cost_id__in=[12, 13, 14, 15]).order_by('id'),
         }
         return render(request, 'gear/gear_list.html', context)
 
