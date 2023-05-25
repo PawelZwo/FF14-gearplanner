@@ -5,7 +5,7 @@ urlpatterns = [
     path('', IndexView.as_view(), name='index'),
 
     path('add-gear', AddGear.as_view(), name='add_gear'),
-    path('gear-list', GearList.as_view(), name='gear_list'),
+    path('gear-list-all', GearList.as_view(), name='gear_list_all'),
     path('gear-details/<int:pk>', GearDetails.as_view(), name='gear_details'),
 
     path('add-cost', AddCost.as_view(), name='add_cost'),

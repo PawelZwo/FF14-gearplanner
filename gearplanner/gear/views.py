@@ -65,7 +65,7 @@ class GearList(View):
             'casting_acc':
                 Gear.objects.filter(name__contains='Casting').filter(cost_id__in=[12, 13, 14, 15]).order_by('id'),
         }
-        return render(request, 'gear/gear_list.html', context)
+        return render(request, 'gear/gear_all.html', context)
 
 
 class GearDetails(View):
