@@ -12,7 +12,7 @@
                 <h6>Gear</h6>
                 <ul id="gear">
                     {% for item in fending %}
-                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a></li>
                     {% empty %}
                         <h4>No gear.</h4>
                     {% endfor %}
@@ -22,7 +22,7 @@
                 <h6>Weapons</h6>
                 <ul id="weapons">
                     {% for item in tank_weapon %}
-                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} ({{ item.job.all.last }})</a>
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} ({{ item.job.all.last }}, i{{ item.item_level }})</a>
                         </li>
                     {% empty %}
                         <h4>No weapons.</h4>
@@ -33,7 +33,7 @@
                 <h6>Accessories</h6>
                 <ul id="accessories">
                     {% for item in fending_acc %}
-                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a></li>
                     {% empty %}
                         <h4>No accessories.</h4>
                     {% endfor %}
@@ -43,7 +43,7 @@
                 <h6>Shields</h6>
                 <ul id="shields">
                     {% for item in shield %}
-                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a></li>
                     {% empty %}
                         <h4>No shields.</h4>
                     {% endfor %}
@@ -57,7 +57,7 @@
                 <h6>Gear</h6>
                 <ul id="gear">
                     {% for item in healing %}
-                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a></li>
                     {% empty %}
                         <h4>No gear.</h4>
                     {% endfor %}
@@ -67,7 +67,7 @@
                 <h6>Weapons</h6>
                 <ul id="weapons">
                     {% for item in healer_weapon %}
-                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} ({{ item.job.all.last }})</a>
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} ({{ item.job.all.last }}, i{{ item.item_level }})</a>
                         </li>
                     {% empty %}
                         <h4>No weapons.</h4>
@@ -78,7 +78,7 @@
                 <h6>Accessories</h6>
                 <ul id="accessories">
                     {% for item in healing_acc %}
-                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a></li>
                     {% empty %}
                         <h4>No accessories.</h4>
                     {% endfor %}
@@ -97,7 +97,7 @@
                 <h6>Gear</h6>
                 <ul id="gear">
                     {% for item in striking %}
-                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a></li>
                     {% empty %}
                         <h4>No gear.</h4>
                     {% endfor %}
@@ -107,7 +107,7 @@
                 <h6>Weapons</h6>
                 <ul id="weapons">
                     {% for item in mnksam_weapon %}
-                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} ({{ item.job.all.last }})</a>
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} ({{ item.job.all.last }}, i{{ item.item_level }})</a>
                         </li>
                     {% empty %}
                         <h4>No weapons.</h4>
@@ -118,7 +118,7 @@
                 <h6>Accessories</h6>
                 <ul id="accessories">
                     {% for item in slaying_acc %}
-                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a></li>
                     {% empty %}
                         <h4>No accessories.</h4>
                     {% endfor %}
@@ -132,7 +132,7 @@
                 <h6>Gear</h6>
                 <ul id="gear">
                     {% for item in scouting %}
-                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a></li>
                     {% empty %}
                         <h4>No gear.</h4>
                     {% endfor %}
@@ -142,7 +142,7 @@
                 <h6>Weapons</h6>
                 <ul id="weapons">
                     {% for item in nin_weapon %}
-                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} ({{ item.job.all.last }})</a>
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} ({{ item.job.all.last }}, i{{ item.item_level }})</a>
                         </li>
                     {% empty %}
                         <h4>No weapons.</h4>
@@ -153,7 +153,7 @@
                 <h6>Accessories</h6>
                 <ul id="accessories">
                     {% for item in aiming_acc %}
-                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a></li>
                     {% empty %}
                         <h4>No accessories.</h4>
                     {% endfor %}
@@ -173,7 +173,7 @@
                 <h6>Gear</h6>
                 <ul id="gear">
                     {% for item in maiming %}
-                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a></li>
                     {% empty %}
                         <h4>No gear.</h4>
                     {% endfor %}
@@ -183,7 +183,7 @@
                 <h6>Weapons</h6>
                 <ul id="weapons">
                     {% for item in drgrpr_weapon %}
-                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} ({{ item.job.all.last }})</a>
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} ({{ item.job.all.last }}, i{{ item.item_level }})</a>
                         </li>
                     {% empty %}
                         <h4>No weapons.</h4>
@@ -194,7 +194,7 @@
                 <h6>Accessories</h6>
                 <ul id="accessories">
                     {% for item in slaying_acc %}
-                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a></li>
                     {% empty %}
                         <h4>No accessories.</h4>
                     {% endfor %}
@@ -208,7 +208,7 @@
                 <h6>Gear</h6>
                 <ul id="gear">
                     {% for item in casting %}
-                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a></li>
                     {% empty %}
                         <h4>No gear.</h4>
                     {% endfor %}
@@ -218,7 +218,7 @@
                 <h6>Weapons</h6>
                 <ul id="weapons">
                     {% for item in caster_weapon %}
-                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} ({{ item.job.all.last }})</a>
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} ({{ item.job.all.last }}, i{{ item.item_level }})</a>
                         </li>
                     {% empty %}
                         <h4>No weapons.</h4>
@@ -229,7 +229,7 @@
                 <h6>Accessories</h6>
                 <ul id="accessories">
                     {% for item in casting_acc %}
-                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }}</a></li>
+                        <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a></li>
                     {% empty %}
                         <h4>No accessories.</h4>
                     {% endfor %}
