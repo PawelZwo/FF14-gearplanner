@@ -300,10 +300,8 @@ class Gearset(models.Model):
         spell_speed += self.right_ring.spell_speed
         return spell_speed
 
-
     def __str__(self):
         return str(self.name)
-
 
     def get_absolute_url(self):
         return reverse('gearset_details', kwargs={'pk': self.id})

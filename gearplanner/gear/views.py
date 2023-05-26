@@ -349,6 +349,7 @@ class GearsetDetails(View):
     def get(self, request, pk):
         context = {
             'gearset': Gearset.objects.get(pk=pk),
+            'job': Gearset.objects.get(pk=pk).weapon.job.all().last().name,
             'vitality': Gearset.objects.get(pk=pk).calculate_total_vitality(),
             'strength': Gearset.objects.get(pk=pk).calculate_total_strength(),
             'dexterity': Gearset.objects.get(pk=pk).calculate_total_dexterity(),
