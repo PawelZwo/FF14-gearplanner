@@ -1,6 +1,8 @@
 {% extends 'gear/__base__.html' %}
 {% load static %}
+
 {% block content %}
+
     <div id="job-icons">
         {% if job == 'Paladin' %}
             <h3><img src="{% static 'gear/media/Paladin.png' %}" alt="White mage job icon"
@@ -81,91 +83,233 @@
     </div>
     <br>
 
-    <h4>Disclaimer: stats don't account for materia slots nor base race stats.</h4>
+    <h5>Disclaimer:</h5>
+    <h6>Stats don't account for materia slots nor base race stats. Crafted gear is its high-quality version.</h6>
     <br>
 
-    <div class="row">
-        <div class="col">
+    <table class="table table-responsive table-hover">
+        <tr>
+            <th class="col-2">
+                Weapon:
+            </th>
+            <td class="col-5">
+                {{ gearset.weapon }}
+            </td>
+            <td class="col-1">
+                i{{ gearset.weapon.item_level }}
+            </td>
+            <td class="col-1">
+                <a href="{% url 'gear_details' gearset.weapon_id %}" class="btn btn-sm btn-outline-info">View</a>
+            </td>
+        </tr>
 
-            <h6>Weapon:</h6>
-            {{ gearset.weapon }} (i{{ gearset.weapon.item_level }})<br><br>
+        <tr>
+            <th class="col-2">
+                Head:
+            </th>
+            <td class="col-5">
+                {{ gearset.helmet }}
+            </td>
+            <td class="col-1">
+                i{{ gearset.helmet.item_level }}
+            </td>
+            <td class="col-1">
+                <a href="{% url 'gear_details' gearset.helmet_id %}" class="btn btn-sm btn-outline-info">View</a>
+            </td>
+        </tr>
 
-            <h6>Head:</h6>
-            {{ gearset.helmet }} (i{{ gearset.helmet.item_level }})<br><br>
+        <tr>
+            <th class="col-2">
+                Body:
+            </th>
+            <td class="col-5">
+                {{ gearset.body }}
+            </td>
+            <td class="col-1">
+                i{{ gearset.body.item_level }}
+            </td>
+            <td class="col-1">
+                <a href="{% url 'gear_details' gearset.body_id %}" class="btn btn-sm btn-outline-info">View</a>
+            </td>
+        </tr>
 
-            <h6>Body:</h6>
-            {{ gearset.body }} (i{{ gearset.body.item_level }})<br><br>
+        <tr>
+            <th class="col-2">
+                Legs:
+            </th>
+            <td class="col-5">
+                {{ gearset.legs }}
+            </td>
+            <td class="col-1">
+                i{{ gearset.legs.item_level }}
+            </td>
+            <td class="col-1">
+                <a href="{% url 'gear_details' gearset.legs_id %}" class="btn btn-sm btn-outline-info">View</a>
+            </td>
+        </tr>
 
-            <h6>Legs:</h6>
-            {{ gearset.legs }} (i{{ gearset.legs.item_level }})<br><br>
+        <tr>
+            <th class="col-2">
+                Hands:
+            </th>
+            <td class="col-5">
+                {{ gearset.hands }}
+            </td>
+            <td class="col-1">
+                i{{ gearset.hands.item_level }}
+            </td>
+            <td class="col-1">
+                <a href="{% url 'gear_details' gearset.hands_id %}" class="btn btn-sm btn-outline-info">View</a>
+            </td>
+        </tr>
 
-            <h6>Hands:</h6>
-            {{ gearset.hands }} (i{{ gearset.hands.item_level }})<br><br>
+        <tr>
+            <th class="col-2">
+                Feet:
+            </th>
+            <td class="col-5">
+                {{ gearset.feet }}
+            </td>
+            <td class="col-1">
+                i{{ gearset.feet.item_level }}
+            </td>
+            <td class="col-1">
+                <a href="{% url 'gear_details' gearset.feet_id %}" class="btn btn-sm btn-outline-info">View</a>
+            </td>
+        </tr>
 
-            <h6>Feet:</h6>
-            {{ gearset.feet }} (i{{ gearset.feet.item_level }})<br><br>
+        {% if gearset.shield %}
+            <tr>
+                <th class="col-2">
+                    Shield:
+                </th>
+                <td class="col-5">
+                    {{ gearset.shield }}
+                </td>
+                <td class="col-1">
+                    i{{ gearset.shield.item_level }}
+                </td>
+            <td class="col-1">
+                <a href="{% url 'gear_details' gearset.shield_id %}" class="btn btn-sm btn-outline-info">View</a>
+            </td>
+            </tr>
+        {% endif %}
 
-        </div>
+        <tr>
+            <th class="col-2">
+                Earrings:
+            </th>
+            <td class="col-5">
+                {{ gearset.earrings }}
+            </td>
+            <td class="col-1">
+                i{{ gearset.earrings.item_level }}
+            </td>
+            <td class="col-1">
+                <a href="{% url 'gear_details' gearset.earrings_id %}" class="btn btn-sm btn-outline-info">View</a>
+            </td>
+        </tr>
 
-        <div class="col">
-            {% if gearset.shield %}
-                <h6>Shield:</h6> {{ gearset.shield }} (i{{ gearset.shield.item_level }})
-            {% endif %}<br><br>
+        <tr>
+            <th class="col-2">
+                Necklace:
+            </th>
+            <td class="col-5">
+                {{ gearset.necklace }}
+            </td>
+            <td class="col-1">
+                i{{ gearset.necklace.item_level }}
+            </td>
+            <td class="col-1">
+                <a href="{% url 'gear_details' gearset.necklace_id %}" class="btn btn-sm btn-outline-info">View</a>
+            </td>
+        </tr>
 
-            <h6>Earrings:</h6>
-            {{ gearset.earrings }} (i{{ gearset.earrings.item_level }})<br><br>
+        <tr>
+            <th class="col-2">
+                Bracelet:
+            </th>
+            <td class="col-5">
+                {{ gearset.bracelet }}
+            </td>
+            <td class="col-1">
+                i{{ gearset.bracelet.item_level }}
+            </td>
+            <td class="col-1">
+                <a href="{% url 'gear_details' gearset.bracelet_id %}" class="btn btn-sm btn-outline-info">View</a>
+            </td>
+        </tr>
 
-            <h6>Necklace:</h6>
-            {{ gearset.necklace }} (i{{ gearset.necklace.item_level }})<br><br>
+        <tr>
+            <th class="col-2">
+                Left ring:
+            </th>
+            <td class="col-5">
+                {{ gearset.left_ring }}
+            </td>
+            <td class="col-1">
+                i{{ gearset.left_ring.item_level }}
+            </td>
+            <td class="col-1">
+                <a href="{% url 'gear_details' gearset.left_ring_id %}" class="btn btn-sm btn-outline-info">View</a>
+            </td>
+        </tr>
 
-            <h6>Bracelet:</h6>
-            {{ gearset.bracelet }} (i{{ gearset.bracelet.item_level }})<br><br>
-
-            <h6>Left ring:</h6>
-            {{ gearset.left_ring }} (i{{ gearset.left_ring.item_level }})<br><br>
-
-            <h6>Right ring:</h6>
-            {{ gearset.right_ring }} (i{{ gearset.right_ring.item_level }})<br><br>
-
-        </div>
-
-        <div class="col">
-
-            <h6>Main stats:</h6>
-            <ul>
-                {% if vitality != 0 %}
-                    <li>Vitality: {{ vitality }}</li>{% endif %}
-                {% if strength != 0 %}
-                    <li>Strength: {{ strength }}</li>{% endif %}
-                {% if dexterity != 0 %}
-                    <li>Dexterity: {{ dexterity }}</li>{% endif %}
-                {% if intelligence != 0 %}
-                    <li>Intelligence: {{ intelligence }}</li>{% endif %}
-                {% if mind != 0 %}
-                    <li>Mind: {{ mind }}</li>{% endif %}
-            </ul>
-            <br>
-
-            <h6>Secondary stats:</h6>
-            <ul>
-                {% if piety != 0 %}
-                    <li>Piety: {{ piety }}</li>{% endif %}
-                {% if tenacity != 0 %}
-                    <li>Tenacity: {{ tenacity }}</li>{% endif %}
-                {% if critical_rate != 0 %}
-                    <li>Critical rate: {{ critical_rate }}</li>{% endif %}
-                {% if direct_hit != 0 %}
-                    <li>Direct hit: {{ direct_hit }}</li>{% endif %}
-                {% if determination != 0 %}
-                    <li>Determination: {{ determination }}</li>{% endif %}
-                {% if skill_speed != 0 %}
-                    <li>Skill speed: {{ skill_speed }}</li>{% endif %}
-                {% if spell_speed != 0 %}
-                    <li>Spell speed: {{ spell_speed }}</li>{% endif %}
-            </ul>
-        </div>
-    </div>
-    <br><br>
+        <tr>
+            <th class="col-2">
+                Right ring:
+            </th>
+            <td class="col-5">
+                {{ gearset.right_ring }}
+            </td>
+            <td class="col-1">
+                i{{ gearset.right_ring.item_level }}
+            </td>
+            <td class="col-1">
+                <a href="{% url 'gear_details' gearset.right_ring_id %}" class="btn btn-sm btn-outline-info">View</a>
+            </td>
+        </tr>
+    </table>
 
     <a class='btn btn-outline-primary' onClick="javascript:history.go(-1);">Back</a>
+    {% if user.is_superuser %}
+        <a class='btn btn-outline-success' href="{% url 'update_gearset' gearset.id %}">Edit</a>
+        <a class='btn btn-outline-danger' href="#">Delete</a>
+    {% endif %}
+
+{% endblock %}
+
+{% block stats %}
+    <h6>Main stats:</h6>
+    <ul>
+        {% if vitality != 0 %}
+            <li>Vitality: {{ vitality }}</li>{% endif %}
+        {% if strength != 0 %}
+            <li>Strength: {{ strength }}</li>{% endif %}
+        {% if dexterity != 0 %}
+            <li>Dexterity: {{ dexterity }}</li>{% endif %}
+        {% if intelligence != 0 %}
+            <li>Intelligence: {{ intelligence }}</li>{% endif %}
+        {% if mind != 0 %}
+            <li>Mind: {{ mind }}</li>{% endif %}
+    </ul>
+    <br>
+
+    <h6>Secondary stats:</h6>
+    <ul>
+        {% if piety != 0 %}
+            <li>Piety: {{ piety }}</li>{% endif %}
+        {% if tenacity != 0 %}
+            <li>Tenacity: {{ tenacity }}</li>{% endif %}
+        {% if critical_rate != 0 %}
+            <li>Critical rate: {{ critical_rate }}</li>{% endif %}
+        {% if direct_hit != 0 %}
+            <li>Direct hit: {{ direct_hit }}</li>{% endif %}
+        {% if determination != 0 %}
+            <li>Determination: {{ determination }}</li>{% endif %}
+        {% if skill_speed != 0 %}
+            <li>Skill speed: {{ skill_speed }}</li>{% endif %}
+        {% if spell_speed != 0 %}
+            <li>Spell speed: {{ spell_speed }}</li>{% endif %}
+    </ul>
 {% endblock %}
