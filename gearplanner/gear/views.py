@@ -31,7 +31,7 @@ class GearList(View):
             'fending_feet':
                 Gear.objects.filter(name__contains='Fending').filter(cost_id=11).order_by('id'),
             'tank_weapon':
-                Gear.objects.filter(cost=4).filter(job__in=[1, 2, 3, 4]).order_by('job'),
+                Gear.objects.filter(cost__in=[4, 5]).filter(job__in=[1, 2, 3, 4]).order_by('job'),
             'shield':
                 Gear.objects.filter(cost=8).order_by('id'),
             'fending_earrings':
@@ -54,7 +54,7 @@ class GearList(View):
             'healing_feet':
                 Gear.objects.filter(name__contains='Healing').filter(cost_id=11).order_by('id'),
             'healer_weapon':
-                Gear.objects.filter(cost=4).filter(job__in=[5, 6, 7, 8]).order_by('job'),
+                Gear.objects.filter(cost=5).filter(job__in=[5, 6, 7, 8]).order_by('job'),
             'healing_earrings':
                 Gear.objects.filter(name__contains='Healing').filter(cost_id=12).order_by('id'),
             'healing_necklace':
@@ -97,11 +97,11 @@ class GearList(View):
             'scouting_feet':
                 Gear.objects.filter(name__contains='Scouting').filter(cost_id=11).order_by('id'),
             'mnksam_weapon':
-                Gear.objects.filter(cost=4).filter(job__in=[9, 12]).order_by('job'),
+                Gear.objects.filter(cost=5).filter(job__in=[9, 12]).order_by('job'),
             'nin_weapon':
-                Gear.objects.filter(cost=4).filter(job__in=[11]).order_by('job'),
+                Gear.objects.filter(cost=5).filter(job__in=[11]).order_by('job'),
             'drgrpr_weapon':
-                Gear.objects.filter(cost=4).filter(job__in=[10, 13]).order_by('job'),
+                Gear.objects.filter(cost=5).filter(job__in=[10, 13]).order_by('job'),
             'slaying_earrings':
                 Gear.objects.filter(name__contains='Slaying').filter(cost_id=12).order_by('id'),
             'slaying_necklace':
@@ -122,7 +122,7 @@ class GearList(View):
             'aiming_feet':
                 Gear.objects.filter(name__contains='Aiming').filter(cost_id=11).order_by('id'),
             'ranged_weapon':
-                Gear.objects.filter(cost=4).filter(job__in=[14, 15, 16]).order_by('job'),
+                Gear.objects.filter(cost=5).filter(job__in=[14, 15, 16]).order_by('job'),
             'aiming_earrings':
                 Gear.objects.filter(name__contains='Aiming').filter(cost_id=12).order_by('id'),
             'aiming_necklace':
@@ -143,7 +143,7 @@ class GearList(View):
             'casting_feet':
                 Gear.objects.filter(name__contains='Casting').filter(cost_id=11).order_by('id'),
             'caster_weapon':
-                Gear.objects.filter(cost=4).filter(job__in=[17, 18, 19]).order_by('job'),
+                Gear.objects.filter(cost=5).filter(job__in=[17, 18, 19]).order_by('job'),
             'casting_earrings':
                 Gear.objects.filter(name__contains='Casting').filter(cost_id=12).order_by('id'),
             'casting_necklace':
@@ -170,7 +170,7 @@ class TankGearList(View):
             'fending_feet':
                 Gear.objects.filter(name__contains='Fending').filter(cost_id=11).order_by('id'),
             'tank_weapon':
-                Gear.objects.filter(cost=4).filter(job__in=[1, 2, 3, 4]).order_by('job'),
+                Gear.objects.filter(cost__in=[4, 5]).filter(job__in=[1, 2, 3, 4]).order_by('job'),
             'shield':
                 Gear.objects.filter(cost=8).order_by('id'),
             'fending_earrings':
@@ -199,7 +199,7 @@ class HealerGearList(View):
             'healing_feet':
                 Gear.objects.filter(name__contains='Healing').filter(cost_id=11).order_by('id'),
             'healer_weapon':
-                Gear.objects.filter(cost=4).filter(job__in=[5, 6, 7, 8]).order_by('job'),
+                Gear.objects.filter(cost=5).filter(job__in=[5, 6, 7, 8]).order_by('job'),
             'healing_earrings':
                 Gear.objects.filter(name__contains='Healing').filter(cost_id=12).order_by('id'),
             'healing_necklace':
@@ -248,11 +248,11 @@ class DpsGearList(View):
             'scouting_feet':
                 Gear.objects.filter(name__contains='Scouting').filter(cost_id=11).order_by('id'),
             'mnksam_weapon':
-                Gear.objects.filter(cost=4).filter(job__in=[9, 12]).order_by('job'),
+                Gear.objects.filter(cost=5).filter(job__in=[9, 12]).order_by('job'),
             'nin_weapon':
-                Gear.objects.filter(cost=4).filter(job__in=[11]).order_by('job'),
+                Gear.objects.filter(cost=5).filter(job__in=[11]).order_by('job'),
             'drgrpr_weapon':
-                Gear.objects.filter(cost=4).filter(job__in=[10, 13]).order_by('job'),
+                Gear.objects.filter(cost=5).filter(job__in=[10, 13]).order_by('job'),
             'slaying_earrings':
                 Gear.objects.filter(name__contains='Slaying').filter(cost_id=12).order_by('id'),
             'slaying_necklace':
@@ -273,7 +273,7 @@ class DpsGearList(View):
             'aiming_feet':
                 Gear.objects.filter(name__contains='Aiming').filter(cost_id=11).order_by('id'),
             'ranged_weapon':
-                Gear.objects.filter(cost=4).filter(job__in=[14, 15, 16]).order_by('job'),
+                Gear.objects.filter(cost=5).filter(job__in=[14, 15, 16]).order_by('job'),
             'aiming_earrings':
                 Gear.objects.filter(name__contains='Aiming').filter(cost_id=12).order_by('id'),
             'aiming_necklace':
@@ -294,7 +294,7 @@ class DpsGearList(View):
             'casting_feet':
                 Gear.objects.filter(name__contains='Casting').filter(cost_id=11).order_by('id'),
             'caster_weapon':
-                Gear.objects.filter(cost=4).filter(job__in=[17, 18, 19]).order_by('job'),
+                Gear.objects.filter(cost=5).filter(job__in=[17, 18, 19]).order_by('job'),
             'casting_earrings':
                 Gear.objects.filter(name__contains='Casting').filter(cost_id=12).order_by('id'),
             'casting_necklace':
@@ -343,6 +343,27 @@ class UpdateGearset(UpdateView):
 class GearsetList(ListView):
     model = Gearset
     template_name = 'gear/gearset_list.html'
+
+
+class GearsetDetails(View):
+    def get(self, request, pk):
+        context = {
+            'gearset': Gearset.objects.get(pk=pk),
+            'vitality': Gearset.objects.get(pk=pk).calculate_total_vitality(),
+            'strength': Gearset.objects.get(pk=pk).calculate_total_strength(),
+            'dexterity': Gearset.objects.get(pk=pk).calculate_total_dexterity(),
+            'intelligence': Gearset.objects.get(pk=pk).calculate_total_intelligence(),
+            'mind': Gearset.objects.get(pk=pk).calculate_total_mind(),
+            'piety': Gearset.objects.get(pk=pk).calculate_total_piety(),
+            'critical_rate': Gearset.objects.get(pk=pk).calculate_total_critical_rate(),
+            'direct_hit': Gearset.objects.get(pk=pk).calculate_total_direct_hit(),
+            'determination': Gearset.objects.get(pk=pk).calculate_total_determination(),
+            'skill_speed': Gearset.objects.get(pk=pk).calculate_total_skill_speed(),
+            'spell_speed': Gearset.objects.get(pk=pk).calculate_total_spell_speed(),
+            'tenacity': Gearset.objects.get(pk=pk).calculate_total_tenacity(),
+        }
+
+        return render(request, 'gear/gearset_details.html', context)
 
 
 class JobList(ListView):

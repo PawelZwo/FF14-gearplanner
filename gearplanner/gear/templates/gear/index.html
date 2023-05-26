@@ -15,9 +15,9 @@
                     <img src="{% static 'gear/media/TankRole.png' %}" alt="Tank Role" style="width: 40px; height: 40px">
                     Tanks
                 </h3><br>
-                <div>
+                <div class="tanks">
                     <h5><img src="{% static 'gear/media/Paladin.png' %}" alt="paladin job icon"
-                             style="width: 30px; height: 30px"> Paladin</h5>
+                             style="width: 30px; height: 30px"><a href="{% url 'gearset_details' pk=1 %}" style="text-decoration: none; color: #444444"> Paladin</a></h5>
                     <h5><img src="{% static 'gear/media/Warrior.png' %}" alt="warrior job icon"
                              style="width: 30px; height: 30px"> Warrior</h5>
                     <h5><img src="{% static 'gear/media/DarkKnight.png' %}" alt="dark knight job icon"
@@ -33,9 +33,9 @@
                          style="width: 40px; height: 40px">
                     Healers
                 </h3><br>
-                <div>
+                <div class="healers">
                     <h5><img src="{% static 'gear/media/WhiteMage.png' %}" alt="White mage job icon"
-                             style="width: 30px; height: 30px"> White mage</h5>
+                             style="width: 30px; height: 30px"><a href="{% url 'gearset_details' pk=2 %}" style="text-decoration: none; color: #444444"> White mage</a></h5>
                     <h5><img src="{% static 'gear/media/Scholar.png' %}" alt="Scholar job icon"
                              style="width: 30px; height: 30px"> Scholar</h5>
                     <h5><img src="{% static 'gear/media/Astrologian.png' %}" alt="Astrologian job icon"
@@ -50,7 +50,7 @@
                     <img src="{% static 'gear/media/DPSRole.png' %}" alt="DPS Role" style="width: 40px; height: 40px">
                     Melee
                 </h3><br>
-                <div>
+                <div class="melees">
                     <h5><img src="{% static 'gear/media/Monk.png' %}" alt="Monk job icon"
                              style="width: 30px; height: 30px"> Monk</h5>
                     <h5><img src="{% static 'gear/media/Dragoon.png' %}" alt="Dragoon job icon"
@@ -69,7 +69,7 @@
                     <img src="{% static 'gear/media/DPSRole.png' %}" alt="DPS Role" style="width: 40px; height: 40px">
                     Ranged
                 </h3><br>
-                <div>
+                <div class="ranged">
                     <h5><img src="{% static 'gear/media/Bard.png' %}" alt="Bard job icon"
                              style="width: 30px; height: 30px"> Bard</h5>
                     <h5><img src="{% static 'gear/media/Dancer.png' %}" alt="Dancer job icon"

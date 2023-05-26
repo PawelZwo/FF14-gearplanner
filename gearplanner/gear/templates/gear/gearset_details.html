@@ -1,0 +1,88 @@
+{% extends 'gear/__base__.html' %}
+{% load static %}
+{% block content %}
+    <div class="row">
+        <div class="col">
+
+            <h6>Weapon:</h6>
+            {{ gearset.weapon }} (i{{ gearset.weapon.item_level }})<br><br>
+
+            <h6>Head:</h6>
+            {{ gearset.helmet }} (i{{ gearset.helmet.item_level }})<br><br>
+
+            <h6>Body:</h6>
+            {{ gearset.body }} (i{{ gearset.body.item_level }})<br><br>
+
+            <h6>Legs:</h6>
+            {{ gearset.legs }} (i{{ gearset.legs.item_level }})<br><br>
+
+            <h6>Hands:</h6>
+            {{ gearset.hands }} (i{{ gearset.hands.item_level }})<br><br>
+
+            <h6>Feet:</h6>
+            {{ gearset.feet }} (i{{ gearset.feet.item_level }})<br><br>
+
+        </div>
+
+        <div class="col">
+            {% if gearset.shield %}
+                <h6>Shield:</h6> {{ gearset.shield }} (i{{ gearset.shield.item_level }})
+            {% endif %}<br><br>
+
+            <h6>Earrings:</h6>
+            {{ gearset.earrings }} (i{{ gearset.earrings.item_level }})<br><br>
+
+            <h6>Necklace:</h6>
+            {{ gearset.necklace }} (i{{ gearset.necklace.item_level }})<br><br>
+
+            <h6>Bracelet:</h6>
+            {{ gearset.bracelet }} (i{{ gearset.bracelet.item_level }})<br><br>
+
+            <h6>Left ring:</h6>
+            {{ gearset.left_ring }} (i{{ gearset.left_ring.item_level }})<br><br>
+
+            <h6>Right ring:</h6>
+            {{ gearset.right_ring }} (i{{ gearset.right_ring.item_level }})<br><br>
+
+        </div>
+
+        <div class="col">
+
+            <h6>Main stats:</h6>
+            <ul>
+                {% if vitality != 0 %}
+                    <li>Vitality: {{ vitality }}</li>{% endif %}
+                {% if strength != 0 %}
+                    <li>Strength: {{ strength }}</li>{% endif %}
+                {% if dexterity != 0 %}
+                    <li>Dexterity: {{ dexterity }}</li>{% endif %}
+                {% if intelligence != 0 %}
+                    <li>Intelligence: {{ intelligence }}</li>{% endif %}
+                {% if mind != 0 %}
+                    <li>Mind: {{ mind }}</li>{% endif %}
+            </ul>
+            <br>
+
+            <h6>Secondary stats:</h6>
+            <ul>
+                {% if piety != 0 %}
+                    <li>Piety: {{ piety }}</li>{% endif %}
+                {% if tenacity != 0 %}
+                    <li>Tenacity: {{ tenacity }}</li>{% endif %}
+                {% if critical_rate != 0 %}
+                    <li>Critical rate: {{ critical_rate }}</li>{% endif %}
+                {% if direct_hit != 0 %}
+                    <li>Direct hit: {{ direct_hit }}</li>{% endif %}
+                {% if determination != 0 %}
+                    <li>Determination: {{ determination }}</li>{% endif %}
+                {% if skill_speed != 0 %}
+                    <li>Skill speed: {{ skill_speed }}</li>{% endif %}
+                {% if spell_speed != 0 %}
+                    <li>Spell speed: {{ spell_speed }}</li>{% endif %}
+            </ul>
+        </div>
+    </div>
+    <br><br>
+
+    <a class='btn btn-outline-primary' onClick="javascript:history.go(-1);">Back</a>
+{% endblock %}
