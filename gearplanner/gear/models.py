@@ -23,12 +23,12 @@ class Content(models.Model):
 
 class Race(models.Model):
     name = models.CharField(max_length=50)
-    base_strength = models.SmallIntegerField()
-    base_dexterity = models.SmallIntegerField()
-    base_vitality = models.SmallIntegerField()
-    base_intelligence = models.SmallIntegerField()
-    base_mind = models.SmallIntegerField()
-    base_piety = models.SmallIntegerField()
+    base_strength = models.PositiveSmallIntegerField()
+    base_dexterity = models.PositiveSmallIntegerField()
+    base_vitality = models.PositiveSmallIntegerField()
+    base_intelligence = models.PositiveSmallIntegerField()
+    base_mind = models.PositiveSmallIntegerField()
+    base_piety = models.PositiveSmallIntegerField()
 
     def __str__(self):
         return self.name
@@ -42,18 +42,18 @@ class Type(models.Model):
 
 
 class Cost(models.Model):
-    mythos_1 = models.SmallIntegerField(null=True)
-    mythos_2 = models.SmallIntegerField(null=True)
-    mythos_3 = models.SmallIntegerField(null=True)
-    mythos_4 = models.SmallIntegerField(null=True)
-    unsung_body = models.SmallIntegerField(null=True)
-    unsung_head = models.SmallIntegerField(null=True)
-    unsung_legs = models.SmallIntegerField(null=True)
-    unsung_feet = models.SmallIntegerField(null=True)
-    unsung_hands = models.SmallIntegerField(null=True)
-    unsung_acc = models.SmallIntegerField(null=True)
-    unsung_weapon = models.SmallIntegerField(null=True)
-    tomestones = models.SmallIntegerField(null=True)
+    mythos_1 = models.PositiveSmallIntegerField(null=True)
+    mythos_2 = models.PositiveSmallIntegerField(null=True)
+    mythos_3 = models.PositiveSmallIntegerField(null=True)
+    mythos_4 = models.PositiveSmallIntegerField(null=True)
+    unsung_body = models.PositiveSmallIntegerField(null=True)
+    unsung_head = models.PositiveSmallIntegerField(null=True)
+    unsung_legs = models.PositiveSmallIntegerField(null=True)
+    unsung_feet = models.PositiveSmallIntegerField(null=True)
+    unsung_hands = models.PositiveSmallIntegerField(null=True)
+    unsung_acc = models.PositiveSmallIntegerField(null=True)
+    unsung_weapon = models.PositiveSmallIntegerField(null=True)
+    tomestones = models.PositiveSmallIntegerField(null=True)
     weapon_token = models.BooleanField(null=True)
     type = models.ForeignKey(Type, on_delete=models.CASCADE)
 
@@ -63,31 +63,31 @@ class Cost(models.Model):
 
 class Gear(models.Model):
     cost = models.ForeignKey(Cost, on_delete=models.CASCADE)
-    job = models.ManyToManyField(Job)
+    job = models.ManyToManyField(Job, related_name='gearjob')
     craftable = models.BooleanField(null=True)
     name = models.CharField(max_length=100)
-    item_level = models.SmallIntegerField()
-    physical_dmg = models.SmallIntegerField(null=True)
-    magical_dmg = models.SmallIntegerField(null=True)
+    item_level = models.PositiveSmallIntegerField()
+    physical_dmg = models.PositiveSmallIntegerField(null=True)
+    magical_dmg = models.PositiveSmallIntegerField(null=True)
     auto_attack = models.DecimalField(null=True, max_digits=5, decimal_places=2)
     delay = models.DecimalField(null=True, max_digits=5, decimal_places=2)
     dps = models.DecimalField(null=True, max_digits=5, decimal_places=2)
-    block_strength = models.SmallIntegerField(null=True)
-    block_rate = models.SmallIntegerField(null=True)
-    defense = models.SmallIntegerField(null=True)
-    magic_defense = models.SmallIntegerField(null=True)
-    strength = models.SmallIntegerField(null=True)
-    dexterity = models.SmallIntegerField(null=True)
-    intelligence = models.SmallIntegerField(null=True)
-    mind = models.SmallIntegerField(null=True)
-    piety = models.SmallIntegerField(null=True)
-    vitality = models.SmallIntegerField(null=True)
-    tenacity = models.SmallIntegerField(null=True)
-    critical_rate = models.SmallIntegerField(null=True)
-    direct_hit = models.SmallIntegerField(null=True)
-    determination = models.SmallIntegerField(null=True)
-    skill_speed = models.SmallIntegerField(null=True)
-    spell_speed = models.SmallIntegerField(null=True)
+    block_strength = models.PositiveSmallIntegerField(null=True)
+    block_rate = models.PositiveSmallIntegerField(null=True)
+    defense = models.PositiveSmallIntegerField(null=True)
+    magic_defense = models.PositiveSmallIntegerField(null=True)
+    strength = models.PositiveSmallIntegerField(null=True)
+    dexterity = models.PositiveSmallIntegerField(null=True)
+    intelligence = models.PositiveSmallIntegerField(null=True)
+    mind = models.PositiveSmallIntegerField(null=True)
+    piety = models.PositiveSmallIntegerField(null=True)
+    vitality = models.PositiveSmallIntegerField(null=True)
+    tenacity = models.PositiveSmallIntegerField(null=True)
+    critical_rate = models.PositiveSmallIntegerField(null=True)
+    direct_hit = models.PositiveSmallIntegerField(null=True)
+    determination = models.PositiveSmallIntegerField(null=True)
+    skill_speed = models.PositiveSmallIntegerField(null=True)
+    spell_speed = models.PositiveSmallIntegerField(null=True)
 
     def __str__(self):
         return str(self.name)
@@ -107,6 +107,8 @@ class Gearset(models.Model):
     left_ring = models.ForeignKey(Gear, related_name='gearleft_ring', on_delete=models.CASCADE)
     right_ring = models.ForeignKey(Gear, related_name='gearright_ring', on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
+    job = models.ForeignKey(Job, related_name='gearsetjob', on_delete=models.CASCADE)
+    content = models.ForeignKey(Content, related_name='gearsetcontent', on_delete=models.CASCADE)
 
     def calculate_total_vitality(self):
         vitality = 0
@@ -301,7 +303,7 @@ class Gearset(models.Model):
         return spell_speed
 
     def __str__(self):
-        return str(self.name)
+        return self.name
 
     def get_absolute_url(self):
         return reverse('gearset_details', kwargs={'pk': self.id})

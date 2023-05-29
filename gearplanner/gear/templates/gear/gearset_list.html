@@ -1,9 +1,369 @@
 {% extends 'gear/__base__.html' %}
+{% load static %}
 {% block content %}
-    <br>
-    <ul>
-    {% for obj in object_list %}
-        <li><a href="{{ obj.get_absolute_url }}">{{ obj }}</a></li>
-    {% endfor %}
-    </ul>
+    <div class="container">
+        <div id="paladin">
+            <h4><img src="{% static 'gear/media/Paladin.png' %}" alt="Paladin job icon"
+                     style="width: 30px; height: 30px"> Paladin</h4>
+            <table class="table table-responsive table-hover table-sm">
+                {% for gearset in pld_gearsets %}
+                    <tr>
+                        <th class="col-4">{{ gearset }}</th>
+                        <td class="col-4">{{ gearset.content }}</td>
+                        <td class="col-1"><a href="{% url 'gearset_details' gearset.id %}"
+                                             class="btn btn-sm btn-outline-info">View</a></td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <th>None</th>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="warrior">
+            <h4><img src="{% static 'gear/media/Warrior.png' %}" alt="Warrior job icon"
+                     style="width: 30px; height: 30px"> Warrior</h4>
+            <table class="table table-responsive table-hover table-sm">
+                {% for gearset in war_gearsets %}
+                    <tr>
+                        <th class="col-4">{{ gearset }}</th>
+                        <td class="col-4">{{ gearset.content }}</td>
+                        <td class="col-1"><a href="{% url 'gearset_details' gearset.id %}"
+                                             class="btn btn-sm btn-outline-info">View</a></td>
+                        >
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <th>None</th>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="dark_knight">
+            <h4><img src="{% static 'gear/media/DarkKnight.png' %}" alt="Dark Knight job icon"
+                     style="width: 30px; height: 30px"> Dark Knight</h4>
+            <table class="table table-responsive table-hover table-sm">
+                {% for gearset in drk_gearsets %}
+                    <tr>
+                        <th class="col-4">{{ gearset }}</th>
+                        <td class="col-4">{{ gearset.content }}</td>
+                        <td class="col-1"><a href="{% url 'gearset_details' gearset.id %}"
+                                             class="btn btn-sm btn-outline-info">View</a></td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <th>None</th>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="gunbreaker">
+            <h4><img src="{% static 'gear/media/Gunbreaker.png' %}" alt="Gunbreaker job icon"
+                     style="width: 30px; height: 30px"> Gunbreaker</h4>
+            <table class="table table-responsive table-hover table-sm">
+                {% for gearset in gnb_gearsets %}
+                    <tr>
+                        <th class="col-4">{{ gearset }}</th>
+                        <td class="col-4">{{ gearset.content }}</td>
+                        <td class="col-1"><a href="{% url 'gearset_details' gearset.id %}"
+                                             class="btn btn-sm btn-outline-info">View</a></td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <th>None</th>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="white_mage">
+            <h4><img src="{% static 'gear/media/WhiteMage.png' %}" alt="White Mage job icon"
+                     style="width: 30px; height: 30px"> White Mage</h4>
+            <table class="table table-responsive table-hover table-sm">
+                {% for gearset in whm_gearsets %}
+                    <tr>
+                        <th class="col-4">{{ gearset }}</th>
+                        <td class="col-4">{{ gearset.content }}</td>
+                        <td class="col-1"><a href="{% url 'gearset_details' gearset.id %}"
+                                             class="btn btn-sm btn-outline-info">View</a></td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <th>None</th>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="scholar">
+            <h4><img src="{% static 'gear/media/Scholar.png' %}" alt="Scholar job icon"
+                     style="width: 30px; height: 30px"> Scholar</h4>
+            <table class="table table-responsive table-hover table-sm">
+                {% for gearset in sch_gearsets %}
+                    <tr>
+                        <th class="col-4">{{ gearset }}</th>
+                        <td class="col-4">{{ gearset.content }}</td>
+                        <td class="col-1"><a href="{% url 'gearset_details' gearset.id %}"
+                                             class="btn btn-sm btn-outline-info">View</a></td>
+                        <td></td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <th>None</th>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="astrologian">
+            <h4><img src="{% static 'gear/media/Astrologian.png' %}" alt="Astrologian job icon"
+                     style="width: 30px; height: 30px"> Astrologian</h4>
+            <table class="table table-responsive table-hover table-sm">
+                {% for gearset in ast_gearsets %}
+                    <tr>
+                        <th class="col-4">{{ gearset }}</th>
+                        <td class="col-4">{{ gearset.content }}</td>
+                        <td class="col-1"><a href="{% url 'gearset_details' gearset.id %}"
+                                             class="btn btn-sm btn-outline-info">View</a></td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <th>None</th>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="sage">
+            <h4><img src="{% static 'gear/media/Sage.png' %}" alt="Sage job icon"
+                     style="width: 30px; height: 30px"> Sage</h4>
+            <table class="table table-responsive table-hover table-sm">
+                {% for gearset in sge_gearsets %}
+                    <tr>
+                        <th class="col-4">{{ gearset }}</th>
+                        <td class="col-4">{{ gearset.content }}</td>
+                        <td class="col-1"><a href="{% url 'gearset_details' gearset.id %}"
+                                             class="btn btn-sm btn-outline-info">View</a></td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <th>None</th>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="monk">
+            <h4><img src="{% static 'gear/media/Monk.png' %}" alt="Monk job icon"
+                     style="width: 30px; height: 30px"> Monk</h4>
+            <table class="table table-responsive table-hover table-sm">
+                {% for gearset in mnk_gearsets %}
+                    <tr>
+                        <th class="col-4">{{ gearset }}</th>
+                        <td class="col-4">{{ gearset.content }}</td>
+                        <td class="col-1"><a href="{% url 'gearset_details' gearset.id %}"
+                                             class="btn btn-sm btn-outline-info">View</a></td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <th>None</th>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="dragoon">
+            <h4><img src="{% static 'gear/media/Dragoon.png' %}" alt="Dragoon job icon"
+                     style="width: 30px; height: 30px"> Dragoon</h4>
+            <table class="table table-responsive table-hover table-sm">
+                {% for gearset in drg_gearsets %}
+                    <tr>
+                        <th class="col-4">{{ gearset }}</th>
+                        <td class="col-4">{{ gearset.content }}</td>
+                        <td class="col-1"><a href="{% url 'gearset_details' gearset.id %}"
+                                             class="btn btn-sm btn-outline-info">View</a></td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <th>None</th>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="ninja">
+            <h4><img src="{% static 'gear/media/Ninja.png' %}" alt="Ninja job icon"
+                     style="width: 30px; height: 30px"> Ninja</h4>
+            <table class="table table-responsive table-hover table-sm">
+                {% for gearset in nin_gearsets %}
+                    <tr>
+                        <th class="col-4">{{ gearset }}</th>
+                        <td class="col-4">{{ gearset.content }}</td>
+                        <td class="col-1"><a href="{% url 'gearset_details' gearset.id %}"
+                                             class="btn btn-sm btn-outline-info">View</a></td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <th>None</th>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="samurai">
+            <h4><img src="{% static 'gear/media/Samurai.png' %}" alt="Samurai job icon"
+                     style="width: 30px; height: 30px"> Samurai</h4>
+            <table class="table table-responsive table-hover table-sm">
+                {% for gearset in sam_gearsets %}
+                    <tr>
+                        <th class="col-4">{{ gearset }}</th>
+                        <td class="col-4">{{ gearset.content }}</td>
+                        <td class="col-1"><a href="{% url 'gearset_details' gearset.id %}"
+                                             class="btn btn-sm btn-outline-info">View</a></td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <th>None</th>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="reaper">
+            <h4><img src="{% static 'gear/media/Reaper.png' %}" alt="Reaper job icon"
+                     style="width: 30px; height: 30px"> Reaper</h4>
+            <table class="table table-responsive table-hover table-sm">
+                {% for gearset in rpr_gearsets %}
+                    <tr>
+                        <th class="col-4">{{ gearset }}</th>
+                        <td class="col-4">{{ gearset.content }}</td>
+                        <td class="col-1"><a href="{% url 'gearset_details' gearset.id %}"
+                                             class="btn btn-sm btn-outline-info">View</a></td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <th>None</th>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="bard">
+            <h4><img src="{% static 'gear/media/Bard.png' %}" alt="Bard job icon"
+                     style="width: 30px; height: 30px"> Bard</h4>
+            <table class="table table-responsive table-hover table-sm">
+                {% for gearset in brd_gearsets %}
+                    <tr>
+                        <th class="col-4">{{ gearset }}</th>
+                        <td class="col-4">{{ gearset.content }}</td>
+                        <td class="col-1"><a href="{% url 'gearset_details' gearset.id %}"
+                                             class="btn btn-sm btn-outline-info">View</a></td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <th>None</th>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="machinist">
+            <h4><img src="{% static 'gear/media/Machinist.png' %}" alt="Machinist job icon"
+                     style="width: 30px; height: 30px"> Machinist</h4>
+            <table class="table table-responsive table-hover table-sm">
+                {% for gearset in mch_gearsets %}
+                    <tr>
+                        <th class="col-4">{{ gearset }}</th>
+                        <td class="col-4">{{ gearset.content }}</td>
+                        <td class="col-1"><a href="{% url 'gearset_details' gearset.id %}"
+                                             class="btn btn-sm btn-outline-info">View</a></td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <th>None</th>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="dancer">
+            <h4><img src="{% static 'gear/media/Dancer.png' %}" alt="Dancer job icon"
+                     style="width: 30px; height: 30px"> Dancer</h4>
+            <table class="table table-responsive table-hover table-sm">
+                {% for gearset in dnc_gearsets %}
+                    <tr>
+                        <th class="col-4">{{ gearset }}</th>
+                        <td class="col-4">{{ gearset.content }}</td>
+                        <td class="col-1"><a href="{% url 'gearset_details' gearset.id %}"
+                                             class="btn btn-sm btn-outline-info">View</a></td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <th>None</th>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="black_mage">
+            <h4><img src="{% static 'gear/media/BlackMage.png' %}" alt="Black Mage job icon"
+                     style="width: 30px; height: 30px"> Black Mage</h4>
+            <table class="table table-responsive table-hover table-sm">
+                {% for gearset in blm_gearsets %}
+                    <tr>
+                        <th class="col-4">{{ gearset }}</th>
+                        <td class="col-4">{{ gearset.content }}</td>
+                        <td class="col-1"><a href="{% url 'gearset_details' gearset.id %}"
+                                             class="btn btn-sm btn-outline-info">View</a></td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <th>None</th>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="summoner">
+            <h4><img src="{% static 'gear/media/Summoner.png' %}" alt="Summoner job icon"
+                     style="width: 30px; height: 30px"> Summoner</h4>
+            <table class="table table-responsive table-hover table-sm">
+                {% for gearset in smn_gearsets %}
+                    <tr>
+                        <th class="col-4">{{ gearset }}</th>
+                        <td class="col-4">{{ gearset.content }}</td>
+                        <td class="col-1"><a href="{% url 'gearset_details' gearset.id %}"
+                                             class="btn btn-sm btn-outline-info">View</a></td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <th>None</th>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="red_mage">
+            <h4><img src="{% static 'gear/media/RedMage.png' %}" alt="Red Mage job icon"
+                     style="width: 30px; height: 30px"> Red Mage</h4>
+            <table class="table table-responsive table-hover table-sm">
+                {% for gearset in rdm_gearsets %}
+                    <tr>
+                        <th class="col-4">{{ gearset }}</th>
+                        <td class="col-4">{{ gearset.content }}</td>
+                        <td class="col-1"><a href="{% url 'gearset_details' gearset.id %}"
+                                             class="btn btn-sm btn-outline-info">View</a></td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <th>None</th>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+    </div>
 {% endblock %}

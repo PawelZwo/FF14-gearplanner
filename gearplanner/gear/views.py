@@ -340,16 +340,37 @@ class UpdateGearset(UpdateView):
     success_url = reverse_lazy('gearset_list')
 
 
-class GearsetList(ListView):
-    model = Gearset
-    template_name = 'gear/gearset_list.html'
+class GearsetList(View):
+    def get(self, request):
+        context = {
+            'pld_gearsets': Gearset.objects.filter(job_id=1).order_by('content_id'),
+            'war_gearsets': Gearset.objects.filter(job_id=2).order_by('content_id'),
+            'drk_gearsets': Gearset.objects.filter(job_id=3).order_by('content_id'),
+            'gnb_gearsets': Gearset.objects.filter(job_id=4).order_by('content_id'),
+            'whm_gearsets': Gearset.objects.filter(job_id=5).order_by('content_id'),
+            'sch_gearsets': Gearset.objects.filter(job_id=6).order_by('content_id'),
+            'ast_gearsets': Gearset.objects.filter(job_id=7).order_by('content_id'),
+            'sge_gearsets': Gearset.objects.filter(job_id=8).order_by('content_id'),
+            'mnk_gearsets': Gearset.objects.filter(job_id=9).order_by('content_id'),
+            'drg_gearsets': Gearset.objects.filter(job_id=10).order_by('content_id'),
+            'nin_gearsets': Gearset.objects.filter(job_id=11).order_by('content_id'),
+            'sam_gearsets': Gearset.objects.filter(job_id=12).order_by('content_id'),
+            'rpr_gearsets': Gearset.objects.filter(job_id=13).order_by('content_id'),
+            'brd_gearsets': Gearset.objects.filter(job_id=14).order_by('content_id'),
+            'dnc_gearsets': Gearset.objects.filter(job_id=15).order_by('content_id'),
+            'mch_gearsets': Gearset.objects.filter(job_id=16).order_by('content_id'),
+            'blm_gearsets': Gearset.objects.filter(job_id=17).order_by('content_id'),
+            'smn_gearsets': Gearset.objects.filter(job_id=18).order_by('content_id'),
+            'rdm_gearsets': Gearset.objects.filter(job_id=19).order_by('content_id'),
+        }
+        return render(request, 'gear/gearset_list.html', context)
 
 
 class GearsetDetails(View):
     def get(self, request, pk):
         context = {
             'gearset': Gearset.objects.get(pk=pk),
-            'job': Gearset.objects.get(pk=pk).weapon.job.all().last().name,
+            'job': Gearset.objects.get(pk=pk).job.name,
             'vitality': Gearset.objects.get(pk=pk).calculate_total_vitality(),
             'strength': Gearset.objects.get(pk=pk).calculate_total_strength(),
             'dexterity': Gearset.objects.get(pk=pk).calculate_total_dexterity(),
