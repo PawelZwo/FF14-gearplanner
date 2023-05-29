@@ -17,7 +17,7 @@ class LoginView(View):
             if user is not None:
                 username = form.cleaned_data.get('username')
                 login(request, user)
-                messages.success(request, f'{username} logged in!')
+                messages.success(request, f"{username}, you've been logged in!")
             return redirect('index')
         return render(request, 'accounts/form.html', {'form': form})
 
@@ -44,3 +44,9 @@ class AddUser(View):
             login(request, user)
             return redirect('index')
         return render(request, 'accounts/form.html', {'form': form})
+
+
+class ProfileDetails(View):
+    def get(self, request, pk):
+        user = User.objects.get(pk=pk)
+        return render(request, 'accounts/profile.html', {'user': user})

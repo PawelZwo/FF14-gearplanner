@@ -1,0 +1,10 @@
+{% extends 'gear/__base__.html' %}
+{% block content %}
+
+<div class="container">
+    <h4>Username: </h4>{{ user.username }}<br><br>
+    <h4>E-mail: </h4>{{ user.email|default:'None' }}<br><br>
+
+</div>
+
+{% endblock %}
