@@ -14,6 +14,7 @@ urlpatterns = [
     path('add-cost/', AddCost.as_view(), name='add_cost'),
     path('cost-list/', CostList.as_view(), name='cost_list'),
 
+    path('add-gearset-admin/', AddGearsetAdmin.as_view(), name='add_gearset_admin'),
     path('add-gearset/', AddGearset.as_view(), name='add_gearset'),
     path('gearset-list/', GearsetList.as_view(), name='gearset_list'),
     path('gearset-details/<int:pk>/', GearsetDetails.as_view(), name='gearset_details'),

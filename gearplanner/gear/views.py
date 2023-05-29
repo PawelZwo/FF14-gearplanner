@@ -326,7 +326,7 @@ class CostList(ListView):
     ordering = ['-tomestones', 'type_id']
 
 
-class AddGearset(CreateView):
+class AddGearsetAdmin(CreateView):
     model = Gearset
     fields = '__all__'
     template_name = 'gear/__form__.html'
@@ -338,6 +338,19 @@ class UpdateGearset(UpdateView):
     fields = '__all__'
     template_name = 'gear/__form__.html'
     success_url = reverse_lazy('gearset_list')
+
+
+class AddGearset(View):
+    def get(self, request):
+        context = {
+            'jobs': Job.objects.all(),
+            'races': Race.objects.all(),
+            'contents': Content.objects.all(),
+        }
+        return render(request, 'gear/add_gearset.html', context)
+
+    def post(self):
+        pass
 
 
 class GearsetList(View):

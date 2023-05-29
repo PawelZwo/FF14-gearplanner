@@ -1,10 +1,7 @@
+from django.contrib.auth.models import User
 from django.db import models
 from random import randint
 from django.urls import reverse
-
-
-# from django.urls import reverse
-# from accounts.models import Accounts
 
 
 class Job(models.Model):
@@ -311,7 +308,7 @@ class Gearset(models.Model):
 
 class PlayerGearset(models.Model):
     name = models.CharField(max_length=50)
-    # account = models.ForeignKey(Accounts, on_delete=models.CASCADE, null=True)
+    account = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     job = models.ManyToManyField(Job)
     race = models.ForeignKey(Race, on_delete=models.CASCADE)
     gearset = models.ForeignKey(Gearset, on_delete=models.CASCADE, default=None)
@@ -320,8 +317,10 @@ class PlayerGearset(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.unique_name:
-            self.unique_name = f'gear{str(randint(0, 200))}{str(randint(200, 400))}'
+            self.unique_name = f'gear{str(randint(0, 20))}{str(randint(20, 40))}'
+        self.account = User.pk
         super(PlayerGearset, self).save(*args, **kwargs)
 
-    def __str__(self):
-        return self.name
+
+def __str__(self):
+    return self.name
