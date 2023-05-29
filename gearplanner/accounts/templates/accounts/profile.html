@@ -4,7 +4,7 @@
     <div class="container">
         <h4>Username: </h4>{{ user.username }}<br><br>
         <h4>E-mail: </h4>{{ user.email|default:'None' }}<br><br>
-        <a class='btn btn-outline-primary' onClick="javascript:history.go(-1);">Back</a>
+        <a class='btn btn-outline-primary' href="{% url 'index' %}">Home</a>
     </div>
 
 {% endblock %}
