@@ -4,7 +4,15 @@
     <div class="container">
         <h4>Username: </h4>{{ user.username }}<br><br>
         <h4>E-mail: </h4>{{ user.email|default:'None' }}<br><br>
+        <h4>Your gearsets:</h4>
+        <ul>
+            {% for gearset in gearsets %}
+                <li><a href="{% url 'gearset_details' gearset.pk %}">{{ gearset }}</a></li>
+            {% endfor %}
+        </ul><br><br>
+
         <a class='btn btn-outline-primary' href="{% url 'index' %}">Home</a>
     </div>
+
 
 {% endblock %}

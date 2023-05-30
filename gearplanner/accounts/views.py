@@ -4,6 +4,10 @@ from django.views import View
 from .forms import *
 from django.contrib import messages
 
+"""
+Login view. After successful logging in on index there will be a success message shown with the username on it.
+"""
+
 
 class LoginView(View):
     def get(self, request):
@@ -22,10 +26,20 @@ class LoginView(View):
         return render(request, 'accounts/form.html', {'form': form})
 
 
+"""
+Logout view.
+"""
+
+
 class LogoutView(View):
     def get(self, request):
         logout(request)
         return redirect('index')
+
+
+"""
+Registration view with validation.
+"""
 
 
 class AddUser(View):
@@ -44,6 +58,11 @@ class AddUser(View):
             login(request, user)
             return redirect('index')
         return render(request, 'accounts/form.html', {'form': form})
+
+
+"""
+Profile view with username, e-mail and gearsets created by that user showing.
+"""
 
 
 class ProfileDetails(View):

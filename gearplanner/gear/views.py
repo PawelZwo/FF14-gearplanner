@@ -4,10 +4,19 @@ from django.views import View
 from django.views.generic import ListView, CreateView, UpdateView
 from .forms import *
 
+"""
+Index view with main menu and login/register/logout/profile links (depending on a user).
+"""
+
 
 class IndexView(View):
     def get(self, request):
         return render(request, 'gear/index.html')
+
+
+"""
+SUPERUSER ONLY gear adding view.
+"""
 
 
 class AddGear(CreateView):
@@ -15,6 +24,11 @@ class AddGear(CreateView):
     fields = '__all__'
     template_name = 'gear/__form__.html'
     success_url = reverse_lazy('add_gear')
+
+
+"""
+List of gear in the DB sorted by the type of a gear and which piece is it.
+"""
 
 
 class GearList(View):
@@ -156,6 +170,11 @@ class GearList(View):
         return render(request, 'gear/gear_all.html', context)
 
 
+"""
+List of gear for tanks only.
+"""
+
+
 class TankGearList(View):
     def get(self, request):
         context = {
@@ -185,6 +204,11 @@ class TankGearList(View):
         return render(request, 'gear/gear_tank.html', context)
 
 
+"""
+List of gear for healers only.
+"""
+
+
 class HealerGearList(View):
     def get(self, request):
         context = {
@@ -210,6 +234,11 @@ class HealerGearList(View):
                 Gear.objects.filter(name__contains='Healing').filter(cost_id=14).order_by('id'),
         }
         return render(request, 'gear/gear_healer.html', context)
+
+
+"""
+List of gear for DPS only.
+"""
 
 
 class DpsGearList(View):
@@ -307,10 +336,20 @@ class DpsGearList(View):
         return render(request, 'gear/gear_dps.html', context)
 
 
+"""
+Details of a gear piece with information of its: name, item level, for what jobs is it for, if it's craftable or not, stats.
+"""
+
+
 class GearDetails(View):
     def get(self, request, pk):
         item = Gear.objects.get(id=pk)
         return render(request, 'gear/gear_details.html', {'item': item})
+
+
+"""
+SUPERUSER ONLY adding cost of particular gear pieces.
+"""
 
 
 class AddCost(CreateView):
@@ -320,10 +359,20 @@ class AddCost(CreateView):
     success_url = reverse_lazy('add_cost')
 
 
+"""
+SUPERUSER ONLY list of all costs.
+"""
+
+
 class CostList(ListView):
     model = Cost
     template_name = 'gear/__list__.html'
     ordering = ['-tomestones', 'type_id']
+
+
+"""
+SUPERUSER ONLY adding a gearset.
+"""
 
 
 class AddGearsetAdmin(CreateView):
@@ -333,11 +382,21 @@ class AddGearsetAdmin(CreateView):
     success_url = reverse_lazy('gearset_list')
 
 
+"""
+SUPERUSER ONLY (as for now) updating a gearset.
+"""
+
+
 class UpdateGearset(UpdateView):
     model = Gearset
     fields = '__all__'
     template_name = 'gear/__form__.html'
     success_url = reverse_lazy('gearset_list')
+
+
+"""
+General use adding gearset and sending it into a form.
+"""
 
 
 class AddGearset(View):
@@ -346,11 +405,28 @@ class AddGearset(View):
             'jobs': Job.objects.all(),
             'races': Race.objects.all(),
             'contents': Content.objects.all(),
+            'weapons': Gear.objects.filter(cost__weapon_token=True),
+            'heads': Gear.objects.filter(cost_id=7),
+            'bodies': Gear.objects.filter(cost_id=6),
+            'legs': Gear.objects.filter(cost_id=9),
+            'hands': Gear.objects.filter(cost_id=10),
+            'feet': Gear.objects.filter(cost_id=11),
+            'earrings': Gear.objects.filter(cost_id=12),
+            'necklaces': Gear.objects.filter(cost_id=13),
+            'bracelets': Gear.objects.filter(cost_id=15),
+            'left_rings': Gear.objects.filter(cost_id=14),
+            'right_rings': Gear.objects.filter(cost_id=14),
+            'shields': Gear.objects.filter(cost_id=8)
         }
         return render(request, 'gear/add_gearset.html', context)
 
     def post(self):
         pass
+
+
+"""
+List of gearsets sorted by job, ordered by content it's for.
+"""
 
 
 class GearsetList(View):
@@ -379,6 +455,11 @@ class GearsetList(View):
         return render(request, 'gear/gearset_list.html', context)
 
 
+"""
+Details for the chosen gearset with all pieces, showing main and secondary stats sums.
+"""
+
+
 class GearsetDetails(View):
     def get(self, request, pk):
         context = {
@@ -401,10 +482,20 @@ class GearsetDetails(View):
         return render(request, 'gear/gearset_details.html', context)
 
 
+"""
+SUPERUSER ONLY list of all jobs in the DB.
+"""
+
+
 class JobList(ListView):
     model = Job
     template_name = 'gear/__list__.html'
     ordering = ['id']
+
+
+"""
+List of all races in the DB.
+"""
 
 
 class RaceList(ListView):
@@ -413,9 +504,19 @@ class RaceList(ListView):
     ordering = ['name']
 
 
+"""
+SUPERUSER ONLY list of all content in the DB.
+"""
+
+
 class ContentList(ListView):
     model = Content
     template_name = 'gear/__list__.html'
+
+
+"""
+SUPERUSER ONLY list of all types of gear type in the DB.
+"""
 
 
 class TypeList(ListView):

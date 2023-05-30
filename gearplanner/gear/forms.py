@@ -1,6 +1,9 @@
 from django import forms
-# from django.core.exceptions import ValidationError
 from .models import *
+
+"""
+SUPERUSER ONLY form for adding a gear piece.
+"""
 
 
 class AddGearForm(forms.ModelForm):
@@ -39,6 +42,11 @@ class AddGearForm(forms.ModelForm):
         fields = '__all__'
 
 
+"""
+SUPERUSER ONLY for for adding a cost for gear pieces.
+"""
+
+
 class AddCostForm(forms.ModelForm):
     def clean(self):
         cleaned_data = super().clean()
@@ -61,6 +69,11 @@ class AddCostForm(forms.ModelForm):
     class Meta:
         model = Cost
         fields = '__all__'
+
+
+"""
+SUPERUSER ONLY form for adding a gearset.
+"""
 
 
 class AddGearsetForm(forms.ModelForm):

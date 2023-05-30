@@ -3,6 +3,10 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 
+"""
+Login form with authentication of credentials.
+"""
+
 
 class LoginForm(forms.Form):
     username = forms.CharField()
@@ -15,6 +19,11 @@ class LoginForm(forms.Form):
             raise ValidationError("Invalid credentials")
         cleaned_data['user'] = user
         return cleaned_data
+
+
+"""
+Registration form with validation of passwords. Checks if username is already used.
+"""
 
 
 class AddUserForm(forms.ModelForm):

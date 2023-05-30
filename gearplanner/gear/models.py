@@ -91,6 +91,9 @@ class Gear(models.Model):
 
 
 class Gearset(models.Model):
+    name = models.CharField(max_length=50)
+    job = models.ForeignKey(Job, related_name='gearsetjob', on_delete=models.CASCADE)
+    content = models.ForeignKey(Content, related_name='gearsetcontent', on_delete=models.CASCADE)
     weapon = models.ForeignKey(Gear, related_name='gearweapon', on_delete=models.CASCADE)
     shield = models.ForeignKey(Gear, related_name='gearshield', on_delete=models.CASCADE, null=True)
     body = models.ForeignKey(Gear, related_name='gearbody', on_delete=models.CASCADE)
@@ -103,9 +106,6 @@ class Gearset(models.Model):
     bracelet = models.ForeignKey(Gear, related_name='gearbracelet', on_delete=models.CASCADE)
     left_ring = models.ForeignKey(Gear, related_name='gearleft_ring', on_delete=models.CASCADE)
     right_ring = models.ForeignKey(Gear, related_name='gearright_ring', on_delete=models.CASCADE)
-    name = models.CharField(max_length=50)
-    job = models.ForeignKey(Job, related_name='gearsetjob', on_delete=models.CASCADE)
-    content = models.ForeignKey(Content, related_name='gearsetcontent', on_delete=models.CASCADE)
 
     def calculate_total_vitality(self):
         vitality = 0
