@@ -21,7 +21,9 @@
                     <td class="col-4">{{ gearset.job.name }}</td>
                     <td class="col-1"><a href="{% url 'gearset_details' gearset.gearset.pk %}"
                                          class="btn btn-sm btn-outline-info">View</a></td>
-                    <td class="col-1"><a href="{% url 'update_gearset' gearset.gearset.id %}"
+{#                    <td class="col-1"><a href="{% url 'update_gearset' gearset.gearset.id %}"#}
+{#                                         class="btn btn-sm btn-outline-success">Edit</a></td>#}
+                    <td class="col-1"><a href="#"
                                          class="btn btn-sm btn-outline-success">Edit</a></td>
                 </tr>
             {% empty %}
