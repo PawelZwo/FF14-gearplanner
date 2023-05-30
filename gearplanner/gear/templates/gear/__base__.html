@@ -85,7 +85,7 @@
             <div class="content-section">
                 {% if user.is_authenticated %}
                     <h1>Welcome,<br></h1>
-                    <h3>{{ user.username|title }}</h3>
+                    <h3>{{ user.username }}</h3>
                 {% else %}
                     <h1>Welcome,<br></h1>
                     <h3>Warrior of Light</h3>
@@ -104,11 +104,11 @@
                     {% endif %}
 
                 {% else %}
+                    <small class="text-muted">Register to be able to edit and keep<br>in one place your gearsets!</small><br><br>
                     <a class='btn btn-outline-primary' href="{% url 'login' %}"
                        style="text-decoration: none">Login</a>
                     <a class='btn btn-outline-success' href="{% url 'register' %}"
                        style="text-decoration: none">Register</a>
-
 
                 {% endif %}
                 <p style="margin-top: 25%" class="text-muted">© 2023 Copyright <a class="text-muted"

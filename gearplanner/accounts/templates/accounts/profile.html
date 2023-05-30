@@ -12,8 +12,8 @@
                 {{ user.email|default:'None' }}
             </div>
         </div>
-        <br><br>
-        <h4>Your gearsets:</h4><br>
+        <br>
+        <h4>{{ user.username }}'s gearsets:</h4><br>
         <table class="table table-responsive table-hover table-sm">
             {% for gearset in gearsets %}
                 <tr>

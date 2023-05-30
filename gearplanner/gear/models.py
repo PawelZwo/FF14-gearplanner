@@ -317,7 +317,7 @@ class PlayerGearset(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.unique_name:
-            self.unique_name = f'gear{str(randint(0, 20))}#{str(randint(20, 40))}#'
+            self.unique_name = f'gear{str(randint(0, 20))}#{str(randint(20, 40))}#{str(randint(40, 60))}'
         super(PlayerGearset, self).save(*args, **kwargs)
 
     def __str__(self):

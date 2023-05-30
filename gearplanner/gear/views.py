@@ -422,7 +422,9 @@ class AddGearset(View):
         return render(request, 'gear/add_gearset.html', context)
 
     def post(self, request):
+        user = request.user if request.user.is_authenticated else None
         title = request.POST.get('title')
+
         if Gearset.objects.filter(name=title):
             messages.warning(request, f"There's already a gearset named '{title}'! Choose another name.")
             return redirect('add_gearset')
@@ -443,7 +445,7 @@ class AddGearset(View):
             right_ring = request.POST.get('right_ring')
             shield = request.POST.get('shield')
 
-            if job != '1':
+            if job != '1' and job != '0':
                 Gearset.objects.create(name=title,
                                        job=Job.objects.get(pk=job),
                                        content=Content.objects.get(pk=content),
@@ -457,14 +459,23 @@ class AddGearset(View):
                                        necklace=Gear.objects.get(pk=necklace),
                                        bracelet=Gear.objects.get(pk=bracelet),
                                        left_ring=Gear.objects.get(pk=left_ring),
-                                       right_ring=Gear.objects.get(pk=right_ring)
+                                       right_ring=Gear.objects.get(pk=right_ring),
                                        )
 
-                player_gearset = PlayerGearset(name=title, account=request.user, job=Job.objects.get(pk=job),
-                                               race=Race.objects.get(pk=race), gearset=Gearset.objects.get(name=title),
-                                               content=Content.objects.get(pk=content))
+                player_gearset = PlayerGearset(name=title,
+                                               account=user,
+                                               job=Job.objects.get(pk=job),
+                                               race=Race.objects.get(pk=race),
+                                               gearset=Gearset.objects.get(name=title),
+                                               content=Content.objects.get(pk=content)
+                                               )
+
                 player_gearset.save()
                 return redirect('gearset_details', pk=Gearset.objects.get(name=title).pk)
+
+            elif job == '0':
+                messages.warning(request, f"Please choose a job before trying creating a new gearset!")
+                return redirect('add_gearset')
 
             else:
                 Gearset.objects.create(name=title,
@@ -484,9 +495,14 @@ class AddGearset(View):
                                        shield=Gear.objects.get(pk=shield)
                                        )
 
-                player_gearset = PlayerGearset(name=title, account=request.user, job=Job.objects.get(pk=job),
-                                               race=Race.objects.get(pk=race), gearset=Gearset.objects.get(name=title),
-                                               content=Content.objects.get(pk=content))
+                player_gearset = PlayerGearset(name=title,
+                                               account=user,
+                                               job=Job.objects.get(pk=job),
+                                               race=Race.objects.get(pk=race),
+                                               gearset=Gearset.objects.get(name=title),
+                                               content=Content.objects.get(pk=content)
+                                               )
+
                 player_gearset.save()
                 return redirect('gearset_details', pk=Gearset.objects.get(name=title).pk)
 

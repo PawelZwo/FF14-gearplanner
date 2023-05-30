@@ -1,8 +1,10 @@
 {% extends 'gear/__base__.html' %}
 {% block content %}
-    <ul>
-    {% for detail in item %}
-        <li>{{ detail }}</li>
-    {% endfor %}
-    </ul>
+    <div class="container">
+        <ul>
+            {% for detail in item %}
+                <li>{{ detail }}</li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}

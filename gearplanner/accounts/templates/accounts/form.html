@@ -1,11 +1,13 @@
 {% extends 'gear/__base__.html' %}
 
 {% block content %}
-    <form method="POST">
-        {% csrf_token %}
-        <br>
-        {{ form.as_p }}
-        <br><br>
-        <input type="submit" id="submit" name="submit" value="Submit">
-    </form>
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            <br>
+            {{ form.as_p }}
+            <br><br>
+            <input type="submit" id="submit" name="submit" value="Submit">
+        </form>
+    </div>
 {% endblock %}
