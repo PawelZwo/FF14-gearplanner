@@ -95,7 +95,7 @@ class Gearset(models.Model):
     job = models.ForeignKey(Job, related_name='gearsetjob', on_delete=models.CASCADE)
     content = models.ForeignKey(Content, related_name='gearsetcontent', on_delete=models.CASCADE)
     weapon = models.ForeignKey(Gear, related_name='gearweapon', on_delete=models.CASCADE)
-    shield = models.ForeignKey(Gear, related_name='gearshield', on_delete=models.CASCADE, null=True)
+    shield = models.ForeignKey(Gear, related_name='gearshield', on_delete=models.CASCADE, null=True, blank=True)
     body = models.ForeignKey(Gear, related_name='gearbody', on_delete=models.CASCADE)
     legs = models.ForeignKey(Gear, related_name='gearlegs', on_delete=models.CASCADE)
     helmet = models.ForeignKey(Gear, related_name='gearhelmet', on_delete=models.CASCADE)
@@ -309,18 +309,16 @@ class Gearset(models.Model):
 class PlayerGearset(models.Model):
     name = models.CharField(max_length=50)
     account = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    job = models.ManyToManyField(Job)
-    race = models.ForeignKey(Race, on_delete=models.CASCADE)
+    job = models.ForeignKey(Job, on_delete=models.CASCADE, null=True)
+    race = models.ForeignKey(Race, on_delete=models.CASCADE, null=True)
     gearset = models.ForeignKey(Gearset, on_delete=models.CASCADE, default=None)
-    content = models.ManyToManyField(Content)
+    content = models.ForeignKey(Content, on_delete=models.CASCADE, null=True)
     unique_name = models.CharField(max_length=50, unique=True, blank=True)
 
     def save(self, *args, **kwargs):
         if not self.unique_name:
             self.unique_name = f'gear{str(randint(0, 20))}{str(randint(20, 40))}'
-        self.account = User.pk
         super(PlayerGearset, self).save(*args, **kwargs)
 
-
-def __str__(self):
-    return self.name
+    def __str__(self):
+        return self.name

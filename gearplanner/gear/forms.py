@@ -96,3 +96,4 @@ class AddGearsetForm(forms.ModelForm):
         class Meta:
             model = Gearset
             fields = '__all__'
+

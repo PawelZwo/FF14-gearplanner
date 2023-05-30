@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import ListView, CreateView, UpdateView
 from .forms import *
+from django.contrib import messages
 
 """
 Index view with main menu and login/register/logout/profile links (depending on a user).
@@ -405,7 +406,7 @@ class AddGearset(View):
             'jobs': Job.objects.all(),
             'races': Race.objects.all(),
             'contents': Content.objects.all(),
-            'weapons': Gear.objects.filter(cost__weapon_token=True),
+            'weapons': Gear.objects.filter(cost__weapon_token=True).order_by('job'),
             'heads': Gear.objects.filter(cost_id=7),
             'bodies': Gear.objects.filter(cost_id=6),
             'legs': Gear.objects.filter(cost_id=9),
@@ -420,8 +421,74 @@ class AddGearset(View):
         }
         return render(request, 'gear/add_gearset.html', context)
 
-    def post(self):
-        pass
+    def post(self, request):
+        title = request.POST.get('title')
+        if Gearset.objects.filter(name=title):
+            messages.warning(request, f"There's already a gearset named '{title}'! Choose another name.")
+            return redirect('add_gearset')
+        else:
+            content = request.POST.get('content')
+            race = request.POST.get('race')
+            job = request.POST.get('job')
+            weapon = request.POST.get('weapon')
+            head = request.POST.get('head')
+            body = request.POST.get('body')
+            legs = request.POST.get('legs')
+            hands = request.POST.get('hands')
+            feet = request.POST.get('feet')
+            earrings = request.POST.get('earrings')
+            necklace = request.POST.get('necklace')
+            bracelet = request.POST.get('bracelet')
+            left_ring = request.POST.get('left_ring')
+            right_ring = request.POST.get('right_ring')
+            shield = request.POST.get('shield')
+
+            if job != '1':
+                Gearset.objects.create(name=title,
+                                       job=Job.objects.get(pk=job),
+                                       content=Content.objects.get(pk=content),
+                                       weapon=Gear.objects.get(pk=weapon),
+                                       body=Gear.objects.get(pk=body),
+                                       legs=Gear.objects.get(pk=legs),
+                                       helmet=Gear.objects.get(pk=head),
+                                       hands=Gear.objects.get(pk=hands),
+                                       feet=Gear.objects.get(pk=feet),
+                                       earrings=Gear.objects.get(pk=earrings),
+                                       necklace=Gear.objects.get(pk=necklace),
+                                       bracelet=Gear.objects.get(pk=bracelet),
+                                       left_ring=Gear.objects.get(pk=left_ring),
+                                       right_ring=Gear.objects.get(pk=right_ring)
+                                       )
+
+                player_gearset = PlayerGearset(name=title, account=request.user, job=Job.objects.get(pk=job),
+                                               race=Race.objects.get(pk=race), gearset=Gearset.objects.get(name=title),
+                                               content=Content.objects.get(pk=content))
+                player_gearset.save()
+                return redirect('gearset_details', pk=Gearset.objects.get(name=title).pk)
+
+            else:
+                Gearset.objects.create(name=title,
+                                       job=Job.objects.get(pk=job),
+                                       content=Content.objects.get(pk=content),
+                                       weapon=Gear.objects.get(pk=weapon),
+                                       body=Gear.objects.get(pk=body),
+                                       legs=Gear.objects.get(pk=legs),
+                                       helmet=Gear.objects.get(pk=head),
+                                       hands=Gear.objects.get(pk=hands),
+                                       feet=Gear.objects.get(pk=feet),
+                                       earrings=Gear.objects.get(pk=earrings),
+                                       necklace=Gear.objects.get(pk=necklace),
+                                       bracelet=Gear.objects.get(pk=bracelet),
+                                       left_ring=Gear.objects.get(pk=left_ring),
+                                       right_ring=Gear.objects.get(pk=right_ring),
+                                       shield=Gear.objects.get(pk=shield)
+                                       )
+
+                player_gearset = PlayerGearset(name=title, account=request.user, job=Job.objects.get(pk=job),
+                                               race=Race.objects.get(pk=race), gearset=Gearset.objects.get(name=title),
+                                               content=Content.objects.get(pk=content))
+                player_gearset.save()
+                return redirect('gearset_details', pk=Gearset.objects.get(name=title).pk)
 
 
 """

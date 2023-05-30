@@ -8,10 +8,11 @@
 
                 <div class="col-6">
                     {% csrf_token %}
+                    <input value="{{ user.pk }}" type="hidden" name="user">
                     <div class="form-group">
                         <label for="title">Title:</label>
                         <input type="text" name="title" id="title" class="form-control form-control-sm"
-                               aria-describedby="titleHelp">
+                               aria-describedby="titleHelp" required placeholder="Title of this gearset">
                         <small id="titleHelp" class="form-text text-muted">
                             Title must be up to 50 characters long, contain letters, and must not
                             contain special characters or emoji.
@@ -21,7 +22,7 @@
 
                     <div class="form-group">
                         <label for="content">Content:</label>
-                        <select name="content" id="content" class="form-control form-control-sm">
+                        <select name="content" id="content" class="form-control form-control-sm" required>
                             <option value="0">---</option>
                             {% for content in contents %}
                                 <option value="{{ content.id }}" id="{{ content.id }}">{{ content }}</option>
@@ -32,7 +33,7 @@
 
                     <div class="form-group">
                         <label for="race">Race:</label>
-                        <select name="race" id="race" class="form-control form-control-sm">
+                        <select name="race" id="race" class="form-control form-control-sm" required>
                             <option value="0">---</option>
                             {% for race in races %}
                                 <option value="{{ race.id }}" id="{{ race.id }}">{{ race }}</option>
@@ -43,7 +44,7 @@
 
                     <div class="form-group">
                         <label for="job">Job:</label>
-                        <select name="job" id="job" class="form-control form-control-sm">
+                        <select name="job" id="job" class="form-control form-control-sm" required>
                             <option value="0">---</option>
                             {% for job in jobs %}
                                 <option value="{{ job.id }}" id="{{ job.id }}">{{ job }}</option>
@@ -53,7 +54,7 @@
                     <br>
 
                     <div class="form-group">
-                        <button class="btn btn-sm btn-primary" type="submit">Create</button>
+                        <button class="btn btn-sm btn-primary" type="submit" id="button_to_submit">Create</button>
                     </div>
 
                 </div>
@@ -65,10 +66,12 @@
                             <div class="form-group">
                                 <label for="weapon">Weapon:</label>
                                 <select name="weapon" id="weapon" class="form-control form-control-sm"
-                                        style="margin-bottom: 5px">
+                                        style="margin-bottom: 5px" required>
                                     <option value="0">---</option>
                                     {% for weapon in weapons %}
-                                        <option value="{{ weapon.id }}" id="{{ weapon.id }}">{{ weapon }}</option>
+                                        <option value="{{ weapon.id }}" id="{{ weapon.id }}">{{ weapon }}
+                                            (i{{ weapon.item_level }}, {{ weapon.job.all.last }})
+                                        </option>
                                     {% endfor %}
                                 </select>
                             </div>
@@ -78,10 +81,12 @@
                             <div class="form-group">
                                 <label for="head">Head:</label>
                                 <select name="head" id="head" class="form-control form-control-sm"
-                                        style="margin-bottom: 5px">
+                                        style="margin-bottom: 5px" required>
                                     <option value="0">---</option>
                                     {% for head in heads %}
-                                        <option value="{{ head.id }}" id="{{ head.id }}">{{ head }}</option>
+                                        <option value="{{ head.id }}" id="{{ head.id }}">{{ head }}
+                                            (i{{ head.item_level }})
+                                        </option>
                                     {% endfor %}
                                 </select>
                             </div>
@@ -91,10 +96,12 @@
                             <div class="form-group">
                                 <label for="body">Body:</label>
                                 <select name="body" id="body" class="form-control form-control-sm"
-                                        style="margin-bottom: 5px">
+                                        style="margin-bottom: 5px" required>
                                     <option value="0">---</option>
                                     {% for body in bodies %}
-                                        <option value="{{ body.id }}" id="{{ body.id }}">{{ body }}</option>
+                                        <option value="{{ body.id }}" id="{{ body.id }}">{{ body }}
+                                            (i{{ body.item_level }})
+                                        </option>
                                     {% endfor %}
                                 </select>
                             </div>
@@ -104,10 +111,12 @@
                             <div class="form-group">
                                 <label for="legs">Legs:</label>
                                 <select name="legs" id="legs" class="form-control form-control-sm"
-                                        style="margin-bottom: 5px">
+                                        style="margin-bottom: 5px" required>
                                     <option value="0">---</option>
                                     {% for leg in legs %}
-                                        <option value="{{ leg.id }}" id="{{ leg.id }}">{{ leg }}</option>
+                                        <option value="{{ leg.id }}" id="{{ leg.id }}">{{ leg }}
+                                            (i{{ leg.item_level }})
+                                        </option>
                                     {% endfor %}
                                 </select>
                             </div>
@@ -117,10 +126,12 @@
                             <div class="form-group">
                                 <label for="hands">Hands:</label>
                                 <select name="hands" id="hands" class="form-control form-control-sm"
-                                        style="margin-bottom: 5px">
+                                        style="margin-bottom: 5px" required>
                                     <option value="0">---</option>
                                     {% for hand in hands %}
-                                        <option value="{{ hand.id }}" id="{{ hand.id }}">{{ hand }}</option>
+                                        <option value="{{ hand.id }}" id="{{ hand.id }}">{{ hand }}
+                                            (i{{ hand.item_level }})
+                                        </option>
                                     {% endfor %}
                                 </select>
                             </div>
@@ -130,10 +141,12 @@
                             <div class="form-group">
                                 <label for="feet">Feet:</label>
                                 <select name="feet" id="feet" class="form-control form-control-sm"
-                                        style="margin-bottom: 5px">
+                                        style="margin-bottom: 5px" required>
                                     <option value="0">---</option>
                                     {% for foot in feet %}
-                                        <option value="{{ foot.id }}" id="{{ foot.id }}">{{ foot }}</option>
+                                        <option value="{{ foot.id }}" id="{{ foot.id }}">{{ foot }}
+                                            (i{{ foot.item_level }})
+                                        </option>
                                     {% endfor %}
                                 </select>
                             </div>
@@ -143,10 +156,12 @@
                             <div class="form-group">
                                 <label for="earrings">Earrings:</label>
                                 <select name="earrings" id="earrings" class="form-control form-control-sm"
-                                        style="margin-bottom: 5px">
+                                        style="margin-bottom: 5px" required>
                                     <option value="0">---</option>
                                     {% for earring in earrings %}
-                                        <option value="{{ earring.id }}" id="{{ earring.id }}">{{ earring }}</option>
+                                        <option value="{{ earring.id }}" id="{{ earring.id }}">{{ earring }}
+                                            (i{{ earring.item_level }})
+                                        </option>
                                     {% endfor %}
                                 </select>
                             </div>
@@ -156,10 +171,12 @@
                             <div class="form-group">
                                 <label for="necklace">Necklace:</label>
                                 <select name="necklace" id="necklace" class="form-control form-control-sm"
-                                        style="margin-bottom: 5px">
+                                        style="margin-bottom: 5px" required>
                                     <option value="0">---</option>
                                     {% for necklace in necklaces %}
-                                        <option value="{{ necklace.id }}" id="{{ necklace.id }}">{{ necklace }}</option>
+                                        <option value="{{ necklace.id }}" id="{{ necklace.id }}">{{ necklace }}
+                                            (i{{ necklace.item_level }})
+                                        </option>
                                     {% endfor %}
                                 </select>
                             </div>
@@ -169,10 +186,12 @@
                             <div class="form-group">
                                 <label for="bracelet">Bracelet:</label>
                                 <select name="bracelet" id="bracelet" class="form-control form-control-sm"
-                                        style="margin-bottom: 5px">
+                                        style="margin-bottom: 5px" required>
                                     <option value="0">---</option>
                                     {% for bracelet in bracelets %}
-                                        <option value="{{ bracelet.id }}" id="{{ bracelet.id }}">{{ bracelet }}</option>
+                                        <option value="{{ bracelet.id }}" id="{{ bracelet.id }}">{{ bracelet }}
+                                            (i{{ bracelet.item_level }})
+                                        </option>
                                     {% endfor %}
                                 </select>
                             </div>
@@ -182,11 +201,12 @@
                             <div class="form-group">
                                 <label for="left_ring">Left ring:</label>
                                 <select name="left_ring" id="left_ring" class="form-control form-control-sm"
-                                        style="margin-bottom: 5px">
+                                        style="margin-bottom: 5px" required>
                                     <option value="0">---</option>
                                     {% for left_ring in left_rings %}
                                         <option value="{{ left_ring.id }}"
-                                                id="{{ left_ring.id }}">{{ left_ring }}</option>
+                                                id="{{ left_ring.id }}">{{ left_ring }} (i{{ left_ring.item_level }})
+                                        </option>
                                     {% endfor %}
                                 </select>
                             </div>
@@ -196,11 +216,12 @@
                             <div class="form-group">
                                 <label for="right_ring">Right ring:</label>
                                 <select name="right_ring" id="right_ring" class="form-control form-control-sm"
-                                        style="margin-bottom: 5px">
+                                        style="margin-bottom: 5px" required>
                                     <option value="0">---</option>
                                     {% for right_ring in right_rings %}
                                         <option value="{{ right_ring.id }}"
-                                                id="{{ right_ring.id }}">{{ right_ring }}</option>
+                                                id="{{ right_ring.id }}">{{ right_ring }} (i{{ right_ring.item_level }})
+                                        </option>
                                     {% endfor %}
                                 </select>
                             </div>
@@ -212,7 +233,9 @@
                                 <select name="shield" id="shield" class="form-control form-control-sm">
                                     <option value="0">---</option>
                                     {% for shield in shields %}
-                                        <option value="{{ shield.id }}" id="{{ shield.id }}">{{ shield }}</option>
+                                        <option value="{{ shield.id }}" id="{{ shield.id }}">{{ shield }}
+                                            (i{{ shield.item_level }})
+                                        </option>
                                     {% endfor %}
                                 </select>
                             </div>

@@ -61,11 +61,16 @@ class AddUser(View):
 
 
 """
-Profile view with username, e-mail and gearsets created by that user showing.
+Profile view with username, e-mail and showing gearsets created by that user, who is able to edit them.
 """
 
 
 class ProfileDetails(View):
     def get(self, request, pk):
-        user = User.objects.get(pk=pk)
-        return render(request, 'accounts/profile.html', {'user': user})
+        from gear.models import PlayerGearset
+        context = {
+            'user': User.objects.get(pk=pk),
+            'gearsets': PlayerGearset.objects.filter(account_id=pk).order_by('job_id'),
+        }
+
+        return render(request, 'accounts/profile.html', context)
