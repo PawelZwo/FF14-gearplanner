@@ -35,6 +35,7 @@ List of gear in the DB sorted by the type of a gear and which piece is it.
 class GearList(View):
     def get(self, request):
         context = {
+            # Fending (tanks) gear and accessories
             'fending_body':
                 Gear.objects.filter(name__contains='Fending').filter(cost_id=6).order_by('id'),
             'fending_legs':
@@ -58,6 +59,7 @@ class GearList(View):
             'fending_ring':
                 Gear.objects.filter(name__contains='Fending').filter(cost_id=14).order_by('id'),
 
+            # Healing (healers) gear and accessories
             'healing_body':
                 Gear.objects.filter(name__contains='Healing').filter(cost_id=6).order_by('id'),
             'healing_legs':
@@ -79,6 +81,8 @@ class GearList(View):
             'healing_ring':
                 Gear.objects.filter(name__contains='Healing').filter(cost_id=14).order_by('id'),
 
+            # DPS gear
+            # Striking (MNK / SAM) gear
             'striking_body':
                 Gear.objects.filter(name__contains='Striking').filter(cost_id=6).order_by('id'),
             'striking_legs':
@@ -90,6 +94,7 @@ class GearList(View):
             'striking_feet':
                 Gear.objects.filter(name__contains='Striking').filter(cost_id=11).order_by('id'),
 
+            # Maiming (DRG / RPR) gear
             'maiming_body':
                 Gear.objects.filter(name__contains='Maiming').filter(cost_id=6).order_by('id'),
             'maiming_legs':
@@ -101,6 +106,7 @@ class GearList(View):
             'maiming_feet':
                 Gear.objects.filter(name__contains='Maiming').filter(cost_id=11).order_by('id'),
 
+            # Scouting (NIN) gear
             'scouting_body':
                 Gear.objects.filter(name__contains='Scouting').filter(cost_id=6).order_by('id'),
             'scouting_legs':
@@ -111,12 +117,18 @@ class GearList(View):
                 Gear.objects.filter(name__contains='Scouting').filter(cost_id=10).order_by('id'),
             'scouting_feet':
                 Gear.objects.filter(name__contains='Scouting').filter(cost_id=11).order_by('id'),
+
+            # DPS weapons
             'mnksam_weapon':
                 Gear.objects.filter(cost=5).filter(job__in=[9, 12]).order_by('job'),
             'nin_weapon':
                 Gear.objects.filter(cost=5).filter(job__in=[11]).order_by('job'),
             'drgrpr_weapon':
                 Gear.objects.filter(cost=5).filter(job__in=[10, 13]).order_by('job'),
+            'ranged_weapon':
+                Gear.objects.filter(cost=5).filter(job__in=[14, 15, 16]).order_by('job'),
+
+            # DPS accessories
             'slaying_earrings':
                 Gear.objects.filter(name__contains='Slaying').filter(cost_id=12).order_by('id'),
             'slaying_necklace':
@@ -126,6 +138,7 @@ class GearList(View):
             'slaying_ring':
                 Gear.objects.filter(name__contains='Slaying').filter(cost_id=14).order_by('id'),
 
+            # Aiming (BRD, MCH, DNC) gear and accessories
             'aiming_body':
                 Gear.objects.filter(name__contains='Aiming').filter(cost_id=6).order_by('id'),
             'aiming_legs':
@@ -136,8 +149,6 @@ class GearList(View):
                 Gear.objects.filter(name__contains='Aiming').filter(cost_id=10).order_by('id'),
             'aiming_feet':
                 Gear.objects.filter(name__contains='Aiming').filter(cost_id=11).order_by('id'),
-            'ranged_weapon':
-                Gear.objects.filter(cost=5).filter(job__in=[14, 15, 16]).order_by('job'),
             'aiming_earrings':
                 Gear.objects.filter(name__contains='Aiming').filter(cost_id=12).order_by('id'),
             'aiming_necklace':
@@ -147,6 +158,7 @@ class GearList(View):
             'aiming_ring':
                 Gear.objects.filter(name__contains='Aiming').filter(cost_id=14).order_by('id'),
 
+            # Casting (BLM, SMN, RDM) gear and accessories
             'casting_body':
                 Gear.objects.filter(name__contains='Casting').filter(cost_id=6).order_by('id'),
             'casting_legs':
@@ -581,10 +593,19 @@ List of all races in the DB.
 """
 
 
-class RaceList(ListView):
-    model = Race
-    template_name = 'gear/__list__.html'
-    ordering = ['name']
+class RaceList(View):
+    def get(self, request):
+        context = {
+            'hyur': Race.objects.get(pk=1),
+            'elezen': Race.objects.get(pk=2),
+            'lalafell': Race.objects.get(pk=3),
+            'miqote': Race.objects.get(pk=4),
+            'roegadyn': Race.objects.get(pk=5),
+            'aura': Race.objects.get(pk=6),
+            'hrothgar': Race.objects.get(pk=7),
+            'viera': Race.objects.get(pk=8),
+        }
+        return render(request, 'gear/races.html', context)
 
 
 """
