@@ -290,20 +290,24 @@
                 <h6>Main stats:</h6>
                 <ul id="main_stats">
                     {% if vitality != 0 %}
-                        <li>Vitality: {{ vitality }}</li>{% endif %}
+                        <li>Vitality: <b>{{ vitality }}</b></li>{% endif %}
                     {% if strength != 0 %}
-                        <li>Strength: {{ strength }}</li>{% endif %}
+                        <li>Strength: <b>{{ strength }}</b></li>{% endif %}
                     {% if dexterity != 0 %}
-                        <li>Dexterity: {{ dexterity }}</li>{% endif %}
+                        <li>Dexterity: <b>{{ dexterity }}</b></li>{% endif %}
                     {% if intelligence != 0 %}
-                        <li>Intelligence: {{ intelligence }}</li>{% endif %}
+                        <li>Intelligence: <b>{{ intelligence }}</b></li>{% endif %}
                     {% if mind != 0 %}
-                        <li>Mind: {{ mind }}</li>{% endif %}
+                        <li>Mind: <b>{{ mind }}</b></li>{% endif %}
                     {% if defense != 0 %}
-                        <li>Defense: {{ defense }}</li>
+                        <li>Defense: <b>{{ defense }}</b><br>
+                            (<b>{{ defense|intdiv:126.7|floatformat:0 }}%</b> physical mitigation)
+                        </li>
                     {% endif %}
                     {% if magic_defense != 0 %}
-                        <li>Magic defense: {{ magic_defense }}</li>
+                        <li>Magic defense: <b>{{ magic_defense }}</b><br>
+                            (<b>{{ magic_defense|intdiv:126.7|floatformat:0 }}%</b> magic mitigation)
+                        </li>
                     {% endif %}
                 </ul>
                 <br>
@@ -311,50 +315,36 @@
                 <h6>Secondary stats:</h6>
                 <ul id="secondary_stats">
                     {% if piety != 0 %}
-                        <li>Piety: {{ piety }}</li>{% endif %}
+                        <li>Piety: <b>{{ piety }}</b></li>{% endif %}
                     {% if tenacity != 0 %}
-                        <li>Tenacity: {{ tenacity }}</li>{% endif %}
-                    {% if critical_rate != 0 %}
-                        <li>Critical rate: {{ critical_rate }}</li>{% endif %}
-                    {% if direct_hit != 0 %}
-                        <li>Direct hit: {{ direct_hit }}</li>{% endif %}
-                    {% if determination != 0 %}
-                        <li>Determination: {{ determination }}</li>{% endif %}
-                    {% if skill_speed != 0 %}
-                        <li>Skill speed: {{ skill_speed }}</li>{% endif %}
-                    {% if spell_speed != 0 %}
-                        <li>Spell speed: {{ spell_speed }}</li>{% endif %}
-                </ul>
-                <br>
-
-                <h6>Thresholds:</h6>
-                <ul id="thresholds">
-                    {% if piety != 0 %}
-                        <li>Piety: {{ piety }}</li>{% endif %}
-                    {% if tenacity != 0 %}
-                        <li>Tenacity: +{{ tenacity|intdiv:190 }}% increase in damage and healing done.
-                            Reduces all damage taken by the same amount.
+                        <li>Tenacity: <b>{{ tenacity }}</b><br>
+                            (<b>+{{ tenacity|intdiv:190 }}%</b> increase in damage and healing done;
+                            reduces all damage taken by the same amount)
                         </li>{% endif %}
                     {% if critical_rate != 0 %}
-                        <li>Critical rate: +{{ critical_rate|intdiv:95 }}% chance of doing +{{ 40|add:critical_hit }}%
-                            additional
-                            damage or healing done.
+                        <li>Critical rate: <b>{{ critical_rate }}</b><br>
+                            (<b>+{{ critical_rate|intdiv:95 }}%</b> chance of doing <b>+{{ 40|add:critical_hit }}%</b>
                         </li>
+                        additional damage or healing)
                     {% endif %}
                     {% if direct_hit != 0 %}
-                        <li>Direct hit: +{{ direct_hit|intdiv:35 }}% chance of doing 25% more damage.</li>{% endif %}
+                        <li>Direct hit: <b>{{ direct_hit }}</b><br>
+                            (<b>+{{ direct_hit|intdiv:35 }}%</b> chance of doing 25% more damage)
+                        </li>{% endif %}
                     {% if determination != 0 %}
-                        <li>Determination: +{{ determination|intdiv:136 }}% increase in damage and healing done.
+                        <li>Determination: <b>{{ determination }}</b><br>
+                            (<b>+{{ determination|intdiv:136 }}%</b> increase in damage and healing done)
                         </li>{% endif %}
                     {% if skill_speed != 0 %}
-                        <li>Skill speed: -{{ skill_speed|div:585|floatformat:2 }}s GCD.</li>{% endif %}
+                        <li>Skill speed: <b>{{ skill_speed }}</b><br>
+                            (<b>-{{ skill_speed|div:585|floatformat:2 }}s</b> GCD)
+                        </li>{% endif %}
                     {% if spell_speed != 0 %}
-                        <li>Spell speed: -{{ spell_speed|div:585|floatformat:2 }}s GCD.</li>{% endif %}
-                    {% if defense != 0 %}
-                        <li>Defense: {{ defense|intdiv:126.7|floatformat:0 }}% physical mitigation.</li>{% endif %}
-                    {% if magic_defense != 0 %}
-                        <li>Magic defense: {{ magic_defense|intdiv:126.7|floatformat:0 }}% magic mitigation.</li>{% endif %}
+                        <li>Spell speed: <b>{{ spell_speed }}</b><br>
+                            (<b>-{{ spell_speed|div:585|floatformat:2 }}s</b> GCD)
+                        </li>{% endif %}
                 </ul>
+
             </div>
         </div>
 
