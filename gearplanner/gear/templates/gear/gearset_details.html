@@ -1,316 +1,368 @@
 {% extends 'gear/__base__.html' %}
 {% load static %}
-{% block title %}- {{ gearset.name}} - Details{% endblock %}
+{% load mathfilters %}
+{% block title %}- {{ gearset.name }} - Details{% endblock %}
 {% block content %}
+    <div class="container">
+        <div class="row">
+            <div id="job-icons">
+                {% if job == 'Paladin' %}
+                    <h2><img src="{% static 'gear/media/Paladin.png' %}" alt="Paladin job icon"
+                             style="width: 50px; height: 50px"> Paladin</h2>
+                {% endif %}
+                {% if job == 'Warrior' %}
+                    <h2><img src="{% static 'gear/media/Warrior.png' %}" alt="Warrior job icon"
+                             style="width: 50px; height: 50px"> Warrior</h2>
+                {% endif %}
+                {% if job == 'Dark Knight' %}
+                    <h2><img src="{% static 'gear/media/DarkKnight.png' %}" alt="Dark Knight job icon"
+                             style="width: 50px; height: 50px"> Dark Knight</h2>
+                {% endif %}
+                {% if job == 'Gunbreaker' %}
+                    <h2><img src="{% static 'gear/media/Gunbreaker.png' %}" alt="Gunbreaker job icon"
+                             style="width: 50px; height: 50px"> Gunbreaker</h2>
+                {% endif %}
+                {% if job == 'White Mage' %}
+                    <h2><img src="{% static 'gear/media/WhiteMage.png' %}" alt="White Mage job icon"
+                             style="width: 50px; height: 50px"> White Mage</h2>
+                {% endif %}
+                {% if job == 'Scholar' %}
+                    <h2><img src="{% static 'gear/media/Scholar.png' %}" alt="Scholar job icon"
+                             style="width: 50px; height: 50px"> Scholar</h2>
+                {% endif %}
+                {% if job == 'Astrologian' %}
+                    <h2><img src="{% static 'gear/media/Astrologian.png' %}" alt="Astrologian job icon"
+                             style="width: 50px; height: 50px"> Astrologian</h2>
+                {% endif %}
+                {% if job == 'Sage' %}
+                    <h2><img src="{% static 'gear/media/Sage.png' %}" alt="Sage job icon"
+                             style="width: 50px; height: 50px"> Sage</h2>
+                {% endif %}
+                {% if job == 'Monk' %}
+                    <h2><img src="{% static 'gear/media/Monk.png' %}" alt="Monk job icon"
+                             style="width: 50px; height: 50px"> Monk</h2>
+                {% endif %}
+                {% if job == 'Dragoon' %}
+                    <h2><img src="{% static 'gear/media/Dragoon.png' %}" alt="Dragoon job icon"
+                             style="width: 50px; height: 50px"> Dragoon</h2>
+                {% endif %}
+                {% if job == 'Ninja' %}
+                    <h2><img src="{% static 'gear/media/Ninja.png' %}" alt="Ninja job icon"
+                             style="width: 50px; height: 50px"> Ninja</h2>
+                {% endif %}
+                {% if job == 'Samurai' %}
+                    <h2><img src="{% static 'gear/media/Samurai.png' %}" alt="Samurai job icon"
+                             style="width: 50px; height: 50px"> Samurai</h2>
+                {% endif %}
+                {% if job == 'Reaper' %}
+                    <h2><img src="{% static 'gear/media/Reaper.png' %}" alt="Reaper job icon"
+                             style="width: 50px; height: 50px"> Reaper</h2>
+                {% endif %}
+                {% if job == 'Bard' %}
+                    <h2><img src="{% static 'gear/media/Bard.png' %}" alt="Bard job icon"
+                             style="width: 50px; height: 50px"> Bard</h2>
+                {% endif %}
+                {% if job == 'Dancer' %}
+                    <h2><img src="{% static 'gear/media/Dancer.png' %}" alt="Dancer job icon"
+                             style="width: 50px; height: 50px"> Dancer</h2>
+                {% endif %}
+                {% if job == 'Machinist' %}
+                    <h2><img src="{% static 'gear/media/Machinist.png' %}" alt="Machinist job icon"
+                             style="width: 50px; height: 50px"> Machinist</h2>
+                {% endif %}
+                {% if job == 'Black Mage' %}
+                    <h2><img src="{% static 'gear/media/BlackMage.png' %}" alt="Black Mage job icon"
+                             style="width: 50px; height: 50px"> Black Mage</h2>
+                {% endif %}
+                {% if job == 'Summoner' %}
+                    <h2><img src="{% static 'gear/media/Summoner.png' %}" alt="Summoner job icon"
+                             style="width: 50px; height: 50px"> Summoner</h2>
+                {% endif %}
+                {% if job == 'Red Mage' %}
+                    <h2><img src="{% static 'gear/media/RedMage.png' %}" alt="Red Mage job icon"
+                             style="width: 50px; height: 50px"> Red Mage</h2>
+                {% endif %}
+            </div>
+            <br>
 
-    <div id="job-icons">
-        {% if job == 'Paladin' %}
-            <h2><img src="{% static 'gear/media/Paladin.png' %}" alt="Paladin job icon"
-                     style="width: 50px; height: 50px"> Paladin</h2>
+            <h5>Disclaimer:</h5>
+            <h6>Stats don't account for materia slots nor base race stats. Crafted gear is its high-quality
+                version.</h6><br>
+            <br>
+            <div class="col-8">
+                <table class="table table-responsive table-hover">
+                    <tr>
+                        <th class="col-2">
+                            Weapon:
+                        </th>
+                        <td class="col-4">
+                            {{ gearset.weapon }}
+                        </td>
+                        <td class="col-1">
+                            i{{ gearset.weapon.item_level }}
+                        </td>
+                        <td class="col-1">
+                            <a href="{% url 'gear_details' gearset.weapon_id %}"
+                               class="btn btn-sm btn-outline-info">View</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="col-2">
+                            Head:
+                        </th>
+                        <td class="col-4">
+                            {{ gearset.helmet }}
+                        </td>
+                        <td class="col-1">
+                            i{{ gearset.helmet.item_level }}
+                        </td>
+                        <td class="col-1">
+                            <a href="{% url 'gear_details' gearset.helmet_id %}"
+                               class="btn btn-sm btn-outline-info">View</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="col-2">
+                            Body:
+                        </th>
+                        <td class="col-4">
+                            {{ gearset.body }}
+                        </td>
+                        <td class="col-1">
+                            i{{ gearset.body.item_level }}
+                        </td>
+                        <td class="col-1">
+                            <a href="{% url 'gear_details' gearset.body_id %}"
+                               class="btn btn-sm btn-outline-info">View</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="col-2">
+                            Legs:
+                        </th>
+                        <td class="col-4">
+                            {{ gearset.legs }}
+                        </td>
+                        <td class="col-1">
+                            i{{ gearset.legs.item_level }}
+                        </td>
+                        <td class="col-1">
+                            <a href="{% url 'gear_details' gearset.legs_id %}"
+                               class="btn btn-sm btn-outline-info">View</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="col-2">
+                            Hands:
+                        </th>
+                        <td class="col-4">
+                            {{ gearset.hands }}
+                        </td>
+                        <td class="col-1">
+                            i{{ gearset.hands.item_level }}
+                        </td>
+                        <td class="col-1">
+                            <a href="{% url 'gear_details' gearset.hands_id %}"
+                               class="btn btn-sm btn-outline-info">View</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="col-2">
+                            Feet:
+                        </th>
+                        <td class="col-4">
+                            {{ gearset.feet }}
+                        </td>
+                        <td class="col-1">
+                            i{{ gearset.feet.item_level }}
+                        </td>
+                        <td class="col-1">
+                            <a href="{% url 'gear_details' gearset.feet_id %}"
+                               class="btn btn-sm btn-outline-info">View</a>
+                        </td>
+                    </tr>
+
+                    {% if gearset.shield %}
+                        <tr>
+                            <th class="col-2">
+                                Shield:
+                            </th>
+                            <td class="col-4">
+                                {{ gearset.shield }}
+                            </td>
+                            <td class="col-1">
+                                i{{ gearset.shield.item_level }}
+                            </td>
+                            <td class="col-1">
+                                <a href="{% url 'gear_details' gearset.shield_id %}"
+                                   class="btn btn-sm btn-outline-info">View</a>
+                            </td>
+                        </tr>
+                    {% endif %}
+
+                    <tr>
+                        <th class="col-2">
+                            Earrings:
+                        </th>
+                        <td class="col-4">
+                            {{ gearset.earrings }}
+                        </td>
+                        <td class="col-1">
+                            i{{ gearset.earrings.item_level }}
+                        </td>
+                        <td class="col-1">
+                            <a href="{% url 'gear_details' gearset.earrings_id %}"
+                               class="btn btn-sm btn-outline-info">View</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="col-2">
+                            Necklace:
+                        </th>
+                        <td class="col-4">
+                            {{ gearset.necklace }}
+                        </td>
+                        <td class="col-1">
+                            i{{ gearset.necklace.item_level }}
+                        </td>
+                        <td class="col-1">
+                            <a href="{% url 'gear_details' gearset.necklace_id %}"
+                               class="btn btn-sm btn-outline-info">View</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="col-2">
+                            Bracelet:
+                        </th>
+                        <td class="col-4">
+                            {{ gearset.bracelet }}
+                        </td>
+                        <td class="col-1">
+                            i{{ gearset.bracelet.item_level }}
+                        </td>
+                        <td class="col-1">
+                            <a href="{% url 'gear_details' gearset.bracelet_id %}"
+                               class="btn btn-sm btn-outline-info">View</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="col-2">
+                            Left ring:
+                        </th>
+                        <td class="col-4">
+                            {{ gearset.left_ring }}
+                        </td>
+                        <td class="col-1">
+                            i{{ gearset.left_ring.item_level }}
+                        </td>
+                        <td class="col-1">
+                            <a href="{% url 'gear_details' gearset.left_ring_id %}"
+                               class="btn btn-sm btn-outline-info">View</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="col-2">
+                            Right ring:
+                        </th>
+                        <td class="col-4">
+                            {{ gearset.right_ring }}
+                        </td>
+                        <td class="col-1">
+                            i{{ gearset.right_ring.item_level }}
+                        </td>
+                        <td class="col-1">
+                            <a href="{% url 'gear_details' gearset.right_ring_id %}"
+                               class="btn btn-sm btn-outline-info">View</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-4">
+                <h6>Main stats:</h6>
+                <ul id="main_stats">
+                    {% if vitality != 0 %}
+                        <li>Vitality: {{ vitality }}</li>{% endif %}
+                    {% if strength != 0 %}
+                        <li>Strength: {{ strength }}</li>{% endif %}
+                    {% if dexterity != 0 %}
+                        <li>Dexterity: {{ dexterity }}</li>{% endif %}
+                    {% if intelligence != 0 %}
+                        <li>Intelligence: {{ intelligence }}</li>{% endif %}
+                    {% if mind != 0 %}
+                        <li>Mind: {{ mind }}</li>{% endif %}
+                    {% if defense != 0 %}
+                        <li>Defense: {{ defense }}</li>
+                    {% endif %}
+                    {% if magic_defense != 0 %}
+                        <li>Magic defense: {{ magic_defense }}</li>
+                    {% endif %}
+                </ul>
+                <br>
+
+                <h6>Secondary stats:</h6>
+                <ul id="secondary_stats">
+                    {% if piety != 0 %}
+                        <li>Piety: {{ piety }}</li>{% endif %}
+                    {% if tenacity != 0 %}
+                        <li>Tenacity: {{ tenacity }}</li>{% endif %}
+                    {% if critical_rate != 0 %}
+                        <li>Critical rate: {{ critical_rate }}</li>{% endif %}
+                    {% if direct_hit != 0 %}
+                        <li>Direct hit: {{ direct_hit }}</li>{% endif %}
+                    {% if determination != 0 %}
+                        <li>Determination: {{ determination }}</li>{% endif %}
+                    {% if skill_speed != 0 %}
+                        <li>Skill speed: {{ skill_speed }}</li>{% endif %}
+                    {% if spell_speed != 0 %}
+                        <li>Spell speed: {{ spell_speed }}</li>{% endif %}
+                </ul>
+                <br>
+
+                <h6>Thresholds:</h6>
+                <ul id="thresholds">
+                    {% if piety != 0 %}
+                        <li>Piety: {{ piety }}</li>{% endif %}
+                    {% if tenacity != 0 %}
+                        <li>Tenacity: +{{ tenacity|intdiv:190 }}% increase in damage and healing done.
+                            Reduces all damage taken by the same amount.
+                        </li>{% endif %}
+                    {% if critical_rate != 0 %}
+                        <li>Critical rate: +{{ critical_rate|intdiv:95 }}% chance of doing +{{ 40|add:critical_hit }}%
+                            additional
+                            damage or healing done.
+                        </li>
+                    {% endif %}
+                    {% if direct_hit != 0 %}
+                        <li>Direct hit: +{{ direct_hit|intdiv:35 }}% chance of doing 25% more damage.</li>{% endif %}
+                    {% if determination != 0 %}
+                        <li>Determination: +{{ determination|intdiv:136 }}% increase in damage and healing done.
+                        </li>{% endif %}
+                    {% if skill_speed != 0 %}
+                        <li>Skill speed: -{{ skill_speed|div:585|floatformat:2 }}s GCD.</li>{% endif %}
+                    {% if spell_speed != 0 %}
+                        <li>Spell speed: -{{ spell_speed|div:585|floatformat:2 }}s GCD.</li>{% endif %}
+                    {% if defense != 0 %}
+                        <li>Defense: {{ defense|intdiv:126.7|floatformat:0 }}% physical mitigation.</li>{% endif %}
+                    {% if magic_defense != 0 %}
+                        <li>Magic defense: {{ magic_defense|intdiv:126.7|floatformat:0 }}% magic mitigation.</li>{% endif %}
+                </ul>
+            </div>
+        </div>
+
+        <a class='btn btn-outline-primary' href="{% url 'gearset_list' %}">Back</a>
+        {% if user.is_superuser %}
+            <a class='btn btn-outline-success' href="{% url 'update_gearset' gearset.id %}">Edit</a>
+            <a class='btn btn-outline-danger' href="#">Delete</a>
         {% endif %}
-        {% if job == 'Warrior' %}
-            <h2><img src="{% static 'gear/media/Warrior.png' %}" alt="Warrior job icon"
-                     style="width: 50px; height: 50px"> Warrior</h2>
-        {% endif %}
-        {% if job == 'Dark Knight' %}
-            <h2><img src="{% static 'gear/media/DarkKnight.png' %}" alt="Dark Knight job icon"
-                     style="width: 50px; height: 50px"> Dark Knight</h2>
-        {% endif %}
-        {% if job == 'Gunbreaker' %}
-            <h2><img src="{% static 'gear/media/Gunbreaker.png' %}" alt="Gunbreaker job icon"
-                     style="width: 50px; height: 50px"> Gunbreaker</h2>
-        {% endif %}
-        {% if job == 'White Mage' %}
-            <h2><img src="{% static 'gear/media/WhiteMage.png' %}" alt="White Mage job icon"
-                     style="width: 50px; height: 50px"> White Mage</h2>
-        {% endif %}
-        {% if job == 'Scholar' %}
-            <h2><img src="{% static 'gear/media/Scholar.png' %}" alt="Scholar job icon"
-                     style="width: 50px; height: 50px"> Scholar</h2>
-        {% endif %}
-        {% if job == 'Astrologian' %}
-            <h2><img src="{% static 'gear/media/Astrologian.png' %}" alt="Astrologian job icon"
-                     style="width: 50px; height: 50px"> Astrologian</h2>
-        {% endif %}
-        {% if job == 'Sage' %}
-            <h2><img src="{% static 'gear/media/Sage.png' %}" alt="Sage job icon"
-                     style="width: 50px; height: 50px"> Sage</h2>
-        {% endif %}
-        {% if job == 'Monk' %}
-            <h2><img src="{% static 'gear/media/Monk.png' %}" alt="Monk job icon"
-                     style="width: 50px; height: 50px"> Monk</h2>
-        {% endif %}
-        {% if job == 'Dragoon' %}
-            <h2><img src="{% static 'gear/media/Dragoon.png' %}" alt="Dragoon job icon"
-                     style="width: 50px; height: 50px"> Dragoon</h2>
-        {% endif %}
-        {% if job == 'Ninja' %}
-            <h2><img src="{% static 'gear/media/Ninja.png' %}" alt="Ninja job icon"
-                     style="width: 50px; height: 50px"> Ninja</h2>
-        {% endif %}
-        {% if job == 'Samurai' %}
-            <h2><img src="{% static 'gear/media/Samurai.png' %}" alt="Samurai job icon"
-                     style="width: 50px; height: 50px"> Samurai</h2>
-        {% endif %}
-        {% if job == 'Reaper' %}
-            <h2><img src="{% static 'gear/media/Reaper.png' %}" alt="Reaper job icon"
-                     style="width: 50px; height: 50px"> Reaper</h2>
-        {% endif %}
-        {% if job == 'Bard' %}
-            <h2><img src="{% static 'gear/media/Bard.png' %}" alt="Bard job icon"
-                     style="width: 50px; height: 50px"> Bard</h2>
-        {% endif %}
-        {% if job == 'Dancer' %}
-            <h2><img src="{% static 'gear/media/Dancer.png' %}" alt="Dancer job icon"
-                     style="width: 50px; height: 50px"> Dancer</h2>
-        {% endif %}
-        {% if job == 'Machinist' %}
-            <h2><img src="{% static 'gear/media/Machinist.png' %}" alt="Machinist job icon"
-                     style="width: 50px; height: 50px"> Machinist</h2>
-        {% endif %}
-        {% if job == 'Black Mage' %}
-            <h2><img src="{% static 'gear/media/BlackMage.png' %}" alt="Black Mage job icon"
-                     style="width: 50px; height: 50px"> Black Mage</h2>
-        {% endif %}
-        {% if job == 'Summoner' %}
-            <h2><img src="{% static 'gear/media/Summoner.png' %}" alt="Summoner job icon"
-                     style="width: 50px; height: 50px"> Summoner</h2>
-        {% endif %}
-        {% if job == 'Red Mage' %}
-            <h2><img src="{% static 'gear/media/RedMage.png' %}" alt="Red Mage job icon"
-                     style="width: 50px; height: 50px"> Red Mage</h2>
-        {% endif %}
+
     </div>
-    <br>
-
-    <h5>Disclaimer:</h5>
-    <h6>Stats don't account for materia slots nor base race stats. Crafted gear is its high-quality version.</h6>
-    <br>
-
-    <table class="table table-responsive table-hover">
-        <tr>
-            <th class="col-2">
-                Weapon:
-            </th>
-            <td class="col-5">
-                {{ gearset.weapon }}
-            </td>
-            <td class="col-1">
-                i{{ gearset.weapon.item_level }}
-            </td>
-            <td class="col-1">
-                <a href="{% url 'gear_details' gearset.weapon_id %}" class="btn btn-sm btn-outline-info">View</a>
-            </td>
-        </tr>
-
-        <tr>
-            <th class="col-2">
-                Head:
-            </th>
-            <td class="col-5">
-                {{ gearset.helmet }}
-            </td>
-            <td class="col-1">
-                i{{ gearset.helmet.item_level }}
-            </td>
-            <td class="col-1">
-                <a href="{% url 'gear_details' gearset.helmet_id %}" class="btn btn-sm btn-outline-info">View</a>
-            </td>
-        </tr>
-
-        <tr>
-            <th class="col-2">
-                Body:
-            </th>
-            <td class="col-5">
-                {{ gearset.body }}
-            </td>
-            <td class="col-1">
-                i{{ gearset.body.item_level }}
-            </td>
-            <td class="col-1">
-                <a href="{% url 'gear_details' gearset.body_id %}" class="btn btn-sm btn-outline-info">View</a>
-            </td>
-        </tr>
-
-        <tr>
-            <th class="col-2">
-                Legs:
-            </th>
-            <td class="col-5">
-                {{ gearset.legs }}
-            </td>
-            <td class="col-1">
-                i{{ gearset.legs.item_level }}
-            </td>
-            <td class="col-1">
-                <a href="{% url 'gear_details' gearset.legs_id %}" class="btn btn-sm btn-outline-info">View</a>
-            </td>
-        </tr>
-
-        <tr>
-            <th class="col-2">
-                Hands:
-            </th>
-            <td class="col-5">
-                {{ gearset.hands }}
-            </td>
-            <td class="col-1">
-                i{{ gearset.hands.item_level }}
-            </td>
-            <td class="col-1">
-                <a href="{% url 'gear_details' gearset.hands_id %}" class="btn btn-sm btn-outline-info">View</a>
-            </td>
-        </tr>
-
-        <tr>
-            <th class="col-2">
-                Feet:
-            </th>
-            <td class="col-5">
-                {{ gearset.feet }}
-            </td>
-            <td class="col-1">
-                i{{ gearset.feet.item_level }}
-            </td>
-            <td class="col-1">
-                <a href="{% url 'gear_details' gearset.feet_id %}" class="btn btn-sm btn-outline-info">View</a>
-            </td>
-        </tr>
-
-        {% if gearset.shield %}
-            <tr>
-                <th class="col-2">
-                    Shield:
-                </th>
-                <td class="col-5">
-                    {{ gearset.shield }}
-                </td>
-                <td class="col-1">
-                    i{{ gearset.shield.item_level }}
-                </td>
-                <td class="col-1">
-                    <a href="{% url 'gear_details' gearset.shield_id %}" class="btn btn-sm btn-outline-info">View</a>
-                </td>
-            </tr>
-        {% endif %}
-
-        <tr>
-            <th class="col-2">
-                Earrings:
-            </th>
-            <td class="col-5">
-                {{ gearset.earrings }}
-            </td>
-            <td class="col-1">
-                i{{ gearset.earrings.item_level }}
-            </td>
-            <td class="col-1">
-                <a href="{% url 'gear_details' gearset.earrings_id %}" class="btn btn-sm btn-outline-info">View</a>
-            </td>
-        </tr>
-
-        <tr>
-            <th class="col-2">
-                Necklace:
-            </th>
-            <td class="col-5">
-                {{ gearset.necklace }}
-            </td>
-            <td class="col-1">
-                i{{ gearset.necklace.item_level }}
-            </td>
-            <td class="col-1">
-                <a href="{% url 'gear_details' gearset.necklace_id %}" class="btn btn-sm btn-outline-info">View</a>
-            </td>
-        </tr>
-
-        <tr>
-            <th class="col-2">
-                Bracelet:
-            </th>
-            <td class="col-5">
-                {{ gearset.bracelet }}
-            </td>
-            <td class="col-1">
-                i{{ gearset.bracelet.item_level }}
-            </td>
-            <td class="col-1">
-                <a href="{% url 'gear_details' gearset.bracelet_id %}" class="btn btn-sm btn-outline-info">View</a>
-            </td>
-        </tr>
-
-        <tr>
-            <th class="col-2">
-                Left ring:
-            </th>
-            <td class="col-5">
-                {{ gearset.left_ring }}
-            </td>
-            <td class="col-1">
-                i{{ gearset.left_ring.item_level }}
-            </td>
-            <td class="col-1">
-                <a href="{% url 'gear_details' gearset.left_ring_id %}" class="btn btn-sm btn-outline-info">View</a>
-            </td>
-        </tr>
-
-        <tr>
-            <th class="col-2">
-                Right ring:
-            </th>
-            <td class="col-5">
-                {{ gearset.right_ring }}
-            </td>
-            <td class="col-1">
-                i{{ gearset.right_ring.item_level }}
-            </td>
-            <td class="col-1">
-                <a href="{% url 'gear_details' gearset.right_ring_id %}" class="btn btn-sm btn-outline-info">View</a>
-            </td>
-        </tr>
-    </table>
-
-    <a class='btn btn-outline-primary' href="{% url 'gearset_list' %}">Back</a>
-
-    {% if user.is_superuser %}
-        <a class='btn btn-outline-success' href="{% url 'update_gearset' gearset.id %}">Edit</a>
-        <a class='btn btn-outline-danger' href="#">Delete</a>
-    {% endif %}
-
-{% endblock %}
-
-{% block stats %}
-    <h6>Main stats:</h6>
-    <ul id="main_stats">
-        {% if vitality != 0 %}
-            <li>Vitality: {{ vitality }}</li>{% endif %}
-        {% if strength != 0 %}
-            <li>Strength: {{ strength }}</li>{% endif %}
-        {% if dexterity != 0 %}
-            <li>Dexterity: {{ dexterity }}</li>{% endif %}
-        {% if intelligence != 0 %}
-            <li>Intelligence: {{ intelligence }}</li>{% endif %}
-        {% if mind != 0 %}
-            <li>Mind: {{ mind }}</li>{% endif %}
-    </ul>
-    <br>
-
-    <h6>Secondary stats:</h6>
-    <ul id="secondary_stats">
-        {% if piety != 0 %}
-            <li>Piety: {{ piety }}</li>{% endif %}
-        {% if tenacity != 0 %}
-            <li>Tenacity: {{ tenacity }}</li>{% endif %}
-        {% if critical_rate != 0 %}
-            <li>Critical rate: {{ critical_rate }}</li>{% endif %}
-        {% if direct_hit != 0 %}
-            <li>Direct hit: {{ direct_hit }}</li>{% endif %}
-        {% if determination != 0 %}
-            <li>Determination: {{ determination }}</li>{% endif %}
-        {% if skill_speed != 0 %}
-            <li>Skill speed: {{ skill_speed }}</li>{% endif %}
-        {% if spell_speed != 0 %}
-            <li>Spell speed: {{ spell_speed }}</li>{% endif %}
-    </ul>
 {% endblock %}

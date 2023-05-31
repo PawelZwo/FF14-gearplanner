@@ -567,11 +567,14 @@ class GearsetDetails(View):
             'mind': Gearset.objects.get(pk=pk).calculate_total_mind(),
             'piety': Gearset.objects.get(pk=pk).calculate_total_piety(),
             'critical_rate': Gearset.objects.get(pk=pk).calculate_total_critical_rate(),
+            'critical_hit': Gearset.objects.get(pk=pk).calculate_total_critical_rate() // 95,
             'direct_hit': Gearset.objects.get(pk=pk).calculate_total_direct_hit(),
             'determination': Gearset.objects.get(pk=pk).calculate_total_determination(),
             'skill_speed': Gearset.objects.get(pk=pk).calculate_total_skill_speed(),
             'spell_speed': Gearset.objects.get(pk=pk).calculate_total_spell_speed(),
             'tenacity': Gearset.objects.get(pk=pk).calculate_total_tenacity(),
+            'defense': Gearset.objects.get(pk=pk).calculate_total_defense(),
+            'magic_defense': Gearset.objects.get(pk=pk).calculate_total_magic_defense(),
         }
 
         return render(request, 'gear/gearset_details.html', context)

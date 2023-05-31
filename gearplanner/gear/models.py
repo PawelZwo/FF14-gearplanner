@@ -299,6 +299,38 @@ class Gearset(models.Model):
         spell_speed += self.right_ring.spell_speed
         return spell_speed
 
+    def calculate_total_defense(self):
+        defense = 0
+        defense += self.weapon.defense
+        defense += self.shield.defense if self.shield else 0
+        defense += self.body.defense
+        defense += self.legs.defense
+        defense += self.helmet.defense
+        defense += self.hands.defense
+        defense += self.feet.defense
+        defense += self.earrings.defense
+        defense += self.necklace.defense
+        defense += self.bracelet.defense
+        defense += self.left_ring.defense
+        defense += self.right_ring.defense
+        return defense
+
+    def calculate_total_magic_defense(self):
+        magic_defense = 0
+        magic_defense += self.weapon.magic_defense
+        magic_defense += self.shield.magic_defense if self.shield else 0
+        magic_defense += self.body.magic_defense
+        magic_defense += self.legs.magic_defense
+        magic_defense += self.helmet.magic_defense
+        magic_defense += self.hands.magic_defense
+        magic_defense += self.feet.magic_defense
+        magic_defense += self.earrings.magic_defense
+        magic_defense += self.necklace.magic_defense
+        magic_defense += self.bracelet.magic_defense
+        magic_defense += self.left_ring.magic_defense
+        magic_defense += self.right_ring.magic_defense
+        return magic_defense
+
     def __str__(self):
         return self.name
 
