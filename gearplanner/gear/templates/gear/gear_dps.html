@@ -248,7 +248,7 @@
 
             <h6>Head</h6>
             <ul>
-                {% for item in slaying_head %}
+                {% for item in maiming_head %}
                     <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a>
                     </li>
                 {% empty %}
@@ -259,7 +259,7 @@
 
             <h6>Body</h6>
             <ul>
-                {% for item in slaying_body %}
+                {% for item in maiming_body %}
                     <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a>
                     </li>
                 {% empty %}
@@ -270,7 +270,7 @@
 
             <h6>Legs</h6>
             <ul>
-                {% for item in slaying_legs %}
+                {% for item in maiming_legs %}
                     <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a>
                     </li>
                 {% empty %}
@@ -281,7 +281,7 @@
 
             <h6>Hands</h6>
             <ul>
-                {% for item in slaying_hands %}
+                {% for item in maiming_hands %}
                     <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a>
                     </li>
                 {% empty %}
@@ -292,7 +292,7 @@
 
             <h6>Feet</h6>
             <ul>
-                {% for item in slaying_feet %}
+                {% for item in maiming_feet %}
                     <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a>
                     </li>
                 {% empty %}
