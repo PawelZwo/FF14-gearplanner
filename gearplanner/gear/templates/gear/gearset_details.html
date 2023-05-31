@@ -366,15 +366,11 @@
                     {% endif %}
 
                     {% if skill_speed != 0 %}
-                        <li>Skill speed: <b>{{ skill_speed }}</b><br>
-                            (<b>-{{ skill_speed|div:585|floatformat:2 }}s</b> GCD)
-                        </li>
+                        <li>Skill speed: <b>{{ skill_speed }}</b></li>
                     {% endif %}
 
                     {% if spell_speed != 0 %}
-                        <li>Spell speed: <b>{{ spell_speed }}</b><br>
-                            (<b>-{{ spell_speed|div:585|floatformat:2 }}s</b> GCD)
-                        </li>
+                        <li>Spell speed: <b>{{ spell_speed }}</b></li>
                     {% endif %}
 
                 </ul>
