@@ -3,240 +3,37 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-3">
-                <h4>{{ hyur.name }}</h4>
-                <table class="table table-hover">
-                    <tr>
-                        <th>Strength:</th>
-                        <td>{{ hyur.base_strength }}</td>
-                    </tr>
-                    <tr>
-                        <th>Dexterity:</th>
-                        <td>{{ hyur.base_dexterity }}</td>
-                    </tr>
-                    <tr>
-                        <th>Intelligence:</th>
-                        <td>{{ hyur.base_intelligence }}</td>
-                    </tr>
-                    <tr>
-                        <th>Mind:</th>
-                        <td>{{ hyur.base_mind }}</td>
-                    </tr>
-                    <tr>
-                        <th>Piety:</th>
-                        <td>{{ hyur.base_piety }}</td>
-                    </tr>
-                    <tr>
-                        <th>Vitality:</th>
-                        <td>{{ hyur.base_vitality }}</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="col-3">
-                <h4>{{ elezen.name }}</h4>
-                <table class="table table-hover">
-                    <tr>
-                        <th>Strength:</th>
-                        <td>{{ elezen.base_strength }}</td>
-                    </tr>
-                    <tr>
-                        <th>Dexterity:</th>
-                        <td>{{ elezen.base_dexterity }}</td>
-                    </tr>
-                    <tr>
-                        <th>Intelligence:</th>
-                        <td>{{ elezen.base_intelligence }}</td>
-                    </tr>
-                    <tr>
-                        <th>Mind:</th>
-                        <td>{{ elezen.base_mind }}</td>
-                    </tr>
-                    <tr>
-                        <th>Piety:</th>
-                        <td>{{ elezen.base_piety }}</td>
-                    </tr>
-                    <tr>
-                        <th>Vitality:</th>
-                        <td>{{ elezen.base_vitality }}</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="col-3">
-                <h4>{{ lalafell.name }}</h4>
-                <table class="table table-hover">
-                    <tr>
-                        <th>Strength:</th>
-                        <td>{{ lalafell.base_strength }}</td>
-                    </tr>
-                    <tr>
-                        <th>Dexterity:</th>
-                        <td>{{ lalafell.base_dexterity }}</td>
-                    </tr>
-                    <tr>
-                        <th>Intelligence:</th>
-                        <td>{{ lalafell.base_intelligence }}</td>
-                    </tr>
-                    <tr>
-                        <th>Mind:</th>
-                        <td>{{ lalafell.base_mind }}</td>
-                    </tr>
-                    <tr>
-                        <th>Piety:</th>
-                        <td>{{ lalafell.base_piety }}</td>
-                    </tr>
-                    <tr>
-                        <th>Vitality:</th>
-                        <td>{{ lalafell.base_vitality }}</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="col-3">
-                <h4>{{ miqote.name }}</h4>
-                <table class="table table-hover">
-                    <tr>
-                        <th>Strength:</th>
-                        <td>{{ miqote.base_strength }}</td>
-                    </tr>
-                    <tr>
-                        <th>Dexterity:</th>
-                        <td>{{ miqote.base_dexterity }}</td>
-                    </tr>
-                    <tr>
-                        <th>Intelligence:</th>
-                        <td>{{ miqote.base_intelligence }}</td>
-                    </tr>
-                    <tr>
-                        <th>Mind:</th>
-                        <td>{{ miqote.base_mind }}</td>
-                    </tr>
-                    <tr>
-                        <th>Piety:</th>
-                        <td>{{ miqote.base_piety }}</td>
-                    </tr>
-                    <tr>
-                        <th>Vitality:</th>
-                        <td>{{ miqote.base_vitality }}</td>
-                    </tr>
-                </table>
-            </div>
-        </div><br>
-        <div class="row">
-            <div class="col-3">
-                <h4>{{ roegadyn.name }}</h4>
-                <table class="table table-hover">
-                    <tr>
-                        <th>Strength:</th>
-                        <td>{{ roegadyn.base_strength }}</td>
-                    </tr>
-                    <tr>
-                        <th>Dexterity:</th>
-                        <td>{{ roegadyn.base_dexterity }}</td>
-                    </tr>
-                    <tr>
-                        <th>Intelligence:</th>
-                        <td>{{ roegadyn.base_intelligence }}</td>
-                    </tr>
-                    <tr>
-                        <th>Mind:</th>
-                        <td>{{ roegadyn.base_mind }}</td>
-                    </tr>
-                    <tr>
-                        <th>Piety:</th>
-                        <td>{{ roegadyn.base_piety }}</td>
-                    </tr>
-                    <tr>
-                        <th>Vitality:</th>
-                        <td>{{ roegadyn.base_vitality }}</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="col-3">
-                <h4>{{ aura.name }}</h4>
-                <table class="table table-hover">
-                    <tr>
-                        <th>Strength:</th>
-                        <td>{{ aura.base_strength }}</td>
-                    </tr>
-                    <tr>
-                        <th>Dexterity:</th>
-                        <td>{{ aura.base_dexterity }}</td>
-                    </tr>
-                    <tr>
-                        <th>Intelligence:</th>
-                        <td>{{ aura.base_intelligence }}</td>
-                    </tr>
-                    <tr>
-                        <th>Mind:</th>
-                        <td>{{ aura.base_mind }}</td>
-                    </tr>
-                    <tr>
-                        <th>Piety:</th>
-                        <td>{{ aura.base_piety }}</td>
-                    </tr>
-                    <tr>
-                        <th>Vitality:</th>
-                        <td>{{ aura.base_vitality }}</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="col-3">
-                <h4>{{ hrothgar.name }}</h4>
-                <table class="table table-hover">
-                    <tr>
-                        <th>Strength:</th>
-                        <td>{{ hrothgar.base_strength }}</td>
-                    </tr>
-                    <tr>
-                        <th>Dexterity:</th>
-                        <td>{{ hrothgar.base_dexterity }}</td>
-                    </tr>
-                    <tr>
-                        <th>Intelligence:</th>
-                        <td>{{ hrothgar.base_intelligence }}</td>
-                    </tr>
-                    <tr>
-                        <th>Mind:</th>
-                        <td>{{ hrothgar.base_mind }}</td>
-                    </tr>
-                    <tr>
-                        <th>Piety:</th>
-                        <td>{{ hrothgar.base_piety }}</td>
-                    </tr>
-                    <tr>
-                        <th>Vitality:</th>
-                        <td>{{ hrothgar.base_vitality }}</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="col-3">
-                <h4>{{ viera.name }}</h4>
-                <table class="table table-hover">
-                    <tr>
-                        <th>Strength:</th>
-                        <td>{{ viera.base_strength }}</td>
-                    </tr>
-                    <tr>
-                        <th>Dexterity:</th>
-                        <td>{{ viera.base_dexterity }}</td>
-                    </tr>
-                    <tr>
-                        <th>Intelligence:</th>
-                        <td>{{ viera.base_intelligence }}</td>
-                    </tr>
-                    <tr>
-                        <th>Mind:</th>
-                        <td>{{ viera.base_mind }}</td>
-                    </tr>
-                    <tr>
-                        <th>Piety:</th>
-                        <td>{{ viera.base_piety }}</td>
-                    </tr>
-                    <tr>
-                        <th>Vitality:</th>
-                        <td>{{ viera.base_vitality }}</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
+            {% for race in races %}
+                <div class="col-3">
+                    <h4>{{ race.name }}</h4>
+                    <table class="table table-hover">
+                        <tr>
+                            <th>Strength:</th>
+                            <td>{{ race.base_strength }}</td>
+                        </tr>
+                        <tr>
+                            <th>Dexterity:</th>
+                            <td>{{ race.base_dexterity }}</td>
+                        </tr>
+                        <tr>
+                            <th>Intelligence:</th>
+                            <td>{{ race.base_intelligence }}</td>
+                        </tr>
+                        <tr>
+                            <th>Mind:</th>
+                            <td>{{ race.base_mind }}</td>
+                        </tr>
+                        <tr>
+                            <th>Piety:</th>
+                            <td>{{ race.base_piety }}</td>
+                        </tr>
+                        <tr>
+                            <th>Vitality:</th>
+                            <td>{{ race.base_vitality }}</td>
+                        </tr>
+                    </table>
+                </div>
+            {% endfor %}
+         </div>
     </div>
 {% endblock %}
