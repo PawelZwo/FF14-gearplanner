@@ -19,6 +19,7 @@ urlpatterns = [
     path('gearset-list/', GearsetList.as_view(), name='gearset_list'),
     path('gearset-details/<int:pk>/', GearsetDetails.as_view(), name='gearset_details'),
     path('update-gearset/<int:pk>/', UpdateGearset.as_view(), name='update_gearset'),
+    path('delete-gearset/<int:pk>/', DeleteGearset.as_view(), name='delete_gearset'),
 
     path('job-list/', JobList.as_view(), name='job_list'),
 

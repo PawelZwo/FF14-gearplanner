@@ -8,10 +8,10 @@
                 <h4>Username: </h4>
                 {{ user.username }}
             </div>
-            <div class="col">
-                <h4>E-mail: </h4>
-                {{ user.email|default:'None' }}
-            </div>
+{#            <div class="col">#}
+{#                <h4>E-mail: </h4>#}
+{#                {{ user.email|default:'None' }}#}
+{#            </div>#}
         </div>
         <br>
         <h4>{{ user.username }}'s gearsets:</h4><br>
@@ -24,7 +24,7 @@
                                          class="btn btn-sm btn-outline-info">View</a></td>
                     {% if user.is_superuser %}
                         <td class="col-1"><a class='btn btn-sm btn-outline-success' href="{% url 'update_gearset' gearset.gearset.id %}">Edit</a></td>
-                        <td class="col-1"><a class='btn btn-sm btn-outline-danger' href="#">Delete</a></td>
+                        <td class="col-1"><a class='btn btn-sm btn-outline-danger' href="{% url 'delete_gearset' gearset.gearset.id %}">Delete</a></td>
                     {% endif %}
                 </tr>
             {% empty %}

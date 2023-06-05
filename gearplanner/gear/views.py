@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import ListView, CreateView, UpdateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .forms import *
 from django.contrib import messages
 
@@ -298,6 +298,16 @@ class UpdateGearset(UpdateView):
     model = Gearset
     fields = '__all__'
     template_name = 'gear/__form__.html'
+    success_url = reverse_lazy('gearset_list')
+
+
+"""
+SUPERUSER ONLY deleting a gearset.
+"""
+
+
+class DeleteGearset(DeleteView):
+    model = Gearset
     success_url = reverse_lazy('gearset_list')
 
 

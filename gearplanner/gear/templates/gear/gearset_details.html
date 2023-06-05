@@ -381,7 +381,7 @@
         <a class='btn btn-outline-primary' href="{% url 'gearset_list' %}">Back</a>
         {% if user.is_superuser %}
             <a class='btn btn-outline-success' href="{% url 'update_gearset' gearset.id %}">Edit</a>
-            <a class='btn btn-outline-danger' href="#">Delete</a>
+            <a class='btn btn-outline-danger' href="{% url 'delete_gearset' gearset.id %}">Delete</a>
         {% endif %}
 
     </div>
