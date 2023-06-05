@@ -29,7 +29,8 @@ This is my first full-pledged webapp project.
 ***
 
 ## Installation
-Fork this repository and clone it. Remember to make local_settings.py to your main directory and put your database connection details in there!
+Fork this repository and clone it. 
+REMEMBER to make local_settings.py to your main directory and put your database connection details in there!
 
 ## Technologies
 
