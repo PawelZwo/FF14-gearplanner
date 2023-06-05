@@ -29,10 +29,7 @@ This is my first full-pledged webapp project.
 ***
 
 ## Installation
-
-```
-pip install FF14-gearplanner
-```
+Fork this repository and clone it. Remember to make local_settings.py to your main directory and put your database connection details in there!
 
 ## Technologies
 
