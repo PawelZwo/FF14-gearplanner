@@ -33,153 +33,96 @@ List of gear in the DB sorted by the type of a gear and which piece is it.
 
 
 class GearList(View):
+    GEAR_MAPPING = {
+        # Fending (tanks) gear and accessories
+        'fending_body': {'name__contains': 'Fending', 'cost_id': 6},
+        'fending_legs': {'name__contains': 'Fending', 'cost_id': 9},
+        'fending_head': {'name__contains': 'Fending', 'cost_id': 7},
+        'fending_hands': {'name__contains': 'Fending', 'cost_id': 10},
+        'fending_feet': {'name__contains': 'Fending', 'cost_id': 11},
+        'tank_weapon': {'cost__in': [4, 5], 'job__in': [1, 2, 3, 4]},
+        'shield': {'cost': 8},
+        'fending_earrings': {'name__contains': 'Fending', 'cost_id': 12},
+        'fending_necklace': {'name__contains': 'Fending', 'cost_id': 13},
+        'fending_bracelet': {'name__contains': 'Fending', 'cost_id': 15},
+        'fending_ring': {'name__contains': 'Fending', 'cost_id': 14},
+
+        # Healing (healers) gear and accessories
+        'healing_body': {'name__contains': 'Healing', 'cost_id': 6},
+        'healing_legs': {'name__contains': 'Healing', 'cost_id': 9},
+        'healing_head': {'name__contains': 'Healing', 'cost_id': 7},
+        'healing_hands': {'name__contains': 'Healing', 'cost_id': 10},
+        'healing_feet': {'name__contains': 'Healing', 'cost_id': 11},
+        'healer_weapon': {'cost': 5, 'job__in': [5, 6, 7, 8]},
+        'healing_earrings': {'name__contains': 'Healing', 'cost_id': 12},
+        'healing_necklace': {'name__contains': 'Healing', 'cost_id': 13},
+        'healing_bracelet': {'name__contains': 'Healing', 'cost_id': 15},
+        'healing_ring': {'name__contains': 'Healing', 'cost_id': 14},
+
+        # DPS gear
+        # Striking (MNK / SAM) gear
+        'striking_body': {'name__contains': 'Striking', 'cost_id': 6},
+        'striking_legs': {'name__contains': 'Striking', 'cost_id': 9},
+        'striking_head': {'name__contains': 'Striking', 'cost_id': 7},
+        'striking_hands': {'name__contains': 'Striking', 'cost_id': 10},
+        'striking_feet': {'name__contains': 'Striking', 'cost_id': 11},
+
+        # Maiming (DRG / RPR) gear
+        'maiming_body': {'name__contains': 'Maiming', 'cost_id': 6},
+        'maiming_legs': {'name__contains': 'Maiming', 'cost_id': 9},
+        'maiming_head': {'name__contains': 'Maiming', 'cost_id': 7},
+        'maiming_hands': {'name__contains': 'Maiming', 'cost_id': 10},
+        'maiming_feet': {'name__contains': 'Maiming', 'cost_id': 11},
+
+        # Scouting (NIN) gear
+        'scouting_body': {'name__contains': 'Scouting', 'cost_id': 6},
+        'scouting_legs': {'name__contains': 'Scouting', 'cost_id': 9},
+        'scouting_head': {'name__contains': 'Scouting', 'cost_id': 7},
+        'scouting_hands': {'name__contains': 'Scouting', 'cost_id': 10},
+        'scouting_feet': {'name__contains': 'Scouting', 'cost_id': 11},
+
+        # DPS weapons
+        'mnksam_weapon': {'cost': 5, 'job__in': [9, 12]},
+        'nin_weapon': {'cost': 5, 'job__in': [11]},
+        'drgrpr_weapon': {'cost': 5, 'job__in': [10, 13]},
+        'ranged_weapon': {'cost': 5, 'job__in': [14, 15, 16]},
+        'caster_weapon': {'cost': 5, 'job__in': [17, 18, 19]},
+
+        # DPS accessories
+        'slaying_earrings': {'name__contains': 'Slaying', 'cost_id': 12},
+        'slaying_necklace': {'name__contains': 'Slaying', 'cost_id': 13},
+        'slaying_bracelet': {'name__contains': 'Slaying', 'cost_id': 15},
+        'slaying_ring': {'name__contains': 'Slaying', 'cost_id': 14},
+
+        # Aiming (BRD, MCH, DNC) gear and accessories
+        'aiming_body': {'name__contains': 'Aiming', 'cost_id': 6},
+        'aiming_legs': {'name__contains': 'Aiming', 'cost_id': 9},
+        'aiming_head': {'name__contains': 'Aiming', 'cost_id': 7},
+        'aiming_hands': {'name__contains': 'Aiming', 'cost_id': 10},
+        'aiming_feet': {'name__contains': 'Aiming', 'cost_id': 11},
+        'aiming_earrings': {'name__contains': 'Aiming', 'cost_id': 12},
+        'aiming_necklace': {'name__contains': 'Aiming', 'cost_id': 13},
+        'aiming_bracelet': {'name__contains': 'Aiming', 'cost_id': 15},
+        'aiming_ring': {'name__contains': 'Aiming', 'cost_id': 14},
+
+        # Casting (BLM, SMN, RDM) gear and accessories
+        'casting_body': {'name__contains': 'Casting', 'cost_id': 6},
+        'casting_legs': {'name__contains': 'Casting', 'cost_id': 9},
+        'casting_head': {'name__contains': 'Casting', 'cost_id': 7},
+        'casting_hands': {'name__contains': 'Casting', 'cost_id': 10},
+        'casting_feet': {'name__contains': 'Casting', 'cost_id': 11},
+        'casting_earrings': {'name__contains': 'Casting', 'cost_id': 12},
+        'casting_necklace': {'name__contains': 'Casting', 'cost_id': 13},
+        'casting_bracelet': {'name__contains': 'Casting', 'cost_id': 15},
+        'casting_ring': {'name__contains': 'Casting', 'cost_id': 14},
+    }
+
     def get(self, request):
-        context = {
-            # Fending (tanks) gear and accessories
-            'fending_body':
-                Gear.objects.filter(name__contains='Fending').filter(cost_id=6).order_by('id'),
-            'fending_legs':
-                Gear.objects.filter(name__contains='Fending').filter(cost_id=9).order_by('id'),
-            'fending_head':
-                Gear.objects.filter(name__contains='Fending').filter(cost_id=7).order_by('id'),
-            'fending_hands':
-                Gear.objects.filter(name__contains='Fending').filter(cost_id=10).order_by('id'),
-            'fending_feet':
-                Gear.objects.filter(name__contains='Fending').filter(cost_id=11).order_by('id'),
-            'tank_weapon':
-                Gear.objects.filter(cost__in=[4, 5]).filter(job__in=[1, 2, 3, 4]).order_by('job'),
-            'shield':
-                Gear.objects.filter(cost=8).order_by('id'),
-            'fending_earrings':
-                Gear.objects.filter(name__contains='Fending').filter(cost_id=12).order_by('id'),
-            'fending_necklace':
-                Gear.objects.filter(name__contains='Fending').filter(cost_id=13).order_by('id'),
-            'fending_bracelet':
-                Gear.objects.filter(name__contains='Fending').filter(cost_id=15).order_by('id'),
-            'fending_ring':
-                Gear.objects.filter(name__contains='Fending').filter(cost_id=14).order_by('id'),
+        context = {}
+        for gear_name, filters in self.GEAR_MAPPING.items():
+            gear_items = Gear.objects.filter(**filters).order_by('id')
+            context[gear_name] = gear_items
 
-            # Healing (healers) gear and accessories
-            'healing_body':
-                Gear.objects.filter(name__contains='Healing').filter(cost_id=6).order_by('id'),
-            'healing_legs':
-                Gear.objects.filter(name__contains='Healing').filter(cost_id=9).order_by('id'),
-            'healing_head':
-                Gear.objects.filter(name__contains='Healing').filter(cost_id=7).order_by('id'),
-            'healing_hands':
-                Gear.objects.filter(name__contains='Healing').filter(cost_id=10).order_by('id'),
-            'healing_feet':
-                Gear.objects.filter(name__contains='Healing').filter(cost_id=11).order_by('id'),
-            'healer_weapon':
-                Gear.objects.filter(cost=5).filter(job__in=[5, 6, 7, 8]).order_by('job'),
-            'healing_earrings':
-                Gear.objects.filter(name__contains='Healing').filter(cost_id=12).order_by('id'),
-            'healing_necklace':
-                Gear.objects.filter(name__contains='Healing').filter(cost_id=13).order_by('id'),
-            'healing_bracelet':
-                Gear.objects.filter(name__contains='Healing').filter(cost_id=15).order_by('id'),
-            'healing_ring':
-                Gear.objects.filter(name__contains='Healing').filter(cost_id=14).order_by('id'),
-
-            # DPS gear
-            # Striking (MNK / SAM) gear
-            'striking_body':
-                Gear.objects.filter(name__contains='Striking').filter(cost_id=6).order_by('id'),
-            'striking_legs':
-                Gear.objects.filter(name__contains='Striking').filter(cost_id=9).order_by('id'),
-            'striking_head':
-                Gear.objects.filter(name__contains='Striking').filter(cost_id=7).order_by('id'),
-            'striking_hands':
-                Gear.objects.filter(name__contains='Striking').filter(cost_id=10).order_by('id'),
-            'striking_feet':
-                Gear.objects.filter(name__contains='Striking').filter(cost_id=11).order_by('id'),
-
-            # Maiming (DRG / RPR) gear
-            'maiming_body':
-                Gear.objects.filter(name__contains='Maiming').filter(cost_id=6).order_by('id'),
-            'maiming_legs':
-                Gear.objects.filter(name__contains='Maiming').filter(cost_id=9).order_by('id'),
-            'maiming_head':
-                Gear.objects.filter(name__contains='Maiming').filter(cost_id=7).order_by('id'),
-            'maiming_hands':
-                Gear.objects.filter(name__contains='Maiming').filter(cost_id=10).order_by('id'),
-            'maiming_feet':
-                Gear.objects.filter(name__contains='Maiming').filter(cost_id=11).order_by('id'),
-
-            # Scouting (NIN) gear
-            'scouting_body':
-                Gear.objects.filter(name__contains='Scouting').filter(cost_id=6).order_by('id'),
-            'scouting_legs':
-                Gear.objects.filter(name__contains='Scouting').filter(cost_id=9).order_by('id'),
-            'scouting_head':
-                Gear.objects.filter(name__contains='Scouting').filter(cost_id=7).order_by('id'),
-            'scouting_hands':
-                Gear.objects.filter(name__contains='Scouting').filter(cost_id=10).order_by('id'),
-            'scouting_feet':
-                Gear.objects.filter(name__contains='Scouting').filter(cost_id=11).order_by('id'),
-
-            # DPS weapons
-            'mnksam_weapon':
-                Gear.objects.filter(cost=5).filter(job__in=[9, 12]).order_by('job'),
-            'nin_weapon':
-                Gear.objects.filter(cost=5).filter(job__in=[11]).order_by('job'),
-            'drgrpr_weapon':
-                Gear.objects.filter(cost=5).filter(job__in=[10, 13]).order_by('job'),
-            'ranged_weapon':
-                Gear.objects.filter(cost=5).filter(job__in=[14, 15, 16]).order_by('job'),
-
-            # DPS accessories
-            'slaying_earrings':
-                Gear.objects.filter(name__contains='Slaying').filter(cost_id=12).order_by('id'),
-            'slaying_necklace':
-                Gear.objects.filter(name__contains='Slaying').filter(cost_id=13).order_by('id'),
-            'slaying_bracelet':
-                Gear.objects.filter(name__contains='Slaying').filter(cost_id=15).order_by('id'),
-            'slaying_ring':
-                Gear.objects.filter(name__contains='Slaying').filter(cost_id=14).order_by('id'),
-
-            # Aiming (BRD, MCH, DNC) gear and accessories
-            'aiming_body':
-                Gear.objects.filter(name__contains='Aiming').filter(cost_id=6).order_by('id'),
-            'aiming_legs':
-                Gear.objects.filter(name__contains='Aiming').filter(cost_id=9).order_by('id'),
-            'aiming_head':
-                Gear.objects.filter(name__contains='Aiming').filter(cost_id=7).order_by('id'),
-            'aiming_hands':
-                Gear.objects.filter(name__contains='Aiming').filter(cost_id=10).order_by('id'),
-            'aiming_feet':
-                Gear.objects.filter(name__contains='Aiming').filter(cost_id=11).order_by('id'),
-            'aiming_earrings':
-                Gear.objects.filter(name__contains='Aiming').filter(cost_id=12).order_by('id'),
-            'aiming_necklace':
-                Gear.objects.filter(name__contains='Aiming').filter(cost_id=13).order_by('id'),
-            'aiming_bracelet':
-                Gear.objects.filter(name__contains='Aiming').filter(cost_id=15).order_by('id'),
-            'aiming_ring':
-                Gear.objects.filter(name__contains='Aiming').filter(cost_id=14).order_by('id'),
-
-            # Casting (BLM, SMN, RDM) gear and accessories
-            'casting_body':
-                Gear.objects.filter(name__contains='Casting').filter(cost_id=6).order_by('id'),
-            'casting_legs':
-                Gear.objects.filter(name__contains='Casting').filter(cost_id=9).order_by('id'),
-            'casting_head':
-                Gear.objects.filter(name__contains='Casting').filter(cost_id=7).order_by('id'),
-            'casting_hands':
-                Gear.objects.filter(name__contains='Casting').filter(cost_id=10).order_by('id'),
-            'casting_feet':
-                Gear.objects.filter(name__contains='Casting').filter(cost_id=11).order_by('id'),
-            'caster_weapon':
-                Gear.objects.filter(cost=5).filter(job__in=[17, 18, 19]).order_by('job'),
-            'casting_earrings':
-                Gear.objects.filter(name__contains='Casting').filter(cost_id=12).order_by('id'),
-            'casting_necklace':
-                Gear.objects.filter(name__contains='Casting').filter(cost_id=13).order_by('id'),
-            'casting_bracelet':
-                Gear.objects.filter(name__contains='Casting').filter(cost_id=15).order_by('id'),
-            'casting_ring':
-                Gear.objects.filter(name__contains='Casting').filter(cost_id=14).order_by('id'),
-        }
         return render(request, 'gear/gear_all.html', context)
 
 
@@ -189,31 +132,26 @@ List of gear for tanks only.
 
 
 class TankGearList(View):
+    FENDING_GEAR_MAPPING = {
+        'fending_body': {'name__contains': 'Fending', 'cost_id': 6},
+        'fending_legs': {'name__contains': 'Fending', 'cost_id': 9},
+        'fending_head': {'name__contains': 'Fending', 'cost_id': 7},
+        'fending_hands': {'name__contains': 'Fending', 'cost_id': 10},
+        'fending_feet': {'name__contains': 'Fending', 'cost_id': 11},
+        'tank_weapon': {'cost__in': [4, 5], 'job__in': [1, 2, 3, 4]},
+        'shield': {'cost': 8},
+        'fending_earrings': {'name__contains': 'Fending', 'cost_id': 12},
+        'fending_necklace': {'name__contains': 'Fending', 'cost_id': 13},
+        'fending_bracelet': {'name__contains': 'Fending', 'cost_id': 15},
+        'fending_ring': {'name__contains': 'Fending', 'cost_id': 14},
+    }
+
     def get(self, request):
-        context = {
-            'fending_body':
-                Gear.objects.filter(name__contains='Fending').filter(cost_id=6).order_by('id'),
-            'fending_legs':
-                Gear.objects.filter(name__contains='Fending').filter(cost_id=9).order_by('id'),
-            'fending_head':
-                Gear.objects.filter(name__contains='Fending').filter(cost_id=7).order_by('id'),
-            'fending_hands':
-                Gear.objects.filter(name__contains='Fending').filter(cost_id=10).order_by('id'),
-            'fending_feet':
-                Gear.objects.filter(name__contains='Fending').filter(cost_id=11).order_by('id'),
-            'tank_weapon':
-                Gear.objects.filter(cost__in=[4, 5]).filter(job__in=[1, 2, 3, 4]).order_by('job'),
-            'shield':
-                Gear.objects.filter(cost=8).order_by('id'),
-            'fending_earrings':
-                Gear.objects.filter(name__contains='Fending').filter(cost_id=12).order_by('id'),
-            'fending_necklace':
-                Gear.objects.filter(name__contains='Fending').filter(cost_id=13).order_by('id'),
-            'fending_bracelet':
-                Gear.objects.filter(name__contains='Fending').filter(cost_id=15).order_by('id'),
-            'fending_ring':
-                Gear.objects.filter(name__contains='Fending').filter(cost_id=14).order_by('id'),
-        }
+        context = {}
+        for gear_name, filters in self.FENDING_GEAR_MAPPING.items():
+            gear_items = Gear.objects.filter(**filters).order_by('id')
+            context[gear_name] = gear_items
+
         return render(request, 'gear/gear_tank.html', context)
 
 
@@ -223,29 +161,25 @@ List of gear for healers only.
 
 
 class HealerGearList(View):
+    HEALING_GEAR_MAPPING = {
+        'healing_body': {'name__contains': 'Healing', 'cost_id': 6},
+        'healing_legs': {'name__contains': 'Healing', 'cost_id': 9},
+        'healing_head': {'name__contains': 'Healing', 'cost_id': 7},
+        'healing_hands': {'name__contains': 'Healing', 'cost_id': 10},
+        'healing_feet': {'name__contains': 'Healing', 'cost_id': 11},
+        'healer_weapon': {'cost': 5, 'job__in': [5, 6, 7, 8]},
+        'healing_earrings': {'name__contains': 'Healing', 'cost_id': 12},
+        'healing_necklace': {'name__contains': 'Healing', 'cost_id': 13},
+        'healing_bracelet': {'name__contains': 'Healing', 'cost_id': 15},
+        'healing_ring': {'name__contains': 'Healing', 'cost_id': 14},
+    }
+
     def get(self, request):
-        context = {
-            'healing_body':
-                Gear.objects.filter(name__contains='Healing').filter(cost_id=6).order_by('id'),
-            'healing_legs':
-                Gear.objects.filter(name__contains='Healing').filter(cost_id=9).order_by('id'),
-            'healing_head':
-                Gear.objects.filter(name__contains='Healing').filter(cost_id=7).order_by('id'),
-            'healing_hands':
-                Gear.objects.filter(name__contains='Healing').filter(cost_id=10).order_by('id'),
-            'healing_feet':
-                Gear.objects.filter(name__contains='Healing').filter(cost_id=11).order_by('id'),
-            'healer_weapon':
-                Gear.objects.filter(cost=5).filter(job__in=[5, 6, 7, 8]).order_by('job'),
-            'healing_earrings':
-                Gear.objects.filter(name__contains='Healing').filter(cost_id=12).order_by('id'),
-            'healing_necklace':
-                Gear.objects.filter(name__contains='Healing').filter(cost_id=13).order_by('id'),
-            'healing_bracelet':
-                Gear.objects.filter(name__contains='Healing').filter(cost_id=15).order_by('id'),
-            'healing_ring':
-                Gear.objects.filter(name__contains='Healing').filter(cost_id=14).order_by('id'),
-        }
+        context = {}
+        for gear_name, filters in self.HEALING_GEAR_MAPPING.items():
+            gear_items = Gear.objects.filter(**filters).order_by('id')
+            context[gear_name] = gear_items
+
         return render(request, 'gear/gear_healer.html', context)
 
 
@@ -255,97 +189,57 @@ List of gear for DPS only.
 
 
 class DpsGearList(View):
+    GEAR_MAPPING = {
+        'striking_body': {'name__contains': 'Striking', 'cost_id': 6},
+        'striking_legs': {'name__contains': 'Striking', 'cost_id': 9},
+        'striking_head': {'name__contains': 'Striking', 'cost_id': 7},
+        'striking_hands': {'name__contains': 'Striking', 'cost_id': 10},
+        'striking_feet': {'name__contains': 'Striking', 'cost_id': 11},
+        'maiming_body': {'name__contains': 'Maiming', 'cost_id': 6},
+        'maiming_legs': {'name__contains': 'Maiming', 'cost_id': 9},
+        'maiming_head': {'name__contains': 'Maiming', 'cost_id': 7},
+        'maiming_hands': {'name__contains': 'Maiming', 'cost_id': 10},
+        'maiming_feet': {'name__contains': 'Maiming', 'cost_id': 11},
+        'scouting_body': {'name__contains': 'Scouting', 'cost_id': 6},
+        'scouting_legs': {'name__contains': 'Scouting', 'cost_id': 9},
+        'scouting_head': {'name__contains': 'Scouting', 'cost_id': 7},
+        'scouting_hands': {'name__contains': 'Scouting', 'cost_id': 10},
+        'scouting_feet': {'name__contains': 'Scouting', 'cost_id': 11},
+        'mnksam_weapon': {'cost': 5, 'job__in': [9, 12]},
+        'nin_weapon': {'cost': 5, 'job__in': [11]},
+        'drgrpr_weapon': {'cost': 5, 'job__in': [10, 13]},
+        'slaying_earrings': {'name__contains': 'Slaying', 'cost_id': 12},
+        'slaying_necklace': {'name__contains': 'Slaying', 'cost_id': 13},
+        'slaying_bracelet': {'name__contains': 'Slaying', 'cost_id': 15},
+        'slaying_ring': {'name__contains': 'Slaying', 'cost_id': 14},
+        'aiming_body': {'name__contains': 'Aiming', 'cost_id': 6},
+        'aiming_legs': {'name__contains': 'Aiming', 'cost_id': 9},
+        'aiming_head': {'name__contains': 'Aiming', 'cost_id': 7},
+        'aiming_hands': {'name__contains': 'Aiming', 'cost_id': 10},
+        'aiming_feet': {'name__contains': 'Aiming', 'cost_id': 11},
+        'ranged_weapon': {'cost': 5, 'job__in': [14, 15, 16]},
+        'aiming_earrings': {'name__contains': 'Aiming', 'cost_id': 12},
+        'aiming_necklace': {'name__contains': 'Aiming', 'cost_id': 13},
+        'aiming_bracelet': {'name__contains': 'Aiming', 'cost_id': 15},
+        'aiming_ring': {'name__contains': 'Aiming', 'cost_id': 14},
+        'casting_body': {'name__contains': 'Casting', 'cost_id': 6},
+        'casting_legs': {'name__contains': 'Casting', 'cost_id': 9},
+        'casting_head': {'name__contains': 'Casting', 'cost_id': 7},
+        'casting_hands': {'name__contains': 'Casting', 'cost_id': 10},
+        'casting_feet': {'name__contains': 'Casting', 'cost_id': 11},
+        'caster_weapon': {'cost': 5, 'job__in': [17, 18, 19]},
+        'casting_earrings': {'name__contains': 'Casting', 'cost_id': 12},
+        'casting_necklace': {'name__contains': 'Casting', 'cost_id': 13},
+        'casting_bracelet': {'name__contains': 'Casting', 'cost_id': 15},
+        'casting_ring': {'name__contains': 'Casting', 'cost_id': 14},
+    }
+
     def get(self, request):
-        context = {
-            'striking_body':
-                Gear.objects.filter(name__contains='Striking').filter(cost_id=6).order_by('id'),
-            'striking_legs':
-                Gear.objects.filter(name__contains='Striking').filter(cost_id=9).order_by('id'),
-            'striking_head':
-                Gear.objects.filter(name__contains='Striking').filter(cost_id=7).order_by('id'),
-            'striking_hands':
-                Gear.objects.filter(name__contains='Striking').filter(cost_id=10).order_by('id'),
-            'striking_feet':
-                Gear.objects.filter(name__contains='Striking').filter(cost_id=11).order_by('id'),
+        context = {}
+        for gear_name, filters in self.GEAR_MAPPING.items():
+            gear_items = Gear.objects.filter(**filters).order_by('id')
+            context[gear_name] = gear_items
 
-            'maiming_body':
-                Gear.objects.filter(name__contains='Maiming').filter(cost_id=6).order_by('id'),
-            'maiming_legs':
-                Gear.objects.filter(name__contains='Maiming').filter(cost_id=9).order_by('id'),
-            'maiming_head':
-                Gear.objects.filter(name__contains='Maiming').filter(cost_id=7).order_by('id'),
-            'maiming_hands':
-                Gear.objects.filter(name__contains='Maiming').filter(cost_id=10).order_by('id'),
-            'maiming_feet':
-                Gear.objects.filter(name__contains='Maiming').filter(cost_id=11).order_by('id'),
-
-            'scouting_body':
-                Gear.objects.filter(name__contains='Scouting').filter(cost_id=6).order_by('id'),
-            'scouting_legs':
-                Gear.objects.filter(name__contains='Scouting').filter(cost_id=9).order_by('id'),
-            'scouting_head':
-                Gear.objects.filter(name__contains='Scouting').filter(cost_id=7).order_by('id'),
-            'scouting_hands':
-                Gear.objects.filter(name__contains='Scouting').filter(cost_id=10).order_by('id'),
-            'scouting_feet':
-                Gear.objects.filter(name__contains='Scouting').filter(cost_id=11).order_by('id'),
-            'mnksam_weapon':
-                Gear.objects.filter(cost=5).filter(job__in=[9, 12]).order_by('job'),
-            'nin_weapon':
-                Gear.objects.filter(cost=5).filter(job__in=[11]).order_by('job'),
-            'drgrpr_weapon':
-                Gear.objects.filter(cost=5).filter(job__in=[10, 13]).order_by('job'),
-            'slaying_earrings':
-                Gear.objects.filter(name__contains='Slaying').filter(cost_id=12).order_by('id'),
-            'slaying_necklace':
-                Gear.objects.filter(name__contains='Slaying').filter(cost_id=13).order_by('id'),
-            'slaying_bracelet':
-                Gear.objects.filter(name__contains='Slaying').filter(cost_id=15).order_by('id'),
-            'slaying_ring':
-                Gear.objects.filter(name__contains='Slaying').filter(cost_id=14).order_by('id'),
-
-            'aiming_body':
-                Gear.objects.filter(name__contains='Aiming').filter(cost_id=6).order_by('id'),
-            'aiming_legs':
-                Gear.objects.filter(name__contains='Aiming').filter(cost_id=9).order_by('id'),
-            'aiming_head':
-                Gear.objects.filter(name__contains='Aiming').filter(cost_id=7).order_by('id'),
-            'aiming_hands':
-                Gear.objects.filter(name__contains='Aiming').filter(cost_id=10).order_by('id'),
-            'aiming_feet':
-                Gear.objects.filter(name__contains='Aiming').filter(cost_id=11).order_by('id'),
-            'ranged_weapon':
-                Gear.objects.filter(cost=5).filter(job__in=[14, 15, 16]).order_by('job'),
-            'aiming_earrings':
-                Gear.objects.filter(name__contains='Aiming').filter(cost_id=12).order_by('id'),
-            'aiming_necklace':
-                Gear.objects.filter(name__contains='Aiming').filter(cost_id=13).order_by('id'),
-            'aiming_bracelet':
-                Gear.objects.filter(name__contains='Aiming').filter(cost_id=15).order_by('id'),
-            'aiming_ring':
-                Gear.objects.filter(name__contains='Aiming').filter(cost_id=14).order_by('id'),
-
-            'casting_body':
-                Gear.objects.filter(name__contains='Casting').filter(cost_id=6).order_by('id'),
-            'casting_legs':
-                Gear.objects.filter(name__contains='Casting').filter(cost_id=9).order_by('id'),
-            'casting_head':
-                Gear.objects.filter(name__contains='Casting').filter(cost_id=7).order_by('id'),
-            'casting_hands':
-                Gear.objects.filter(name__contains='Casting').filter(cost_id=10).order_by('id'),
-            'casting_feet':
-                Gear.objects.filter(name__contains='Casting').filter(cost_id=11).order_by('id'),
-            'caster_weapon':
-                Gear.objects.filter(cost=5).filter(job__in=[17, 18, 19]).order_by('job'),
-            'casting_earrings':
-                Gear.objects.filter(name__contains='Casting').filter(cost_id=12).order_by('id'),
-            'casting_necklace':
-                Gear.objects.filter(name__contains='Casting').filter(cost_id=13).order_by('id'),
-            'casting_bracelet':
-                Gear.objects.filter(name__contains='Casting').filter(cost_id=15).order_by('id'),
-            'casting_ring':
-                Gear.objects.filter(name__contains='Casting').filter(cost_id=14).order_by('id'),
-        }
         return render(request, 'gear/gear_dps.html', context)
 
 
@@ -525,28 +419,34 @@ List of gearsets sorted by job, ordered by content it's for.
 
 
 class GearsetList(View):
+    JOB_GEARSET_MAPPING = {
+        1: 'pld_gearsets',
+        2: 'war_gearsets',
+        3: 'drk_gearsets',
+        4: 'gnb_gearsets',
+        5: 'whm_gearsets',
+        6: 'sch_gearsets',
+        7: 'ast_gearsets',
+        8: 'sge_gearsets',
+        9: 'mnk_gearsets',
+        10: 'drg_gearsets',
+        11: 'nin_gearsets',
+        12: 'sam_gearsets',
+        13: 'rpr_gearsets',
+        14: 'brd_gearsets',
+        15: 'dnc_gearsets',
+        16: 'mch_gearsets',
+        17: 'blm_gearsets',
+        18: 'smn_gearsets',
+        19: 'rdm_gearsets',
+    }
+
     def get(self, request):
-        context = {
-            'pld_gearsets': Gearset.objects.filter(job_id=1).order_by('content_id'),
-            'war_gearsets': Gearset.objects.filter(job_id=2).order_by('content_id'),
-            'drk_gearsets': Gearset.objects.filter(job_id=3).order_by('content_id'),
-            'gnb_gearsets': Gearset.objects.filter(job_id=4).order_by('content_id'),
-            'whm_gearsets': Gearset.objects.filter(job_id=5).order_by('content_id'),
-            'sch_gearsets': Gearset.objects.filter(job_id=6).order_by('content_id'),
-            'ast_gearsets': Gearset.objects.filter(job_id=7).order_by('content_id'),
-            'sge_gearsets': Gearset.objects.filter(job_id=8).order_by('content_id'),
-            'mnk_gearsets': Gearset.objects.filter(job_id=9).order_by('content_id'),
-            'drg_gearsets': Gearset.objects.filter(job_id=10).order_by('content_id'),
-            'nin_gearsets': Gearset.objects.filter(job_id=11).order_by('content_id'),
-            'sam_gearsets': Gearset.objects.filter(job_id=12).order_by('content_id'),
-            'rpr_gearsets': Gearset.objects.filter(job_id=13).order_by('content_id'),
-            'brd_gearsets': Gearset.objects.filter(job_id=14).order_by('content_id'),
-            'dnc_gearsets': Gearset.objects.filter(job_id=15).order_by('content_id'),
-            'mch_gearsets': Gearset.objects.filter(job_id=16).order_by('content_id'),
-            'blm_gearsets': Gearset.objects.filter(job_id=17).order_by('content_id'),
-            'smn_gearsets': Gearset.objects.filter(job_id=18).order_by('content_id'),
-            'rdm_gearsets': Gearset.objects.filter(job_id=19).order_by('content_id'),
-        }
+        context = {}
+        for job_id, gearset_name in self.JOB_GEARSET_MAPPING.items():
+            gearsets = Gearset.objects.filter(job_id=job_id).order_by('content_id')
+            context[gearset_name] = gearsets
+
         return render(request, 'gear/gearset_list.html', context)
 
 
@@ -557,24 +457,25 @@ Details for the chosen gearset with all pieces, showing main and secondary stats
 
 class GearsetDetails(View):
     def get(self, request, pk):
+        gearset = Gearset.objects.get(pk=pk)
         context = {
-            'gearset': Gearset.objects.get(pk=pk),
-            'job': Gearset.objects.get(pk=pk).job.name,
-            'vitality': Gearset.objects.get(pk=pk).calculate_total_vitality(),
-            'strength': Gearset.objects.get(pk=pk).calculate_total_strength(),
-            'dexterity': Gearset.objects.get(pk=pk).calculate_total_dexterity(),
-            'intelligence': Gearset.objects.get(pk=pk).calculate_total_intelligence(),
-            'mind': Gearset.objects.get(pk=pk).calculate_total_mind(),
-            'piety': Gearset.objects.get(pk=pk).calculate_total_piety(),
-            'critical_rate': Gearset.objects.get(pk=pk).calculate_total_critical_rate(),
-            'critical_hit': Gearset.objects.get(pk=pk).calculate_total_critical_rate() // 95,
-            'direct_hit': Gearset.objects.get(pk=pk).calculate_total_direct_hit(),
-            'determination': Gearset.objects.get(pk=pk).calculate_total_determination(),
-            'skill_speed': Gearset.objects.get(pk=pk).calculate_total_skill_speed(),
-            'spell_speed': Gearset.objects.get(pk=pk).calculate_total_spell_speed(),
-            'tenacity': Gearset.objects.get(pk=pk).calculate_total_tenacity(),
-            'defense': Gearset.objects.get(pk=pk).calculate_total_defense(),
-            'magic_defense': Gearset.objects.get(pk=pk).calculate_total_magic_defense(),
+            'gearset': gearset,
+            'job': gearset.job.name,
+            'vitality': gearset.calculate_total_vitality(),
+            'strength': gearset.calculate_total_strength(),
+            'dexterity': gearset.calculate_total_dexterity(),
+            'intelligence': gearset.calculate_total_intelligence(),
+            'mind': gearset.calculate_total_mind(),
+            'piety': gearset.calculate_total_piety(),
+            'critical_rate': gearset.calculate_total_critical_rate(),
+            'critical_hit': gearset.calculate_total_critical_rate() // 95,
+            'direct_hit': gearset.calculate_total_direct_hit(),
+            'determination': gearset.calculate_total_determination(),
+            'skill_speed': gearset.calculate_total_skill_speed(),
+            'spell_speed': gearset.calculate_total_spell_speed(),
+            'tenacity': gearset.calculate_total_tenacity(),
+            'defense': gearset.calculate_total_defense(),
+            'magic_defense': gearset.calculate_total_magic_defense(),
         }
 
         return render(request, 'gear/gearset_details.html', context)
@@ -598,17 +499,7 @@ List of all races in the DB.
 
 class RaceList(View):
     def get(self, request):
-        context = {
-            'hyur': Race.objects.get(pk=1),
-            'elezen': Race.objects.get(pk=2),
-            'lalafell': Race.objects.get(pk=3),
-            'miqote': Race.objects.get(pk=4),
-            'roegadyn': Race.objects.get(pk=5),
-            'aura': Race.objects.get(pk=6),
-            'hrothgar': Race.objects.get(pk=7),
-            'viera': Race.objects.get(pk=8),
-        }
-        return render(request, 'gear/races.html', context)
+        return render(request, 'gear/races.html', {'races': Race.objects.all()})
 
 
 """
