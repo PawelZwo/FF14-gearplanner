@@ -93,3 +93,6 @@ Job icons and banner were taken from offical Final Fantasy XIV Fan Kit, which ca
 downloaded [here](https://na.finalfantasyxiv.com/lodestone/special/fankit/).
 
 For questions you can ask them on my [LinkedIn](https://www.linkedin.com/in/pawe%C5%82-zwoli%C5%84ski/).
+
+FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.
+FINAL FANTASY XIV © SQUARE ENIX CO., LTD.
