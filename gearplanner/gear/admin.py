@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import *
+from .models import Job, Cost, Content, Type, Race, Gear, Gearset, PlayerGearset
 
 admin.site.register(Job)
 admin.site.register(Content)

@@ -1,8 +1,8 @@
 import pytest
 from django.test import Client, RequestFactory
 from .views import *
-from accounts.forms import *
-from accounts.views import *
+from ..accounts.forms import *
+from ..accounts.views import *
 
 
 # Testing connection to 'index' URL
@@ -68,7 +68,7 @@ def test_add_gear_view(client):
     response = AddGear.as_view()(request)
 
     assert response.status_code == 200
-    assert response.template_name == ['gear/__form__.html']
+    assert response.template_name == ['gear/generic_form.html']
     assert response.context_data['view'].success_url == reverse('add_gear')
     assert isinstance(response.context_data['view'].model(), Gear)
     assert response.context_data['view'].fields == '__all__'
@@ -91,7 +91,7 @@ def test_add_cost_view(client):
     request = factory.get(reverse('add_cost'))
     response = AddCost.as_view()(request)
     assert response.status_code == 200
-    assert response.template_name == ['gear/__form__.html']
+    assert response.template_name == ['gear/generic_form.html']
     assert response.context_data['view'].success_url == reverse('add_cost')
     assert isinstance(response.context_data['view'].model(), Cost)
     assert response.context_data['view'].fields == '__all__'
