@@ -67,7 +67,7 @@ Profile view with username, e-mail and showing gearsets created by that user, wh
 
 class ProfileDetails(View):
     def get(self, request, pk):
-        from gear.models import PlayerGearset
+        from ..gear.models import PlayerGearset
         context = {
             'user': User.objects.get(pk=pk),
             'gearsets': PlayerGearset.objects.filter(account_id=pk).order_by('job_id'),

@@ -49,8 +49,7 @@ The app was created using:
 ```
 * django-mathfilters 1.0.0
 * psycopg2-binary 2.9.6
-* pytest 7.3.1
-* pytest-django 4.5.2
+
 ```
 
 ***

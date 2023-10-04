@@ -2,37 +2,47 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
-from .forms import *
 from django.contrib import messages
-
-"""
-Index view with main menu and login/register/logout/profile links (depending on a user).
-"""
+from .models import Gear, Gearset, Cost, Race, Content, Job, Type, PlayerGearset
 
 
 class IndexView(View):
+    """
+    Index view with main menu and login/register/logout/profile links (depending on a user).
+    """
+
     def get(self, request):
         return render(request, 'gear/index.html')
 
 
-"""
-SUPERUSER ONLY gear adding view.
-"""
-
-
 class AddGear(CreateView):
+    """
+    SUPERUSER ONLY gear adding view.
+    """
+    """
+    TODO:
+    NIE nazywaj fragmentów używając "__X__.html" !
+
+    W fields warto nie używać "__all__" w myśl zasady "Explicit is better than implicit."
+    """
     model = Gear
     fields = '__all__'
-    template_name = 'gear/__form__.html'
+    template_name = 'gear/generic_form.html'
     success_url = reverse_lazy('add_gear')
 
 
-"""
-List of gear in the DB sorted by the type of a gear and which piece is it.
-"""
-
-
 class GearList(View):
+    """
+    List of gear in the DB sorted by the type of a gear and which piece is it.
+    """
+    """
+    TODO:
+    Usun hardkodowany cost_id -> niebezpieczeństwo, że id będzie albo stale zmieniane, albo będzie źle wskazywane podczas zmian w BD.
+
+    Body, legs itd. dodać jako choices w Cost. W Cost relacja MtM do Job.
+
+    Model Category joko "fending" itd. MtM do Cost.
+    """
     GEAR_MAPPING = {
         # Fending (tanks) gear and accessories
         'fending_body': {'name__contains': 'Fending', 'cost_id': 6},
@@ -126,12 +136,10 @@ class GearList(View):
         return render(request, 'gear/gear_all.html', context)
 
 
-"""
-List of gear for tanks only.
-"""
-
-
 class TankGearList(View):
+    """
+    List of gear for tanks only.
+    """
     FENDING_GEAR_MAPPING = {
         'fending_body': {'name__contains': 'Fending', 'cost_id': 6},
         'fending_legs': {'name__contains': 'Fending', 'cost_id': 9},
@@ -155,12 +163,10 @@ class TankGearList(View):
         return render(request, 'gear/gear_tank.html', context)
 
 
-"""
-List of gear for healers only.
-"""
-
-
 class HealerGearList(View):
+    """
+    List of gear for healers only.
+    """
     HEALING_GEAR_MAPPING = {
         'healing_body': {'name__contains': 'Healing', 'cost_id': 6},
         'healing_legs': {'name__contains': 'Healing', 'cost_id': 9},
@@ -183,13 +189,11 @@ class HealerGearList(View):
         return render(request, 'gear/gear_healer.html', context)
 
 
-"""
-List of gear for DPS only.
-"""
-
-
 class DpsGearList(View):
-    GEAR_MAPPING = {
+    """
+    List of gear for DPS only.
+    """
+    DPS_GEAR_MAPPING = {
         'striking_body': {'name__contains': 'Striking', 'cost_id': 6},
         'striking_legs': {'name__contains': 'Striking', 'cost_id': 9},
         'striking_head': {'name__contains': 'Striking', 'cost_id': 7},
@@ -236,87 +240,75 @@ class DpsGearList(View):
 
     def get(self, request):
         context = {}
-        for gear_name, filters in self.GEAR_MAPPING.items():
+        for gear_name, filters in self.DPS_GEAR_MAPPING.items():
             gear_items = Gear.objects.filter(**filters).order_by('id')
             context[gear_name] = gear_items
 
         return render(request, 'gear/gear_dps.html', context)
 
 
-"""
-Details of a gear piece with information of its: name, item level, for what jobs is it for, if it's craftable or not, stats.
-"""
-
-
 class GearDetails(View):
+    """
+    Details of a gear piece with information of its: name, item level, for what jobs is it for, if it's craftable or not, stats.
+    """
+
     def get(self, request, pk):
         item = Gear.objects.get(id=pk)
         return render(request, 'gear/gear_details.html', {'item': item})
 
 
-"""
-SUPERUSER ONLY adding cost of particular gear pieces.
-"""
-
-
 class AddCost(CreateView):
+    """
+    SUPERUSER ONLY adding cost of particular gear pieces.
+    """
     model = Cost
     fields = '__all__'
-    template_name = 'gear/__form__.html'
+    template_name = 'gear/generic_form.html'
     success_url = reverse_lazy('add_cost')
 
 
-"""
-SUPERUSER ONLY list of all costs.
-"""
-
-
 class CostList(ListView):
+    """
+    SUPERUSER ONLY list of all costs.
+    """
     model = Cost
-    template_name = 'gear/__list__.html'
+    template_name = 'gear/create_view_list.html'
     ordering = ['-tomestones', 'type_id']
 
 
-"""
-SUPERUSER ONLY adding a gearset.
-"""
-
-
 class AddGearsetAdmin(CreateView):
+    """
+    SUPERUSER ONLY adding a gearset.
+    """
     model = Gearset
     fields = '__all__'
-    template_name = 'gear/__form__.html'
+    template_name = 'gear/generic_form.html'
     success_url = reverse_lazy('gearset_list')
-
-
-"""
-SUPERUSER ONLY (as for now) updating a gearset.
-"""
 
 
 class UpdateGearset(UpdateView):
+    """
+    SUPERUSER ONLY (as for now) updating a gearset.
+    """
     model = Gearset
     fields = '__all__'
-    template_name = 'gear/__form__.html'
+    template_name = 'gear/generic_form.html'
     success_url = reverse_lazy('gearset_list')
-
-
-"""
-SUPERUSER ONLY deleting a gearset.
-"""
 
 
 class DeleteGearset(DeleteView):
+    """
+    SUPERUSER ONLY deleting a gearset.
+    """
     model = Gearset
     success_url = reverse_lazy('gearset_list')
 
 
-"""
-General use adding gearset and sending it into a form.
-"""
-
-
 class AddGearset(View):
+    """
+    General use adding gearset and sending it into a form.
+    """
+
     def get(self, request):
         context = {
             'jobs': Job.objects.all(),
@@ -390,7 +382,7 @@ class AddGearset(View):
                 return redirect('gearset_details', pk=Gearset.objects.get(name=title).pk)
 
             elif job == '0':
-                messages.warning(request, f"Please choose a job before trying creating a new gearset!")
+                messages.warning(request, "Please choose a job before trying creating a new gearset!")
                 return redirect('add_gearset')
 
             else:
@@ -423,12 +415,10 @@ class AddGearset(View):
                 return redirect('gearset_details', pk=Gearset.objects.get(name=title).pk)
 
 
-"""
-List of gearsets sorted by job, ordered by content it's for.
-"""
-
-
 class GearsetList(View):
+    """
+    List of gearsets sorted by job, ordered by content it's for.
+    """
     JOB_GEARSET_MAPPING = {
         1: 'pld_gearsets',
         2: 'war_gearsets',
@@ -460,12 +450,11 @@ class GearsetList(View):
         return render(request, 'gear/gearset_list.html', context)
 
 
-"""
-Details for the chosen gearset with all pieces, showing main and secondary stats sums.
-"""
-
-
 class GearsetDetails(View):
+    """
+    Details for the chosen gearset with all pieces, showing main and secondary stats sums.
+    """
+
     def get(self, request, pk):
         gearset = Gearset.objects.get(pk=pk)
         context = {
@@ -491,42 +480,35 @@ class GearsetDetails(View):
         return render(request, 'gear/gearset_details.html', context)
 
 
-"""
-SUPERUSER ONLY list of all jobs in the DB.
-"""
-
-
 class JobList(ListView):
+    """
+    SUPERUSER ONLY list of all jobs in the DB.
+    """
     model = Job
-    template_name = 'gear/__list__.html'
+    template_name = 'gear/create_view_list.html'
     ordering = ['id']
 
 
-"""
-List of all races in the DB.
-"""
-
-
 class RaceList(View):
+    """
+    List of all races in the DB.
+    """
+
     def get(self, request):
         return render(request, 'gear/races.html', {'races': Race.objects.all()})
 
 
-"""
-SUPERUSER ONLY list of all content in the DB.
-"""
-
-
 class ContentList(ListView):
+    """
+    SUPERUSER ONLY list of all content in the DB.
+    """
     model = Content
-    template_name = 'gear/__list__.html'
-
-
-"""
-SUPERUSER ONLY list of all types of gear type in the DB.
-"""
+    template_name = 'gear/create_view_list.html'
 
 
 class TypeList(ListView):
+    """
+    SUPERUSER ONLY list of all types of gear type in the DB.
+    """
     model = Type
-    template_name = 'gear/__list__.html'
+    template_name = 'gear/create_view_list.html'
