@@ -3,7 +3,7 @@ from django.db import models
 import uuid
 
 
-# dumpdata core.job core.cost core.race -o initial.json
+# dumpdata core.job core.cost core.race -o fixtures/initial.json
 
 class Job(models.Model):
     name = models.CharField(db_comment="Name of the job")
@@ -114,7 +114,6 @@ class Gear(models.Model):
         ("x.5", "x.5")
     ]
 
-    uuid = models.UUIDField(default=uuid.uuid4, editable=False)
     name = models.CharField(db_comment="Name of the core")
     category = models.CharField(choices=CATEGORIES, db_comment="Category of the core")
     acquisition = models.CharField(choices=ACQUISITION_TYPES, db_comment="Way to obtain the core")
@@ -153,6 +152,7 @@ class Gear(models.Model):
 
 
 class Gearset(models.Model):
+    uuid = models.UUIDField(default=uuid.uuid4, editable=False)
     name = models.CharField(unique=True)
     job = models.OneToOneField(Job, on_delete=models.CASCADE)
     weapon = models.OneToOneField(Gear, on_delete=models.CASCADE, related_name="weapon")
