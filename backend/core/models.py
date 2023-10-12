@@ -1,6 +1,9 @@
 from django.contrib.auth.models import User
 from django.db import models
+import uuid
 
+
+# dumpdata core.job core.cost core.race -o initial.json
 
 class Job(models.Model):
     name = models.CharField(db_comment="Name of the job")
@@ -23,49 +26,53 @@ class Race(models.Model):
 
 
 class Cost(models.Model):
+    name = models.CharField(unique=True, null=True)
     mythos_1 = models.PositiveSmallIntegerField(
-        null=True, default=3,
-        db_comment="Number of Mythos I tokens needed to exchange for a piece of gear")
+        null=True, default=0,
+        db_comment="Number of Mythos I tokens needed to exchange for a piece of core")
     mythos_2 = models.PositiveSmallIntegerField(
-        null=True, default=4,
-        db_comment="Number of Mythos II tokens needed to exchange for a piece of gear")
+        null=True, default=0,
+        db_comment="Number of Mythos II tokens needed to exchange for a piece of core")
     mythos_3 = models.PositiveSmallIntegerField(
-        null=True, default=6,
-        db_comment="Number of Mythos III tokens needed to exchange for a piece of gear")
+        null=True, default=0,
+        db_comment="Number of Mythos III tokens needed to exchange for a piece of core")
     mythos_4 = models.PositiveSmallIntegerField(
-        null=True, default=8,
-        db_comment="Number of Mythos IV tokens needed to exchange for a piece of gear")
+        null=True, default=0,
+        db_comment="Number of Mythos IV tokens needed to exchange for a piece of core")
     unsung_head = models.PositiveSmallIntegerField(
-        null=True, default=2,
-        db_comment="Number of Unsung Head tokens needed to exchange for a piece of gear")
+        null=True, default=0,
+        db_comment="Number of Unsung Head tokens needed to exchange for a piece of core")
     unsung_body = models.PositiveSmallIntegerField(
-        null=True, default=4,
-        db_comment="Number of Unsung Body tokens needed to exchange for a piece of gear")
+        null=True, default=0,
+        db_comment="Number of Unsung Body tokens needed to exchange for a piece of core")
     unsung_legs = models.PositiveSmallIntegerField(
-        null=True, default=4,
-        db_comment="Number of Unsung Legs tokens needed to exchange for a piece of gear")
+        null=True, default=0,
+        db_comment="Number of Unsung Legs tokens needed to exchange for a piece of core")
     unsung_hands = models.PositiveSmallIntegerField(
-        null=True, default=2,
-        db_comment="Number of Unsung Hands tokens needed to exchange for a piece of gear")
+        null=True, default=0,
+        db_comment="Number of Unsung Hands tokens needed to exchange for a piece of core")
     unsung_feet = models.PositiveSmallIntegerField(
-        null=True, default=2,
-        db_comment="Number of Unsung Feet tokens needed to exchange for a piece of gear")
+        null=True, default=0,
+        db_comment="Number of Unsung Feet tokens needed to exchange for a piece of core")
     unsung_acc = models.PositiveSmallIntegerField(
-        null=True, default=1,
-        db_comment="Number of Unsung Accessory tokens needed to exchange for a piece of gear")
+        null=True, default=0,
+        db_comment="Number of Unsung Accessory tokens needed to exchange for a piece of core")
     tomestones = models.PositiveSmallIntegerField(
-        null=True, default=375,
-        db_comment="Number of Tomestones needed to exchange for a piece of gear")
+        null=True, default=0,
+        db_comment="Number of Tomestones needed to exchange for a piece of core")
     weapon_token = models.BooleanField(
         null=True, default=False,
         db_comment="Is weapon token needed to exchange for a weapon")
     weapon_token_price = models.PositiveSmallIntegerField(
-        null=True, default=7,
+        null=True, default=0,
         db_comment="Number of Unsung Weapon tokens needed to exchange for a weapon token")
+
+    def __str__(self):
+        return f"{self.name}"
 
 
 class Gear(models.Model):
-    CONTENT_TYPES = [
+    ACQUISITION_TYPES = [
         ("NR", "Normal Raid"),
         ("AR", "Alliance Raid"),
         ("SR", "Savage Raid"),
@@ -106,14 +113,15 @@ class Gear(models.Model):
         ("x.5", "x.5")
     ]
 
-    name = models.CharField(unique=True, db_comment="Name of the gear")
-    category = models.CharField(choices=CATEGORIES, db_comment="Category of the gear")
-    content_type = models.CharField(choices=CONTENT_TYPES, db_comment="Way to obtain the gear")
-    added_in_patch = models.CharField(choices=PATCHES, db_comment="Patch the gear was added on")
-    type = models.CharField(choices=TYPES, db_comment="Type of the gear")
-    cost = models.ManyToManyField(Cost)
+    uuid = models.UUIDField(default=uuid.uuid4, editable=False)
+    name = models.CharField(db_comment="Name of the core")
+    category = models.CharField(choices=CATEGORIES, db_comment="Category of the core")
+    acquisition = models.CharField(choices=ACQUISITION_TYPES, db_comment="Way to obtain the core")
+    added_in_patch = models.CharField(choices=PATCHES, db_comment="Patch the core was added on")
+    type = models.CharField(choices=TYPES, db_comment="Type of the core")
+    cost = models.OneToOneField(Cost, on_delete=models.CASCADE, db_comment="Costs of the core")
     job = models.ManyToManyField(Job)
-    item_level = models.PositiveSmallIntegerField(db_comment="Item level of the gear")
+    item_level = models.PositiveSmallIntegerField(db_comment="Item level of the core")
     physical_dmg = models.PositiveSmallIntegerField(null=True, db_comment="Weapon's physical damage")
     magical_dmg = models.PositiveSmallIntegerField(null=True, db_comment="Weapon's magical damage")
     auto_attack = models.DecimalField(null=True, max_digits=5, decimal_places=2, db_comment="Weapon's auto attack")
@@ -145,19 +153,19 @@ class Gear(models.Model):
 
 class Gearset(models.Model):
     name = models.CharField(unique=True)
-    job = models.ForeignKey(Job, on_delete=models.CASCADE)
-    weapon = models.ForeignKey(Gear, on_delete=models.CASCADE, related_name="weapon")
-    shield = models.ForeignKey(Gear, on_delete=models.CASCADE, null=True, blank=True, related_name="shield")
-    head = models.ForeignKey(Gear, on_delete=models.CASCADE, related_name="head")
-    body = models.ForeignKey(Gear, on_delete=models.CASCADE, related_name="body")
-    legs = models.ForeignKey(Gear, on_delete=models.CASCADE, related_name="legs")
-    hands = models.ForeignKey(Gear, on_delete=models.CASCADE, related_name="hands")
-    feet = models.ForeignKey(Gear, on_delete=models.CASCADE, related_name="feet")
-    earring = models.ForeignKey(Gear, on_delete=models.CASCADE, related_name="earring")
-    necklace = models.ForeignKey(Gear, on_delete=models.CASCADE, related_name="necklace")
-    bracelet = models.ForeignKey(Gear, on_delete=models.CASCADE, related_name="bracelet")
-    left_ring = models.ForeignKey(Gear, on_delete=models.CASCADE, related_name="left_ring")
-    right_ring = models.ForeignKey(Gear, on_delete=models.CASCADE, related_name="right_ring")
+    job = models.OneToOneField(Job, on_delete=models.CASCADE)
+    weapon = models.OneToOneField(Gear, on_delete=models.CASCADE, related_name="weapon")
+    shield = models.OneToOneField(Gear, on_delete=models.CASCADE, null=True, related_name="shield")
+    head = models.OneToOneField(Gear, on_delete=models.CASCADE, related_name="head")
+    body = models.OneToOneField(Gear, on_delete=models.CASCADE, related_name="body")
+    legs = models.OneToOneField(Gear, on_delete=models.CASCADE, related_name="legs")
+    hands = models.OneToOneField(Gear, on_delete=models.CASCADE, related_name="hands")
+    feet = models.OneToOneField(Gear, on_delete=models.CASCADE, related_name="feet")
+    earring = models.OneToOneField(Gear, on_delete=models.CASCADE, related_name="earring")
+    necklace = models.OneToOneField(Gear, on_delete=models.CASCADE, related_name="necklace")
+    bracelet = models.OneToOneField(Gear, on_delete=models.CASCADE, related_name="bracelet")
+    left_ring = models.OneToOneField(Gear, on_delete=models.CASCADE, related_name="left_ring")
+    right_ring = models.OneToOneField(Gear, on_delete=models.CASCADE, related_name="right_ring")
 
     def __str__(self):
         return f"{self.name}"
@@ -193,5 +201,5 @@ class Gearset(models.Model):
 
 
 class PlayerGearsets(models.Model):
-    account = models.ForeignKey(User, on_delete=models.DO_NOTHING, null=True)
-    gearset = models.ManyToManyField(Gearset)
+    account = models.OneToOneField(User, on_delete=models.DO_NOTHING, null=True)
+    gearset = models.ForeignKey(Gearset, on_delete=models.DO_NOTHING, null=True)

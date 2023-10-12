@@ -1,14 +1,14 @@
 {% extends 'gear/base.html' %}
 {% load static %}
-{% block title %}- Tanks Gear{% endblock %}
+{% block title %}- Healer Gear{% endblock %}
 {% block content %}
-    <h3><img src="{% static 'gear/media/TankRole.png' %}" alt="Fending gear"
-             style="width: 35px; height: 35px"> Fending</h3><br>
+    <h3><img src="{% static 'core/media/HealerRole.png' %}" alt="Healing gear"
+             style="width: 35px; height: 35px"> Healing</h3><br>
     <div class="row">
         <div class="col" id="gear">
             <h6>Head</h6>
             <ul>
-                {% for item in fending_head %}
+                {% for item in healing_head %}
                     <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a>
                     </li>
                 {% empty %}
@@ -19,7 +19,7 @@
 
             <h6>Body</h6>
             <ul>
-                {% for item in fending_body %}
+                {% for item in healing_body %}
                     <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a>
                     </li>
                 {% empty %}
@@ -30,7 +30,7 @@
 
             <h6>Legs</h6>
             <ul>
-                {% for item in fending_legs %}
+                {% for item in healing_legs %}
                     <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a>
                     </li>
                 {% empty %}
@@ -41,7 +41,7 @@
 
             <h6>Hands</h6>
             <ul>
-                {% for item in fending_hands %}
+                {% for item in healing_hands %}
                     <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a>
                     </li>
                 {% empty %}
@@ -52,7 +52,7 @@
 
             <h6>Feet</h6>
             <ul>
-                {% for item in fending_feet %}
+                {% for item in healing_feet %}
                     <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a>
                     </li>
                 {% empty %}
@@ -65,7 +65,7 @@
         <div class="col">
             <h6>Weapons</h6>
             <ul id="weapons">
-                {% for item in tank_weapon %}
+                {% for item in healer_weapon %}
                     <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} ({{ item.job.all.last }},
                         i{{ item.item_level }})</a>
                     </li>
@@ -80,29 +80,29 @@
 
             <h6>Earrings</h6>
             <ul>
-                {% for item in fending_earrings %}
+                {% for item in healing_earrings %}
                     <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a>
                     </li>
                 {% empty %}
-                    No accessories.
+                    No earrings.
                 {% endfor %}
             </ul>
             <br>
 
             <h6>Necklace</h6>
             <ul>
-                {% for item in fending_necklace %}
+                {% for item in healing_necklace %}
                     <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a>
                     </li>
                 {% empty %}
-                    No gear.
+                    No necklace.
                 {% endfor %}
             </ul>
             <br>
 
             <h6>Bracelet</h6>
             <ul>
-                {% for item in fending_bracelet %}
+                {% for item in healing_bracelet %}
                     <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a>
                     </li>
                 {% empty %}
@@ -113,7 +113,7 @@
 
             <h6>Ring</h6>
             <ul>
-                {% for item in fending_ring %}
+                {% for item in healing_ring %}
                     <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a>
                     </li>
                 {% empty %}
@@ -122,15 +122,6 @@
             </ul>
             <br>
         </div>
-        <div class="col">
-            <h6>Shields</h6>
-            <ul id="shields">
-                {% for item in shield %}
-                    <li><a href="{% url 'gear_details' item.pk %}">{{ item.name }} (i{{ item.item_level }})</a></li>
-                {% empty %}
-                    No shields.
-                {% endfor %}
-            </ul>
-        </div>
+
     </div>
 {% endblock %}
