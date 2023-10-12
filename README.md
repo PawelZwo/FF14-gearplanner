@@ -31,6 +31,9 @@ This is my first full-pledged webapp project.
 ## Installation
 Fork this repository and clone it. 
 REMEMBER to change local_settings_public.py name to local_settings.py and follow instructions in there to connect to your DB.
+To populate your DB with initial data for Job and Race, use command in the terminal:
+
+```django-admin loaddata fixtures/jobs fixtures/races```
 
 ## Technologies
 
