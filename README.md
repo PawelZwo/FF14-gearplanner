@@ -5,6 +5,7 @@
 ## Table of content
 
 * [Introduction](#introduction)
+* [Development](#development)
 * [Installation](#installation)
 * [Technologies](#technologies)
 * [Requirements](#requirements)
@@ -25,6 +26,12 @@ My idea was to create a webapp that will in more clear and readable way present 
 gearsets.
 
 This is my first full-pledged webapp project.
+
+***
+
+## Development
+
+I have already started preparations for ver. 2.0.0. using Django as back-end and React as front-end.
 
 ***
 
