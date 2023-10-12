@@ -6,20 +6,20 @@ class Job(models.Model):
     name = models.CharField(db_comment="Name of the job")
 
     def __str__(self):
-        return self.name
+        return f"{self.name}"
 
 
 class Race(models.Model):
     name = models.CharField(db_comment="Race name")
+    base_vitality = models.PositiveSmallIntegerField(db_comment="Base vitality value for the race")
     base_strength = models.PositiveSmallIntegerField(db_comment="Base strength value for the race")
     base_dexterity = models.PositiveSmallIntegerField(db_comment="Base dexterity value for the race")
-    base_vitality = models.PositiveSmallIntegerField(db_comment="Base vitality value for the race")
     base_intelligence = models.PositiveSmallIntegerField(db_comment="Base intelligence value for the race")
     base_mind = models.PositiveSmallIntegerField(db_comment="Base mind value for the race")
     base_piety = models.PositiveSmallIntegerField(db_comment="Base piety value for the race")
 
     def __str__(self):
-        return self.name
+        return f"{self.name}"
 
 
 class Cost(models.Model):
@@ -27,53 +27,41 @@ class Cost(models.Model):
         null=True, default=3,
         db_comment="Number of Mythos I tokens needed to exchange for a piece of gear")
     mythos_2 = models.PositiveSmallIntegerField(
-        null=True,
-        db_comment="Number of Mythos II tokens needed to exchange for a piece of gear",
-        default=4)
+        null=True, default=4,
+        db_comment="Number of Mythos II tokens needed to exchange for a piece of gear")
     mythos_3 = models.PositiveSmallIntegerField(
-        null=True,
-        db_comment="Number of Mythos III tokens needed to exchange for a piece of gear",
-        default=6)
+        null=True, default=6,
+        db_comment="Number of Mythos III tokens needed to exchange for a piece of gear")
     mythos_4 = models.PositiveSmallIntegerField(
-        null=True,
-        db_comment="Number of Mythos IV tokens needed to exchange for a piece of gear",
-        default=8)
+        null=True, default=8,
+        db_comment="Number of Mythos IV tokens needed to exchange for a piece of gear")
     unsung_head = models.PositiveSmallIntegerField(
-        null=True,
-        db_comment="Number of Unsung Head tokens needed to exchange for a piece of gear",
-        default=2)
+        null=True, default=2,
+        db_comment="Number of Unsung Head tokens needed to exchange for a piece of gear")
     unsung_body = models.PositiveSmallIntegerField(
-        null=True,
-        db_comment="Number of Unsung Body tokens needed to exchange for a piece of gear",
-        default=4)
+        null=True, default=4,
+        db_comment="Number of Unsung Body tokens needed to exchange for a piece of gear")
     unsung_legs = models.PositiveSmallIntegerField(
-        null=True,
-        db_comment="Number of Unsung Legs tokens needed to exchange for a piece of gear",
-        default=4)
+        null=True, default=4,
+        db_comment="Number of Unsung Legs tokens needed to exchange for a piece of gear")
     unsung_hands = models.PositiveSmallIntegerField(
-        null=True,
-        db_comment="Number of Unsung Hands tokens needed to exchange for a piece of gear",
-        default=2)
+        null=True, default=2,
+        db_comment="Number of Unsung Hands tokens needed to exchange for a piece of gear")
     unsung_feet = models.PositiveSmallIntegerField(
-        null=True,
-        db_comment="Number of Unsung Feet tokens needed to exchange for a piece of gear",
-        default=2)
+        null=True, default=2,
+        db_comment="Number of Unsung Feet tokens needed to exchange for a piece of gear")
     unsung_acc = models.PositiveSmallIntegerField(
-        null=True,
-        db_comment="Number of Unsung Accessory tokens needed to exchange for a piece of gear",
-        default=1)
+        null=True, default=1,
+        db_comment="Number of Unsung Accessory tokens needed to exchange for a piece of gear")
     tomestones = models.PositiveSmallIntegerField(
-        null=True,
-        db_comment="Number of Tomestones needed to exchange for a piece of gear",
-        default=375)
+        null=True, default=375,
+        db_comment="Number of Tomestones needed to exchange for a piece of gear")
     weapon_token = models.BooleanField(
-        null=True,
-        db_comment="Is weapon token needed to exchange for a weapon",
-        default=False)
-
-    # unsung_weapon = models.PositiveSmallIntegerField(
-    #     null=True,
-    #     db_comment="Number of Unsung Weapon tokens needed to exchange for a ")
+        null=True, default=False,
+        db_comment="Is weapon token needed to exchange for a weapon")
+    weapon_token_price = models.PositiveSmallIntegerField(
+        null=True, default=7,
+        db_comment="Number of Unsung Weapon tokens needed to exchange for a weapon token")
 
 
 class Gear(models.Model):
@@ -152,7 +140,7 @@ class Gear(models.Model):
         ordering = ['category']
 
     def __str__(self):
-        return self.name
+        return f"{self.name}"
 
 
 class Gearset(models.Model):
@@ -160,9 +148,9 @@ class Gearset(models.Model):
     job = models.ForeignKey(Job, on_delete=models.CASCADE)
     weapon = models.ForeignKey(Gear, on_delete=models.CASCADE, related_name="weapon")
     shield = models.ForeignKey(Gear, on_delete=models.CASCADE, null=True, blank=True, related_name="shield")
+    head = models.ForeignKey(Gear, on_delete=models.CASCADE, related_name="head")
     body = models.ForeignKey(Gear, on_delete=models.CASCADE, related_name="body")
     legs = models.ForeignKey(Gear, on_delete=models.CASCADE, related_name="legs")
-    head = models.ForeignKey(Gear, on_delete=models.CASCADE, related_name="head")
     hands = models.ForeignKey(Gear, on_delete=models.CASCADE, related_name="hands")
     feet = models.ForeignKey(Gear, on_delete=models.CASCADE, related_name="feet")
     earring = models.ForeignKey(Gear, on_delete=models.CASCADE, related_name="earring")
@@ -172,7 +160,7 @@ class Gearset(models.Model):
     right_ring = models.ForeignKey(Gear, on_delete=models.CASCADE, related_name="right_ring")
 
     def __str__(self):
-        return self.name
+        return f"{self.name}"
 
     def calculate_total_stats(self):
         attributes = {
@@ -205,5 +193,5 @@ class Gearset(models.Model):
 
 
 class PlayerGearsets(models.Model):
-    gearset = models.ManyToManyField(Gearset)
     account = models.ForeignKey(User, on_delete=models.DO_NOTHING, null=True)
+    gearset = models.ManyToManyField(Gearset)
