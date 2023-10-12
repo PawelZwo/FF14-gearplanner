@@ -78,7 +78,8 @@ class Gear(models.Model):
         ("SR", "Savage Raid"),
         ("TG", "Tomestone Gear"),
         ("ATG", "Augmented Tomestone Gear"),
-        ("CHQ", "Crafted High Quality")
+        ("C_Normal_Q", "Crafted Normal Quality"),
+        ("C_High_Q", "Crafted High Quality")
     ]
 
     TYPES = [
