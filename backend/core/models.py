@@ -79,7 +79,8 @@ class Gear(models.Model):
         ("TG", "Tomestone Gear"),
         ("ATG", "Augmented Tomestone Gear"),
         ("C_Normal_Q", "Crafted Normal Quality"),
-        ("C_High_Q", "Crafted High Quality")
+        ("C_High_Q", "Crafted High Quality"),
+        ("DD", "Dungeon Drop")
     ]
 
     TYPES = [

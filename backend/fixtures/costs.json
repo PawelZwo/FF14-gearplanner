@@ -1,1 +1,442 @@
-[{"model": "core.cost", "pk": 1, "fields": {"name": "Normal Raid Head", "mythos_1": 0, "mythos_2": 0, "mythos_3": 0, "mythos_4": 0, "unsung_head": 2, "unsung_body": 0, "unsung_legs": 0, "unsung_hands": 0, "unsung_feet": 0, "unsung_acc": 0, "tomestones": 0, "weapon_token": false, "weapon_token_price": 0}}, {"model": "core.cost", "pk": 2, "fields": {"name": "Normal Raid Body", "mythos_1": 0, "mythos_2": 0, "mythos_3": 0, "mythos_4": 0, "unsung_head": 0, "unsung_body": 4, "unsung_legs": 0, "unsung_hands": 0, "unsung_feet": 0, "unsung_acc": 0, "tomestones": 0, "weapon_token": false, "weapon_token_price": 0}}, {"model": "core.cost", "pk": 3, "fields": {"name": "Normal Raid Legs", "mythos_1": 0, "mythos_2": 0, "mythos_3": 0, "mythos_4": 0, "unsung_head": 0, "unsung_body": 0, "unsung_legs": 4, "unsung_hands": 0, "unsung_feet": 0, "unsung_acc": 0, "tomestones": 0, "weapon_token": false, "weapon_token_price": 0}}, {"model": "core.cost", "pk": 4, "fields": {"name": "Normal Raid Hands", "mythos_1": 0, "mythos_2": 0, "mythos_3": 0, "mythos_4": 0, "unsung_head": 0, "unsung_body": 0, "unsung_legs": 0, "unsung_hands": 2, "unsung_feet": 0, "unsung_acc": 0, "tomestones": 0, "weapon_token": false, "weapon_token_price": 0}}, {"model": "core.cost", "pk": 5, "fields": {"name": "Normal Raid Feet", "mythos_1": 0, "mythos_2": 0, "mythos_3": 0, "mythos_4": 0, "unsung_head": 0, "unsung_body": 0, "unsung_legs": 0, "unsung_hands": 0, "unsung_feet": 2, "unsung_acc": 0, "tomestones": 0, "weapon_token": false, "weapon_token_price": 0}}, {"model": "core.cost", "pk": 6, "fields": {"name": "Normal Raid Accessory", "mythos_1": 0, "mythos_2": 0, "mythos_3": 0, "mythos_4": 0, "unsung_head": 0, "unsung_body": 0, "unsung_legs": 0, "unsung_hands": 0, "unsung_feet": 0, "unsung_acc": 1, "tomestones": 0, "weapon_token": false, "weapon_token_price": 0}}, {"model": "core.cost", "pk": 7, "fields": {"name": "Savage Raid Head", "mythos_1": 0, "mythos_2": 4, "mythos_3": 0, "mythos_4": 4, "unsung_head": 0, "unsung_body": 0, "unsung_legs": 0, "unsung_hands": 0, "unsung_feet": 0, "unsung_acc": 0, "tomestones": 0, "weapon_token": false, "weapon_token_price": 0}}, {"model": "core.cost", "pk": 8, "fields": {"name": "Savage Raid Body", "mythos_1": 0, "mythos_2": 0, "mythos_3": 6, "mythos_4": 6, "unsung_head": 0, "unsung_body": 0, "unsung_legs": 0, "unsung_hands": 0, "unsung_feet": 0, "unsung_acc": 0, "tomestones": 0, "weapon_token": false, "weapon_token_price": 0}}, {"model": "core.cost", "pk": 9, "fields": {"name": "Savage Raid Legs", "mythos_1": 0, "mythos_2": 0, "mythos_3": 6, "mythos_4": 6, "unsung_head": 0, "unsung_body": 0, "unsung_legs": 0, "unsung_hands": 0, "unsung_feet": 0, "unsung_acc": 0, "tomestones": 0, "weapon_token": false, "weapon_token_price": 0}}, {"model": "core.cost", "pk": 10, "fields": {"name": "Savage Raid Hands", "mythos_1": 0, "mythos_2": 4, "mythos_3": 0, "mythos_4": 4, "unsung_head": 0, "unsung_body": 0, "unsung_legs": 0, "unsung_hands": 0, "unsung_feet": 0, "unsung_acc": 0, "tomestones": 0, "weapon_token": false, "weapon_token_price": 0}}, {"model": "core.cost", "pk": 11, "fields": {"name": "Savage Raid Feet", "mythos_1": 0, "mythos_2": 4, "mythos_3": 0, "mythos_4": 4, "unsung_head": 0, "unsung_body": 0, "unsung_legs": 0, "unsung_hands": 0, "unsung_feet": 0, "unsung_acc": 0, "tomestones": 0, "weapon_token": false, "weapon_token_price": 0}}, {"model": "core.cost", "pk": 12, "fields": {"name": "Savage Raid Accessory", "mythos_1": 3, "mythos_2": 0, "mythos_3": 0, "mythos_4": 3, "unsung_head": 0, "unsung_body": 0, "unsung_legs": 0, "unsung_hands": 0, "unsung_feet": 0, "unsung_acc": 0, "tomestones": 0, "weapon_token": false, "weapon_token_price": 0}}, {"model": "core.cost", "pk": 13, "fields": {"name": "Savage Raid Weapon", "mythos_1": 0, "mythos_2": 0, "mythos_3": 0, "mythos_4": 8, "unsung_head": 0, "unsung_body": 0, "unsung_legs": 0, "unsung_hands": 0, "unsung_feet": 0, "unsung_acc": 0, "tomestones": 0, "weapon_token": false, "weapon_token_price": 0}}, {"model": "core.cost", "pk": 14, "fields": {"name": "Tomestone Head", "mythos_1": 0, "mythos_2": 0, "mythos_3": 0, "mythos_4": 0, "unsung_head": 0, "unsung_body": 0, "unsung_legs": 0, "unsung_hands": 0, "unsung_feet": 0, "unsung_acc": 0, "tomestones": 495, "weapon_token": false, "weapon_token_price": 0}}, {"model": "core.cost", "pk": 15, "fields": {"name": "Tomestone Body", "mythos_1": 0, "mythos_2": 0, "mythos_3": 0, "mythos_4": 0, "unsung_head": 0, "unsung_body": 0, "unsung_legs": 0, "unsung_hands": 0, "unsung_feet": 0, "unsung_acc": 0, "tomestones": 825, "weapon_token": false, "weapon_token_price": 0}}, {"model": "core.cost", "pk": 16, "fields": {"name": "Tomestone Legs", "mythos_1": 0, "mythos_2": 0, "mythos_3": 0, "mythos_4": 0, "unsung_head": 0, "unsung_body": 0, "unsung_legs": 0, "unsung_hands": 0, "unsung_feet": 0, "unsung_acc": 0, "tomestones": 825, "weapon_token": false, "weapon_token_price": 0}}, {"model": "core.cost", "pk": 17, "fields": {"name": "Tomestone Hands", "mythos_1": 0, "mythos_2": 0, "mythos_3": 0, "mythos_4": 0, "unsung_head": 0, "unsung_body": 0, "unsung_legs": 0, "unsung_hands": 0, "unsung_feet": 0, "unsung_acc": 0, "tomestones": 495, "weapon_token": false, "weapon_token_price": 0}}, {"model": "core.cost", "pk": 18, "fields": {"name": "Tomestone Feet", "mythos_1": 0, "mythos_2": 0, "mythos_3": 0, "mythos_4": 0, "unsung_head": 0, "unsung_body": 0, "unsung_legs": 0, "unsung_hands": 0, "unsung_feet": 0, "unsung_acc": 0, "tomestones": 495, "weapon_token": false, "weapon_token_price": 0}}, {"model": "core.cost", "pk": 19, "fields": {"name": "Tomestone Accessory", "mythos_1": 0, "mythos_2": 0, "mythos_3": 0, "mythos_4": 0, "unsung_head": 0, "unsung_body": 0, "unsung_legs": 0, "unsung_hands": 0, "unsung_feet": 0, "unsung_acc": 0, "tomestones": 375, "weapon_token": false, "weapon_token_price": 0}}, {"model": "core.cost", "pk": 20, "fields": {"name": "Tomestone Weapon", "mythos_1": 0, "mythos_2": 0, "mythos_3": 0, "mythos_4": 0, "unsung_head": 0, "unsung_body": 0, "unsung_legs": 0, "unsung_hands": 0, "unsung_feet": 0, "unsung_acc": 0, "tomestones": 500, "weapon_token": true, "weapon_token_price": 4}}, {"model": "core.cost", "pk": 21, "fields": {"name": "Tomestone Paladin's Arm", "mythos_1": 0, "mythos_2": 0, "mythos_3": 0, "mythos_4": 0, "unsung_head": 0, "unsung_body": 0, "unsung_legs": 0, "unsung_hands": 0, "unsung_feet": 0, "unsung_acc": 0, "tomestones": 350, "weapon_token": true, "weapon_token_price": 4}}, {"model": "core.cost", "pk": 22, "fields": {"name": "Tomestone Shield", "mythos_1": 0, "mythos_2": 0, "mythos_3": 0, "mythos_4": 0, "unsung_head": 0, "unsung_body": 0, "unsung_legs": 0, "unsung_hands": 0, "unsung_feet": 0, "unsung_acc": 0, "tomestones": 150, "weapon_token": false, "weapon_token_price": 0}}]
+[
+  {
+    "model": "core.cost",
+    "pk": 1,
+    "fields": {
+      "name": "Normal Raid Head",
+      "mythos_1": 0,
+      "mythos_2": 0,
+      "mythos_3": 0,
+      "mythos_4": 0,
+      "unsung_head": 2,
+      "unsung_body": 0,
+      "unsung_legs": 0,
+      "unsung_hands": 0,
+      "unsung_feet": 0,
+      "unsung_acc": 0,
+      "tomestones": 0,
+      "weapon_token": false,
+      "weapon_token_price": 0
+    }
+  },
+  {
+    "model": "core.cost",
+    "pk": 2,
+    "fields": {
+      "name": "Normal Raid Body",
+      "mythos_1": 0,
+      "mythos_2": 0,
+      "mythos_3": 0,
+      "mythos_4": 0,
+      "unsung_head": 0,
+      "unsung_body": 4,
+      "unsung_legs": 0,
+      "unsung_hands": 0,
+      "unsung_feet": 0,
+      "unsung_acc": 0,
+      "tomestones": 0,
+      "weapon_token": false,
+      "weapon_token_price": 0
+    }
+  },
+  {
+    "model": "core.cost",
+    "pk": 3,
+    "fields": {
+      "name": "Normal Raid Legs",
+      "mythos_1": 0,
+      "mythos_2": 0,
+      "mythos_3": 0,
+      "mythos_4": 0,
+      "unsung_head": 0,
+      "unsung_body": 0,
+      "unsung_legs": 4,
+      "unsung_hands": 0,
+      "unsung_feet": 0,
+      "unsung_acc": 0,
+      "tomestones": 0,
+      "weapon_token": false,
+      "weapon_token_price": 0
+    }
+  },
+  {
+    "model": "core.cost",
+    "pk": 4,
+    "fields": {
+      "name": "Normal Raid Hands",
+      "mythos_1": 0,
+      "mythos_2": 0,
+      "mythos_3": 0,
+      "mythos_4": 0,
+      "unsung_head": 0,
+      "unsung_body": 0,
+      "unsung_legs": 0,
+      "unsung_hands": 2,
+      "unsung_feet": 0,
+      "unsung_acc": 0,
+      "tomestones": 0,
+      "weapon_token": false,
+      "weapon_token_price": 0
+    }
+  },
+  {
+    "model": "core.cost",
+    "pk": 5,
+    "fields": {
+      "name": "Normal Raid Feet",
+      "mythos_1": 0,
+      "mythos_2": 0,
+      "mythos_3": 0,
+      "mythos_4": 0,
+      "unsung_head": 0,
+      "unsung_body": 0,
+      "unsung_legs": 0,
+      "unsung_hands": 0,
+      "unsung_feet": 2,
+      "unsung_acc": 0,
+      "tomestones": 0,
+      "weapon_token": false,
+      "weapon_token_price": 0
+    }
+  },
+  {
+    "model": "core.cost",
+    "pk": 6,
+    "fields": {
+      "name": "Normal Raid Accessory",
+      "mythos_1": 0,
+      "mythos_2": 0,
+      "mythos_3": 0,
+      "mythos_4": 0,
+      "unsung_head": 0,
+      "unsung_body": 0,
+      "unsung_legs": 0,
+      "unsung_hands": 0,
+      "unsung_feet": 0,
+      "unsung_acc": 1,
+      "tomestones": 0,
+      "weapon_token": false,
+      "weapon_token_price": 0
+    }
+  },
+  {
+    "model": "core.cost",
+    "pk": 7,
+    "fields": {
+      "name": "Savage Raid Head",
+      "mythos_1": 0,
+      "mythos_2": 4,
+      "mythos_3": 0,
+      "mythos_4": 4,
+      "unsung_head": 0,
+      "unsung_body": 0,
+      "unsung_legs": 0,
+      "unsung_hands": 0,
+      "unsung_feet": 0,
+      "unsung_acc": 0,
+      "tomestones": 0,
+      "weapon_token": false,
+      "weapon_token_price": 0
+    }
+  },
+  {
+    "model": "core.cost",
+    "pk": 8,
+    "fields": {
+      "name": "Savage Raid Body",
+      "mythos_1": 0,
+      "mythos_2": 0,
+      "mythos_3": 6,
+      "mythos_4": 6,
+      "unsung_head": 0,
+      "unsung_body": 0,
+      "unsung_legs": 0,
+      "unsung_hands": 0,
+      "unsung_feet": 0,
+      "unsung_acc": 0,
+      "tomestones": 0,
+      "weapon_token": false,
+      "weapon_token_price": 0
+    }
+  },
+  {
+    "model": "core.cost",
+    "pk": 9,
+    "fields": {
+      "name": "Savage Raid Legs",
+      "mythos_1": 0,
+      "mythos_2": 0,
+      "mythos_3": 6,
+      "mythos_4": 6,
+      "unsung_head": 0,
+      "unsung_body": 0,
+      "unsung_legs": 0,
+      "unsung_hands": 0,
+      "unsung_feet": 0,
+      "unsung_acc": 0,
+      "tomestones": 0,
+      "weapon_token": false,
+      "weapon_token_price": 0
+    }
+  },
+  {
+    "model": "core.cost",
+    "pk": 10,
+    "fields": {
+      "name": "Savage Raid Hands",
+      "mythos_1": 0,
+      "mythos_2": 4,
+      "mythos_3": 0,
+      "mythos_4": 4,
+      "unsung_head": 0,
+      "unsung_body": 0,
+      "unsung_legs": 0,
+      "unsung_hands": 0,
+      "unsung_feet": 0,
+      "unsung_acc": 0,
+      "tomestones": 0,
+      "weapon_token": false,
+      "weapon_token_price": 0
+    }
+  },
+  {
+    "model": "core.cost",
+    "pk": 11,
+    "fields": {
+      "name": "Savage Raid Feet",
+      "mythos_1": 0,
+      "mythos_2": 4,
+      "mythos_3": 0,
+      "mythos_4": 4,
+      "unsung_head": 0,
+      "unsung_body": 0,
+      "unsung_legs": 0,
+      "unsung_hands": 0,
+      "unsung_feet": 0,
+      "unsung_acc": 0,
+      "tomestones": 0,
+      "weapon_token": false,
+      "weapon_token_price": 0
+    }
+  },
+  {
+    "model": "core.cost",
+    "pk": 12,
+    "fields": {
+      "name": "Savage Raid Accessory",
+      "mythos_1": 3,
+      "mythos_2": 0,
+      "mythos_3": 0,
+      "mythos_4": 3,
+      "unsung_head": 0,
+      "unsung_body": 0,
+      "unsung_legs": 0,
+      "unsung_hands": 0,
+      "unsung_feet": 0,
+      "unsung_acc": 0,
+      "tomestones": 0,
+      "weapon_token": false,
+      "weapon_token_price": 0
+    }
+  },
+  {
+    "model": "core.cost",
+    "pk": 13,
+    "fields": {
+      "name": "Savage Raid Weapon",
+      "mythos_1": 0,
+      "mythos_2": 0,
+      "mythos_3": 0,
+      "mythos_4": 8,
+      "unsung_head": 0,
+      "unsung_body": 0,
+      "unsung_legs": 0,
+      "unsung_hands": 0,
+      "unsung_feet": 0,
+      "unsung_acc": 0,
+      "tomestones": 0,
+      "weapon_token": false,
+      "weapon_token_price": 0
+    }
+  },
+  {
+    "model": "core.cost",
+    "pk": 14,
+    "fields": {
+      "name": "Tomestone Head",
+      "mythos_1": 0,
+      "mythos_2": 0,
+      "mythos_3": 0,
+      "mythos_4": 0,
+      "unsung_head": 0,
+      "unsung_body": 0,
+      "unsung_legs": 0,
+      "unsung_hands": 0,
+      "unsung_feet": 0,
+      "unsung_acc": 0,
+      "tomestones": 495,
+      "weapon_token": false,
+      "weapon_token_price": 0
+    }
+  },
+  {
+    "model": "core.cost",
+    "pk": 15,
+    "fields": {
+      "name": "Tomestone Body",
+      "mythos_1": 0,
+      "mythos_2": 0,
+      "mythos_3": 0,
+      "mythos_4": 0,
+      "unsung_head": 0,
+      "unsung_body": 0,
+      "unsung_legs": 0,
+      "unsung_hands": 0,
+      "unsung_feet": 0,
+      "unsung_acc": 0,
+      "tomestones": 825,
+      "weapon_token": false,
+      "weapon_token_price": 0
+    }
+  },
+  {
+    "model": "core.cost",
+    "pk": 16,
+    "fields": {
+      "name": "Tomestone Legs",
+      "mythos_1": 0,
+      "mythos_2": 0,
+      "mythos_3": 0,
+      "mythos_4": 0,
+      "unsung_head": 0,
+      "unsung_body": 0,
+      "unsung_legs": 0,
+      "unsung_hands": 0,
+      "unsung_feet": 0,
+      "unsung_acc": 0,
+      "tomestones": 825,
+      "weapon_token": false,
+      "weapon_token_price": 0
+    }
+  },
+  {
+    "model": "core.cost",
+    "pk": 17,
+    "fields": {
+      "name": "Tomestone Hands",
+      "mythos_1": 0,
+      "mythos_2": 0,
+      "mythos_3": 0,
+      "mythos_4": 0,
+      "unsung_head": 0,
+      "unsung_body": 0,
+      "unsung_legs": 0,
+      "unsung_hands": 0,
+      "unsung_feet": 0,
+      "unsung_acc": 0,
+      "tomestones": 495,
+      "weapon_token": false,
+      "weapon_token_price": 0
+    }
+  },
+  {
+    "model": "core.cost",
+    "pk": 18,
+    "fields": {
+      "name": "Tomestone Feet",
+      "mythos_1": 0,
+      "mythos_2": 0,
+      "mythos_3": 0,
+      "mythos_4": 0,
+      "unsung_head": 0,
+      "unsung_body": 0,
+      "unsung_legs": 0,
+      "unsung_hands": 0,
+      "unsung_feet": 0,
+      "unsung_acc": 0,
+      "tomestones": 495,
+      "weapon_token": false,
+      "weapon_token_price": 0
+    }
+  },
+  {
+    "model": "core.cost",
+    "pk": 19,
+    "fields": {
+      "name": "Tomestone Accessory",
+      "mythos_1": 0,
+      "mythos_2": 0,
+      "mythos_3": 0,
+      "mythos_4": 0,
+      "unsung_head": 0,
+      "unsung_body": 0,
+      "unsung_legs": 0,
+      "unsung_hands": 0,
+      "unsung_feet": 0,
+      "unsung_acc": 0,
+      "tomestones": 375,
+      "weapon_token": false,
+      "weapon_token_price": 0
+    }
+  },
+  {
+    "model": "core.cost",
+    "pk": 20,
+    "fields": {
+      "name": "Tomestone Weapon",
+      "mythos_1": 0,
+      "mythos_2": 0,
+      "mythos_3": 0,
+      "mythos_4": 0,
+      "unsung_head": 0,
+      "unsung_body": 0,
+      "unsung_legs": 0,
+      "unsung_hands": 0,
+      "unsung_feet": 0,
+      "unsung_acc": 0,
+      "tomestones": 500,
+      "weapon_token": true,
+      "weapon_token_price": 4
+    }
+  },
+  {
+    "model": "core.cost",
+    "pk": 21,
+    "fields": {
+      "name": "Tomestone Paladin's Arm",
+      "mythos_1": 0,
+      "mythos_2": 0,
+      "mythos_3": 0,
+      "mythos_4": 0,
+      "unsung_head": 0,
+      "unsung_body": 0,
+      "unsung_legs": 0,
+      "unsung_hands": 0,
+      "unsung_feet": 0,
+      "unsung_acc": 0,
+      "tomestones": 350,
+      "weapon_token": true,
+      "weapon_token_price": 4
+    }
+  },
+  {
+    "model": "core.cost",
+    "pk": 22,
+    "fields": {
+      "name": "Tomestone Shield",
+      "mythos_1": 0,
+      "mythos_2": 0,
+      "mythos_3": 0,
+      "mythos_4": 0,
+      "unsung_head": 0,
+      "unsung_body": 0,
+      "unsung_legs": 0,
+      "unsung_hands": 0,
+      "unsung_feet": 0,
+      "unsung_acc": 0,
+      "tomestones": 150,
+      "weapon_token": false,
+      "weapon_token_price": 0
+    }
+  }
+]
