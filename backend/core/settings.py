@@ -18,7 +18,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -31,7 +31,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'backend.gearplanner.urls'
+ROOT_URLCONF = 'backend.core.urls'
 
 TEMPLATES = [
     {
@@ -49,7 +49,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'backend.gearplanner.wsgi.application'
+WSGI_APPLICATION = 'backend.core.wsgi.application'
 
 try:
     from .local_settings import DATABASES
@@ -84,6 +84,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_URL = 'static/'
+STATIC_URL = './static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.SmallAutoField'

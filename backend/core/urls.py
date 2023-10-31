@@ -1,6 +1,7 @@
-from django.urls import path
-# from . import views as gear_views
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-    # path('', gear_views.IndexView.as_view(), name='index'),
+    path('admin/', admin.site.urls),
+    path('', include('backend.api.urls')),
 ]

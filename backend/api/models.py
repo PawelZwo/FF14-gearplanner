@@ -3,7 +3,7 @@ from django.db import models
 import uuid
 
 
-# dumpdata core.job core.cost core.race -o fixtures/initial.json
+# dumpdata api.job api.cost api.race -o fixtures/initial.json
 
 class Job(models.Model):
     name = models.CharField(db_comment="Name of the job")
@@ -29,37 +29,37 @@ class Cost(models.Model):
     name = models.CharField(unique=True, null=True)
     mythos_1 = models.PositiveSmallIntegerField(
         null=True, default=0,
-        db_comment="Number of Mythos I tokens needed to exchange for a piece of core")
+        db_comment="Number of Mythos I tokens needed to exchange for a piece of api")
     mythos_2 = models.PositiveSmallIntegerField(
         null=True, default=0,
-        db_comment="Number of Mythos II tokens needed to exchange for a piece of core")
+        db_comment="Number of Mythos II tokens needed to exchange for a piece of api")
     mythos_3 = models.PositiveSmallIntegerField(
         null=True, default=0,
-        db_comment="Number of Mythos III tokens needed to exchange for a piece of core")
+        db_comment="Number of Mythos III tokens needed to exchange for a piece of api")
     mythos_4 = models.PositiveSmallIntegerField(
         null=True, default=0,
-        db_comment="Number of Mythos IV tokens needed to exchange for a piece of core")
+        db_comment="Number of Mythos IV tokens needed to exchange for a piece of api")
     unsung_head = models.PositiveSmallIntegerField(
         null=True, default=0,
-        db_comment="Number of Unsung Head tokens needed to exchange for a piece of core")
+        db_comment="Number of Unsung Head tokens needed to exchange for a piece of api")
     unsung_body = models.PositiveSmallIntegerField(
         null=True, default=0,
-        db_comment="Number of Unsung Body tokens needed to exchange for a piece of core")
+        db_comment="Number of Unsung Body tokens needed to exchange for a piece of api")
     unsung_legs = models.PositiveSmallIntegerField(
         null=True, default=0,
-        db_comment="Number of Unsung Legs tokens needed to exchange for a piece of core")
+        db_comment="Number of Unsung Legs tokens needed to exchange for a piece of api")
     unsung_hands = models.PositiveSmallIntegerField(
         null=True, default=0,
-        db_comment="Number of Unsung Hands tokens needed to exchange for a piece of core")
+        db_comment="Number of Unsung Hands tokens needed to exchange for a piece of api")
     unsung_feet = models.PositiveSmallIntegerField(
         null=True, default=0,
-        db_comment="Number of Unsung Feet tokens needed to exchange for a piece of core")
+        db_comment="Number of Unsung Feet tokens needed to exchange for a piece of api")
     unsung_acc = models.PositiveSmallIntegerField(
         null=True, default=0,
-        db_comment="Number of Unsung Accessory tokens needed to exchange for a piece of core")
+        db_comment="Number of Unsung Accessory tokens needed to exchange for a piece of api")
     tomestones = models.PositiveSmallIntegerField(
         null=True, default=0,
-        db_comment="Number of Tomestones needed to exchange for a piece of core")
+        db_comment="Number of Tomestones needed to exchange for a piece of api")
     weapon_token = models.BooleanField(
         null=True, default=False,
         db_comment="Is weapon token needed to exchange for a weapon")
@@ -115,14 +115,14 @@ class Gear(models.Model):
         ("x.5", "x.5")
     ]
 
-    name = models.CharField(db_comment="Name of the core")
-    category = models.CharField(choices=CATEGORIES, db_comment="Category of the core")
-    acquisition = models.CharField(choices=ACQUISITION_TYPES, db_comment="Way to obtain the core")
-    added_in_patch = models.CharField(choices=PATCHES, db_comment="Patch the core was added on")
-    type = models.CharField(choices=TYPES, db_comment="Type of the core")
-    cost = models.OneToOneField(Cost, on_delete=models.CASCADE, db_comment="Costs of the core")
+    name = models.CharField(db_comment="Name of the api")
+    category = models.CharField(choices=CATEGORIES, db_comment="Category of the api")
+    acquisition = models.CharField(choices=ACQUISITION_TYPES, db_comment="Way to obtain the api")
+    added_in_patch = models.CharField(choices=PATCHES, db_comment="Patch the api was added on")
+    type = models.CharField(choices=TYPES, db_comment="Type of the api")
+    cost = models.OneToOneField(Cost, on_delete=models.CASCADE, db_comment="Costs of the api")
     job = models.ManyToManyField(Job)
-    item_level = models.PositiveSmallIntegerField(db_comment="Item level of the core")
+    item_level = models.PositiveSmallIntegerField(db_comment="Item level of the api")
     physical_dmg = models.PositiveSmallIntegerField(null=True, db_comment="Weapon's physical damage")
     magical_dmg = models.PositiveSmallIntegerField(null=True, db_comment="Weapon's magical damage")
     auto_attack = models.DecimalField(null=True, max_digits=5, decimal_places=2, db_comment="Weapon's auto attack")
@@ -153,7 +153,7 @@ class Gear(models.Model):
 
 
 class Gearset(models.Model):
-    uuid = models.UUIDField(default=uuid.uuid4, editable=False)
+    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(unique=True)
     job = models.OneToOneField(Job, on_delete=models.CASCADE)
     weapon = models.OneToOneField(Gear, on_delete=models.CASCADE, related_name="weapon")
