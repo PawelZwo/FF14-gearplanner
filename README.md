@@ -57,10 +57,8 @@ The app was created using:
 
 ```
 * Node.js
-
-If using PostgreSQL:
-* psycopg2-binary 2.9.6
-* PostgreSQL database
+* Django ^5.0a1
+* psycopg2-binary ^2.9.6
 ```
 
 [//]: # (***)
