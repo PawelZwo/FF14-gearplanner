@@ -125,16 +125,16 @@ class Gear(models.Model):
         ("x.5", "x.5")
     ]
 
-    name = models.CharField(db_comment="Name of the api")
-    category = models.CharField(choices=CATEGORIES, db_comment="Category of the api")
-    acquisition = models.CharField(choices=ACQUISITION_TYPES, db_comment="Way to obtain the api")
-    added_in_patch = models.CharField(choices=PATCHES, db_comment="Patch the api was added on")
-    type = models.CharField(choices=TYPES, db_comment="Type of the api")
-    cost = models.OneToOneField(Cost, on_delete=models.CASCADE, db_comment="Costs of the api")
+    name = models.CharField(db_comment="Name of the gear")
+    category = models.CharField(choices=CATEGORIES, db_comment="Category of the gear")
+    acquisition = models.CharField(choices=ACQUISITION_TYPES, db_comment="Way to obtain the gear")
+    added_in_patch = models.CharField(choices=PATCHES, db_comment="Patch the gear was added on")
+    type = models.CharField(choices=TYPES, db_comment="Type of the gear")
+    cost = models.OneToOneField(Cost, on_delete=models.CASCADE, db_comment="Costs of the gear")
     job = models.ManyToManyField(Job, related_name="gear_job")
 
     # Gear actual stats
-    item_level = models.PositiveSmallIntegerField(db_comment="Item level of the api")
+    item_level = models.PositiveSmallIntegerField(db_comment="Item level of the gear")
     physical_dmg = models.PositiveSmallIntegerField(null=True, db_comment="Weapon's physical damage")
     magical_dmg = models.PositiveSmallIntegerField(null=True, db_comment="Weapon's magical damage")
     auto_attack = models.DecimalField(null=True, max_digits=5, decimal_places=2, db_comment="Weapon's auto attack")

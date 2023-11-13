@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>API Index</title>
+    <style>
+        body {
+            margin-left: auto;
+            margin-top: 25rem;
+            font-size: 24px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+<div><a href={% url "job" %}>Jobs</a></div>
+<div><a href={% url "cost" %}>Costs</a></div>
+<div><a href={% url "race" %}>Races</a></div>
+<div><a href={% url "gear" %}>Gears</a></div>
+<div><a href={% url "gearset" %}>Gearsets</a></div>
+</body>
+</html>
