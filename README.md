@@ -48,7 +48,7 @@ The app was created using:
 
 ```
 * Python 3.11
-* Django 5.0a1
+* Django 4.2.6
 * React
 * Bootstrap-React
 ```
@@ -57,8 +57,11 @@ The app was created using:
 
 ```
 * Node.js
-* Django ^5.0a1
+* Django ^4.2.6
 * psycopg2-binary ^2.9.6
+* Python-dotenv ^1.0.0
+* Django filter ^23.3
+* Django REST Framework ^3.14.0
 ```
 
 [//]: # (***)

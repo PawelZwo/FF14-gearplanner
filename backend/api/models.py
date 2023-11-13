@@ -1,9 +1,17 @@
-from django.contrib.auth.models import User
+# Django models
 from django.db import models
+
+# AbstractUser model imports
+from django.conf import settings
+from django.contrib.auth.models import AbstractUser
+
+# Additional imports
 import uuid
 
 
-# dumpdata api.job api.cost api.race -o fixtures/initial.json
+class Account(AbstractUser):
+    pass
+
 
 class Job(models.Model):
     name = models.CharField(db_comment="Name of the job")
@@ -78,9 +86,11 @@ class Gear(models.Model):
         ("SR", "Savage Raid"),
         ("TG", "Tomestone Gear"),
         ("ATG", "Augmented Tomestone Gear"),
+        ("ETG", "Exquisite Tomestone Weapon"),
         ("C_Normal_Q", "Crafted Normal Quality"),
         ("C_High_Q", "Crafted High Quality"),
-        ("DD", "Dungeon Drop")
+        ("DD", "Dungeon Drop"),
+        ("RW", "Relic Weapon")
     ]
 
     TYPES = [
@@ -121,7 +131,9 @@ class Gear(models.Model):
     added_in_patch = models.CharField(choices=PATCHES, db_comment="Patch the api was added on")
     type = models.CharField(choices=TYPES, db_comment="Type of the api")
     cost = models.OneToOneField(Cost, on_delete=models.CASCADE, db_comment="Costs of the api")
-    job = models.ManyToManyField(Job)
+    job = models.ManyToManyField(Job, related_name="gear_job")
+
+    # Gear actual stats
     item_level = models.PositiveSmallIntegerField(db_comment="Item level of the api")
     physical_dmg = models.PositiveSmallIntegerField(null=True, db_comment="Weapon's physical damage")
     magical_dmg = models.PositiveSmallIntegerField(null=True, db_comment="Weapon's magical damage")
@@ -203,5 +215,11 @@ class Gearset(models.Model):
 
 
 class PlayerGearsets(models.Model):
-    account = models.OneToOneField(User, on_delete=models.DO_NOTHING, null=True)
-    gearset = models.ForeignKey(Gearset, on_delete=models.DO_NOTHING, null=True)
+    account = models.OneToOneField(settings.AUTH_USER_MODEL,
+                                   on_delete=models.DO_NOTHING,
+                                   null=True,
+                                   related_name="playergearset_account")
+    gearset = models.ForeignKey(Gearset,
+                                on_delete=models.DO_NOTHING,
+                                null=True,
+                                related_name="playergearset_gearset")

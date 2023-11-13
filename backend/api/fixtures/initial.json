@@ -580,6 +580,46 @@
     }
   },
   {
+    "model": "api.cost",
+    "pk": 23,
+    "fields": {
+      "name": "Exquisite Tomestone Weapon",
+      "mythos_1": 0,
+      "mythos_2": 0,
+      "mythos_3": 0,
+      "mythos_4": 0,
+      "unsung_head": 0,
+      "unsung_body": 0,
+      "unsung_legs": 0,
+      "unsung_hands": 0,
+      "unsung_feet": 0,
+      "unsung_acc": 0,
+      "tomestones": 0,
+      "weapon_token": false,
+      "weapon_token_price": 0
+    }
+  },
+  {
+    "model": "api.cost",
+    "pk": 24,
+    "fields": {
+      "name": "Relic Weapon",
+      "mythos_1": 0,
+      "mythos_2": 0,
+      "mythos_3": 0,
+      "mythos_4": 0,
+      "unsung_head": 0,
+      "unsung_body": 0,
+      "unsung_legs": 0,
+      "unsung_hands": 0,
+      "unsung_feet": 0,
+      "unsung_acc": 0,
+      "tomestones": 0,
+      "weapon_token": false,
+      "weapon_token_price": 0
+    }
+  },
+  {
     "model": "api.race",
     "pk": 1,
     "fields": {

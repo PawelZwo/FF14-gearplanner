@@ -1,13 +1,17 @@
 from pathlib import Path
+import os
+
+# Dependencies
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-n$)#3km+b4js@^p%wxp%fwf_i0l)of3c-47=+hng^@i(&grw(t'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG")
 
 ALLOWED_HOSTS = []
 
@@ -18,7 +22,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'api',
+
+    # Project's apps
+    'backend.api.apps.ApiConfig',
+
+    # Dependencies
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -51,12 +60,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backend.core.wsgi.application'
 
-try:
-    from .local_settings import DATABASES
-except ModuleNotFoundError:
-    print("Please configure your database connection in local_settings.py!")
-    print("Put your credentials and continue.")
-    exit(0)
+DATABASES = {
+    'default': {
+        'HOST': os.environ.get("DATABASE_HOST"),
+        'NAME': os.environ.get("DATABASE_NAME"),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'USER': os.environ.get("DATABASE_USER"),
+        'PASSWORD': os.environ.get("DATABASE_PASSWORD"),
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -86,4 +98,12 @@ USE_TZ = True
 
 STATIC_URL = './static/'
 
-DEFAULT_AUTO_FIELD = 'django.db.models.SmallAutoField'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = "api.Account"
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
