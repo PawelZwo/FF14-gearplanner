@@ -22,12 +22,18 @@ class Job(models.Model):
 
 class Race(models.Model):
     name = models.CharField(db_comment="Race name")
-    base_vitality = models.PositiveSmallIntegerField(db_comment="Base vitality value for the race")
-    base_strength = models.PositiveSmallIntegerField(db_comment="Base strength value for the race")
-    base_dexterity = models.PositiveSmallIntegerField(db_comment="Base dexterity value for the race")
-    base_intelligence = models.PositiveSmallIntegerField(db_comment="Base intelligence value for the race")
-    base_mind = models.PositiveSmallIntegerField(db_comment="Base mind value for the race")
-    base_piety = models.PositiveSmallIntegerField(db_comment="Base piety value for the race")
+    base_vitality = models.PositiveSmallIntegerField(
+        db_comment="Base vitality value for the race")
+    base_strength = models.PositiveSmallIntegerField(
+        db_comment="Base strength value for the race")
+    base_dexterity = models.PositiveSmallIntegerField(
+        db_comment="Base dexterity value for the race")
+    base_intelligence = models.PositiveSmallIntegerField(
+        db_comment="Base intelligence value for the race")
+    base_mind = models.PositiveSmallIntegerField(
+        db_comment="Base mind value for the race")
+    base_piety = models.PositiveSmallIntegerField(
+        db_comment="Base piety value for the race")
 
     def __str__(self):
         return f"{self.name}"
@@ -126,36 +132,62 @@ class Gear(models.Model):
     ]
 
     name = models.CharField(db_comment="Name of the gear")
-    category = models.CharField(choices=CATEGORIES, db_comment="Category of the gear")
-    acquisition = models.CharField(choices=ACQUISITION_TYPES, db_comment="Way to obtain the gear")
-    added_in_patch = models.CharField(choices=PATCHES, db_comment="Patch the gear was added on")
-    type = models.CharField(choices=TYPES, db_comment="Type of the gear")
-    cost = models.OneToOneField(Cost, on_delete=models.CASCADE, db_comment="Costs of the gear")
+    category = models.CharField(
+        choices=CATEGORIES, db_comment="Category of the gear")
+    acquisition = models.CharField(
+        choices=ACQUISITION_TYPES, db_comment="Way to obtain the gear")
+    added_in_patch = models.CharField(
+        choices=PATCHES, db_comment="Patch the gear was added on")
+    slot = models.CharField(choices=TYPES, db_comment="Slot for the gear")
+    cost = models.OneToOneField(
+        Cost, on_delete=models.CASCADE, db_comment="Costs of the gear")
     job = models.ManyToManyField(Job, related_name="gear_job")
 
     # Gear actual stats
-    item_level = models.PositiveSmallIntegerField(db_comment="Item level of the gear")
-    physical_dmg = models.PositiveSmallIntegerField(null=True, db_comment="Weapon's physical damage")
-    magical_dmg = models.PositiveSmallIntegerField(null=True, db_comment="Weapon's magical damage")
-    auto_attack = models.DecimalField(null=True, max_digits=5, decimal_places=2, db_comment="Weapon's auto attack")
-    delay = models.DecimalField(null=True, max_digits=5, decimal_places=2, db_comment="Weapon's delay")
-    dps = models.DecimalField(null=True, max_digits=5, decimal_places=2, db_comment="Weapon's dps")
-    block_strength = models.PositiveSmallIntegerField(null=True, db_comment="Shield's block strength")
-    block_rate = models.PositiveSmallIntegerField(null=True, db_comment="Shield's block rate")
-    defense = models.PositiveSmallIntegerField(null=True, db_comment="Gear's defense")
-    magic_defense = models.PositiveSmallIntegerField(null=True, db_comment="Gear's magic defense")
-    vitality = models.PositiveSmallIntegerField(null=True, db_comment="Gear's vitality value")
-    strength = models.PositiveSmallIntegerField(null=True, db_comment="Gear's strength value")
-    dexterity = models.PositiveSmallIntegerField(null=True, db_comment="Gear's dexterity value")
-    tenacity = models.PositiveSmallIntegerField(null=True, db_comment="Gear's tenacity value")
-    intelligence = models.PositiveSmallIntegerField(null=True, db_comment="Gear's intelligence value")
-    mind = models.PositiveSmallIntegerField(null=True, db_comment="Gear's mind value")
-    piety = models.PositiveSmallIntegerField(null=True, db_comment="Gear's piety value")
-    critical_rate = models.PositiveSmallIntegerField(null=True, db_comment="Gear's critical rate value")
-    direct_hit = models.PositiveSmallIntegerField(null=True, db_comment="Gear's direct hit value")
-    determination = models.PositiveSmallIntegerField(null=True, db_comment="Gear's determination value")
-    skill_speed = models.PositiveSmallIntegerField(null=True, db_comment="Gear's skill speed value")
-    spell_speed = models.PositiveSmallIntegerField(null=True, db_comment="Gear's spell speed value")
+    item_level = models.PositiveSmallIntegerField(
+        db_comment="Item level of the gear")
+    physical_dmg = models.PositiveSmallIntegerField(
+        null=True, db_comment="Weapon's physical damage")
+    magical_dmg = models.PositiveSmallIntegerField(
+        null=True, db_comment="Weapon's magical damage")
+    auto_attack = models.DecimalField(
+        null=True, max_digits=5, decimal_places=2, db_comment="Weapon's auto attack")
+    delay = models.DecimalField(
+        null=True, max_digits=5, decimal_places=2, db_comment="Weapon's delay")
+    dps = models.DecimalField(null=True, max_digits=5,
+                              decimal_places=2, db_comment="Weapon's dps")
+    block_strength = models.PositiveSmallIntegerField(
+        null=True, db_comment="Shield's block strength")
+    block_rate = models.PositiveSmallIntegerField(
+        null=True, db_comment="Shield's block rate")
+    defense = models.PositiveSmallIntegerField(
+        null=True, db_comment="Gear's defense")
+    magic_defense = models.PositiveSmallIntegerField(
+        null=True, db_comment="Gear's magic defense")
+    vitality = models.PositiveSmallIntegerField(
+        null=True, db_comment="Gear's vitality value")
+    strength = models.PositiveSmallIntegerField(
+        null=True, db_comment="Gear's strength value")
+    dexterity = models.PositiveSmallIntegerField(
+        null=True, db_comment="Gear's dexterity value")
+    tenacity = models.PositiveSmallIntegerField(
+        null=True, db_comment="Gear's tenacity value")
+    intelligence = models.PositiveSmallIntegerField(
+        null=True, db_comment="Gear's intelligence value")
+    mind = models.PositiveSmallIntegerField(
+        null=True, db_comment="Gear's mind value")
+    piety = models.PositiveSmallIntegerField(
+        null=True, db_comment="Gear's piety value")
+    critical_rate = models.PositiveSmallIntegerField(
+        null=True, db_comment="Gear's critical rate value")
+    direct_hit = models.PositiveSmallIntegerField(
+        null=True, db_comment="Gear's direct hit value")
+    determination = models.PositiveSmallIntegerField(
+        null=True, db_comment="Gear's determination value")
+    skill_speed = models.PositiveSmallIntegerField(
+        null=True, db_comment="Gear's skill speed value")
+    spell_speed = models.PositiveSmallIntegerField(
+        null=True, db_comment="Gear's spell speed value")
 
     class Meta:
         ordering = ['category']
@@ -165,21 +197,34 @@ class Gear(models.Model):
 
 
 class Gearset(models.Model):
-    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    uuid = models.UUIDField(
+        primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(unique=True)
     job = models.OneToOneField(Job, on_delete=models.CASCADE)
-    weapon = models.OneToOneField(Gear, on_delete=models.CASCADE, related_name="weapon")
-    shield = models.OneToOneField(Gear, on_delete=models.CASCADE, null=True, related_name="shield")
-    head = models.OneToOneField(Gear, on_delete=models.CASCADE, related_name="head")
-    body = models.OneToOneField(Gear, on_delete=models.CASCADE, related_name="body")
-    legs = models.OneToOneField(Gear, on_delete=models.CASCADE, related_name="legs")
-    hands = models.OneToOneField(Gear, on_delete=models.CASCADE, related_name="hands")
-    feet = models.OneToOneField(Gear, on_delete=models.CASCADE, related_name="feet")
-    earring = models.OneToOneField(Gear, on_delete=models.CASCADE, related_name="earring")
-    necklace = models.OneToOneField(Gear, on_delete=models.CASCADE, related_name="necklace")
-    bracelet = models.OneToOneField(Gear, on_delete=models.CASCADE, related_name="bracelet")
-    left_ring = models.OneToOneField(Gear, on_delete=models.CASCADE, related_name="left_ring")
-    right_ring = models.OneToOneField(Gear, on_delete=models.CASCADE, related_name="right_ring")
+    weapon = models.OneToOneField(
+        Gear, on_delete=models.CASCADE, related_name="weapon")
+    shield = models.OneToOneField(
+        Gear, on_delete=models.CASCADE, null=True, related_name="shield")
+    head = models.OneToOneField(
+        Gear, on_delete=models.CASCADE, related_name="head")
+    body = models.OneToOneField(
+        Gear, on_delete=models.CASCADE, related_name="body")
+    legs = models.OneToOneField(
+        Gear, on_delete=models.CASCADE, related_name="legs")
+    hands = models.OneToOneField(
+        Gear, on_delete=models.CASCADE, related_name="hands")
+    feet = models.OneToOneField(
+        Gear, on_delete=models.CASCADE, related_name="feet")
+    earring = models.OneToOneField(
+        Gear, on_delete=models.CASCADE, related_name="earring")
+    necklace = models.OneToOneField(
+        Gear, on_delete=models.CASCADE, related_name="necklace")
+    bracelet = models.OneToOneField(
+        Gear, on_delete=models.CASCADE, related_name="bracelet")
+    left_ring = models.OneToOneField(
+        Gear, on_delete=models.CASCADE, related_name="left_ring")
+    right_ring = models.OneToOneField(
+        Gear, on_delete=models.CASCADE, related_name="right_ring")
 
     def __str__(self):
         return f"{self.name}"

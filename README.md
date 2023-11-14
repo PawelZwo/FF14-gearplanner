@@ -38,8 +38,16 @@ To populate your DB with initial data for Job, Race and Cost, use commands in th
 
 ```
 cd backend
-cd core
-python manage.py loaddata fixtures/initial
+python manage.py loaddata api/fixtures/initial
+```
+
+Obviously, to run entire app we need to start both Django server and React.
+```
+(in "backend" directory)
+python manage.py runserver
+cd ../
+cd frontend
+npm start
 ```
 
 ## Technologies

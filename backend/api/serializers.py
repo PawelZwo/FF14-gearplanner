@@ -42,6 +42,9 @@ class GearSerializer(serializers.ModelSerializer):
 
 
 class GearsetSerializer(serializers.ModelSerializer):
+    attributes = serializers.SerializerMethodField(
+        source='calculate_total_stats')
+
     class Meta:
         model = Gearset
         fields = "__all__"
