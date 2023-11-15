@@ -16,7 +16,6 @@ function Menu() {
         bg="dark"
         data-bs-theme="dark"
         className="bg-body-tertiary"
-        sticky="top"
         style={{ marginBottom: "10px" }}
       >
         <Container>
@@ -40,7 +39,6 @@ function Menu() {
         bg="dark"
         data-bs-theme="dark"
         className="bg-body-tertiary"
-        sticky="top"
         style={{ marginBottom: "10px" }}
       >
         <Container>
@@ -64,7 +62,6 @@ function Menu() {
         bg="dark"
         data-bs-theme="dark"
         className="bg-body-tertiary"
-        sticky="top"
         style={{ marginBottom: "10px" }}
       >
         <Container>
@@ -88,7 +85,6 @@ function Menu() {
         bg="dark"
         data-bs-theme="dark"
         className="bg-body-tertiary"
-        sticky="top"
         style={{ marginBottom: "10px" }}
       >
         <Container>
@@ -112,7 +108,6 @@ function Menu() {
         bg="dark"
         data-bs-theme="dark"
         className="bg-body-tertiary"
-        sticky="top"
         style={{ marginBottom: "10px" }}
       >
         <Container>
@@ -135,7 +130,6 @@ function Menu() {
         bg="dark"
         data-bs-theme="dark"
         className="bg-body-tertiary"
-        sticky="top"
         style={{ marginBottom: "10px" }}
       >
         <Container>
@@ -158,7 +152,6 @@ function Menu() {
         bg="dark"
         data-bs-theme="dark"
         className="bg-body-tertiary"
-        sticky="top"
         style={{ marginBottom: "10px" }}
       >
         <Container>
@@ -181,7 +174,6 @@ function Menu() {
         bg="dark"
         data-bs-theme="dark"
         className="bg-body-tertiary"
-        sticky="top"
         style={{ marginBottom: "10px" }}
       >
         <Container>

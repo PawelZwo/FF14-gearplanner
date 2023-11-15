@@ -7,3 +7,11 @@
 .job-list {
     margin-top: 2vh;
 }
+
+.footer-legal {
+    font-size: 12px;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0;
+}

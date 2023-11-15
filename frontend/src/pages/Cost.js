@@ -18,7 +18,7 @@ function Cost() {
           alt="Current patch banner"
           rounded
           fluid
-          style={{marginBottom: "2vh"}}
+          style={{ marginBottom: "2vh" }}
         />
       </div>
       <div>
