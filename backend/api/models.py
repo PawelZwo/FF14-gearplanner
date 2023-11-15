@@ -116,6 +116,8 @@ class Gear(models.Model):
     CATEGORIES = [
         ("Fending", "Fending"),
         ("Healing", "Healing"),
+        ("Striking", "Striking"),
+        ("Maiming", "Maiming"),
         ("Scouting", "Scouting"),
         ("Aiming", "Aiming"),
         ("Casting", "Casting"),

@@ -10,24 +10,26 @@ from .serializers import JobSerializer, RaceSerializer, CostSerializer, GearSeri
 from .models import Job, Race, Cost, Gear, Gearset
 
 
-class JobList(generics.ListCreateAPIView):
+class APIIndex(View):
+    '''Helper View'''
+
+    def get(self, request):
+        return render(request, "index.html")
+
+
+class JobList(generics.ListAPIView):
     queryset = Job.objects.all()
     serializer_class = JobSerializer
 
 
-class RaceList(generics.ListCreateAPIView):
+class RaceList(generics.ListAPIView):
     queryset = Race.objects.all()
     serializer_class = RaceSerializer
 
 
-class CostList(generics.ListCreateAPIView):
+class CostList(generics.ListAPIView):
     queryset = Cost.objects.all()
     serializer_class = CostSerializer
-
-
-class GearList(generics.ListCreateAPIView):
-    queryset = Gear.objects.all()
-    serializer_class = GearSerializer
 
 
 class GearsetList(generics.ListCreateAPIView):
@@ -35,6 +37,34 @@ class GearsetList(generics.ListCreateAPIView):
     serializer_class = GearsetSerializer
 
 
-class APIIndex(View):
-    def get(self, request):
-        return render(request, "index.html")
+# GEAR model API views
+
+class GearList(generics.ListAPIView):
+    '''All Gear'''
+
+    queryset = Gear.objects.all()
+    serializer_class = GearSerializer
+
+
+class DpsGearList(generics.ListCreateAPIView):
+    '''Gear for DPS jobs'''
+
+    queryset = Gear.objects.filter(
+        category__in=["Maiming", "Striking", "Slaying",
+                      "Scouting", "Aiming", "Casting"]
+    )
+    serializer_class = GearSerializer
+
+
+class HealerGearList(generics.ListCreateAPIView):
+    '''Gear for healers'''
+
+    queryset = Gear.objects.filter(category="Healing")
+    serializer_class = GearSerializer
+
+
+class TankGearList(generics.ListCreateAPIView):
+    '''Gear for tanks'''
+
+    queryset = Gear.objects.filter(category="Fending")
+    serializer_class = GearSerializer

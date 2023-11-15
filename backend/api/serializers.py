@@ -48,3 +48,4 @@ class GearsetSerializer(serializers.ModelSerializer):
     class Meta:
         model = Gearset
         fields = "__all__"
+
