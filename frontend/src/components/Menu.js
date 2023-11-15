@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 // React-Icons imports
 import { FaHome } from "react-icons/fa";
+import { GiAncientSword, GiBandana, GiBanknote, GiAbdominalArmor } from "react-icons/gi";
 
 // React-Bootstrap imports
 import Container from "react-bootstrap/Container";
@@ -44,6 +45,78 @@ function Menu() {
       >
         <Container>
           <Navbar.Brand>
+            <GiAncientSword
+              style={{
+                display: "inline-block",
+                width: "40%",
+                height: "40%",
+                alignItems: "center",
+              }}
+            />
+            <Link to="jobs/" className="menu-link">
+              Jobs
+            </Link>
+          </Navbar.Brand>
+        </Container>
+      </Navbar>
+
+      <Navbar
+        bg="dark"
+        data-bs-theme="dark"
+        className="bg-body-tertiary"
+        sticky="top"
+        style={{ marginBottom: "10px" }}
+      >
+        <Container>
+          <Navbar.Brand>
+            <GiBandana
+              style={{
+                display: "inline-block",
+                width: "40%",
+                height: "40%",
+                alignItems: "center",
+              }}
+            />
+            <Link to="races/" className="menu-link">
+              Races
+            </Link>
+          </Navbar.Brand>
+        </Container>
+      </Navbar>
+
+      <Navbar
+        bg="dark"
+        data-bs-theme="dark"
+        className="bg-body-tertiary"
+        sticky="top"
+        style={{ marginBottom: "10px" }}
+      >
+        <Container>
+          <Navbar.Brand>
+            <GiBanknote
+              style={{
+                display: "inline-block",
+                width: "30%",
+                height: "30%",
+                alignItems: "center",
+              }}
+            />
+            <Link to="costs/" className="menu-link">
+              Gear costs
+            </Link>
+          </Navbar.Brand>
+        </Container>
+      </Navbar>
+
+      <Navbar
+        bg="dark"
+        data-bs-theme="dark"
+        className="bg-body-tertiary"
+        sticky="top"
+        style={{ marginBottom: "10px" }}
+      >
+        <Container>
+          <Navbar.Brand>
             <img
               src="/media/DPSRole.png"
               width="30"
@@ -57,6 +130,7 @@ function Menu() {
           </Navbar.Brand>
         </Container>
       </Navbar>
+
       <Navbar
         bg="dark"
         data-bs-theme="dark"
@@ -79,6 +153,7 @@ function Menu() {
           </Navbar.Brand>
         </Container>
       </Navbar>
+
       <Navbar
         bg="dark"
         data-bs-theme="dark"
@@ -97,6 +172,30 @@ function Menu() {
             />
             <Link to="tankgear/" className="menu-link">
               Tank gear
+            </Link>
+          </Navbar.Brand>
+        </Container>
+      </Navbar>
+
+      <Navbar
+        bg="dark"
+        data-bs-theme="dark"
+        className="bg-body-tertiary"
+        sticky="top"
+        style={{ marginBottom: "10px" }}
+      >
+        <Container>
+          <Navbar.Brand>
+          <GiAbdominalArmor
+              style={{
+                display: "inline-block",
+                width: "30%",
+                height: "300%",
+                alignItems: "center",
+              }}
+            />
+            <Link to="gear/" className="menu-link">
+              All gear
             </Link>
           </Navbar.Brand>
         </Container>

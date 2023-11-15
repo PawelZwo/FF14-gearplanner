@@ -1,39 +1,32 @@
-// React imports
-import { useState, useEffect } from "react";
-
 // React-Bootstrap imports
 import Spinner from "react-bootstrap/Spinner";
 
+// Custom hooks
+import { useFetch } from "../hooks/useFetch";
+
 function JobList() {
-  const [jobs, setJobs] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-
-  const fetchJobs = async () => {
-    const fetchJobs = await fetch("http://127.0.0.1:8000/api/job/");
-    const jobData = await fetchJobs.json();
-    setJobs(jobData);
-    setIsLoading(false);
-  };
-
-  useEffect(() => {
-    fetchJobs();
-  }, []);
+  const { data, isPending, error } = useFetch("http://127.0.0.1:8000/api/job/");
 
   return (
     <div className="job-list">
-      <h2>JobList</h2>
-      {isLoading ? (
+      <h2>Best-in-slot gearsets</h2>
+      {isPending && (
         <>
-          <Spinner animation="border" variant="dark" /> Loading...
+          <Spinner animation="border" variant="dark" />
+          <br />
+          Loading data...
         </>
-      ) : (
+      )}
+
+      {data && (
         <ul>
-          {jobs.length !== 0 &&
-            jobs.map((job) => {
-              return <li key={job.id}>{job.name}</li>;
-            })}
+          {data.map((job) => {
+            return <li key={job.id}>{job.name}</li>;
+          })}
         </ul>
       )}
+
+      {error && <div>{error}</div>}
     </div>
   );
 }

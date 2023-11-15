@@ -4,14 +4,14 @@ import Spinner from "react-bootstrap/Spinner";
 // Custom hooks
 import { useFetch } from "../hooks/useFetch";
 
-function Tankgear() {
+function AllGear() {
   const { data, isPending, error } = useFetch(
-    "http://127.0.0.1:8000/api/tankgear/"
+    "http://127.0.0.1:8000/api/gear/"
   );
 
   return (
     <>
-      <h3>Tank gear</h3>
+    <h3>All gear</h3>
       {isPending && (
         <>
           <Spinner animation="border" variant="dark" />
@@ -32,4 +32,4 @@ function Tankgear() {
     </>
   );
 }
-export default Tankgear;
+export default AllGear;
