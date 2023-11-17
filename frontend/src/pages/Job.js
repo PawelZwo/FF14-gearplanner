@@ -54,7 +54,11 @@ function Job() {
                 {data
                   .filter((job) => job.role === "tank")
                   .map(({ id, name }) => {
-                    return <tr key={id}>{name}</tr>;
+                    return (
+                      <tr key={id}>
+                        <td>{name}</td>
+                      </tr>
+                    );
                   })}
               </tbody>
             </Table>
@@ -80,7 +84,11 @@ function Job() {
                 {data
                   .filter((job) => job.role === "healer")
                   .map(({ id, name }) => {
-                    return <tr key={id}>{name}</tr>;
+                    return (
+                      <tr key={id}>
+                        <td>{name}</td>
+                      </tr>
+                    );
                   })}
               </tbody>
             </Table>
@@ -106,7 +114,11 @@ function Job() {
                 {data
                   .filter((job) => job.role === "melee")
                   .map(({ id, name }) => {
-                    return <tr key={id}>{name}</tr>;
+                    return (
+                      <tr key={id}>
+                        <td>{name}</td>
+                      </tr>
+                    );
                   })}
               </tbody>
             </Table>
@@ -132,7 +144,11 @@ function Job() {
                 {data
                   .filter((job) => job.role === "ranged")
                   .map(({ id, name }) => {
-                    return <tr key={id}>{name}</tr>;
+                    return (
+                      <tr key={id}>
+                        <td>{name}</td>
+                      </tr>
+                    );
                   })}
               </tbody>
             </Table>
@@ -158,7 +174,11 @@ function Job() {
                 {data
                   .filter((job) => job.role === "caster")
                   .map(({ id, name }) => {
-                    return <tr key={id}>{name}</tr>;
+                    return (
+                      <tr key={id}>
+                        <td>{name}</td>
+                      </tr>
+                    );
                   })}
               </tbody>
             </Table>

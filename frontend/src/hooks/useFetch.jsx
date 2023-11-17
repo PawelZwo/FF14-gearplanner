@@ -22,6 +22,10 @@ export function useFetch(endpoint) {
       }
     };
     fetchData();
+
+    return () => {
+      new AbortController().abort();
+    };
   }, [endpoint]);
   return { data, isPending, error };
 }
