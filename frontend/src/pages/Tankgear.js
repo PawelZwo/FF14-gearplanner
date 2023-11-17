@@ -1,8 +1,8 @@
-// React-Bootstrap imports
-import Spinner from "react-bootstrap/Spinner";
-
 // Custom hooks
 import { useFetch } from "../hooks/useFetch";
+
+// Project's components
+import Loading from "../components/Loading";
 
 function Tankgear() {
   const { data, isPending, error } = useFetch(
@@ -12,13 +12,7 @@ function Tankgear() {
   return (
     <>
       <h3>Tank gear</h3>
-      {isPending && (
-        <>
-          <Spinner animation="border" variant="dark" />
-          <br />
-          Loading data...
-        </>
-      )}
+      {isPending && <Loading />}
 
       {data && (
         <ul>

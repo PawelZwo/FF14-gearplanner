@@ -154,7 +154,7 @@ class Gear(models.Model):
     cost = models.OneToOneField(
         Cost, on_delete=models.CASCADE, db_comment="Costs of the gear")
     job = models.ManyToManyField(Job, related_name="gear_job")
-    ff14_db_url = models.URLField(null=True, blank=True)
+    ff14_db_index = models.PositiveSmallIntegerField(null=True, blank=True)
 
     # Gear actual stats
     item_level = models.PositiveSmallIntegerField(

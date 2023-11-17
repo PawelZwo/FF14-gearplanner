@@ -1,5 +1,4 @@
 // React-Bootstrap imports
-import Spinner from "react-bootstrap/Spinner";
 import Image from "react-bootstrap/Image";
 import Alert from "react-bootstrap/Alert";
 
@@ -8,6 +7,7 @@ import { useFetch } from "../hooks/useFetch";
 
 // Project's components
 import RoleTableColumn from "../components/RoleTableColumn";
+import Loading from "../components/Loading";
 
 function Job() {
   const { data, isPending, error } = useFetch("http://127.0.0.1:8000/api/job/");
@@ -25,14 +25,9 @@ function Job() {
       </div>
       <div>
         <h3>Jobs</h3>
-        <p>You can view job's guide by clicking on it.</p>
-        {isPending && (
-          <>
-            <Spinner animation="border" variant="dark" />
-            <br />
-            Loading data...
-          </>
-        )}
+        <p>View official job guide by clicking on it.</p>
+
+        {isPending && <Loading />}
 
         {data && (
           <div style={{ marginTop: "1vh", display: "inline-flex", gap: "3vw" }}>

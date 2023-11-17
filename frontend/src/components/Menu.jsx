@@ -28,8 +28,8 @@ function Menu() {
             <FaHome
               style={{
                 display: "inline-block",
-                width: "25%",
-                height: "25%",
+                width: "30",
+                height: "30",
                 alignItems: "center",
               }}
             />
@@ -51,8 +51,8 @@ function Menu() {
             <GiAncientSword
               style={{
                 display: "inline-block",
-                width: "40%",
-                height: "40%",
+                width: "30",
+                height: "30",
                 alignItems: "center",
               }}
             />
@@ -74,8 +74,8 @@ function Menu() {
             <GiBandana
               style={{
                 display: "inline-block",
-                width: "40%",
-                height: "40%",
+                width: "30",
+                height: "30",
                 alignItems: "center",
               }}
             />
@@ -97,13 +97,36 @@ function Menu() {
             <GiBanknote
               style={{
                 display: "inline-block",
-                width: "30%",
-                height: "30%",
+                width: "30",
+                height: "30",
                 alignItems: "center",
               }}
             />
             <Link to="costs/" className="menu-link">
               Gear costs
+            </Link>
+          </Navbar.Brand>
+        </Container>
+      </Navbar>
+
+      <Navbar
+        bg="dark"
+        data-bs-theme="dark"
+        className="bg-body-tertiary"
+        style={{ marginBottom: "10px" }}
+      >
+        <Container>
+          <Navbar.Brand>
+            <GiAbdominalArmor
+              style={{
+                display: "inline-block",
+                width: "30",
+                height: "30",
+                alignItems: "center",
+              }}
+            />
+            <Link to="gear/" className="menu-link">
+              All gear
             </Link>
           </Navbar.Brand>
         </Container>
@@ -170,29 +193,6 @@ function Menu() {
             />
             <Link to="tankgear/" className="menu-link">
               Tank gear
-            </Link>
-          </Navbar.Brand>
-        </Container>
-      </Navbar>
-
-      <Navbar
-        bg="dark"
-        data-bs-theme="dark"
-        className="bg-body-tertiary"
-        style={{ marginBottom: "10px" }}
-      >
-        <Container>
-          <Navbar.Brand>
-            <GiAbdominalArmor
-              style={{
-                display: "inline-block",
-                width: "30%",
-                height: "300%",
-                alignItems: "center",
-              }}
-            />
-            <Link to="gear/" className="menu-link">
-              All gear
             </Link>
           </Navbar.Brand>
         </Container>

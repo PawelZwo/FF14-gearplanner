@@ -1,9 +1,11 @@
 // React-Bootstrap imports
-import Spinner from "react-bootstrap/Spinner";
 import Image from "react-bootstrap/Image";
 
 // Custom hooks
 import { useFetch } from "../hooks/useFetch";
+
+// Project's components
+import Loading from "../components/Loading";
 
 function Cost() {
   const { data, isPending, error } = useFetch(
@@ -24,13 +26,7 @@ function Cost() {
       <div>
         <h3>Gear costs types</h3>
 
-        {isPending && (
-          <>
-            <Spinner animation="border" variant="dark" />
-            <br />
-            Loading data...
-          </>
-        )}
+        {isPending && <Loading />}
 
         {data && (
           <ul>

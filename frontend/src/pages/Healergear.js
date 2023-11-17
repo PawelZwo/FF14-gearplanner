@@ -1,8 +1,8 @@
-// React-Bootstrap imports
-import Spinner from "react-bootstrap/Spinner";
-
 // Custom hooks
 import { useFetch } from "../hooks/useFetch";
+
+// Project's components
+import Loading from "../components/Loading";
 
 function Healergear() {
   const { data, isPending, error } = useFetch(
@@ -12,13 +12,7 @@ function Healergear() {
   return (
     <>
       <h3>Healer gear</h3>
-      {isPending && (
-        <>
-          <Spinner animation="border" variant="dark" />
-          <br />
-          Loading data...
-        </>
-      )}
+      {isPending && <Loading />}
 
       {data && (
         <ul>
