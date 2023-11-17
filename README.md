@@ -1,6 +1,5 @@
-# FF14 Gear planner
+# FF14 Gear planner [ver 2.0.0 in development]
 
-*** 
 
 ## Table of content
 
@@ -43,7 +42,7 @@ python manage.py loaddata api/fixtures/initial
 
 Obviously, to run entire app we need to start both Django server and React.
 ```
-(in "backend" directory)
+cd backend
 python manage.py runserver
 cd ../
 cd frontend
@@ -57,20 +56,20 @@ The app was created using:
 ```
 * Python 3.11
 * Django 4.2.6
+* Django REST framework
 * React
 * Bootstrap-React
 ```
 
 ## Requirements
 
-```
-* Node.js
-* Django ^4.2.6
-* psycopg2-binary ^2.9.6
-* Python-dotenv ^1.0.0
-* Django filter ^23.3
-* Django REST Framework ^3.14.0
-```
+Backend | React
+--- | ---
+| django ^4.2.6 | react ^18.2.0 |
+| django-cors-headers ^4.3.1 | react-icons ^4.12.0 |
+| django_restframwerok ^3.14.0 | react-bootstrap ^2.9.1 |
+| psycopng2-binary ^2.9.90 | bootstrap ^5.3.2 |
+| python-dotenv | react-router-dom ^6.18.0 |
 
 [//]: # (***)
 

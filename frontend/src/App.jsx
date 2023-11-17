@@ -13,7 +13,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-// Porject's components imports
+// Project's components imports
 import Home from "./components/Home";
 import Menu from "./components/Menu";
 import AllGear from "./pages/AllGear";

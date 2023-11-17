@@ -43,37 +43,37 @@ class Cost(models.Model):
     name = models.CharField(unique=True, null=True)
     mythos_1 = models.PositiveSmallIntegerField(
         null=True, default=0,
-        db_comment="Number of Mythos I tokens needed to exchange for a piece of api")
+        db_comment="Number of Mythos I tokens needed to exchange for a piece of gear")
     mythos_2 = models.PositiveSmallIntegerField(
         null=True, default=0,
-        db_comment="Number of Mythos II tokens needed to exchange for a piece of api")
+        db_comment="Number of Mythos II tokens needed to exchange for a piece of gear")
     mythos_3 = models.PositiveSmallIntegerField(
         null=True, default=0,
-        db_comment="Number of Mythos III tokens needed to exchange for a piece of api")
+        db_comment="Number of Mythos III tokens needed to exchange for a piece of gear")
     mythos_4 = models.PositiveSmallIntegerField(
         null=True, default=0,
-        db_comment="Number of Mythos IV tokens needed to exchange for a piece of api")
+        db_comment="Number of Mythos IV tokens needed to exchange for a piece of gear")
     unsung_head = models.PositiveSmallIntegerField(
         null=True, default=0,
-        db_comment="Number of Unsung Head tokens needed to exchange for a piece of api")
+        db_comment="Number of Unsung Head tokens needed to exchange for a piece of gear")
     unsung_body = models.PositiveSmallIntegerField(
         null=True, default=0,
-        db_comment="Number of Unsung Body tokens needed to exchange for a piece of api")
+        db_comment="Number of Unsung Body tokens needed to exchange for a piece of gear")
     unsung_legs = models.PositiveSmallIntegerField(
         null=True, default=0,
-        db_comment="Number of Unsung Legs tokens needed to exchange for a piece of api")
+        db_comment="Number of Unsung Legs tokens needed to exchange for a piece of gear")
     unsung_hands = models.PositiveSmallIntegerField(
         null=True, default=0,
-        db_comment="Number of Unsung Hands tokens needed to exchange for a piece of api")
+        db_comment="Number of Unsung Hands tokens needed to exchange for a piece of gear")
     unsung_feet = models.PositiveSmallIntegerField(
         null=True, default=0,
-        db_comment="Number of Unsung Feet tokens needed to exchange for a piece of api")
+        db_comment="Number of Unsung Feet tokens needed to exchange for a piece of gear")
     unsung_acc = models.PositiveSmallIntegerField(
         null=True, default=0,
-        db_comment="Number of Unsung Accessory tokens needed to exchange for a piece of api")
+        db_comment="Number of Unsung Accessory tokens needed to exchange for a piece of gear")
     tomestones = models.PositiveSmallIntegerField(
         null=True, default=0,
-        db_comment="Number of Tomestones needed to exchange for a piece of api")
+        db_comment="Number of Tomestones needed to exchange for a piece of gear")
     weapon_token = models.BooleanField(
         null=True, default=False,
         db_comment="Is weapon token needed to exchange for a weapon")
@@ -144,6 +144,7 @@ class Gear(models.Model):
     cost = models.OneToOneField(
         Cost, on_delete=models.CASCADE, db_comment="Costs of the gear")
     job = models.ManyToManyField(Job, related_name="gear_job")
+    ff14_db_url = models.URLField(null=True, blank=True)
 
     # Gear actual stats
     item_level = models.PositiveSmallIntegerField(
@@ -192,7 +193,7 @@ class Gear(models.Model):
         null=True, db_comment="Gear's spell speed value")
 
     class Meta:
-        ordering = ['category']
+        ordering = ['category', 'pk']
 
     def __str__(self):
         return f"{self.name}"
@@ -204,29 +205,29 @@ class Gearset(models.Model):
     name = models.CharField(unique=True)
     job = models.OneToOneField(Job, on_delete=models.CASCADE)
     weapon = models.OneToOneField(
-        Gear, on_delete=models.CASCADE, related_name="weapon")
+        Gear, on_delete=models.CASCADE, related_name="gearset_weapon")
     shield = models.OneToOneField(
-        Gear, on_delete=models.CASCADE, null=True, related_name="shield")
+        Gear, on_delete=models.CASCADE, null=True, related_name="gearset_shield")
     head = models.OneToOneField(
-        Gear, on_delete=models.CASCADE, related_name="head")
+        Gear, on_delete=models.CASCADE, related_name="gearset_head")
     body = models.OneToOneField(
-        Gear, on_delete=models.CASCADE, related_name="body")
+        Gear, on_delete=models.CASCADE, related_name="gearset_body")
     legs = models.OneToOneField(
-        Gear, on_delete=models.CASCADE, related_name="legs")
+        Gear, on_delete=models.CASCADE, related_name="gearset_legs")
     hands = models.OneToOneField(
-        Gear, on_delete=models.CASCADE, related_name="hands")
+        Gear, on_delete=models.CASCADE, related_name="gearset_hands")
     feet = models.OneToOneField(
-        Gear, on_delete=models.CASCADE, related_name="feet")
+        Gear, on_delete=models.CASCADE, related_name="gearset_feet")
     earring = models.OneToOneField(
-        Gear, on_delete=models.CASCADE, related_name="earring")
+        Gear, on_delete=models.CASCADE, related_name="gearset_earring")
     necklace = models.OneToOneField(
-        Gear, on_delete=models.CASCADE, related_name="necklace")
+        Gear, on_delete=models.CASCADE, related_name="gearset_necklace")
     bracelet = models.OneToOneField(
-        Gear, on_delete=models.CASCADE, related_name="bracelet")
+        Gear, on_delete=models.CASCADE, related_name="gearset_bracelet")
     left_ring = models.OneToOneField(
-        Gear, on_delete=models.CASCADE, related_name="left_ring")
+        Gear, on_delete=models.CASCADE, related_name="gearset_left_ring")
     right_ring = models.OneToOneField(
-        Gear, on_delete=models.CASCADE, related_name="right_ring")
+        Gear, on_delete=models.CASCADE, related_name="gearset_right_ring")
 
     def __str__(self):
         return f"{self.name}"
