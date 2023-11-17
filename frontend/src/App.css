@@ -10,8 +10,14 @@
 
 .footer-legal {
     font-size: 12px;
+    color: white;
 }
 
 .no-margin-bottom {
     margin-bottom: 0;
 }
+
+.job-link {
+    text-decoration: none;
+    color: white;
+  }

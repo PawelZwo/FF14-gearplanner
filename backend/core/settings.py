@@ -117,5 +117,5 @@ REST_FRAMEWORK = {
     )
 }
 
-CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOW_ALL_ORIGINS = bool(int(os.environ.get("CORS_ALLOW_ALL_ORIGINS"))) # Value 1 for "True" or 0 for "False"
 CORS_ALLOWED_ORIGINS = [os.environ.get("CORS_ALLOWED_ORIGINS")]

@@ -6,6 +6,9 @@ import Alert from "react-bootstrap/Alert";
 // Custom hooks
 import { useFetch } from "../hooks/useFetch";
 
+// Custom functions
+import toTitleCase from "../custom_functions/toTitleCase";
+
 function JobList() {
   const { data, isPending, error } = useFetch("http://127.0.0.1:8000/api/job/");
 
@@ -23,14 +26,14 @@ function JobList() {
       {data && (
         <div style={{ marginTop: "1vh", display: "inline-flex", gap: "3vw" }}>
           {/* Tank jobs */}
-          <Table borderless responsive="md">
+          <Table borderless hover responsive="md" variant="dark">
             <thead>
               <tr>
                 <th>
                   <img
                     src="/media/TankRole.png"
-                    width="25"
-                    height="25"
+                    width="30"
+                    height="30"
                     className="d-inline-block align-top"
                     alt="tank gear logo"
                     style={{ marginRight: "5px" }}
@@ -45,7 +48,20 @@ function JobList() {
                 .map(({ id, name }) => {
                   return (
                     <tr key={id}>
-                      <td>{name}</td>
+                      <td>
+                        <img
+                          src={`/media/job_icons/${toTitleCase(name).replace(
+                            /\s/g,
+                            ""
+                          )}.png`}
+                          width="25"
+                          height="25"
+                          className="d-inline-block align-top"
+                          alt={`${name} job icon`}
+                          style={{ marginRight: "5px" }}
+                        />
+                        {name}
+                      </td>
                     </tr>
                   );
                 })}
@@ -53,14 +69,14 @@ function JobList() {
           </Table>
 
           {/* Healer jobs */}
-          <Table borderless responsive="md">
+          <Table borderless hover responsive="md" variant="dark">
             <thead>
               <tr>
                 <th>
                   <img
                     src="/media/HealerRole.png"
-                    width="25"
-                    height="25"
+                    width="30"
+                    height="30"
                     className="d-inline-block align-top"
                     alt="tank gear logo"
                     style={{ marginRight: "5px" }}
@@ -75,7 +91,20 @@ function JobList() {
                 .map(({ id, name }) => {
                   return (
                     <tr key={id}>
-                      <td>{name}</td>
+                      <td>
+                        <img
+                          src={`/media/job_icons/${toTitleCase(name).replace(
+                            /\s/g,
+                            ""
+                          )}.png`}
+                          width="25"
+                          height="25"
+                          className="d-inline-block align-top"
+                          alt={`${name} job icon`}
+                          style={{ marginRight: "5px" }}
+                        />
+                        {name}
+                      </td>
                     </tr>
                   );
                 })}
@@ -83,14 +112,14 @@ function JobList() {
           </Table>
 
           {/* Melee jobs */}
-          <Table borderless responsive="md">
+          <Table borderless hover responsive="md" variant="dark">
             <thead>
               <tr>
                 <th>
                   <img
                     src="/media/DPSRole.png"
-                    width="25"
-                    height="25"
+                    width="30"
+                    height="30"
                     className="d-inline-block align-top"
                     alt="tank gear logo"
                     style={{ marginRight: "5px" }}
@@ -105,7 +134,20 @@ function JobList() {
                 .map(({ id, name }) => {
                   return (
                     <tr key={id}>
-                      <td>{name}</td>
+                      <td>
+                        <img
+                          src={`/media/job_icons/${toTitleCase(name).replace(
+                            /\s/g,
+                            ""
+                          )}.png`}
+                          width="25"
+                          height="25"
+                          className="d-inline-block align-top"
+                          alt={`${name} job icon`}
+                          style={{ marginRight: "5px" }}
+                        />
+                        {name}
+                      </td>
                     </tr>
                   );
                 })}
@@ -113,14 +155,14 @@ function JobList() {
           </Table>
 
           {/* Ranged jobs */}
-          <Table borderless responsive="md">
+          <Table borderless hover responsive="md" variant="dark">
             <thead>
               <tr>
                 <th>
                   <img
                     src="/media/DPSRole.png"
-                    width="25"
-                    height="25"
+                    width="30"
+                    height="30"
                     className="d-inline-block align-top"
                     alt="tank gear logo"
                     style={{ marginRight: "5px" }}
@@ -135,7 +177,20 @@ function JobList() {
                 .map(({ id, name }) => {
                   return (
                     <tr key={id}>
-                      <td>{name}</td>
+                      <td>
+                        <img
+                          src={`/media/job_icons/${toTitleCase(name).replace(
+                            /\s/g,
+                            ""
+                          )}.png`}
+                          width="25"
+                          height="25"
+                          className="d-inline-block align-top"
+                          alt={`${name} job icon`}
+                          style={{ marginRight: "5px" }}
+                        />
+                        {name}
+                      </td>
                     </tr>
                   );
                 })}
@@ -143,14 +198,14 @@ function JobList() {
           </Table>
 
           {/* Caster jobs */}
-          <Table borderless responsive="md">
+          <Table borderless hover responsive="md" variant="dark">
             <thead>
               <tr>
                 <th>
                   <img
                     src="/media/DPSRole.png"
-                    width="25"
-                    height="25"
+                    width="30"
+                    height="30"
                     className="d-inline-block align-top"
                     alt="tank gear logo"
                     style={{ marginRight: "5px" }}
@@ -165,7 +220,20 @@ function JobList() {
                 .map(({ id, name }) => {
                   return (
                     <tr key={id}>
-                      <td>{name}</td>
+                      <td>
+                        <img
+                          src={`/media/job_icons/${toTitleCase(name).replace(
+                            /\s/g,
+                            ""
+                          )}.png`}
+                          width="25"
+                          height="25"
+                          className="d-inline-block align-top"
+                          alt={`${name} job icon`}
+                          style={{ marginRight: "5px" }}
+                        />
+                        {name}
+                      </td>
                     </tr>
                   );
                 })}

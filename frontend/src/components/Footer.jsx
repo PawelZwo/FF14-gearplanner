@@ -14,7 +14,7 @@ function Footer() {
           to="https://github.com/PawelZwo"
           style={{ textDecoration: "none" }}
         >
-          Paweł Zwoliński
+          PawZwo
         </Link>
       </p>
     </div>

@@ -1,10 +1,13 @@
 // React-Bootstrap imports
 import Spinner from "react-bootstrap/Spinner";
 import Image from "react-bootstrap/Image";
-import Table from "react-bootstrap/Table";
+import Alert from "react-bootstrap/Alert";
 
 // Custom hooks
 import { useFetch } from "../hooks/useFetch";
+
+// Project's components
+import RoleTableColumn from "../components/RoleTableColumn";
 
 function Job() {
   const { data, isPending, error } = useFetch("http://127.0.0.1:8000/api/job/");
@@ -22,7 +25,7 @@ function Job() {
       </div>
       <div>
         <h3>Jobs</h3>
-
+        <p>You can view job's guide by clicking on it.</p>
         {isPending && (
           <>
             <Spinner animation="border" variant="dark" />
@@ -33,157 +36,40 @@ function Job() {
 
         {data && (
           <div style={{ marginTop: "1vh", display: "inline-flex", gap: "3vw" }}>
-            {/* Tank jobs */}
-            <Table borderless responsive="md">
-              <thead>
-                <tr>
-                  <th>
-                    <img
-                      src="/media/TankRole.png"
-                      width="25"
-                      height="25"
-                      className="d-inline-block align-top"
-                      alt="tank gear logo"
-                      style={{ marginRight: "5px" }}
-                    />
-                    Tanks
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {data
-                  .filter((job) => job.role === "tank")
-                  .map(({ id, name }) => {
-                    return (
-                      <tr key={id}>
-                        <td>{name}</td>
-                      </tr>
-                    );
-                  })}
-              </tbody>
-            </Table>
-
-            {/* Healer jobs */}
-            <Table borderless responsive="md">
-              <thead>
-                <tr>
-                  <th>
-                    <img
-                      src="/media/HealerRole.png"
-                      width="25"
-                      height="25"
-                      className="d-inline-block align-top"
-                      alt="tank gear logo"
-                      style={{ marginRight: "5px" }}
-                    />
-                    Healers
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {data
-                  .filter((job) => job.role === "healer")
-                  .map(({ id, name }) => {
-                    return (
-                      <tr key={id}>
-                        <td>{name}</td>
-                      </tr>
-                    );
-                  })}
-              </tbody>
-            </Table>
-
-            {/* Melee jobs */}
-            <Table borderless responsive="md">
-              <thead>
-                <tr>
-                  <th>
-                    <img
-                      src="/media/DPSRole.png"
-                      width="25"
-                      height="25"
-                      className="d-inline-block align-top"
-                      alt="tank gear logo"
-                      style={{ marginRight: "5px" }}
-                    />
-                    Melee dps
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {data
-                  .filter((job) => job.role === "melee")
-                  .map(({ id, name }) => {
-                    return (
-                      <tr key={id}>
-                        <td>{name}</td>
-                      </tr>
-                    );
-                  })}
-              </tbody>
-            </Table>
-
-            {/* Ranged jobs */}
-            <Table borderless responsive="md">
-              <thead>
-                <tr>
-                  <th>
-                    <img
-                      src="/media/DPSRole.png"
-                      width="25"
-                      height="25"
-                      className="d-inline-block align-top"
-                      alt="tank gear logo"
-                      style={{ marginRight: "5px" }}
-                    />
-                    Ranged dps
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {data
-                  .filter((job) => job.role === "ranged")
-                  .map(({ id, name }) => {
-                    return (
-                      <tr key={id}>
-                        <td>{name}</td>
-                      </tr>
-                    );
-                  })}
-              </tbody>
-            </Table>
-
-            {/* Caster jobs */}
-            <Table borderless responsive="md">
-              <thead>
-                <tr>
-                  <th>
-                    <img
-                      src="/media/DPSRole.png"
-                      width="25"
-                      height="25"
-                      className="d-inline-block align-top"
-                      alt="tank gear logo"
-                      style={{ marginRight: "5px" }}
-                    />
-                    Caster dps
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {data
-                  .filter((job) => job.role === "caster")
-                  .map(({ id, name }) => {
-                    return (
-                      <tr key={id}>
-                        <td>{name}</td>
-                      </tr>
-                    );
-                  })}
-              </tbody>
-            </Table>
+            <RoleTableColumn
+              data={data}
+              roleCol="tank"
+              pngRole="TankRole"
+              title="Tanks"
+            />
+            <RoleTableColumn
+              data={data}
+              roleCol="healer"
+              pngRole="HealerRole"
+              title="Healers"
+            />
+            <RoleTableColumn
+              data={data}
+              roleCol="melee"
+              pngRole="DpsRole"
+              title="Melee Dps"
+            />
+            <RoleTableColumn
+              data={data}
+              roleCol="ranged"
+              pngRole="DpsRole"
+              title="Ranged Dps"
+            />
+            <RoleTableColumn
+              data={data}
+              roleCol="caster"
+              pngRole="DpsRole"
+              title="Caster Dps"
+            />
           </div>
         )}
+
+        {error && <Alert variant="danger">{error}</Alert>}
       </div>
     </>
   );
