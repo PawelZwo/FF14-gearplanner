@@ -58,7 +58,7 @@ export default function RoleTableColumn({ data, roleCol, title, is_home }) {
                       >
                         {name}
                       </Link>{" "}
-                      {(name == "Reaper" || name == "Sage") && (
+                      {(name === "Reaper" || name === "Sage") && (
                         <Badge pill bg="success">
                           Endwalker
                         </Badge>
