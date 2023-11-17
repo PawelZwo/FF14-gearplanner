@@ -8,7 +8,7 @@ from .models import Job, Race, Cost, Gear, Gearset
 class JobSerializer(serializers.ModelSerializer):
     class Meta:
         model = Job
-        fields = ("id", "name")
+        fields = ("id", "name", "role")
 
 
 class CostSerializer(serializers.ModelSerializer):

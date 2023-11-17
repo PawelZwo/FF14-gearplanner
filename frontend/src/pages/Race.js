@@ -10,6 +10,8 @@ function Race() {
     "http://127.0.0.1:8000/api/race/"
   );
 
+  console.log(data);
+
   return (
     <>
       <div>

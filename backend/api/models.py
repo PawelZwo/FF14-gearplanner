@@ -14,7 +14,17 @@ class Account(AbstractUser):
 
 
 class Job(models.Model):
+
+    ROLES = [
+        ("tank", "tank"),
+        ("healer", "healer"),
+        ("melee", "melee"),
+        ("ranged", "ranged"),
+        ("caster", "caster"),
+    ]
+
     name = models.CharField(db_comment="Name of the job")
+    role = models.CharField(choices=ROLES)
 
     def __str__(self):
         return f"{self.name}"
