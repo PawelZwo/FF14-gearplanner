@@ -110,7 +110,11 @@ REST_FRAMEWORK = {
     # ]
     'DEFAULT_PARSER_CLASSES': [
         'rest_framework.parsers.JSONParser',
-    ]
+    ],
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    )
 }
 
 CORS_ALLOW_ALL_ORIGINS = False
