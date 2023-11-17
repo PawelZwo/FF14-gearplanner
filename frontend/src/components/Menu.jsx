@@ -3,7 +3,12 @@ import { Link } from "react-router-dom";
 
 // React-Icons imports
 import { FaHome } from "react-icons/fa";
-import { GiAncientSword, GiBandana, GiBanknote, GiAbdominalArmor } from "react-icons/gi";
+import {
+  GiAncientSword,
+  GiBandana,
+  GiBanknote,
+  GiAbdominalArmor,
+} from "react-icons/gi";
 
 // React-Bootstrap imports
 import Container from "react-bootstrap/Container";
@@ -113,7 +118,7 @@ function Menu() {
         <Container>
           <Navbar.Brand>
             <img
-              src="/media/DPSRole.png"
+              src="/media/DpsRole.png"
               width="30"
               height="30"
               className="d-inline-block align-top"
@@ -135,7 +140,7 @@ function Menu() {
         <Container>
           <Navbar.Brand>
             <img
-              src="/media/HealerRole.png"
+              src="/media/Healers.png"
               width="30"
               height="30"
               className="d-inline-block align-top"
@@ -157,7 +162,7 @@ function Menu() {
         <Container>
           <Navbar.Brand>
             <img
-              src="/media/TankRole.png"
+              src="/media/Tanks.png"
               width="30"
               height="30"
               className="d-inline-block align-top"
@@ -178,7 +183,7 @@ function Menu() {
       >
         <Container>
           <Navbar.Brand>
-          <GiAbdominalArmor
+            <GiAbdominalArmor
               style={{
                 display: "inline-block",
                 width: "30%",

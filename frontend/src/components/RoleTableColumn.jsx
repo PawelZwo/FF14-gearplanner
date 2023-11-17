@@ -8,14 +8,14 @@ import { Link } from "react-router-dom";
 // Custom functions
 import toTitleCase from "../custom_functions/toTitleCase";
 
-export default function RoleTableColumn({ data, roleCol, pngRole, title }) {
+export default function RoleTableColumn({ data, roleCol, title, is_home }) {
   return (
     <Table borderless hover responsive="md" variant="dark">
       <thead>
         <tr>
           <th>
             <img
-              src={`/media/${pngRole}.png`}
+              src={"/media/" + title.replace(/\s/g, "") + ".png"}
               width="30"
               height="30"
               className="d-inline-block align-top"
@@ -44,7 +44,8 @@ export default function RoleTableColumn({ data, roleCol, pngRole, title }) {
                     alt={`${name} job icon`}
                     style={{ marginRight: "5px" }}
                   />
-                  {name === "Reaper" || name === "Sage" ? (
+
+                  {!is_home && (
                     <>
                       <Link
                         to={
@@ -57,23 +58,15 @@ export default function RoleTableColumn({ data, roleCol, pngRole, title }) {
                       >
                         {name}
                       </Link>{" "}
-                      <Badge pill bg="success">
-                        Endwalker
-                      </Badge>
+                      {(name == "Reaper" || name == "Sage") && (
+                        <Badge pill bg="success">
+                          Endwalker
+                        </Badge>
+                      )}
                     </>
-                  ) : (
-                    <Link
-                      to={
-                        "https://eu.finalfantasyxiv.com/jobguide/" +
-                        name.replace(/\s/g, "").toLowerCase() +
-                        "/"
-                      }
-                      className="job-link"
-                      target="_blank"
-                    >
-                      {name}
-                    </Link>
                   )}
+
+                  {is_home && name}
                 </td>
               </tr>
             );

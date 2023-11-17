@@ -39,32 +39,32 @@ function Job() {
             <RoleTableColumn
               data={data}
               roleCol="tank"
-              pngRole="TankRole"
               title="Tanks"
+              is_home={false}
             />
             <RoleTableColumn
               data={data}
               roleCol="healer"
-              pngRole="HealerRole"
               title="Healers"
+              is_home={false}
             />
             <RoleTableColumn
               data={data}
               roleCol="melee"
-              pngRole="DpsRole"
               title="Melee Dps"
+              is_home={false}
             />
             <RoleTableColumn
               data={data}
               roleCol="ranged"
-              pngRole="DpsRole"
               title="Ranged Dps"
+              is_home={false}
             />
             <RoleTableColumn
               data={data}
               roleCol="caster"
-              pngRole="DpsRole"
               title="Caster Dps"
+              is_home={false}
             />
           </div>
         )}
