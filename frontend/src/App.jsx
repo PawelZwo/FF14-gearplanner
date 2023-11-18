@@ -15,7 +15,7 @@ import Col from "react-bootstrap/Col";
 
 // Project's components imports
 import Home from "./components/Home";
-import Menu from "./components/Menu";
+import RightSide from "./components/RightSide";
 import AllGear from "./pages/AllGear";
 import Dpsgear from "./pages/Dpsgear";
 import Healergear from "./pages/Healergear";
@@ -24,17 +24,23 @@ import Job from "./pages/Job";
 import Race from "./pages/Race";
 import Cost from "./pages/Cost";
 import Footer from "./components/Footer";
+// import NewsFeed from "./components/NewsFeed";
+import LeftSide from "./components/LeftSide";
 
 export default function App() {
   useEffect(() => {
-    document.title = "FF14 Gearplanner | ";
+    document.title = "Final Fantasy 14 Gearplanner";
   }, []);
 
   return (
     <BrowserRouter>
       <Container style={{ marginTop: "2vh" }}>
         <Row>
-          <Col sm={9}>
+          <Col sm={2}>
+            {/* <NewsFeed/> */}
+            <LeftSide />
+          </Col>
+          <Col sm={7}>
             <Routes>
               <Route path="" element={<Home />} />
               <Route path="gear/" element={<AllGear />} />
@@ -46,12 +52,16 @@ export default function App() {
               <Route path="costs/" element={<Cost />} />
             </Routes>
           </Col>
-          <Col sm={3}>
-            <Menu />
+          <Col sm={2}>
+            <RightSide />
           </Col>
         </Row>
-        <Row style={{marginBottom: "1vh", marginTop: "2vh"}}>
-          <Footer />
+        <Row style={{ marginBottom: "1vh", marginTop: "2vh" }}>
+          <Col />
+          <Col sm={7}>
+            <Footer />
+          </Col>
+          <Col />
         </Row>
       </Container>
     </BrowserRouter>

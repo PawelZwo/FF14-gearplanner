@@ -10,7 +10,13 @@ import toTitleCase from "../custom_functions/toTitleCase";
 
 export default function RoleTableColumn({ data, roleCol, title, is_home }) {
   return (
-    <Table borderless hover responsive="md" variant="dark">
+    <Table
+      borderless
+      hover
+      responsive="sm"
+      variant="dark"
+      style={{ marginBottom: "0px", marginTop: "0px", padding: "0px" }}
+    >
       <thead>
         <tr>
           <th>
@@ -60,7 +66,7 @@ export default function RoleTableColumn({ data, roleCol, title, is_home }) {
                       </Link>{" "}
                       {(name === "Reaper" || name === "Sage") && (
                         <Badge pill bg="success">
-                          Endwalker
+                          N
                         </Badge>
                       )}
                     </>

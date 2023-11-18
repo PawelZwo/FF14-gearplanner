@@ -30,7 +30,7 @@ function Job() {
         {isPending && <Loading />}
 
         {data && (
-          <div style={{ marginTop: "1vh", display: "inline-flex", gap: "3vw" }}>
+          <div style={{ marginTop: "1vh", display: "inline-flex", gap: "1vw", flexWrap: "wrap" }}>
             <RoleTableColumn
               data={data}
               roleCol="tank"

@@ -13,8 +13,6 @@ function Race() {
     "http://127.0.0.1:8000/api/race/"
   );
 
-  console.log(data);
-
   return (
     <>
       <div>
@@ -36,7 +34,14 @@ function Race() {
         {isPending && <Loading />}
 
         {data && (
-          <div style={{ marginTop: "2vh", display: "inline-flex", gap: "2vw" }}>
+          <div
+            style={{
+              marginTop: "2vh",
+              display: "inline-flex",
+              gap: "0.75vw",
+              flexWrap: "wrap",
+            }}
+          >
             {data.map((race) => {
               return (
                 <Table
@@ -45,6 +50,7 @@ function Race() {
                   striped
                   responsive="sm"
                   variant="dark"
+                  style={{ marginTop: 0, marginBottom: 0 }}
                 >
                   <thead>
                     <tr>
