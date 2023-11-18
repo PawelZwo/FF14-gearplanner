@@ -12,12 +12,19 @@ function JobList() {
   const { data, isPending, error } = useFetch("http://127.0.0.1:8000/api/job/");
 
   return (
-    <div className="job-list">
-      <h2>Best-in-slot gearsets</h2>
-      {isPending && <Loading/>}
+    <>
+      <h3>Best-in-slot gearsets</h3>
+      {isPending && <Loading />}
 
       {data && (
-        <div style={{ marginTop: "1vh", display: "inline-flex", gap: "1vw", flexWrap: "wrap" }}>
+        <div
+          style={{
+            marginTop: "1vh",
+            display: "inline-flex",
+            gap: "1vw",
+            flexWrap: "wrap",
+          }}
+        >
           <RoleTableColumn
             data={data}
             roleCol="tank"
@@ -52,7 +59,7 @@ function JobList() {
       )}
 
       {error && <Alert variant="danger">{error}</Alert>}
-    </div>
+    </>
   );
 }
 

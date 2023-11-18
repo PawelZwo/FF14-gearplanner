@@ -8,7 +8,6 @@ import {
   GiAncientSword,
   GiBandana,
   GiBanknote,
-  GiAbdominalArmor,
 } from "react-icons/gi";
 
 // React-Bootstrap imports
@@ -91,7 +90,11 @@ export default function RightSide() {
                 }}
               />
               Jobs{" "}
-              <Badge pill bg="success" style={{ marginLeft: "20px" }}>
+              <Badge
+                pill
+                bg="success"
+                style={{ marginLeft: "20px", fontSize: "12px" }}
+              >
                 NEW
               </Badge>
             </Navbar.Brand>

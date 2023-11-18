@@ -35,6 +35,13 @@ export default function App() {
   return (
     <BrowserRouter>
       <Container style={{ marginTop: "2vh" }}>
+        <Row style={{ marginBottom: "4vh" }}>
+          <Col />
+          <Col sm={7}>
+            <div className="header">Final Fantasy 14 gearplanner</div>
+          </Col>
+          <Col />
+        </Row>
         <Row>
           <Col sm={2}>
             {/* <NewsFeed/> */}
@@ -57,11 +64,7 @@ export default function App() {
           </Col>
         </Row>
         <Row style={{ marginBottom: "1vh", marginTop: "2vh" }}>
-          <Col />
-          <Col sm={7}>
-            <Footer />
-          </Col>
-          <Col />
+          <Footer />
         </Row>
       </Container>
     </BrowserRouter>

@@ -13,8 +13,8 @@ export default function Home() {
           fluid
         />
       </div>
-      <div>
-        <JobList/>
+      <div style={{ marginTop: "2vh" }}>
+        <JobList />
       </div>
     </>
   );
