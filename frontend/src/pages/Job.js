@@ -12,6 +12,8 @@ import Loading from "../components/Loading";
 function Job() {
   const { data, isPending, error } = useFetch("http://127.0.0.1:8000/api/job/");
 
+  console.log(data);
+
   return (
     <>
       <div>
