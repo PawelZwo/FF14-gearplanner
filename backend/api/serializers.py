@@ -28,8 +28,8 @@ class RaceSerializer(serializers.ModelSerializer):
 class GearSerializer(serializers.ModelSerializer):
     class Meta:
         model = Gear
-        fields = ('name', 'category', 'acquisition', 'added_in_patch',
-                  'slot', 'cost', 'job', 'ff14_db_url', 'item_level',
+        fields = ('id', 'name', 'category', 'acquisition', 'added_in_patch',
+                  'slot', 'cost', 'job', 'ff14_db_index', 'item_level',
                   'physical_dmg', 'magical_dmg', 'auto_attack', 'delay',
                   'dps', 'block_strength', 'block_rate', 'defense',
                   'magic_defense', 'vitality', 'strength', 'dexterity',
@@ -46,7 +46,8 @@ class GearsetSerializer(serializers.ModelSerializer):
         model = Gearset
         fields = ('uuid', 'name', 'job', 'weapon', 'shield', 'head',
                   'body', 'legs', 'hands', 'feet', 'earring',
-                  'necklace', 'bracelet', 'left_ring', 'right_ring', )
+                  'necklace', 'bracelet', 'left_ring', 'right_ring',
+                  'attributes',)
 
     def get_attributes(self, obj):
         return obj.calculate_total_stats()

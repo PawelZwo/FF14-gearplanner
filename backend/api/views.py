@@ -39,14 +39,14 @@ class GearsetList(generics.ListCreateAPIView):
 
 # GEAR model API views
 
-class GearList(generics.ListAPIView):
+class GearList(generics.ListCreateAPIView):
     '''All Gear'''
 
     queryset = Gear.objects.all()
     serializer_class = GearSerializer
 
 
-class DpsGearList(generics.ListCreateAPIView):
+class DpsGearList(generics.ListAPIView):
     '''Gear for DPS jobs'''
 
     queryset = Gear.objects.filter(
@@ -56,14 +56,14 @@ class DpsGearList(generics.ListCreateAPIView):
     serializer_class = GearSerializer
 
 
-class HealerGearList(generics.ListCreateAPIView):
+class HealerGearList(generics.ListAPIView):
     '''Gear for healers'''
 
     queryset = Gear.objects.filter(category="Healing")
     serializer_class = GearSerializer
 
 
-class TankGearList(generics.ListCreateAPIView):
+class TankGearList(generics.ListAPIView):
     '''Gear for tanks'''
 
     queryset = Gear.objects.filter(category="Fending")
