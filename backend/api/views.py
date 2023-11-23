@@ -2,6 +2,7 @@
 from django.shortcuts import render
 from django.views import View
 from rest_framework import generics
+from django_filters.rest_framework import DjangoFilterBackend
 
 # Serializers
 from .serializers import JobSerializer, RaceSerializer, CostSerializer, GearSerializer, GearsetSerializer
@@ -20,6 +21,8 @@ class APIIndex(View):
 class JobList(generics.ListAPIView):
     queryset = Job.objects.all()
     serializer_class = JobSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = {'role': ['in']}
 
 
 class RaceList(generics.ListAPIView):
@@ -37,34 +40,8 @@ class GearsetList(generics.ListCreateAPIView):
     serializer_class = GearsetSerializer
 
 
-# GEAR model API views
-
 class GearList(generics.ListCreateAPIView):
-    '''All Gear'''
-
     queryset = Gear.objects.all()
     serializer_class = GearSerializer
-
-
-class DpsGearList(generics.ListAPIView):
-    '''Gear for DPS jobs'''
-
-    queryset = Gear.objects.filter(
-        category__in=["Maiming", "Striking", "Slaying",
-                      "Scouting", "Aiming", "Casting"]
-    )
-    serializer_class = GearSerializer
-
-
-class HealerGearList(generics.ListAPIView):
-    '''Gear for healers'''
-
-    queryset = Gear.objects.filter(category="Healing")
-    serializer_class = GearSerializer
-
-
-class TankGearList(generics.ListAPIView):
-    '''Gear for tanks'''
-
-    queryset = Gear.objects.filter(category="Fending")
-    serializer_class = GearSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = {'category': ['in']}

@@ -1,5 +1,6 @@
 // React-Bootstrap imports
 import Image from "react-bootstrap/Image";
+import Alert from "react-bootstrap/Alert";
 
 // Custom hooks
 import { useFetch } from "../hooks/useFetch";
@@ -36,7 +37,7 @@ function Cost() {
           </ul>
         )}
 
-        {error && <div>{error}</div>}
+        {error && <Alert variant="danger">{error}</Alert>}
       </div>
     </>
   );

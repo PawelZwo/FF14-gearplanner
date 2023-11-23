@@ -1,12 +1,15 @@
 // Custom hooks
 import { useFetch } from "../hooks/useFetch";
 
+// React-Bootstrap imports
+import Alert from "react-bootstrap/Alert";
+
 // Project's components
 import Loading from "../components/Loading";
 
 function Tankgear() {
   const { data, isPending, error } = useFetch(
-    "http://127.0.0.1:8000/api/tankgear/"
+    "http://127.0.0.1:8000/api/gear/?category__in=Fending"
   );
 
   return (
@@ -22,7 +25,7 @@ function Tankgear() {
         </ul>
       )}
 
-      {error && <div>{error}</div>}
+      {error && <Alert variant="danger">{error}</Alert>}
     </>
   );
 }

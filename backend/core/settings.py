@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     # Dependencies
     'rest_framework',
     'corsheaders',
+    'django_filters'
 ]
 
 MIDDLEWARE = [
