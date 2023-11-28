@@ -38,7 +38,9 @@ export default function App() {
         <Row style={{ marginBottom: "4vh" }}>
           <Col />
           <Col sm={8}>
-            <div className="header">Final Fantasy 14 Gearset Planner</div>
+            <div className="header">
+              FINAL&nbsp;FANTASY&nbsp;XIV&nbsp;Gearset&nbsp;Planner
+            </div>
           </Col>
           <Col />
         </Row>

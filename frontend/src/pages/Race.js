@@ -28,8 +28,9 @@ function Race() {
       <div>
         <h3>Races on Eitherys</h3>
         <p>
-          Those are their base stats. Mostly, those are irrevelant. If you want
-          to min-max hard - they aren't.
+          Those are their base stats. Mostly, those are{" "}
+          <strong>irrevelant</strong>. If you want to min-max hard - they
+          aren't.
         </p>
 
         {isPending && <Loading />}
@@ -39,8 +40,8 @@ function Race() {
             style={{
               marginTop: "2vh",
               display: "inline-flex",
-              gap: "0.75vw",
-              flexWrap: "wrap",
+              gap: "1.25rem",
+              textWrap: "wrap",
             }}
           >
             {data.map((race) => {

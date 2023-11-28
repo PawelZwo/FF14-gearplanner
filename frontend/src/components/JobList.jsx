@@ -21,7 +21,7 @@ function JobList() {
           style={{
             marginTop: "1vh",
             display: "inline-flex",
-            gap: "1vw",
+            gap: "2.5rem",
             flexWrap: "wrap",
           }}
         >

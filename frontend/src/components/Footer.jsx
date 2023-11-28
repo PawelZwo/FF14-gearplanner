@@ -7,12 +7,12 @@ export default function Footer() {
   return (
     <p className="footer-legal">
       FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.
-      FINAL FANTASY XIV © SQUARE ENIX CO., LTD. &nbsp; &nbsp; | &nbsp; &nbsp;
-      Webapp by&nbsp;
+      FINAL FANTASY XIV &copy; SQUARE ENIX CO., LTD. &nbsp; | &nbsp;
+      Webapp&nbsp;by&nbsp;
       <Link to="https://github.com/PawelZwo" target="_blank">
         PawZwo
       </Link>
-      &nbsp; &copy; {newDate === 2023 ? newDate : `2023-${ newDate }`}
+      &nbsp;&copy;&nbsp;{newDate === 2023 ? newDate : `2023-${newDate}`}
     </p>
   );
 }

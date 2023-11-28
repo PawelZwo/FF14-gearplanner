@@ -168,9 +168,13 @@ function Cost() {
                         ) : (
                           <td>-</td>
                         )}
-                        <td>
-                          <strong>{cost.weapon_token ? "Yes" : "No"}</strong>
-                        </td>
+                        {cost.weapon_token ? (
+                          <td>
+                            <strong>Yes</strong>
+                          </td>
+                        ) : (
+                          <td>-</td>
+                        )}
                       </tr>
                     </tbody>
                   </Table>
