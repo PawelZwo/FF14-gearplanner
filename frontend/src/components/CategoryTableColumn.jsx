@@ -18,7 +18,9 @@ export default function CategoryTableColumn({ data, category }) {
     >
       <thead>
         <tr>
-          <th>{category}</th>
+          <th>
+            <strong>{category}</strong>
+          </th>
         </tr>
       </thead>
 

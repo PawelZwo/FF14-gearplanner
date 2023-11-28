@@ -13,7 +13,7 @@ function JobList() {
 
   return (
     <>
-      <h3>Best-in-slot gearsets</h3>
+      <h4>Best-in-slot gearsets</h4>
       {isPending && <Loading />}
 
       {data && data.length !== 0 && (
@@ -55,7 +55,7 @@ function JobList() {
 
       {error && <Alert variant="danger">{error}</Alert>}
 
-      {data && data.length === 0 && <div>Nothing to see here... 🤷‍♂️</div>}
+      {data && data.length === 0 && <h4>Nothing to see here... 🤷‍♂️</h4>}
     </>
   );
 }

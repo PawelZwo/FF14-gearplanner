@@ -40,7 +40,7 @@ function AllGear() {
 
       {error && <Alert variant="danger">{error}</Alert>}
 
-      {data && data.length === 0 && <div>Nothing to see here... 🤷‍♂️</div>}
+      {data && data.length === 0 && <h4>Nothing to see here... 🤷‍♂️</h4>}
     </>
   );
 }

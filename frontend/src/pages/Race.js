@@ -55,7 +55,9 @@ function Race() {
                 >
                   <thead>
                     <tr>
-                      <th>{race.name}</th>
+                      <th>
+                        <strong>{race.name}</strong>
+                      </th>
                     </tr>
                   </thead>
 
@@ -87,7 +89,7 @@ function Race() {
 
         {error && <Alert variant="danger">{error}</Alert>}
 
-        {data && data.length === 0 && <div>Nothing to see here... 🤷‍♂️</div>}
+        {data && data.length === 0 && <h4>Nothing to see here... 🤷‍♂️</h4>}
       </div>
     </>
   );

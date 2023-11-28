@@ -1,26 +1,42 @@
 .menu-link {
     text-decoration: none;
     color: white;
-} 
+}
 
 .footer-legal {
     font-size: 12px;
     position: sticky;
     background-color: #212529;
+
     /* padding: 10px; */
-    & > a {
-        text-decoration: none;}
+    &>a {
+        text-decoration: none;
+        color: #658bf5;
+    }
 }
 
 .job-link {
     text-decoration: none;
     color: white;
-  }
+}
 
 .header {
     font-size: 24px;
     position: sticky;
+    color: #658bf5;
     /* left: 40vw;
     top: 0.5vh;
     width: 100%; */
+}
+
+thead th>strong {
+    color: #658bf5;
+}
+
+tbody td>strong {
+    color: #658bf5;
+}
+
+p>strong {
+    color: #658bf5;
 }

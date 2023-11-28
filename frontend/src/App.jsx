@@ -37,8 +37,8 @@ export default function App() {
       <Container style={{ marginTop: "2vh" }}>
         <Row style={{ marginBottom: "4vh" }}>
           <Col />
-          <Col sm={7}>
-            <div className="header">Final Fantasy 14 gearplanner</div>
+          <Col sm={8}>
+            <div className="header">Final Fantasy 14 Gearset Planner</div>
           </Col>
           <Col />
         </Row>
@@ -47,7 +47,7 @@ export default function App() {
             {/* <NewsFeed/> */}
             <LeftSide />
           </Col>
-          <Col sm={7}>
+          <Col sm={8}>
             <Routes>
               <Route path="" element={<Home />} />
               <Route path="gear/" element={<AllGear />} />
