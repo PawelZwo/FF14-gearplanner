@@ -63,7 +63,7 @@ export default function App() {
             <RightSide />
           </Col>
         </Row>
-        <Row style={{ marginBottom: "1vh", marginTop: "2vh" }}>
+        <Row style={{ marginBottom: 0, marginTop: "4vh" }}>
           <Footer />
         </Row>
       </Container>

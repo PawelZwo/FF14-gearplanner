@@ -9,6 +9,11 @@ import { Link } from "react-router-dom";
 import toTitleCase from "../custom_functions/toTitleCase";
 
 export default function RoleTableColumn({ data, roleCol, title, is_home }) {
+  // data: Object          - data coming from API in the parent element
+  // roleCol: String       - role for which data will be filtered
+  // title: String         - what will be shown as table header
+  // is_home: Boolean      - can be passed down to tell the component that it will be viewed on Home Page.
+
   return (
     <Table
       borderless

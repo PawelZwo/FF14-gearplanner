@@ -29,7 +29,7 @@ function Cost() {
 
         {isPending && <Loading />}
 
-        {data && (
+        {data && data.length !== 0 && (
           <ul>
             {data.map((cost) => {
               return <li key={cost.id}>{cost.name}</li>;
@@ -38,6 +38,8 @@ function Cost() {
         )}
 
         {error && <Alert variant="danger">{error}</Alert>}
+
+        {data && data.length === 0 && <div>Nothing to see here... 🤷‍♂️</div>}
       </div>
     </>
   );

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <p className="footer-legal no-margin-bottom">
+    <p className="footer-legal">
       FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.
       FINAL FANTASY XIV © SQUARE ENIX CO., LTD. &nbsp; &nbsp; | &nbsp; &nbsp;
       Webapp by&nbsp;

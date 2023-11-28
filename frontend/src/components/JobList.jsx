@@ -16,7 +16,7 @@ function JobList() {
       <h3>Best-in-slot gearsets</h3>
       {isPending && <Loading />}
 
-      {data && (
+      {data && data.length !== 0 && (
         <div
           style={{
             marginTop: "1vh",
@@ -25,40 +25,37 @@ function JobList() {
             flexWrap: "wrap",
           }}
         >
-          <RoleTableColumn
-            data={data}
-            roleCol="tank"
-            title="Tanks"
-            is_home={true}
-          />
+          <RoleTableColumn data={data} roleCol="tank" title="Tanks" is_home />
           <RoleTableColumn
             data={data}
             roleCol="healer"
             title="Healers"
-            is_home={true}
+            is_home
           />
           <RoleTableColumn
             data={data}
             roleCol="melee"
             title="Melee Dps"
-            is_home={true}
+            is_home
           />
           <RoleTableColumn
             data={data}
             roleCol="ranged"
             title="Ranged Dps"
-            is_home={true}
+            is_home
           />
           <RoleTableColumn
             data={data}
             roleCol="caster"
             title="Caster Dps"
-            is_home={true}
+            is_home
           />
         </div>
       )}
 
       {error && <Alert variant="danger">{error}</Alert>}
+
+      {data && data.length === 0 && <div>Nothing to see here... 🤷‍♂️</div>}
     </>
   );
 }

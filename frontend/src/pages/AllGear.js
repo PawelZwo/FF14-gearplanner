@@ -6,6 +6,7 @@ import Alert from "react-bootstrap/Alert";
 
 // Project's components
 import Loading from "../components/Loading";
+import CategoryTableColumn from "../components/CategoryTableColumn";
 
 function AllGear() {
   const { data, isPending, error } = useFetch(
@@ -17,15 +18,29 @@ function AllGear() {
       <h3>All gear</h3>
       {isPending && <Loading />}
 
-      {data && (
-        <ul>
-          {data.map((gear) => {
-            return <li key={gear.id}>{gear.name}</li>;
-          })}
-        </ul>
+      {data && data.length !== 0 && (
+        <div
+          style={{
+            marginTop: "1vh",
+            display: "inline-flex",
+            gap: "1vw",
+            flexWrap: "wrap",
+          }}
+        >
+          <CategoryTableColumn data={data} category="Fending" />
+          <CategoryTableColumn data={data} category="Healing" />
+          <CategoryTableColumn data={data} category="Maiming" />
+          <CategoryTableColumn data={data} category="Striking" />
+          <CategoryTableColumn data={data} category="Slaying" />
+          <CategoryTableColumn data={data} category="Casting" />
+          <CategoryTableColumn data={data} category="Aiming" />
+          <CategoryTableColumn data={data} category="Scouting" />
+        </div>
       )}
 
       {error && <Alert variant="danger">{error}</Alert>}
+
+      {data && data.length === 0 && <div>Nothing to see here... 🤷‍♂️</div>}
     </>
   );
 }

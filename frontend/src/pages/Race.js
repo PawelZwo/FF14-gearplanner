@@ -1,6 +1,7 @@
 // React-Bootstrap imports
 import Image from "react-bootstrap/Image";
 import Table from "react-bootstrap/Table";
+import Alert from "react-bootstrap/Alert";
 
 // Custom hooks
 import { useFetch } from "../hooks/useFetch";
@@ -33,7 +34,7 @@ function Race() {
 
         {isPending && <Loading />}
 
-        {data && (
+        {data && data.length !== 0 && (
           <div
             style={{
               marginTop: "2vh",
@@ -84,7 +85,9 @@ function Race() {
           </div>
         )}
 
-        {error && <div>{error}</div>}
+        {error && <Alert variant="danger">{error}</Alert>}
+
+        {data && data.length === 0 && <div>Nothing to see here... 🤷‍♂️</div>}
       </div>
     </>
   );

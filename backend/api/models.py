@@ -224,6 +224,11 @@ class Gear(models.Model):
         null=True,
         blank=True
     )
+    ff14_db_icon = models.URLField(
+        max_length=200,
+        null=True,
+        blank=True
+    )
 
     # Gear actual stats
     item_level = models.PositiveSmallIntegerField(

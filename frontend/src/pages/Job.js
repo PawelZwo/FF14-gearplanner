@@ -12,8 +12,6 @@ import Loading from "../components/Loading";
 function Job() {
   const { data, isPending, error } = useFetch("http://127.0.0.1:8000/api/job/");
 
-  console.log(data);
-
   return (
     <>
       <div>
@@ -31,42 +29,26 @@ function Job() {
 
         {isPending && <Loading />}
 
-        {data && (
-          <div style={{ marginTop: "1vh", display: "inline-flex", gap: "1vw", flexWrap: "wrap" }}>
-            <RoleTableColumn
-              data={data}
-              roleCol="tank"
-              title="Tanks"
-              is_home={false}
-            />
-            <RoleTableColumn
-              data={data}
-              roleCol="healer"
-              title="Healers"
-              is_home={false}
-            />
-            <RoleTableColumn
-              data={data}
-              roleCol="melee"
-              title="Melee Dps"
-              is_home={false}
-            />
-            <RoleTableColumn
-              data={data}
-              roleCol="ranged"
-              title="Ranged Dps"
-              is_home={false}
-            />
-            <RoleTableColumn
-              data={data}
-              roleCol="caster"
-              title="Caster Dps"
-              is_home={false}
-            />
+        {data && data.length !== 0 && (
+          <div
+            style={{
+              marginTop: "1vh",
+              display: "inline-flex",
+              gap: "1vw",
+              flexWrap: "wrap",
+            }}
+          >
+            <RoleTableColumn data={data} roleCol="tank" title="Tanks" />
+            <RoleTableColumn data={data} roleCol="healer" title="Healers" />
+            <RoleTableColumn data={data} roleCol="melee" title="Melee Dps" />
+            <RoleTableColumn data={data} roleCol="ranged" title="Ranged Dps" />
+            <RoleTableColumn data={data} roleCol="caster" title="Caster Dps" />
           </div>
         )}
 
         {error && <Alert variant="danger">{error}</Alert>}
+
+        {data && data.length === 0 && <div>Nothing to see here... 🤷‍♂️</div>}
       </div>
     </>
   );

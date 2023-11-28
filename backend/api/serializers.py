@@ -29,7 +29,7 @@ class GearSerializer(serializers.ModelSerializer):
     class Meta:
         model = Gear
         fields = ('id', 'name', 'category', 'acquisition', 'added_in_patch',
-                  'slot', 'cost', 'job', 'ff14_db_index', 'item_level',
+                  'slot', 'cost', 'job', 'ff14_db_index', 'ff14_db_icon', 'item_level',
                   'physical_dmg', 'magical_dmg', 'auto_attack', 'delay',
                   'dps', 'block_strength', 'block_rate', 'defense',
                   'magic_defense', 'vitality', 'strength', 'dexterity',
