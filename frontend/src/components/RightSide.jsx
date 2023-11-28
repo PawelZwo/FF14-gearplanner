@@ -8,6 +8,7 @@ import {
   GiAncientSword,
   GiBandana,
   GiBanknote,
+  GiSwordsEmblem
 } from "react-icons/gi";
 
 // React-Bootstrap imports
@@ -95,7 +96,7 @@ export default function RightSide() {
                 bg="success"
                 style={{ marginLeft: "20px", fontSize: "12px" }}
               >
-                NEW
+                Updates
               </Badge>
             </Navbar.Brand>
           </Container>
@@ -163,6 +164,39 @@ export default function RightSide() {
                 }}
               />
               Gear costs
+            </Navbar.Brand>
+          </Container>
+        </Navbar>
+      </NavLink>
+
+      <NavLink
+        to="pvp-series/"
+        className="menu-link"
+        // style={({ isActive }) =>
+        //   isActive
+        //     ? setIsLinkActive({ costs: true })
+        //     : setIsLinkActive(!isLinkActive)
+        // }
+      >
+        <Navbar
+          bg="dark"
+          data-bs-theme="dark"
+          className="bg-body-tertiary"
+          style={{ marginBottom: "10px" }}
+        >
+          <Container>
+            <Navbar.Brand>
+              <GiSwordsEmblem
+                style={{
+                  display: "inline-block",
+                  width: "35",
+                  height: "35",
+                  alignItems: "center",
+                  marginRight: "0.85rem",
+                  marginLeft: "0.25rem",
+                }}
+              />
+              PvP series
             </Navbar.Brand>
           </Container>
         </Navbar>

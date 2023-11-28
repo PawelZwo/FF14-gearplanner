@@ -43,7 +43,12 @@ function AllGear() {
 
   return (
     <>
-      <h3>All gear</h3>
+      <h3>
+        {isFiltered.by === null || isFiltered.by === "All"
+          ? "All"
+          : isFiltered.by}{" "}
+        gear
+      </h3>
       {isPending && <Loading />}
 
       {data && data.length !== 0 && (

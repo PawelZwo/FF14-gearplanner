@@ -6,16 +6,21 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // CSS imports
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // React-Bootstrap components
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-// Project's components imports
+// Project's components
 import Home from "./components/Home";
 import RightSide from "./components/RightSide";
+import Footer from "./components/Footer";
+// import NewsFeed from "./components/NewsFeed";
+import LeftSide from "./components/LeftSide";
+
+// Project's pages
 import AllGear from "./pages/AllGear";
 import Dpsgear from "./pages/Dpsgear";
 import Healergear from "./pages/Healergear";
@@ -23,9 +28,7 @@ import Tankgear from "./pages/Tankgear";
 import Job from "./pages/Job";
 import Race from "./pages/Race";
 import Cost from "./pages/Cost";
-import Footer from "./components/Footer";
-// import NewsFeed from "./components/NewsFeed";
-import LeftSide from "./components/LeftSide";
+import PvpCalc from "./pages/PvpCalc";
 
 export default function App() {
   useEffect(() => {
@@ -39,7 +42,7 @@ export default function App() {
           <Col />
           <Col sm={8}>
             <div className="header">
-              FINAL&nbsp;FANTASY&nbsp;XIV&nbsp;Gearset&nbsp;Planner
+              FINAL&nbsp;FANTASY&nbsp;XIV Gearset&nbsp;Planner
             </div>
           </Col>
           <Col />
@@ -59,6 +62,7 @@ export default function App() {
               <Route path="jobs/" element={<Job />} />
               <Route path="races/" element={<Race />} />
               <Route path="costs/" element={<Cost />} />
+              <Route path="pvp-series/" element={<PvpCalc />} />
             </Routes>
           </Col>
           <Col sm={2}>

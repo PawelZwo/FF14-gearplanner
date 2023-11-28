@@ -2,6 +2,9 @@
 import Table from "react-bootstrap/Table";
 import Badge from "react-bootstrap/Badge";
 
+// React-icons imports
+import { TbStatusChange } from "react-icons/tb";
+
 // React-router imports
 import { Link } from "react-router-dom";
 
@@ -69,9 +72,9 @@ export default function RoleTableColumn({ data, roleCol, title, is_home }) {
                       >
                         {name}
                       </Link>{" "}
-                      {(name === "Reaper" || name === "Sage") && (
+                      {(name === "Paladin" || name === "Reaper" || name === "Bard" || name === "Red Mage") && (
                         <Badge pill bg="success">
-                          N
+                          <TbStatusChange />
                         </Badge>
                       )}
                     </>
