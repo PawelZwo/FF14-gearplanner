@@ -64,7 +64,11 @@ export default function App() {
           </Col>
         </Row>
         <Row style={{ marginBottom: 0, marginTop: "4vh" }}>
-          <Footer />
+          <Col></Col>
+          <Col sm={8}>
+            <Footer />
+          </Col>
+          <Col></Col>
         </Row>
       </Container>
     </BrowserRouter>
