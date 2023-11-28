@@ -25,9 +25,19 @@ export default function CategoryTableColumn({ data, category }) {
       </thead>
 
       <tbody>
-        {data
-          .filter((gear) => gear.category === category)
-          .map((gearPiece) => {
+        {category &&
+          data
+            .filter((gear) => gear.category === category)
+            .map((gearPiece) => {
+              return (
+                <tr key={gearPiece.id}>
+                  <td>{gearPiece.name}</td>
+                </tr>
+              );
+            })}
+
+        {!category &&
+          data.map((gearPiece) => {
             return (
               <tr key={gearPiece.id}>
                 <td>{gearPiece.name}</td>

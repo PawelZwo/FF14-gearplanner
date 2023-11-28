@@ -40,3 +40,8 @@ tbody td>strong {
 p>strong {
     color: #658bf5;
 }
+
+.category-list {
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+}
