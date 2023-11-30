@@ -13,7 +13,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 DEBUG = os.environ.get("DEBUG")
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "192.168.0.150", "192.168.0.73"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "192.168.0.73"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -67,7 +67,7 @@ DATABASES = {
     'default': {
         'HOST': os.environ.get("DATABASE_HOST"),
         'NAME': os.environ.get("DATABASE_NAME"),
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': os.environ.get("ENGINE"),
         'USER': os.environ.get("DATABASE_USER"),
         'PASSWORD': os.environ.get("DATABASE_PASSWORD"),
         'PORT': os.environ.get("PORT"),
@@ -121,4 +121,4 @@ REST_FRAMEWORK = {
 }
 
 CORS_ALLOW_ALL_ORIGINS = bool(int(os.environ.get("CORS_ALLOW_ALL_ORIGINS"))) # Value 1 for "True" or 0 for "False"
-# CORS_ALLOWED_ORIGINS = [os.environ.get("CORS_ALLOWED_ORIGINS")]
+# CORS_ALLOWED_ORIGINS = os.environ.get("CORS_ALLOWED_ORIGINS").split(",")

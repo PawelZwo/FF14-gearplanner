@@ -27,14 +27,14 @@ import Race from "./pages/Race";
 import Cost from "./pages/Cost";
 import PvpCalc from "./pages/PvpCalc";
 import NotFound from "./pages/NotFound";
+import GearDetails from "./pages/GearDetails";
 
 export default function App() {
   return (
     <BrowserRouter>
       <Container style={{ marginTop: "2vh" }}>
         <Row style={{ marginBottom: "4vh" }}>
-          <Col />
-          <Col sm={8}>
+          <Col sm={10}>
             <div className="header">
               <strong>FINAL&nbsp;FANTASY&nbsp;XIV Gearset&nbsp;Planner</strong>
             </div>
@@ -42,17 +42,10 @@ export default function App() {
           <Col />
         </Row>
         <Row>
-          <Col sm={2}>
-            {/* <NewsFeed/> */}
-            <LeftSide />
-          </Col>
-          <Col sm={8}>
+          <Col sm={10}>
             <Routes>
               <Route path="/gear" element={<AllGear />} />
-              {/* <Route path="/gear" >
-                <Route index element={<AllGear />} />
-                <Route path=":id" element={<GearDetails />} />
-              <Route /> */}
+              <Route path="/gear/:gearId" element={<GearDetails />} />
               <Route path="/dpsgear" element={<Dpsgear />} />
               <Route path="/healergear" element={<Healergear />} />
               <Route path="/tankgear" element={<Tankgear />} />
@@ -68,11 +61,11 @@ export default function App() {
           </Col>
           <Col sm={2}>
             <RightSide />
+            <LeftSide />
           </Col>
         </Row>
         <Row style={{ marginBottom: 0, marginTop: "4vh" }}>
-          <Col></Col>
-          <Col sm={8}>
+          <Col sm={10}>
             <Footer />
           </Col>
           <Col></Col>

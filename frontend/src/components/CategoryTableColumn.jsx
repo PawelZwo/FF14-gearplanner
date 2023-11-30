@@ -1,10 +1,10 @@
 // React-bootstrap imports
 import Table from "react-bootstrap/Table";
 
-// // React-router imports
-// import { Link } from "react-router-dom";
+// React-router imports
+import { NavLink } from "react-router-dom";
 
-export default function CategoryTableColumn({ data, category }) {
+export default function CategoryTableColumn({ data, category, filtered }) {
   // data: Object       - data coming from API in the parent element
   // category: String   - category for which data will be filtered
 
@@ -16,13 +16,15 @@ export default function CategoryTableColumn({ data, category }) {
       variant="dark"
       style={{ marginBottom: "0px", marginTop: "0px", padding: "0px" }}
     >
-      <thead>
-        <tr>
-          <th>
-            <strong>{category}</strong>
-          </th>
-        </tr>
-      </thead>
+      {!filtered && (
+        <thead>
+          <tr>
+            <th>
+              <strong>{category}</strong>
+            </th>
+          </tr>
+        </thead>
+      )}
 
       <tbody>
         {category &&
@@ -31,7 +33,7 @@ export default function CategoryTableColumn({ data, category }) {
             .map((gearPiece) => {
               return (
                 <tr key={gearPiece.id}>
-                  <td>{gearPiece.name}</td>
+                  <td><NavLink className="gear_details_link" to={`/gear/${gearPiece.id}`}>{gearPiece.gear_name}</NavLink></td>
                 </tr>
               );
             })}
@@ -40,7 +42,7 @@ export default function CategoryTableColumn({ data, category }) {
           data.map((gearPiece) => {
             return (
               <tr key={gearPiece.id}>
-                <td>{gearPiece.name}</td>
+                <td><NavLink className="gear_details_link" to={`/gear/${gearPiece.id}`}>{gearPiece.gear_name}</NavLink></td>
               </tr>
             );
           })}

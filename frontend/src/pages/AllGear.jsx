@@ -21,7 +21,7 @@ function AllGear() {
 
   const [isFiltered, setIsFiltered] = useState({ filtered: false, by: null });
 
-  const jobs = [
+  const roles = [
     "All",
     "Fending",
     "Healing",
@@ -33,9 +33,9 @@ function AllGear() {
     "Casting",
   ];
 
-  // const jobs2 = data && jobs.map(job => {return job})
+  // const roles2 = data && roles.map(role => {return role})
 
-  // console.log(jobs2);
+  // console.log(roles2);
 
   function handleFiltration(chosenFilter) {
     if (chosenFilter !== "All") {
@@ -50,43 +50,45 @@ function AllGear() {
     <>
       <PageTitle />
       <h3>
-        {isFiltered.by === null || isFiltered.by === "All"
-          ? "All"
-          : isFiltered.by}{" "}
+        {isFiltered.by === null || isFiltered.by === "All" ? (
+          "All "
+        ) : (
+          <strong className="categories">{isFiltered.by} </strong>
+        )}
         gear
       </h3>
       {isPending && <Loading />}
 
       {data && data.length !== 0 && (
         <Stack direction="horizontal" gap={2} className="category-list">
-          {jobs.map((job, index) => {
+          {roles.map((role, index) => {
             return (
               <Button
                 disabled={
-                  job === "All"
+                  role === "All"
                     ? isFiltered.by === null
                       ? true
                       : ""
-                    : isFiltered.by === job
+                    : isFiltered.by === role
                     ? true
                     : ""
                 }
                 key={index}
                 size="sm"
                 type="button"
-                value={job}
+                value={role}
                 onClick={(e) => handleFiltration(e.target.value)}
                 variant={
-                  job === "All"
+                  role === "All"
                     ? isFiltered.by === null
                       ? "secondary"
                       : "light"
-                    : isFiltered.by === job
+                    : isFiltered.by === role
                     ? "secondary"
                     : "light"
                 }
               >
-                {job}
+                {role}
               </Button>
             );
           })}
@@ -102,7 +104,7 @@ function AllGear() {
             flexWrap: "wrap",
           }}
         >
-          <CategoryTableColumn data={data} category={isFiltered.by} />
+          <CategoryTableColumn data={data} category={isFiltered.by} filtered />
         </div>
       )}
 
@@ -115,18 +117,13 @@ function AllGear() {
             flexWrap: "wrap",
           }}
         >
-          {jobs.slice(1).map((category) => (
-            <CategoryTableColumn data={data} category={category} />
+          {roles.slice(1).map((category) => (
+            <CategoryTableColumn
+              key={category}
+              data={data}
+              category={category}
+            />
           ))}
-
-          {/* <CategoryTableColumn data={data} category="Fending" />
-          <CategoryTableColumn data={data} category="Healing" />
-          <CategoryTableColumn data={data} category="Maiming" />
-          <CategoryTableColumn data={data} category="Striking" />
-          <CategoryTableColumn data={data} category="Slaying" />
-          <CategoryTableColumn data={data} category="Casting" />
-          <CategoryTableColumn data={data} category="Aiming" />
-          <CategoryTableColumn data={data} category="Scouting" /> */}
         </div>
       )}
 

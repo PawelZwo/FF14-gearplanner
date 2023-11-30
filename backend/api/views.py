@@ -1,7 +1,9 @@
 # REST imports
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import View
+from rest_framework.response import Response
 from rest_framework import generics
+from rest_framework.views import APIView
 from django_filters.rest_framework import DjangoFilterBackend
 
 # Serializers
@@ -45,3 +47,10 @@ class GearList(generics.ListCreateAPIView):
     serializer_class = GearSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_fields = {'category': ['in']}
+
+
+class GearDetails(APIView):
+    def get(self, request, id, format=None):
+        instance = get_object_or_404(Gear, id=id)
+        serializer = GearSerializer(instance)
+        return Response(serializer.data)

@@ -6,8 +6,8 @@ import Alert from "react-bootstrap/Alert";
 
 // Project's components
 import Loading from "../components/Loading";
-import CategoryTableColumn from "../components/CategoryTableColumn";
 import PageTitle from "../components/PageTitle";
+import CategoryTableColumn from "../components/CategoryTableColumn";
 
 function Tankgear() {
   const { data, isPending, error } = useFetch(
@@ -29,7 +29,7 @@ function Tankgear() {
             flexWrap: "wrap",
           }}
         >
-          <CategoryTableColumn data={data} category="Fending" />
+          <CategoryTableColumn data={data} category="Fending" filtered/>
         </div>
       )}
 

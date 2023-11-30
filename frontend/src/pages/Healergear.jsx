@@ -29,7 +29,7 @@ function Healergear() {
             flexWrap: "wrap",
           }}
         >
-          <CategoryTableColumn data={data} category="Healing" />
+          <CategoryTableColumn data={data} category="Healing" filtered/>
         </div>
       )}
 

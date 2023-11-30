@@ -22,7 +22,7 @@ class Job(models.Model):
         RANGED = "ranged", "ranged"
         CASTER = "caster", "caster"
 
-    name = models.CharField(
+    job_name = models.CharField(
         db_comment="Name of the job",
         unique=True,
         max_length=20
@@ -32,11 +32,11 @@ class Job(models.Model):
     )
 
     def __str__(self):
-        return f"{self.name}"
+        return f"{self.job_name}"
 
 
 class Race(models.Model):
-    name = models.CharField(
+    race_name = models.CharField(
         db_comment="Race name",
         unique=True,
         max_length=20
@@ -61,11 +61,11 @@ class Race(models.Model):
     )
 
     def __str__(self):
-        return f"{self.name}"
+        return f"{self.race_name}"
 
 
 class Cost(models.Model):
-    name = models.CharField(
+    cost_name = models.CharField(
         unique=True,
         null=True,
         max_length=50
@@ -137,7 +137,7 @@ class Cost(models.Model):
     )
 
     def __str__(self):
-        return f"{self.name}"
+        return f"{self.cost_name}"
 
 
 class Gear(models.Model):
@@ -185,7 +185,7 @@ class Gear(models.Model):
         patch_4 = "x.4", "x.4"
         patch_5 = "x.5", "x.5"
 
-    name = models.CharField(
+    gear_name = models.CharField(
         db_comment="Name of the gear",
         unique=True,
         max_length=100
@@ -217,7 +217,7 @@ class Gear(models.Model):
     )
     job = models.ManyToManyField(
         Job,
-        related_name="gear_job"
+        related_name="gears"
     )
     ff14_db_index = models.CharField(
         max_length=20,
@@ -254,12 +254,12 @@ class Gear(models.Model):
         decimal_places=2,
         db_comment="Weapon's delay"
     )
-    dps = models.DecimalField(
-        null=True,
-        max_digits=5,
-        decimal_places=2,
-        db_comment="Weapon's dps"
-    )
+    # dps = models.DecimalField(
+    #     null=True,
+    #     max_digits=5,
+    #     decimal_places=2,
+    #     db_comment="Weapon's dps"
+    # )
     block_strength = models.PositiveSmallIntegerField(
         null=True,
         db_comment="Shield's block strength"
@@ -329,7 +329,7 @@ class Gear(models.Model):
         ordering = ['category', 'pk']
 
     def __str__(self):
-        return f"{self.name}"
+        return f"{self.gear_name}"
 
 
 class Gearset(models.Model):
@@ -340,7 +340,7 @@ class Gearset(models.Model):
         unique=True,
         auto_created=True
     )
-    name = models.CharField(
+    gearset_name = models.CharField(
         max_length=100,
         unique=True
     )
@@ -411,7 +411,7 @@ class Gearset(models.Model):
     )
 
     def __str__(self):
-        return f"{self.name}"
+        return f"{self.gearset_name}"
 
     def calculate_total_stats(self):
         attributes = {

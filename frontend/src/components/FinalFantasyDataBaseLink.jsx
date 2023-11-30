@@ -1,4 +1,4 @@
-export default function useFFdb({ item_index, item_name }) {
+export default function useFFdb({ item_index, gear_name }) {
   return (
     <a
       href={
@@ -6,9 +6,10 @@ export default function useFFdb({ item_index, item_name }) {
         item_index +
         "/"
       }
-      class="eorzeadb_link"
+      className="eorzeadb_link"
+      target="_blank"
     >
-      {item_name}
+      {gear_name}
     </a>
   );
 }

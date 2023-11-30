@@ -50,7 +50,7 @@ function Race() {
                   <thead>
                     <tr>
                       <th>
-                        <strong>{race.name}</strong>
+                        <strong>{race.race_name}</strong>
                       </th>
                     </tr>
                   </thead>

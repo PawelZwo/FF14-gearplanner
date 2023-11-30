@@ -43,19 +43,19 @@ export default function RoleTableColumn({ data, roleCol, title, is_home }) {
       <tbody>
         {data
           .filter((job) => job.role === roleCol)
-          .map(({ id, name }) => {
+          .map(({ id, job_name }) => {
             return (
               <tr key={id}>
                 <td>
                   <img
-                    src={`/media/job_icons/${toTitleCase(name).replace(
+                    src={`/media/job_icons/${toTitleCase(job_name).replace(
                       /\s/g,
                       ""
                     )}.png`}
                     width="25"
                     height="25"
                     className="d-inline-block align-top"
-                    alt={`${name} job icon`}
+                    alt={`${job_name} job icon`}
                     style={{ marginRight: "5px" }}
                   />
 
@@ -64,15 +64,15 @@ export default function RoleTableColumn({ data, roleCol, title, is_home }) {
                       <Link
                         to={
                           "https://eu.finalfantasyxiv.com/jobguide/" +
-                          name.replace(/\s/g, "").toLowerCase() +
+                          job_name.replace(/\s/g, "").toLowerCase() +
                           "/"
                         }
                         className="job-link"
                         target="_blank"
                       >
-                        {name}
+                        {job_name}
                       </Link>{" "}
-                      {(name === "Paladin" || name === "Reaper" || name === "Bard" || name === "Red Mage") && (
+                      {(job_name === "Paladin" || job_name === "Reaper" || job_name === "Bard" || job_name === "Red Mage") && (
                         <Badge pill bg="success">
                           <TbStatusChange />
                         </Badge>
@@ -80,7 +80,7 @@ export default function RoleTableColumn({ data, roleCol, title, is_home }) {
                     </>
                   )}
 
-                  {is_home && name}
+                  {is_home && job_name}
                 </td>
               </tr>
             );

@@ -9,6 +9,7 @@ export default function Banner() {
         <Image
           src="/media/current_patch_banner.jpg"
           alt="Current patch banner"
+          height="150"
           rounded
           fluid
         />

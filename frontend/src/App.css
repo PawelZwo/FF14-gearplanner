@@ -12,15 +12,10 @@
     font-size: 12px;
     position: sticky;
     background-color: var(--main-background);
-
-    /* padding: 10px; */
-    &>a {
-        text-decoration: none;
-        color: var(--basic-colour);
-    }
 }
 
-.job-link {
+.job-link,
+.gear_details_link {
     text-decoration: none;
     color: white;
 }
@@ -34,15 +29,11 @@
     width: 100%; */
 }
 
-thead th>strong {
-    color: var(--basic-colour);
-}
-
-tbody td>strong {
-    color: var(--basic-colour);
-}
-
-p>strong {
+thead th>strong,
+tbody td>strong,
+p>strong,
+.pvp-list li>strong,
+strong.categories {
     color: var(--basic-colour);
 }
 
@@ -51,6 +42,8 @@ p>strong {
     margin-bottom: 1vh;
 }
 
-.pvp-list li>strong {
+.eorzeadb_link,
+.footer-legal>a {
     color: var(--basic-colour);
+    text-decoration: none;
 }

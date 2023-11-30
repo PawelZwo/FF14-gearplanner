@@ -41,8 +41,8 @@ function Cost() {
             {data
               .filter(
                 (costName) =>
-                  costName.name !== "Exquisite Tomestone Weapon" &&
-                  costName.name !== "Relic Weapon"
+                  costName.cost_name !== "Exquisite Tomestone Weapon" &&
+                  costName.cost_name !== "Relic Weapon"
               )
               .map((cost) => {
                 return (
@@ -62,7 +62,7 @@ function Cost() {
                     <thead>
                       <tr>
                         <th colSpan={12}>
-                          <strong>{cost.name}</strong>
+                          <strong>{cost.cost_name}</strong>
                         </th>
                       </tr>
                     </thead>
