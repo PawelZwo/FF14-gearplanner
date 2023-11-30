@@ -17,15 +17,6 @@ function Cost() {
   return (
     <>
       <div>
-        <Image
-          src="/media/current_patch_banner.jpg"
-          alt="Current patch banner"
-          rounded
-          fluid
-          style={{ marginBottom: "2vh" }}
-        />
-      </div>
-      <div>
         <h3>Gear costs types</h3>
         <p style={{ textWrap: "balance" }}>
           Since patch 6.4 Savage pieces drops have been shifted a little. In

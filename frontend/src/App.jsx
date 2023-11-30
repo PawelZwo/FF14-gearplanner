@@ -14,11 +14,12 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 // Project's components
-import Home from "./components/Home";
+import Home from "./pages/Home";
 import RightSide from "./components/RightSide";
 import Footer from "./components/Footer";
 // import NewsFeed from "./components/NewsFeed";
 import LeftSide from "./components/LeftSide";
+import Banner from "./components/Banner";
 
 // Project's pages
 import AllGear from "./pages/AllGear";
@@ -54,15 +55,17 @@ export default function App() {
           </Col>
           <Col sm={8}>
             <Routes>
-              <Route path="" element={<Home />} />
               <Route path="gear/" element={<AllGear />} />
               <Route path="dpsgear/" element={<Dpsgear />} />
               <Route path="healergear/" element={<Healergear />} />
               <Route path="tankgear/" element={<Tankgear />} />
-              <Route path="jobs/" element={<Job />} />
-              <Route path="races/" element={<Race />} />
-              <Route path="costs/" element={<Cost />} />
-              <Route path="pvp-series/" element={<PvpCalc />} />
+              <Route element={<Banner />}>
+                <Route path="" element={<Home />} />
+                <Route path="jobs/" element={<Job />} />
+                <Route path="races/" element={<Race />} />
+                <Route path="costs/" element={<Cost />} />
+                <Route path="pvp-series/" element={<PvpCalc />} />
+              </Route>
             </Routes>
           </Col>
           <Col sm={2}>

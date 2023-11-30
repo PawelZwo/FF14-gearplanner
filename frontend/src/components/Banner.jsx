@@ -1,11 +1,11 @@
 // React-Bootstrap components
 import Image from "react-bootstrap/Image";
-import JobList from "./JobList";
+import { Outlet } from "react-router-dom";
 
-export default function Home() {
+export default function Banner() {
   return (
     <>
-      <div>
+      <div style={{ marginBottom: "2vh" }}>
         <Image
           src="./media/current_patch_banner.jpg"
           alt="Current patch banner"
@@ -13,9 +13,7 @@ export default function Home() {
           fluid
         />
       </div>
-      <div style={{ marginTop: "2vh" }}>
-        <JobList />
-      </div>
+      <Outlet />
     </>
   );
 }

@@ -15,15 +15,6 @@ function Job() {
   return (
     <>
       <div>
-        <Image
-          src="/media/current_patch_banner.jpg"
-          alt="Current patch banner"
-          rounded
-          fluid
-          style={{ marginBottom: "2vh" }}
-        />
-      </div>
-      <div>
         <h3>Jobs</h3>
         <p>View official job guide by clicking on it.</p>
 

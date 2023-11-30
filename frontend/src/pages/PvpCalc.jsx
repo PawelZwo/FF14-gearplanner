@@ -84,15 +84,6 @@ export default function PvpCalc() {
   return (
     <>
       <div>
-        <Image
-          src="/media/current_patch_banner.jpg"
-          alt="Current patch banner"
-          rounded
-          fluid
-          style={{ marginBottom: "2vh" }}
-        />
-      </div>
-      <div>
         <h3>PvP series calculator</h3>
         <p>
           Each series comes with unique rewards for series level: 5, 10, 15, 20

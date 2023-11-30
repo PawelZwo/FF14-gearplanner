@@ -32,6 +32,10 @@ function AllGear() {
     "Casting",
   ];
 
+  // const jobs2 = data && jobs.map(job => {return job})
+
+  // console.log(jobs2);
+
   function handleFiltration(chosenFilter) {
     if (chosenFilter !== "All") {
       setIsFiltered({ filtered: true, by: chosenFilter });
@@ -109,14 +113,19 @@ function AllGear() {
             flexWrap: "wrap",
           }}
         >
-          <CategoryTableColumn data={data} category="Fending" />
+          {jobs.slice(1).map((category) => (
+            <CategoryTableColumn data={data} category={category} />
+          ))}
+
+          {/* <CategoryTableColumn data={data} category="Fending" />
           <CategoryTableColumn data={data} category="Healing" />
           <CategoryTableColumn data={data} category="Maiming" />
           <CategoryTableColumn data={data} category="Striking" />
           <CategoryTableColumn data={data} category="Slaying" />
           <CategoryTableColumn data={data} category="Casting" />
           <CategoryTableColumn data={data} category="Aiming" />
-          <CategoryTableColumn data={data} category="Scouting" />
+          <CategoryTableColumn data={data} category="Scouting" /> */}
+          
         </div>
       )}
 
