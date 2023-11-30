@@ -7,7 +7,7 @@ export default function Banner() {
     <>
       <div style={{ marginBottom: "2vh" }}>
         <Image
-          src="./media/current_patch_banner.jpg"
+          src="/media/current_patch_banner.jpg"
           alt="Current patch banner"
           rounded
           fluid

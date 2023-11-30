@@ -26,6 +26,7 @@ import Job from "./pages/Job";
 import Race from "./pages/Race";
 import Cost from "./pages/Cost";
 import PvpCalc from "./pages/PvpCalc";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
@@ -62,6 +63,7 @@ export default function App() {
                 <Route path="/costs" element={<Cost />} />
                 <Route path="/pvp-series" element={<PvpCalc />} />
               </Route>
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Col>
           <Col sm={2}>
