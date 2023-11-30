@@ -14,7 +14,9 @@ export default function Banner() {
           fluid
         />
       </div>
-      <Outlet />
+      <div style={{ marginBottom: "2vh" }}>
+        <Outlet />
+      </div>
     </>
   );
 }

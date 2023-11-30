@@ -47,3 +47,25 @@ strong.categories {
     color: var(--basic-colour);
     text-decoration: none;
 }
+
+.gear_info {
+    margin-bottom: 10px;
+
+    &>strong {
+        color: var(--basic-colour);
+
+    }
+}
+
+.gear_jobs {
+    margin-top: 5px;
+
+    &>strong {
+        color: var(--basic-colour);
+
+    }
+}
+
+.last-item {
+    margin-top: 20px;
+}

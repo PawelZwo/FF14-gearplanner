@@ -1,4 +1,7 @@
-export default function useFFdb({ item_index, gear_name }) {
+// React-bootstrap components
+import Button from "react-bootstrap/Button";
+
+export default function useFFdb({ item_index }) {
   return (
     <a
       href={
@@ -9,7 +12,9 @@ export default function useFFdb({ item_index, gear_name }) {
       className="eorzeadb_link"
       target="_blank"
     >
-      {gear_name}
+      <Button size="sm" type="button" variant="dark" style={{color: "#658bf5"}}>
+        Lodestone
+      </Button>
     </a>
   );
 }

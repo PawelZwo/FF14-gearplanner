@@ -34,15 +34,17 @@ export default function App() {
     <BrowserRouter>
       <Container style={{ marginTop: "2vh" }}>
         <Row style={{ marginBottom: "4vh" }}>
-          <Col sm={10}>
+          <Col sm={1} />
+          <Col sm={8}>
             <div className="header">
               <strong>FINAL&nbsp;FANTASY&nbsp;XIV Gearset&nbsp;Planner</strong>
             </div>
           </Col>
-          <Col />
+          <Col sm={2} />
         </Row>
         <Row>
-          <Col sm={10}>
+          <Col sm={1} />
+          <Col sm={8}>
             <Routes>
               <Route path="/gear" element={<AllGear />} />
               <Route path="/gear/:gearId" element={<GearDetails />} />
@@ -65,10 +67,11 @@ export default function App() {
           </Col>
         </Row>
         <Row style={{ marginBottom: 0, marginTop: "4vh" }}>
-          <Col sm={10}>
+          <Col sm={1} />
+          <Col sm={8}>
             <Footer />
           </Col>
-          <Col></Col>
+          <Col sm={2} />
         </Row>
       </Container>
     </BrowserRouter>
