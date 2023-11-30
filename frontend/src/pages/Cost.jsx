@@ -32,7 +32,7 @@ function Cost() {
         {data && data.length !== 0 && (
           <div
             style={{
-              marginTop: "2vh",
+              marginTop: "10px",
               display: "inline-flex",
               gap: "0.75vw",
               flexWrap: "wrap",
@@ -55,7 +55,7 @@ function Cost() {
                     variant="dark"
                     style={{
                       marginTop: 0,
-                      marginBottom: "2vh",
+                      marginBottom: "10px",
                       textAlign: "center",
                     }}
                   >

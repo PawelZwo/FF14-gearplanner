@@ -11,6 +11,7 @@ import { NavLink } from "react-router-dom";
 export default function CategoryTableColumn({ data, category, filtered }) {
   // data: Object       - data coming from API in the parent element
   // category: String   - category for which data will be filtered
+  // filtered: Boolean  - if true, then <thead> won't be displayed
 
   return (
     <Table

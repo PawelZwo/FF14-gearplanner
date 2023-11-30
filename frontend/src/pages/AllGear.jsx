@@ -128,10 +128,6 @@ function AllGear() {
           ))}
         </div>
       )}
-
-      {error && <Alert variant="danger">{error}</Alert>}
-
-      {data && data.length === 0 && <h4>Nothing to see here... 🤷‍♂️</h4>}
     </>
   );
 }

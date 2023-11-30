@@ -8,6 +8,7 @@ import {
   GiBandana,
   GiBanknote,
   GiSwordsEmblem,
+  GiAbdominalArmor,
 } from "react-icons/gi";
 
 // React-Bootstrap imports
@@ -75,31 +76,6 @@ export default function RightSide() {
         </Navbar>
       </NavLink>
 
-      <NavLink to="costs/" className="menu-link">
-        <Navbar
-          bg="dark"
-          data-bs-theme="dark"
-          className="bg-body-tertiary"
-          style={{ marginBottom: "10px" }}
-        >
-          <Container>
-            <Navbar.Brand>
-              <GiBanknote
-                style={{
-                  display: "inline-block",
-                  width: "35",
-                  height: "35",
-                  alignItems: "center",
-                  marginRight: "0.85rem",
-                  marginLeft: "0.25rem",
-                }}
-              />
-              Gear costs
-            </Navbar.Brand>
-          </Container>
-        </Navbar>
-      </NavLink>
-
       <NavLink to="pvp-series/" className="menu-link">
         <Navbar
           bg="dark"
@@ -145,6 +121,56 @@ export default function RightSide() {
                 }}
               />
               Races
+            </Navbar.Brand>
+          </Container>
+        </Navbar>
+      </NavLink>
+
+      <NavLink to="costs/" className="menu-link">
+        <Navbar
+          bg="dark"
+          data-bs-theme="dark"
+          className="bg-body-tertiary"
+          style={{ marginBottom: "10px" }}
+        >
+          <Container>
+            <Navbar.Brand>
+              <GiBanknote
+                style={{
+                  display: "inline-block",
+                  width: "35",
+                  height: "35",
+                  alignItems: "center",
+                  marginRight: "0.85rem",
+                  marginLeft: "0.25rem",
+                }}
+              />
+              Gear costs
+            </Navbar.Brand>
+          </Container>
+        </Navbar>
+      </NavLink>
+
+      <NavLink to="gear/" className="menu-link">
+        <Navbar
+          bg="dark"
+          data-bs-theme="dark"
+          className="bg-body-tertiary"
+          style={{ marginBottom: "10px" }}
+        >
+          <Container>
+            <Navbar.Brand>
+              <GiAbdominalArmor
+                style={{
+                  display: "inline-block",
+                  width: "35",
+                  height: "35",
+                  alignItems: "center",
+                  marginRight: "0.85rem",
+                  marginLeft: "0.25rem",
+                }}
+              />
+              All gear
             </Navbar.Brand>
           </Container>
         </Navbar>

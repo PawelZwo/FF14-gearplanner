@@ -13,7 +13,7 @@ import Col from "react-bootstrap/Col";
 // Project's components
 import RightSide from "./components/RightSide";
 import Footer from "./components/small_components/Footer";
-import LeftSide from "./components/LeftSide";
+// import LeftSide from "./components/LeftSide";
 
 // Project's small components
 import Banner from "./components/small_components/Banner";
@@ -21,9 +21,9 @@ import Banner from "./components/small_components/Banner";
 // Project's pages
 import Home from "./pages/Home";
 import AllGear from "./pages/AllGear";
-import Dpsgear from "./pages/Dpsgear";
-import Healergear from "./pages/Healergear";
-import Tankgear from "./pages/Tankgear";
+// import Dpsgear from "./pages/Dpsgear";
+// import Healergear from "./pages/Healergear";
+// import Tankgear from "./pages/Tankgear";
 import Job from "./pages/Job";
 import Race from "./pages/Race";
 import Cost from "./pages/Cost";
@@ -50,22 +50,22 @@ export default function App() {
             <Routes>
               <Route path="/gear" element={<AllGear />} />
               <Route path="/gear/:gearSlug" element={<GearDetails />} />
-              <Route path="/dpsgear" element={<Dpsgear />} />
+              {/* <Route path="/dpsgear" element={<Dpsgear />} />
               <Route path="/healergear" element={<Healergear />} />
-              <Route path="/tankgear" element={<Tankgear />} />
+              <Route path="/tankgear" element={<Tankgear />} /> */}
               <Route element={<Banner />}>
                 <Route path="/" element={<Home />} />
                 <Route path="/jobs" element={<Job />} />
                 <Route path="/races" element={<Race />} />
-                <Route path="/costs" element={<Cost />} />
                 <Route path="/pvp-series" element={<PvpCalc />} />
               </Route>
+              <Route path="/costs" element={<Cost />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Col>
           <Col sm={2}>
             <RightSide />
-            <LeftSide />
+            {/* <LeftSide /> */}
           </Col>
         </Row>
         <Row style={{ marginBottom: 0, marginTop: "4vh" }}>

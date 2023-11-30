@@ -36,7 +36,7 @@ export default function LeftSide() {
         </Navbar>
       </NavLink>
 
-      <NavLink to="dpsgear/" className="menu-link">
+      {/* <NavLink to="dpsgear/" className="menu-link">
         <Navbar
           bg="dark"
           data-bs-theme="dark"
@@ -103,7 +103,7 @@ export default function LeftSide() {
             </Navbar.Brand>
           </Container>
         </Navbar>
-      </NavLink>
+      </NavLink> */}
     </>
   );
 }
