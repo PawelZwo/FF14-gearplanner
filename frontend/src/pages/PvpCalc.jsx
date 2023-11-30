@@ -2,9 +2,11 @@
 import { useState } from "react";
 
 // React-Bootstrap imports
-import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
 import Stack from "react-bootstrap/Stack";
+
+// Project's components
+import PageTitle from "../components/PageTitle";
 
 export default function PvpCalc() {
   const seriesExp = {
@@ -83,6 +85,8 @@ export default function PvpCalc() {
 
   return (
     <>
+      <PageTitle />
+
       <div>
         <h3>PvP series calculator</h3>
         <p>

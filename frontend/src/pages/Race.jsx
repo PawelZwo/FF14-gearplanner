@@ -1,5 +1,4 @@
 // React-Bootstrap imports
-import Image from "react-bootstrap/Image";
 import Table from "react-bootstrap/Table";
 import Alert from "react-bootstrap/Alert";
 
@@ -8,6 +7,7 @@ import { useFetch } from "../hooks/useFetch";
 
 // Project's components
 import Loading from "../components/Loading";
+import PageTitle from "../components/PageTitle";
 
 function Race() {
   const { data, isPending, error } = useFetch(
@@ -16,6 +16,8 @@ function Race() {
 
   return (
     <>
+      <PageTitle />
+
       <div>
         <h3>Races on Eitherys</h3>
         <p>

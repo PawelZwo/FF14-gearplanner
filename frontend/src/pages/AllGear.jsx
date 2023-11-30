@@ -12,6 +12,7 @@ import Stack from "react-bootstrap/Stack";
 // Project's components
 import Loading from "../components/Loading";
 import CategoryTableColumn from "../components/CategoryTableColumn";
+import PageTitle from "../components/PageTitle";
 
 function AllGear() {
   const { data, isPending, error } = useFetch(
@@ -47,6 +48,7 @@ function AllGear() {
 
   return (
     <>
+      <PageTitle />
       <h3>
         {isFiltered.by === null || isFiltered.by === "All"
           ? "All"
@@ -125,7 +127,6 @@ function AllGear() {
           <CategoryTableColumn data={data} category="Casting" />
           <CategoryTableColumn data={data} category="Aiming" />
           <CategoryTableColumn data={data} category="Scouting" /> */}
-          
         </div>
       )}
 

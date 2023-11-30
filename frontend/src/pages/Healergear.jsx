@@ -7,6 +7,7 @@ import Alert from "react-bootstrap/Alert";
 // Project's components
 import Loading from "../components/Loading";
 import CategoryTableColumn from "../components/CategoryTableColumn";
+import PageTitle from "../components/PageTitle";
 
 function Healergear() {
   const { data, isPending, error } = useFetch(
@@ -15,6 +16,7 @@ function Healergear() {
 
   return (
     <>
+      <PageTitle />
       <h3>Healer gear</h3>
       {isPending && <Loading />}
 

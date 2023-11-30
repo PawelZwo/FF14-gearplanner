@@ -1,5 +1,4 @@
 // React-Bootstrap imports
-import Image from "react-bootstrap/Image";
 import Alert from "react-bootstrap/Alert";
 
 // Custom hooks
@@ -8,12 +7,15 @@ import { useFetch } from "../hooks/useFetch";
 // Project's components
 import RoleTableColumn from "../components/RoleTableColumn";
 import Loading from "../components/Loading";
+import PageTitle from "../components/PageTitle";
 
 function Job() {
   const { data, isPending, error } = useFetch("http://127.0.0.1:8000/api/job/");
 
   return (
     <>
+      <PageTitle />
+
       <div>
         <h3>Jobs</h3>
         <p>View official job guide by clicking on it.</p>

@@ -1,5 +1,4 @@
 // React-Bootstrap imports
-import Image from "react-bootstrap/Image";
 import Alert from "react-bootstrap/Alert";
 import Table from "react-bootstrap/Table";
 
@@ -8,6 +7,7 @@ import { useFetch } from "../hooks/useFetch";
 
 // Project's components
 import Loading from "../components/Loading";
+import PageTitle from "../components/PageTitle";
 
 function Cost() {
   const { data, isPending, error } = useFetch(
@@ -16,6 +16,7 @@ function Cost() {
 
   return (
     <>
+      <PageTitle />
       <div>
         <h3>Gear costs types</h3>
         <p style={{ textWrap: "balance" }}>

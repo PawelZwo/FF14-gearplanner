@@ -1,6 +1,3 @@
-// React imports
-import { useEffect } from "react";
-
 // React-router imports
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -14,14 +11,13 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 // Project's components
-import Home from "./pages/Home";
 import RightSide from "./components/RightSide";
 import Footer from "./components/Footer";
-// import NewsFeed from "./components/NewsFeed";
 import LeftSide from "./components/LeftSide";
 import Banner from "./components/Banner";
 
 // Project's pages
+import Home from "./pages/Home";
 import AllGear from "./pages/AllGear";
 import Dpsgear from "./pages/Dpsgear";
 import Healergear from "./pages/Healergear";
@@ -32,10 +28,6 @@ import Cost from "./pages/Cost";
 import PvpCalc from "./pages/PvpCalc";
 
 export default function App() {
-  useEffect(() => {
-    document.title = "Final Fantasy 14 Gearplanner";
-  }, []);
-
   return (
     <BrowserRouter>
       <Container style={{ marginTop: "2vh" }}>
@@ -43,7 +35,7 @@ export default function App() {
           <Col />
           <Col sm={8}>
             <div className="header">
-              FINAL&nbsp;FANTASY&nbsp;XIV Gearset&nbsp;Planner
+              <strong>FINAL&nbsp;FANTASY&nbsp;XIV Gearset&nbsp;Planner</strong>
             </div>
           </Col>
           <Col />
@@ -55,16 +47,20 @@ export default function App() {
           </Col>
           <Col sm={8}>
             <Routes>
-              <Route path="gear/" element={<AllGear />} />
-              <Route path="dpsgear/" element={<Dpsgear />} />
-              <Route path="healergear/" element={<Healergear />} />
-              <Route path="tankgear/" element={<Tankgear />} />
+              <Route path="/gear" element={<AllGear />} />
+              {/* <Route path="/gear" >
+                <Route index element={<AllGear />} />
+                <Route path=":id" element={<GearDetails />} />
+              <Route /> */}
+              <Route path="/dpsgear" element={<Dpsgear />} />
+              <Route path="/healergear" element={<Healergear />} />
+              <Route path="/tankgear" element={<Tankgear />} />
               <Route element={<Banner />}>
-                <Route path="" element={<Home />} />
-                <Route path="jobs/" element={<Job />} />
-                <Route path="races/" element={<Race />} />
-                <Route path="costs/" element={<Cost />} />
-                <Route path="pvp-series/" element={<PvpCalc />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/jobs" element={<Job />} />
+                <Route path="/races" element={<Race />} />
+                <Route path="/costs" element={<Cost />} />
+                <Route path="/pvp-series" element={<PvpCalc />} />
               </Route>
             </Routes>
           </Col>
