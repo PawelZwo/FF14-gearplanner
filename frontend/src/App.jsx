@@ -47,7 +47,7 @@ export default function App() {
           <Col sm={8}>
             <Routes>
               <Route path="/gear" element={<AllGear />} />
-              <Route path="/gear/:gearId" element={<GearDetails />} />
+              <Route path="/gear/:gearSlug" element={<GearDetails />} />
               <Route path="/dpsgear" element={<Dpsgear />} />
               <Route path="/healergear" element={<Healergear />} />
               <Route path="/tankgear" element={<Tankgear />} />

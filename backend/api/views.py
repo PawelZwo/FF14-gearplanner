@@ -50,7 +50,7 @@ class GearList(generics.ListCreateAPIView):
 
 
 class GearDetails(APIView):
-    def get(self, request, id, format=None):
-        instance = get_object_or_404(Gear, id=id)
+    def get(self, request, slug, format=None):
+        instance = get_object_or_404(Gear, slug=slug)
         serializer = GearSerializer(instance)
         return Response(serializer.data)

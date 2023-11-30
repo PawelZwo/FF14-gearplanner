@@ -7,6 +7,7 @@ from django.contrib.auth.models import AbstractUser
 
 # Additional imports
 import uuid
+from autoslug import AutoSlugField
 
 
 class Account(AbstractUser):
@@ -190,6 +191,11 @@ class Gear(models.Model):
         unique=True,
         max_length=100
     )
+    slug = AutoSlugField(
+        populate_from='gear_name',
+        editable=True, always_update=True,
+        null=True, blank=True
+    )
     category = models.CharField(
         choices=Categories.choices,
         db_comment="Category of the gear",
@@ -254,12 +260,6 @@ class Gear(models.Model):
         decimal_places=2,
         db_comment="Weapon's delay"
     )
-    # dps = models.DecimalField(
-    #     null=True,
-    #     max_digits=5,
-    #     decimal_places=2,
-    #     db_comment="Weapon's dps"
-    # )
     block_strength = models.PositiveSmallIntegerField(
         null=True,
         db_comment="Shield's block strength"
@@ -343,6 +343,11 @@ class Gearset(models.Model):
     gearset_name = models.CharField(
         max_length=100,
         unique=True
+    )
+    slug = AutoSlugField(
+        populate_from='gearset_name',
+        editable=True, always_update=True,
+        null=True, blank=True
     )
     job = models.OneToOneField(
         Job,

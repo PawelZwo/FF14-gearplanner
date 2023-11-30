@@ -38,7 +38,7 @@ class GearSerializer(serializers.ModelSerializer):
                   'auto_attack', 'delay', 'block_strength', 'block_rate', 'defense',
                   'magic_defense', 'vitality', 'strength', 'dexterity',
                   'tenacity', 'intelligence', 'mind', 'piety', 'critical_rate',
-                  'direct_hit', 'determination', 'skill_speed', 'spell_speed',)
+                  'direct_hit', 'determination', 'skill_speed', 'spell_speed', 'slug')
 
 
 class GearsetSerializer(serializers.ModelSerializer):
@@ -52,7 +52,7 @@ class GearsetSerializer(serializers.ModelSerializer):
         fields = ('uuid', 'gearset_name', 'job', 'job_name', 'weapon', 'shield', 'head',
                   'body', 'legs', 'hands', 'feet', 'earring',
                   'necklace', 'bracelet', 'left_ring', 'right_ring',
-                  'attributes',)
+                  'attributes', 'slug')
 
     def get_attributes(self, obj):
         return obj.calculate_total_stats()

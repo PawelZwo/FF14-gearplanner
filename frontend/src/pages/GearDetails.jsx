@@ -20,10 +20,10 @@ import { useFetch } from "../hooks/useFetch";
 import { useParams } from "react-router-dom";
 
 export default function GearDetails() {
-  const { gearId } = useParams();
+  const { gearSlug } = useParams();
 
   const { data, isPending, error } = useFetch(
-    `http://192.168.0.73:8000/api/gear/${gearId}`
+    `http://192.168.0.73:8000/api/gear/${gearSlug}`
   );
 
   return (
@@ -71,18 +71,22 @@ export default function GearDetails() {
           </Row>
 
           <Row>
-            <Col sm={6}>
+            <Col sm={7}>
               <div style={{ marginLeft: "115px", marginBottom: "20px" }}>
-                <div className="gear_info">
-                  Added in patch: <strong>{data.added_in_patch}</strong> (
-                  {data.acquisition})
-                </div>
-
                 <div className="gear_info">
                   <strong style={{ fontSize: "20px" }}>
                     {data.item_level}
                   </strong>{" "}
-                  ilvl <strong>{data.cost_name}</strong>
+                  ilvl{" "}
+                  <strong style={{ fontSize: "20px" }}>{data.cost_name}</strong>
+                </div>
+
+                <div className="gear_info">
+                  Added in patch: <strong>{data.added_in_patch}</strong>
+                </div>
+
+                <div className="gear_info">
+                  Acquired from: <strong>{data.acquisition}</strong>
                 </div>
 
                 <div className="gear_info">
@@ -110,13 +114,7 @@ export default function GearDetails() {
             </Col>
 
             <Col sm={4}>
-              <Table
-                borderless
-                striped
-                responsive="sm"
-                variant="dark"
-                style={{ width: "100%" }}
-              >
+              <Table borderless striped responsive="sm" variant="dark">
                 <tbody>
                   {data.physical_dmg !== 0 && (
                     <tr>

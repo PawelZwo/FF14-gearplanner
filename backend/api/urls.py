@@ -12,5 +12,5 @@ urlpatterns = [
     path('race/', api_views.RaceList.as_view(), name='race'),
     path('gearset/', api_views.GearsetList.as_view(), name='gearset'),
     path('gear/', api_views.GearList.as_view(), name='gear'),
-    path('gear/<str:id>/', api_views.GearDetails.as_view(), name='gear_details'),
+    path('gear/<str:slug>/', api_views.GearDetails.as_view(), name='gear_details'),
 ]

@@ -32,8 +32,15 @@ export default function CategoryTableColumn({ data, category, filtered }) {
             .filter((gear) => gear.category === category)
             .map((gearPiece) => {
               return (
-                <tr key={gearPiece.id}>
-                  <td><NavLink className="gear_details_link" to={`/gear/${gearPiece.id}`}>{gearPiece.gear_name}</NavLink></td>
+                <tr key={gearPiece.slug}>
+                  <td>
+                    <NavLink
+                      className="gear_details_link"
+                      to={`/gear/${gearPiece.slug}`}
+                    >
+                      {gearPiece.gear_name}
+                    </NavLink>
+                  </td>
                 </tr>
               );
             })}
@@ -41,8 +48,15 @@ export default function CategoryTableColumn({ data, category, filtered }) {
         {!category &&
           data.map((gearPiece) => {
             return (
-              <tr key={gearPiece.id}>
-                <td><NavLink className="gear_details_link" to={`/gear/${gearPiece.id}`}>{gearPiece.gear_name}</NavLink></td>
+              <tr key={gearPiece.slug}>
+                <td>
+                  <NavLink
+                    className="gear_details_link"
+                    to={`/gear/${gearPiece.slug}`}
+                  >
+                    {gearPiece.gear_name}
+                  </NavLink>
+                </td>
               </tr>
             );
           })}
