@@ -32,13 +32,13 @@ class GearSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Gear
-        fields = ('id', 'gear_name', 'category', 'acquisition', 'added_in_patch',
+        fields = ('id', 'gear_name', 'slug', 'category', 'acquisition', 'added_in_patch',
                   'slot', 'cost_name', 'job', 'ff14_db_index', 'ff14_db_icon',
                   'item_level', 'physical_dmg', 'magical_dmg',
                   'auto_attack', 'delay', 'block_strength', 'block_rate', 'defense',
                   'magic_defense', 'vitality', 'strength', 'dexterity',
                   'tenacity', 'intelligence', 'mind', 'piety', 'critical_rate',
-                  'direct_hit', 'determination', 'skill_speed', 'spell_speed', 'slug')
+                  'direct_hit', 'determination', 'skill_speed', 'spell_speed',)
 
 
 class GearsetSerializer(serializers.ModelSerializer):
@@ -49,10 +49,10 @@ class GearsetSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Gearset
-        fields = ('uuid', 'gearset_name', 'job', 'job_name', 'weapon', 'shield', 'head',
+        fields = ('uuid', 'gearset_name', 'slug', 'job', 'job_name', 'weapon', 'shield', 'head',
                   'body', 'legs', 'hands', 'feet', 'earring',
                   'necklace', 'bracelet', 'left_ring', 'right_ring',
-                  'attributes', 'slug')
+                  'attributes',)
 
     def get_attributes(self, obj):
         return obj.calculate_total_stats()

@@ -72,7 +72,10 @@ export default function RoleTableColumn({ data, roleCol, title, is_home }) {
                       >
                         {job_name}
                       </Link>{" "}
-                      {(job_name === "Paladin" || job_name === "Reaper" || job_name === "Bard" || job_name === "Red Mage") && (
+                      {(job_name === "Paladin" ||
+                        job_name === "Reaper" ||
+                        job_name === "Bard" ||
+                        job_name === "Red Mage") && (
                         <Badge pill bg="success">
                           <TbStatusChange />
                         </Badge>

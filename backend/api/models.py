@@ -230,8 +230,8 @@ class Gear(models.Model):
         null=True,
         blank=True
     )
-    ff14_db_icon = models.URLField(
-        max_length=200,
+    ff14_db_icon = models.CharField(
+        max_length=100,
         null=True,
         blank=True
     )

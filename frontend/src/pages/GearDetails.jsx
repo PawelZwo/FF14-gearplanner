@@ -59,7 +59,7 @@ export default function GearDetails() {
           <Row>
             <Stack direction="horizontal" style={{ marginBottom: "1rem" }}>
               <Image
-                src={data.ff14_db_icon}
+                src={`https://lds-img.finalfantasyxiv.com/itemicon/${data.ff14_db_icon}`}
                 width="100"
                 height="100"
                 className="d-inline-block align-top"

@@ -12,7 +12,12 @@ export default function useFFdb({ item_index }) {
       className="eorzeadb_link"
       target="_blank"
     >
-      <Button size="sm" type="button" variant="dark" style={{color: "#658bf5"}}>
+      <Button
+        size="sm"
+        type="button"
+        variant="dark"
+        style={{ color: "#658bf5" }}
+      >
         Lodestone
       </Button>
     </a>
