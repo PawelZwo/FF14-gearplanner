@@ -35,5 +35,5 @@ export default function PageTitle() {
       default:
         document.title = "Final Fantasy 14 Gearplanner";
     }
-  }, []);
+  }, [currentUrl]);
 }

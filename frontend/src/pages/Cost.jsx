@@ -11,7 +11,7 @@ import PageTitle from "../components/PageTitle";
 
 function Cost() {
   const { data, isPending, error } = useFetch(
-    "http://127.0.0.1:8000/api/cost/"
+    "http://192.168.0.73:8000/api/cost/"
   );
 
   return (

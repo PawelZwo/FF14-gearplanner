@@ -11,7 +11,7 @@ import PageTitle from "../components/PageTitle";
 
 function Race() {
   const { data, isPending, error } = useFetch(
-    "http://127.0.0.1:8000/api/race/"
+    "http://192.168.0.73:8000/api/race/"
   );
 
   return (

@@ -16,7 +16,7 @@ import PageTitle from "../components/PageTitle";
 
 function AllGear() {
   const { data, isPending, error } = useFetch(
-    "http://127.0.0.1:8000/api/gear/"
+    "http://192.168.0.73:8000/api/gear/"
   );
 
   const [isFiltered, setIsFiltered] = useState({ filtered: false, by: null });

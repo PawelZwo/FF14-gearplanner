@@ -11,7 +11,7 @@ import PageTitle from "../components/PageTitle";
 
 function Dpsgear() {
   const { data, isPending, error } = useFetch(
-    "http://127.0.0.1:8000/api/gear/?category__in=Maiming,Striking,Slaying,Casting,Aiming,Scouting"
+    "http://192.168.0.73:8000/api/gear/?category__in=Maiming,Striking,Slaying,Casting,Aiming,Scouting"
   );
 
   return (
