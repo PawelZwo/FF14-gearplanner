@@ -12,9 +12,11 @@ import Col from "react-bootstrap/Col";
 
 // Project's components
 import RightSide from "./components/RightSide";
-import Footer from "./components/Footer";
+import Footer from "./components/small_components/Footer";
 import LeftSide from "./components/LeftSide";
-import Banner from "./components/Banner";
+
+// Project's small components
+import Banner from "./components/small_components/Banner";
 
 // Project's pages
 import Home from "./pages/Home";

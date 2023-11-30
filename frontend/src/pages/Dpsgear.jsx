@@ -4,10 +4,13 @@ import { useFetch } from "../hooks/useFetch";
 // React-Bootstrap imports
 import Alert from "react-bootstrap/Alert";
 
+// Project's small components
+import PageTitle from "../components/small_components/PageTitle";
+import Loading from "../components/small_components/Loading";
+
 // Project's components
-import Loading from "../components/Loading";
 import CategoryTableColumn from "../components/CategoryTableColumn";
-import PageTitle from "../components/PageTitle";
+
 
 function Dpsgear() {
   const { data, isPending, error } = useFetch(

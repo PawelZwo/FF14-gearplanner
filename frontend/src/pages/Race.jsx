@@ -5,9 +5,9 @@ import Alert from "react-bootstrap/Alert";
 // Custom hooks
 import { useFetch } from "../hooks/useFetch";
 
-// Project's components
-import Loading from "../components/Loading";
-import PageTitle from "../components/PageTitle";
+// Project's small components
+import Loading from "../components/small_components/Loading";
+import PageTitle from "../components/small_components/PageTitle";
 
 function Race() {
   const { data, isPending, error } = useFetch(

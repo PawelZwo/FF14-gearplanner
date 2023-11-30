@@ -1,5 +1,5 @@
 // Project's components
-import Banner from "../components/Banner";
+import Banner from "../components/small_components/Banner";
 
 export default function NotFound() {
   return (

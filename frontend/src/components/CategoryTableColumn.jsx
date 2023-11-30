@@ -1,7 +1,9 @@
 // React-bootstrap imports
 import Table from "react-bootstrap/Table";
-import Image from "react-bootstrap/Image";
 import Stack from "react-bootstrap/Stack";
+
+// Project's small components
+import GearIcon from "./small_components/GearIcon";
 
 // React-router imports
 import { NavLink } from "react-router-dom";
@@ -37,12 +39,9 @@ export default function CategoryTableColumn({ data, category, filtered }) {
                 <tr key={gearPiece.slug}>
                   <td>
                     <Stack direction="horizontal" gap={2}>
-                      <Image
-                        src={`https://lds-img.finalfantasyxiv.com/itemicon/${gearPiece.ff14_db_icon}`}
-                        width="30"
-                        height="30"
-                        className="d-inline-block align-top"
-                        alt={`${gearPiece.gear_name} icon`}
+                      <GearIcon
+                        icon_path={gearPiece.ff14_db_icon}
+                        piece_name={gearPiece.gear_name}
                       />
                       <NavLink
                         className="gear_details_link"

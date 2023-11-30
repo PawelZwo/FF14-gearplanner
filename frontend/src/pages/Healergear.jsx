@@ -5,9 +5,11 @@ import { useFetch } from "../hooks/useFetch";
 import Alert from "react-bootstrap/Alert";
 
 // Project's components
-import Loading from "../components/Loading";
 import CategoryTableColumn from "../components/CategoryTableColumn";
-import PageTitle from "../components/PageTitle";
+
+// Project's small components
+import Loading from "../components/small_components/Loading";
+import PageTitle from "../components/small_components/PageTitle";
 
 function Healergear() {
   const { data, isPending, error } = useFetch(
@@ -29,7 +31,7 @@ function Healergear() {
             flexWrap: "wrap",
           }}
         >
-          <CategoryTableColumn data={data} category="Healing" filtered/>
+          <CategoryTableColumn data={data} category="Healing" filtered />
         </div>
       )}
 

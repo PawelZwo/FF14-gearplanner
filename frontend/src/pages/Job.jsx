@@ -6,11 +6,15 @@ import { useFetch } from "../hooks/useFetch";
 
 // Project's components
 import RoleTableColumn from "../components/RoleTableColumn";
-import Loading from "../components/Loading";
-import PageTitle from "../components/PageTitle";
+
+// Project's small components
+import Loading from "../components/small_components/Loading";
+import PageTitle from "../components/small_components/PageTitle";
 
 function Job() {
-  const { data, isPending, error } = useFetch("http://192.168.0.73:8000/api/job/");
+  const { data, isPending, error } = useFetch(
+    "http://192.168.0.73:8000/api/job/"
+  );
 
   return (
     <>

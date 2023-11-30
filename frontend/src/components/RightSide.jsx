@@ -1,6 +1,5 @@
 // Other imports
 import { NavLink } from "react-router-dom";
-// import { useState } from "react";
 
 // React-Icons imports
 import { FaHome } from "react-icons/fa";

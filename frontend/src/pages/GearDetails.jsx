@@ -2,7 +2,6 @@
 import { Link } from "react-router-dom";
 
 // React-bootstrap components
-import Image from "react-bootstrap/Image";
 import Alert from "react-bootstrap/Alert";
 import Stack from "react-bootstrap/Stack";
 import Button from "react-bootstrap/Button";
@@ -10,10 +9,11 @@ import Table from "react-bootstrap/Table";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-// Project's components
-import Loading from "../components/Loading";
-import PageTitle from "../components/PageTitle";
-import FinalFantasyDataBaseLink from "../components/FinalFantasyDataBaseLink";
+// Project's small components
+import Loading from "../components/small_components/Loading";
+import PageTitle from "../components/small_components/PageTitle";
+import GearIcon from "../components/small_components/GearIcon";
+import FinalFantasyDataBaseLink from "../components/small_components/FinalFantasyDataBaseLink";
 
 // Custom hooks
 import { useFetch } from "../hooks/useFetch";
@@ -57,14 +57,15 @@ export default function GearDetails() {
       {data && (
         <>
           <Row>
-            <Stack direction="horizontal" style={{ marginBottom: "1rem" }}>
-              <Image
-                src={`https://lds-img.finalfantasyxiv.com/itemicon/${data.ff14_db_icon}`}
-                width="100"
-                height="100"
-                className="d-inline-block align-top"
-                alt={`${data.gear_name} icon`}
-                style={{ marginRight: "1rem" }}
+            <Stack
+              direction="horizontal"
+              style={{ marginBottom: "1rem" }}
+              gap={2}
+            >
+              <GearIcon
+                icon_path={data.ff14_db_icon}
+                piece_name={data.gear_nam}
+                on_details
               />
               <h3>{data.gear_name}</h3>
             </Stack>
@@ -92,7 +93,7 @@ export default function GearDetails() {
                 <div className="gear_info">
                   Can be equipped by: <br />
                   {data.job.map((item) => (
-                    <div className="gear_jobs" key={item.id}>
+                    <div className="gear_jobs" key={item.job_name}>
                       <strong>{item.job_name} </strong>
                     </div>
                   ))}

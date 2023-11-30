@@ -5,8 +5,8 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Stack from "react-bootstrap/Stack";
 
-// Project's components
-import PageTitle from "../components/PageTitle";
+// Project's small components
+import PageTitle from "../components/small_components/PageTitle";
 
 export default function PvpCalc() {
   const seriesExp = {

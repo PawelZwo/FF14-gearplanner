@@ -10,9 +10,11 @@ import Button from "react-bootstrap/Button";
 import Stack from "react-bootstrap/Stack";
 
 // Project's components
-import Loading from "../components/Loading";
 import CategoryTableColumn from "../components/CategoryTableColumn";
-import PageTitle from "../components/PageTitle";
+
+// Project's small components
+import PageTitle from "../components/small_components/PageTitle";
+import Loading from "../components/small_components/Loading";
 
 function AllGear() {
   const { data, isPending, error } = useFetch(

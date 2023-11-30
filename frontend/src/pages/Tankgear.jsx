@@ -5,9 +5,11 @@ import { useFetch } from "../hooks/useFetch";
 import Alert from "react-bootstrap/Alert";
 
 // Project's components
-import Loading from "../components/Loading";
-import PageTitle from "../components/PageTitle";
 import CategoryTableColumn from "../components/CategoryTableColumn";
+
+// Project's small components
+import Loading from "../components/small_components/Loading";
+import PageTitle from "../components/small_components/PageTitle";
 
 function Tankgear() {
   const { data, isPending, error } = useFetch(
@@ -29,7 +31,7 @@ function Tankgear() {
             flexWrap: "wrap",
           }}
         >
-          <CategoryTableColumn data={data} category="Fending" filtered/>
+          <CategoryTableColumn data={data} category="Fending" filtered />
         </div>
       )}
 

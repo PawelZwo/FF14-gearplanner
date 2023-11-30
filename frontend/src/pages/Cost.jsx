@@ -5,9 +5,9 @@ import Table from "react-bootstrap/Table";
 // Custom hooks
 import { useFetch } from "../hooks/useFetch";
 
-// Project's components
-import Loading from "../components/Loading";
-import PageTitle from "../components/PageTitle";
+// Project's small components
+import PageTitle from "../components/small_components/PageTitle";
+import Loading from "../components/small_components/Loading";
 
 function Cost() {
   const { data, isPending, error } = useFetch(

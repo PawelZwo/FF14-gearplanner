@@ -1,7 +1,7 @@
 // Other imports
 import { NavLink } from "react-router-dom";
 
-// React-Icons imports
+// React-icons imports
 import { GiAbdominalArmor } from "react-icons/gi";
 
 // React-Bootstrap imports
@@ -11,15 +11,7 @@ import Navbar from "react-bootstrap/Navbar";
 export default function LeftSide() {
   return (
     <>
-      <NavLink
-        to="gear/"
-        className="menu-link"
-        // style={({ isActive }) =>
-        //   isActive
-        //     ? setIsLinkActive({ all: true })
-        //     : setIsLinkActive(!isLinkActive)
-        // }
-      >
+      <NavLink to="gear/" className="menu-link">
         <Navbar
           bg="dark"
           data-bs-theme="dark"
@@ -44,15 +36,7 @@ export default function LeftSide() {
         </Navbar>
       </NavLink>
 
-      <NavLink
-        to="dpsgear/"
-        className="menu-link"
-        // style={({ isActive }) =>
-        //   isActive
-        //     ? setIsLinkActive({ dps: true })
-        //     : setIsLinkActive(!isLinkActive)
-        // }
-      >
+      <NavLink to="dpsgear/" className="menu-link">
         <Navbar
           bg="dark"
           data-bs-theme="dark"
@@ -75,15 +59,7 @@ export default function LeftSide() {
         </Navbar>
       </NavLink>
 
-      <NavLink
-        to="healergear/"
-        className="menu-link"
-        // style={({ isActive }) =>
-        //   isActive
-        //     ? setIsLinkActive({ healer: true })
-        //     : setIsLinkActive(!isLinkActive)
-        // }
-      >
+      <NavLink to="healergear/" className="menu-link">
         <Navbar
           bg="dark"
           data-bs-theme="dark"
@@ -106,15 +82,7 @@ export default function LeftSide() {
         </Navbar>
       </NavLink>
 
-      <NavLink
-        to="tankgear/"
-        className="menu-link"
-        // style={({ isActive }) =>
-        //   isActive
-        //     ? setIsLinkActive({ tank: true })
-        //     : setIsLinkActive(!isLinkActive)
-        // }
-      >
+      <NavLink to="tankgear/" className="menu-link">
         <Navbar
           bg="dark"
           data-bs-theme="dark"
