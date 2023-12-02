@@ -49,10 +49,10 @@ class GearsetSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Gearset
-        fields = ('uuid', 'gearset_name', 'slug', 'job', 'job_name', 'weapon', 'shield', 'head',
-                  'body', 'legs', 'hands', 'feet', 'earring',
+        fields = ('uuid', 'gearset_name', 'slug', 'job', 'job_name', 'weapon',
+                  'shield', 'head', 'body', 'legs', 'hands', 'feet', 'earring',
                   'necklace', 'bracelet', 'left_ring', 'right_ring',
-                  'attributes',)
+                  'attributes', 'date_added', 'last_modified')
 
     def get_attributes(self, obj):
         return obj.calculate_total_stats()

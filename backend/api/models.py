@@ -414,6 +414,12 @@ class Gearset(models.Model):
         on_delete=models.CASCADE,
         related_name="gearset_right_ring"
     )
+    date_added = models.DateTimeField(
+        auto_now_add=True
+    )
+    last_modified = models.DateTimeField(
+        auto_now=True
+    )
 
     def __str__(self):
         return f"{self.gearset_name}"
