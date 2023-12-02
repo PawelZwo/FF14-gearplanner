@@ -4,6 +4,7 @@ import { useState } from "react";
 // React-Bootstrap imports
 import Button from "react-bootstrap/Button";
 import Stack from "react-bootstrap/Stack";
+import Alert from "react-bootstrap/Alert";
 
 // Project's small components
 import PageTitle from "../small_components/PageTitle";
@@ -41,46 +42,56 @@ export default function PvpCalc() {
     crystalineDefeat: 700,
   };
 
-  const [currentExp, setCurrentExp] = useState(0);
-  const [currentLevel, setCurrentLevel] = useState(0);
-  const [isCalculated, setIsCalculated] = useState(false);
-  const [calculatedValue, setCalculatedValue] = useState(0);
-  const [error, setError] = useState("");
+  const [levelInput, setLevelInput] = useState(0);
+  const [expInput, setExpInput] = useState(0);
+  const [pvpSeriesData, setPvpSeriesData] = useState(0);
+  const [expLeft, setExpLeft] = useState(0);
 
-  let expDifference;
-  // TODO:
-  // verify that values are NOT undefined!
-  function CalculateDifference(currentExp, currentLevel) {
-    // console.log("currentExp", currentExp, typeof currentExp);
-    // console.log("currentLevel", currentLevel, typeof currentLevel);
-    // if (typeof currentExp === undefined && typeof currentLevel === undefined) {
-    //   setIsCalculated(false);
-    //   setError("Please input the data.");
-    //   return;
-    // } else {
-    //   setError("");
-    let previousLevel = Number(currentLevel) - 1;
-    // console.log("previousLevel", previousLevel, typeof previousLevel);
+  const [displayControls, setDisplayControls] = useState({
+    error: null,
+    isCalculated: false,
+    isDisabled: true,
+  });
 
-    let previousAccumulated =
-      currentLevel > 1
-        ? seriesExp[previousLevel].accumulated
-        : seriesExp[Number(currentLevel)].accumulated;
-    // console.log(
-    //   "previousAccumulated",
-    //   previousAccumulated,
-    //   typeof previousAccumulated
-    // );
+  let neededLevel;
+  let calculatedValue;
+  let calculateExpLeft;
+  function CalculateDifference(e, levelValue, expValue) {
+    e.preventDefault();
 
-    expDifference =
+    neededLevel = levelValue === 1 ? 1 : levelValue - 1;
+
+    calculatedValue =
       seriesExp.sum -
-      (previousAccumulated +
-        (seriesExp[Number(currentLevel)].exp - Number(currentExp)));
-    // console.log("expDifference", expDifference, typeof expDifference);
+      (seriesExp[neededLevel].accumulated +
+        (seriesExp[levelValue].exp - expValue));
 
-    setIsCalculated(true);
-    setCalculatedValue(expDifference);
-    // }
+    calculateExpLeft = seriesExp[neededLevel].exp - expValue;
+
+    setPvpSeriesData(calculatedValue);
+    setDisplayControls({ isCalculated: true });
+    setExpLeft(calculateExpLeft);
+  }
+
+  function checkInputs() {
+    if (
+      levelInput >= 1 &&
+      levelInput !== null &&
+      levelInput < 25 &&
+      expInput !== 0 &&
+      expInput !== null &&
+      expInput < 7500
+    ) {
+      setDisplayControls({
+        error: null,
+        isDisabled: false,
+      });
+    } else {
+      setDisplayControls({
+        error: "Please input valid data!",
+        isDisabled: true,
+      });
+    }
   }
 
   return (
@@ -138,86 +149,100 @@ export default function PvpCalc() {
       <Stack
         direction="horizontal"
         gap={2}
-        style={{ marginBottom: "2vh", display: "inline-block" }}
+        style={{ marginBottom: "", display: "inline-block" }}
       >
-        <label htmlFor="current-level">
-          Current PvP level
-          <input
-            id="current-level"
-            type="number"
-            placeholder="Current PvP level"
-            style={{
-              marginRight: "10px",
-              marginBottom: "10px",
-              marginLeft: "10px",
-              width: "100px",
-            }}
-            value={currentLevel}
-            required="true"
-            onInput={(e) => setCurrentLevel(e.target.value)}
+        <form
+          onSubmit={(e) => CalculateDifference(e, levelInput, expInput)}
+          onInput={() => checkInputs()}
+        >
+          <label htmlFor="current-level">
+            Current PvP level
+            <input
+              id="current-level"
+              type="number"
+              placeholder="Current PvP level"
+              style={{
+                marginRight: "10px",
+                marginBottom: "10px",
+                marginLeft: "10px",
+                width: "100px",
+              }}
+              value={levelInput}
+              required={true}
+              onInput={(e) => setLevelInput(Number(e.target.value))}
+              min={1}
+              max={25}
+            />
+          </label>
+          <label htmlFor="current-exp">
+            Current EXP
+            <input
+              id="current-exp"
+              type="number"
+              placeholder="Current EXP"
+              style={{
+                marginRight: "10px",
+                marginBottom: "10px",
+                marginLeft: "10px",
+                width: "100px",
+              }}
+              value={expInput}
+              required={true}
+              onInput={(e) => setExpInput(Number(e.target.value))}
+              min={0}
+              max={7500}
+            />
+          </label>{" "}
+          <Button
+            as="input"
+            type="submit"
+            value="Check!"
+            size="sm"
+            variant="secondary"
+            style={{ marginBottom: "5px" }}
+            disabled={displayControls.isDisabled}
           />
-        </label>
-        <label htmlFor="current-exp">
-          Current EXP
-          <input
-            id="current-exp"
-            type="number"
-            placeholder="Current EXP"
-            style={{
-              marginRight: "10px",
-              marginBottom: "10px",
-              marginLeft: "10px",
-              width: "100px",
-            }}
-            value={currentExp}
-            required="true"
-            onInput={(e) => setCurrentExp(e.target.value)}
-          />
-        </label>{" "}
-        <Button
-          as="input"
-          type="button"
-          value="Check!"
-          size="sm"
-          variant="secondary"
-          onClick={() => CalculateDifference(currentExp, currentLevel)}
-          style={{ marginBottom: "5px" }}
-        />
+        </form>
       </Stack>
 
-      {isCalculated && (
-        <div>
-          You still got ahead of you either:
+      {displayControls.isCalculated && (
+        <>
+          <p style={{ marginBottom: "5px" }}>
+            You need <strong>{expLeft}</strong> EXP for the next level. To get
+            to 25 you'll need either:
+          </p>
           <ul className="pvp-list">
             <li>
               <strong>
-                {Math.ceil(calculatedValue / seriesExp.frontlineVictory)}
+                {Math.ceil(pvpSeriesData / seriesExp.frontlineVictory)}
               </strong>{" "}
               Frontlines victories,
             </li>
             <li>
               <strong>
-                {Math.ceil(calculatedValue / seriesExp.frontlineDefeat)}
+                {Math.ceil(pvpSeriesData / seriesExp.frontlineDefeat)}
               </strong>{" "}
               Frontlines defeats,
             </li>
             <li>
               <strong>
-                {Math.ceil(calculatedValue / seriesExp.crystalineVictory)}
+                {Math.ceil(pvpSeriesData / seriesExp.crystalineVictory)}
               </strong>{" "}
               Crystaline Conflicts victories or
             </li>
             <li>
               <strong>
-                {Math.ceil(calculatedValue / seriesExp.crystalineDefeat)}
+                {Math.ceil(pvpSeriesData / seriesExp.crystalineDefeat)}
               </strong>{" "}
               Crystaline Conflicts defeats.
             </li>
           </ul>
-        </div>
+        </>
       )}
 
-      {error !== "" ? error : ""}
+      {displayControls.error && (
+        <Alert variant="info">{displayControls.error}</Alert>
+      )}
     </>
   );
 }
