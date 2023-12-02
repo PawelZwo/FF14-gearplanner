@@ -9,9 +9,7 @@ import RoleTableColumn from "../components/RoleTableColumn";
 import Loading from "../small_components/Loading";
 
 function JobList() {
-  const { data, isPending, error } = useFetch(
-    "http://192.168.0.73:8000/api/job/"
-  );
+  const { data, isPending, error } = useFetch("api/job/");
 
   return (
     <>

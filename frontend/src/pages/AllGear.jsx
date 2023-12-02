@@ -17,9 +17,7 @@ import PageTitle from "../small_components/PageTitle";
 import Loading from "../small_components/Loading";
 
 function AllGear() {
-  const { data, isPending, error } = useFetch(
-    "http://192.168.0.73:8000/api/gear/"
-  );
+  const { data, isPending, error } = useFetch("api/gear/");
 
   const [isFiltered, setIsFiltered] = useState({ filtered: false, by: null });
 

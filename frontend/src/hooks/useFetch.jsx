@@ -10,14 +10,14 @@ export function useFetch(endpoint) {
     const fetchData = async () => {
       setIsPending(true);
       try {
-        const response = await fetch(endpoint);
+        const response = await fetch("http://192.168.0.73:8000/" + endpoint);
         if (!response.ok) throw new Error(response.statusText);
         const json = await response.json();
         setIsPending(false);
         setData(json);
         setError(null);
       } catch (error) {
-        setError(`Could not Fetch Data (${error} )`);
+        setError(`Could not fetch data (${error} )`);
         setIsPending(false);
       }
     };

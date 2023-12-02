@@ -10,9 +10,7 @@ import Loading from "../small_components/Loading";
 import PageTitle from "../small_components/PageTitle";
 
 function Race() {
-  const { data, isPending, error } = useFetch(
-    "http://192.168.0.73:8000/api/race/"
-  );
+  const { data, isPending, error } = useFetch("api/race/");
 
   return (
     <>

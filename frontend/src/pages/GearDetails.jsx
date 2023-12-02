@@ -22,9 +22,7 @@ import { useParams } from "react-router-dom";
 export default function GearDetails() {
   const { gearSlug } = useParams();
 
-  const { data, isPending, error } = useFetch(
-    `http://192.168.0.73:8000/api/gear/${gearSlug}`
-  );
+  const { data, isPending, error } = useFetch(`api/gear/${gearSlug}`);
 
   return (
     <>

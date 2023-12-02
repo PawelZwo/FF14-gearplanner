@@ -10,9 +10,7 @@ import PageTitle from "../small_components/PageTitle";
 import Loading from "../small_components/Loading";
 
 function Cost() {
-  const { data, isPending, error } = useFetch(
-    "http://192.168.0.73:8000/api/cost/"
-  );
+  const { data, isPending, error } = useFetch("api/cost/");
 
   return (
     <>
