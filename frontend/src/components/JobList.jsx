@@ -6,7 +6,7 @@ import { useFetch } from "../hooks/useFetch";
 
 // Project's components
 import RoleTableColumn from "../components/RoleTableColumn";
-import Loading from "./small_components/Loading";
+import Loading from "../small_components/Loading";
 
 function JobList() {
   const { data, isPending, error } = useFetch(

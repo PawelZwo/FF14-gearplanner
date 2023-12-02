@@ -3,7 +3,7 @@ import Table from "react-bootstrap/Table";
 import Stack from "react-bootstrap/Stack";
 
 // Project's small components
-import GearIcon from "./small_components/GearIcon";
+import GearIcon from "../small_components/GearIcon";
 
 // React-router imports
 import { NavLink } from "react-router-dom";

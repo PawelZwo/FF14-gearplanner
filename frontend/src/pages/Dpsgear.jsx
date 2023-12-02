@@ -5,8 +5,8 @@ import { useFetch } from "../hooks/useFetch";
 import Alert from "react-bootstrap/Alert";
 
 // Project's small components
-import PageTitle from "../components/small_components/PageTitle";
-import Loading from "../components/small_components/Loading";
+import PageTitle from "../small_components/PageTitle";
+import Loading from "../small_components/Loading";
 
 // Project's components
 import CategoryTableColumn from "../components/CategoryTableColumn";

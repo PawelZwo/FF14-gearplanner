@@ -8,8 +8,8 @@ import { useFetch } from "../hooks/useFetch";
 import RoleTableColumn from "../components/RoleTableColumn";
 
 // Project's small components
-import Loading from "../components/small_components/Loading";
-import PageTitle from "../components/small_components/PageTitle";
+import Loading from "../small_components/Loading";
+import PageTitle from "../small_components/PageTitle";
 
 function Job() {
   const { data, isPending, error } = useFetch(

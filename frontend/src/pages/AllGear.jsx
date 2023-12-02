@@ -5,16 +5,16 @@ import { useState } from "react";
 import { useFetch } from "../hooks/useFetch";
 
 // React-Bootstrap imports
-import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
 import Stack from "react-bootstrap/Stack";
+import Alert from "react-bootstrap/Alert";
 
 // Project's components
 import CategoryTableColumn from "../components/CategoryTableColumn";
 
 // Project's small components
-import PageTitle from "../components/small_components/PageTitle";
-import Loading from "../components/small_components/Loading";
+import PageTitle from "../small_components/PageTitle";
+import Loading from "../small_components/Loading";
 
 function AllGear() {
   const { data, isPending, error } = useFetch(
@@ -128,6 +128,9 @@ function AllGear() {
           ))}
         </div>
       )}
+      {error && <Alert variant="danger">{error}</Alert>}
+
+      {data && data.length === 0 && <h4>Nothing to see here... 🤷‍♂️</h4>}
     </>
   );
 }

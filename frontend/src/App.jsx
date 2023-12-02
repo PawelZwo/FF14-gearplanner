@@ -12,11 +12,11 @@ import Col from "react-bootstrap/Col";
 
 // Project's components
 import RightSide from "./components/RightSide";
-import Footer from "./components/small_components/Footer";
+import Footer from "./small_components/Footer";
 // import LeftSide from "./components/LeftSide";
 
 // Project's small components
-import Banner from "./components/small_components/Banner";
+import Banner from "./small_components/Banner";
 
 // Project's pages
 import Home from "./pages/Home";
@@ -53,14 +53,14 @@ export default function App() {
               {/* <Route path="/dpsgear" element={<Dpsgear />} />
               <Route path="/healergear" element={<Healergear />} />
               <Route path="/tankgear" element={<Tankgear />} /> */}
+              <Route path="/costs" element={<Cost />} />
               <Route element={<Banner />}>
                 <Route path="/" element={<Home />} />
                 <Route path="/jobs" element={<Job />} />
                 <Route path="/races" element={<Race />} />
                 <Route path="/pvp-series" element={<PvpCalc />} />
+                <Route path="*" element={<NotFound />} />
               </Route>
-              <Route path="/costs" element={<Cost />} />
-              <Route path="*" element={<NotFound />} />
             </Routes>
           </Col>
           <Col sm={2}>

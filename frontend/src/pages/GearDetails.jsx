@@ -10,10 +10,10 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 // Project's small components
-import Loading from "../components/small_components/Loading";
-import PageTitle from "../components/small_components/PageTitle";
-import GearIcon from "../components/small_components/GearIcon";
-import FinalFantasyDataBaseLink from "../components/small_components/FinalFantasyDataBaseLink";
+import Loading from "../small_components/Loading";
+import PageTitle from "../small_components/PageTitle";
+import GearIcon from "../small_components/GearIcon";
+import FinalFantasyDataBaseLink from "../small_components/FinalFantasyDataBaseLink";
 
 // Custom hooks
 import { useFetch } from "../hooks/useFetch";

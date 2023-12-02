@@ -8,8 +8,8 @@ import Alert from "react-bootstrap/Alert";
 import CategoryTableColumn from "../components/CategoryTableColumn";
 
 // Project's small components
-import Loading from "../components/small_components/Loading";
-import PageTitle from "../components/small_components/PageTitle";
+import Loading from "../small_components/Loading";
+import PageTitle from "../small_components/PageTitle";
 
 function Healergear() {
   const { data, isPending, error } = useFetch(
