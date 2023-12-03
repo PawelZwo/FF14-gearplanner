@@ -14,7 +14,7 @@ function Race() {
 
   return (
     <>
-      <PageTitle />
+      <PageTitle pageName="Races" />
 
       <div>
         <h3>Races on Eitherys</h3>

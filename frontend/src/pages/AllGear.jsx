@@ -48,7 +48,7 @@ function AllGear() {
 
   return (
     <>
-      <PageTitle />
+      <PageTitle pageName="All gear" />
       <h3>
         {isFiltered.by === null || isFiltered.by === "All" ? (
           "All "

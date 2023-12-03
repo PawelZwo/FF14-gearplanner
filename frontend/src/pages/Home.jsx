@@ -7,7 +7,7 @@ import PageTitle from "../small_components/PageTitle";
 export default function Home() {
   return (
     <>
-      <PageTitle />
+      <PageTitle pageName="Home" />
 
       <div>
         <JobList />

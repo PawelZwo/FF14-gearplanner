@@ -96,7 +96,7 @@ export default function PvpCalc() {
 
   return (
     <>
-      <PageTitle />
+      <PageTitle pageName="PvP series" />
 
       <div>
         <h3>PvP series calculator</h3>

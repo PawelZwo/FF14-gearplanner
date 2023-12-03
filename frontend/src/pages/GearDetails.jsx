@@ -26,7 +26,7 @@ export default function GearDetails() {
 
   return (
     <>
-      <PageTitle />
+      {data && <PageTitle pageName={data.gear_name} />}
       {isPending && <Loading />}
 
       {error && (

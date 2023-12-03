@@ -16,7 +16,7 @@ function Job() {
 
   return (
     <>
-      <PageTitle />
+      <PageTitle pageName="Jobs" />
 
       <div>
         <h3>Jobs</h3>

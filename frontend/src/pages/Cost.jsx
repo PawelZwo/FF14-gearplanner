@@ -14,7 +14,7 @@ function Cost() {
 
   return (
     <>
-      <PageTitle />
+      <PageTitle pageName="Gear costs" />
       <div>
         <h3>Gear costs types</h3>
         <p style={{ textWrap: "balance" }}>
