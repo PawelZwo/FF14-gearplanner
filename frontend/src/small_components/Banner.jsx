@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 export default function Banner() {
   return (
     <>
-      <div style={{ marginBottom: "2vh" }}>
+      <div className="mb20">
         <Image
           src="/media/current_patch_banner.jpg"
           alt="Current patch banner"
@@ -14,7 +14,7 @@ export default function Banner() {
           fluid
         />
       </div>
-      <div style={{ marginBottom: "2vh" }}>
+      <div className="mb20">
         <Outlet />
       </div>
     </>

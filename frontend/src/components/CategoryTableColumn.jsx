@@ -19,7 +19,8 @@ export default function CategoryTableColumn({ data, category, filtered }) {
       hover
       responsive="sm"
       variant="dark"
-      style={{ marginBottom: "0px", marginTop: "0px", padding: "0px" }}
+      className="mtb0"
+      style={{ padding: "0px" }}
     >
       {!filtered && (
         <thead>

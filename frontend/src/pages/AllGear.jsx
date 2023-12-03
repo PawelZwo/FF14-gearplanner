@@ -33,10 +33,6 @@ function AllGear() {
     "Casting",
   ];
 
-  // const roles2 = data && roles.map(role => {return role})
-
-  // console.log(roles2);
-
   function handleFiltration(chosenFilter) {
     if (chosenFilter !== "All") {
       setIsFiltered({ filtered: true, by: chosenFilter });
@@ -96,27 +92,13 @@ function AllGear() {
       )}
 
       {data && data.length !== 0 && isFiltered.filtered && (
-        <div
-          style={{
-            marginTop: "1vh",
-            display: "inline-flex",
-            gap: "1vw",
-            flexWrap: "wrap",
-          }}
-        >
+        <div className="categories-tables">
           <CategoryTableColumn data={data} category={isFiltered.by} filtered />
         </div>
       )}
 
       {data && data.length !== 0 && !isFiltered.filtered && (
-        <div
-          style={{
-            marginTop: "1vh",
-            display: "inline-flex",
-            gap: "1vw",
-            flexWrap: "wrap",
-          }}
-        >
+        <div className="categories-tables">
           {roles.slice(1).map((category) => (
             <CategoryTableColumn
               key={category}

@@ -88,7 +88,7 @@ export default function PvpCalc() {
       });
     } else {
       setDisplayControls({
-        error: "Please input valid data!",
+        error: "Level can be 1-25, and EXP can be 0-7500!",
         isDisabled: true,
       });
     }
@@ -146,11 +146,7 @@ export default function PvpCalc() {
         </p>
       </div>
 
-      <Stack
-        direction="horizontal"
-        gap={2}
-        style={{ marginBottom: "", display: "inline-block" }}
-      >
+      <Stack direction="horizontal" gap={2} className="mb5 inline-block">
         <form
           onSubmit={(e) => CalculateDifference(e, levelInput, expInput)}
           onInput={() => checkInputs()}
@@ -161,12 +157,7 @@ export default function PvpCalc() {
               id="current-level"
               type="number"
               placeholder="Current PvP level"
-              style={{
-                marginRight: "10px",
-                marginBottom: "10px",
-                marginLeft: "10px",
-                width: "100px",
-              }}
+              className="pvp-calc-input"
               value={levelInput}
               required={true}
               onInput={(e) => setLevelInput(Number(e.target.value))}
@@ -180,12 +171,7 @@ export default function PvpCalc() {
               id="current-exp"
               type="number"
               placeholder="Current EXP"
-              style={{
-                marginRight: "10px",
-                marginBottom: "10px",
-                marginLeft: "10px",
-                width: "100px",
-              }}
+              className="pvp-calc-input"
               value={expInput}
               required={true}
               onInput={(e) => setExpInput(Number(e.target.value))}
@@ -199,7 +185,7 @@ export default function PvpCalc() {
             value="Check!"
             size="sm"
             variant="secondary"
-            style={{ marginBottom: "5px" }}
+            className="mb5"
             disabled={displayControls.isDisabled}
           />
         </form>
@@ -207,11 +193,11 @@ export default function PvpCalc() {
 
       {displayControls.isCalculated && (
         <>
-          <p style={{ marginBottom: "5px" }}>
+          <p className="mb5">
             You need <strong>{expLeft}</strong> EXP for the next level. To get
             to 25 you'll need either:
           </p>
-          <ul className="pvp-list">
+          <ul>
             <li>
               <strong>
                 {Math.ceil(pvpSeriesData / seriesExp.frontlineVictory)}

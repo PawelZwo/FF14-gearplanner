@@ -11,9 +11,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 // Project's components
-import RightSide from "./components/RightSide";
+import SideBar from "./components/SideBar";
 import Footer from "./small_components/Footer";
-// import LeftSide from "./components/LeftSide";
 
 // Project's small components
 import Banner from "./small_components/Banner";
@@ -21,9 +20,6 @@ import Banner from "./small_components/Banner";
 // Project's pages
 import Home from "./pages/Home";
 import AllGear from "./pages/AllGear";
-// import Dpsgear from "./pages/Dpsgear";
-// import Healergear from "./pages/Healergear";
-// import Tankgear from "./pages/Tankgear";
 import Job from "./pages/Job";
 import Race from "./pages/Race";
 import Cost from "./pages/Cost";
@@ -64,8 +60,7 @@ export default function App() {
             </Routes>
           </Col>
           <Col sm={2}>
-            <RightSide />
-            {/* <LeftSide /> */}
+            <SideBar />
           </Col>
         </Row>
         <Row style={{ marginBottom: 0, marginTop: "4vh" }}>

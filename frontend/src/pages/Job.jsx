@@ -26,8 +26,8 @@ function Job() {
 
         {data && data.length !== 0 && (
           <div
+            className="mt0"
             style={{
-              marginTop: "1vh",
               display: "inline-flex",
               gap: "2.5rem",
               flexWrap: "wrap",

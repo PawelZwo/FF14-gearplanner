@@ -43,7 +43,7 @@ function Race() {
                   striped
                   responsive="sm"
                   variant="dark"
-                  style={{ marginTop: 0, marginBottom: 0 }}
+                  className="mtb0"
                 >
                   <thead>
                     <tr>

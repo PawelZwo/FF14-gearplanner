@@ -9,7 +9,7 @@ export default function useFFdb({ item_index }) {
         item_index +
         "/"
       }
-      className="eorzeadb_link"
+      className="eorzeadb_link td-none"
       target="_blank"
     >
       <Button

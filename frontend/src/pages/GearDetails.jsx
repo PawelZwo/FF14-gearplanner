@@ -55,11 +55,7 @@ export default function GearDetails() {
       {data && (
         <>
           <Row>
-            <Stack
-              direction="horizontal"
-              style={{ marginBottom: "1rem" }}
-              gap={2}
-            >
+            <Stack direction="horizontal" className="mb10" gap={2}>
               <GearIcon
                 icon_path={data.ff14_db_icon}
                 piece_name={data.gear_nam}
@@ -71,38 +67,35 @@ export default function GearDetails() {
 
           <Row>
             <Col sm={7}>
-              <div style={{ marginLeft: "115px", marginBottom: "20px" }}>
-                <div className="gear_info">
-                  <strong style={{ fontSize: "20px" }}>
-                    {data.item_level}
-                  </strong>{" "}
-                  ilvl{" "}
-                  <strong style={{ fontSize: "20px" }}>{data.cost_name}</strong>
+              <div className="mb20" style={{ marginLeft: "115px" }}>
+                <div className="strong20 mb10">
+                  <strong>{data.item_level}</strong> ilvl{" "}
+                  <strong>{data.cost_name}</strong>
                 </div>
 
-                <div className="gear_info">
+                <div className="strong20 mb10">
                   Added in patch: <strong>{data.added_in_patch}</strong>
                 </div>
 
-                <div className="gear_info">
+                <div className="strong20 mb10">
                   Acquired from: <strong>{data.acquisition}</strong>
                 </div>
 
-                <div className="gear_info">
+                <div className="strong20 mb10">
                   Can be equipped by: <br />
                   {data.job.map((item) => (
-                    <div className="gear_jobs" key={item.job_name}>
+                    <div className="mt5" key={item.job_name}>
                       <strong>{item.job_name} </strong>
                     </div>
                   ))}
                 </div>
-                <div className="last-item">
+                <div className="mt20">
                   <Link to="/gear/">
                     <Button
                       size="sm"
                       type="button"
                       variant="secondary"
-                      style={{ marginRight: "10px" }}
+                      className="mr10"
                     >
                       Back
                     </Button>

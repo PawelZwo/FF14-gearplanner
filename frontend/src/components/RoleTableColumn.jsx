@@ -23,7 +23,8 @@ export default function RoleTableColumn({ data, roleCol, title, is_home }) {
       hover
       responsive="sm"
       variant="dark"
-      style={{ marginBottom: "0px", marginTop: "0px", padding: "0px" }}
+      style={{ padding: "0px" }}
+      className="mtb0"
     >
       <thead>
         <tr>

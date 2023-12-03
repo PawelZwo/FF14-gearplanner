@@ -5,7 +5,7 @@ export default function Footer() {
   const newDate = new Date().getFullYear();
 
   return (
-    <p className="footer-legal">
+    <p className="footer-legal td-none">
       FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.
       FINAL FANTASY XIV &copy; SQUARE ENIX CO., LTD. &nbsp; | &nbsp;
       Webapp&nbsp;by&nbsp;

@@ -1,40 +1,37 @@
 :root {
-    --basic-colour: #658bf5;
+    --main-important-colour: #658bf5;
     --main-background: #212529;
+    --main-link-text-colour: white;
 }
 
-.menu-link {
-    text-decoration: none;
-    color: white;
+strong {
+    color: var(--main-important-colour);
 }
 
 .footer-legal {
     font-size: 12px;
     position: sticky;
-    background-color: var(--main-background);
 }
 
+.menu-link,
 .job-link,
 .gear_details_link {
+    color: var(--main-link-text-colour);
     text-decoration: none;
-    color: white;
+}
+
+.menu-link-icon {
+    display: inline-block;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 4px;
 }
 
 .header {
+    color: var(--main-important-colour);
     font-size: 24px;
     position: sticky;
-    color: var(--basic-colour);
-    /* left: 40vw;
-    top: 0.5vh;
-    width: 100%; */
-}
-
-thead th>strong,
-tbody td>strong,
-p>strong,
-.pvp-list li>strong,
-strong.categories {
-    color: var(--basic-colour);
 }
 
 .category-list {
@@ -44,28 +41,113 @@ strong.categories {
 
 .eorzeadb_link,
 .footer-legal>a {
-    color: var(--basic-colour);
+    color: var(--main-important-colour);
+}
+
+.strong20>strong {
+    font-size: 20px;
+}
+
+.pvp-calc-input {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    width: 100px;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.categories-tables {
+    margin-top: 10px;
+    display: inline-flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.td-none>* {
     text-decoration: none;
 }
 
-.gear_info {
-    margin-bottom: 10px;
-
-    &>strong {
-        color: var(--basic-colour);
-
-    }
+/* MARGIN TOP */
+.mt0 {
+    margin-top: 0;
 }
 
-.gear_jobs {
+.mt5 {
     margin-top: 5px;
-
-    &>strong {
-        color: var(--basic-colour);
-
-    }
 }
 
-.last-item {
+.mt10 {
+    margin-top: 10px;
+}
+
+.mt15 {
+    margin-top: 15px;
+}
+
+.mt20 {
     margin-top: 20px;
+}
+
+/* MARGIN RIGHT */
+.mr5 {
+    margin-right: 5px;
+}
+
+.mr10 {
+    margin-right: 10px;
+}
+
+.mr15 {
+    margin-right: 15px;
+}
+
+.mr20 {
+    margin-right: 20px;
+}
+
+/* MARGIN LEFT */
+.ml5 {
+    margin-left: 5px;
+}
+
+.ml10 {
+    margin-left: 10px;
+}
+
+.ml15 {
+    margin-left: 15px;
+}
+
+.ml20 {
+    margin-left: 20px;
+}
+
+/* MARGIN BOTTOM */
+.mb0 {
+    margin-bottom: 0;
+}
+
+.mb5 {
+    margin-bottom: 5px;
+}
+
+.mb10 {
+    margin-bottom: 10px;
+}
+
+.mb15 {
+    margin-bottom: 15px;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+/* MARGIN TOP-BOTTOM */
+.mtb0 {
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
