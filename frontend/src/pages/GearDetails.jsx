@@ -90,7 +90,7 @@ export default function GearDetails() {
                   ))}
                 </div>
                 <div className="mt20">
-                  <Link to="/gear/">
+                  <Link to={`/gear?category=${data.category}`}>
                     <Button
                       size="sm"
                       type="button"

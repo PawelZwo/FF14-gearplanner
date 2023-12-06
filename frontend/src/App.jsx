@@ -19,7 +19,7 @@ import Banner from "./small_components/Banner";
 
 // Project's pages
 import Home from "./pages/Home";
-import AllGear from "./pages/AllGear";
+import Gear from "./pages/Gear";
 import Job from "./pages/Job";
 import Race from "./pages/Race";
 import Cost from "./pages/Cost";
@@ -44,7 +44,7 @@ export default function App() {
           <Col sm={1} />
           <Col sm={8}>
             <Routes>
-              <Route path="/gear" element={<AllGear />} />
+              <Route path="/gear" element={<Gear />} />
               <Route path="/gear/:gearSlug" element={<GearDetails />} />
               {/* <Route path="/dpsgear" element={<Dpsgear />} />
               <Route path="/healergear" element={<Healergear />} />

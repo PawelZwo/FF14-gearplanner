@@ -8,9 +8,9 @@ import GearIcon from "../small_components/GearIcon";
 // React-router imports
 import { NavLink } from "react-router-dom";
 
-export default function CategoryTableColumn({ data, category }) {
+export default function SlotTableColumn({ data, slot }) {
   // data: Object       - data coming from the parent element
-  // category: String   - by what category will the data be
+  // slot: String       - by what slot will the data be
 
   return (
     <Table
@@ -24,13 +24,13 @@ export default function CategoryTableColumn({ data, category }) {
       <thead>
         <tr>
           <th>
-            <strong>{category}</strong>
+            <strong>{slot}</strong>
           </th>
         </tr>
       </thead>
       <tbody>
         {data
-          .filter((item) => item.category === category)
+          .filter((item) => item.slot === slot)
           .map((gearPiece) => {
             return (
               <tr key={gearPiece.slug}>

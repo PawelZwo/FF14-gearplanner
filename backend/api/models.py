@@ -326,7 +326,7 @@ class Gear(models.Model):
     )
 
     class Meta:
-        ordering = ['category', 'pk']
+        ordering = ['category', 'slot', 'item_level']
 
     def __str__(self):
         return f"{self.gear_name}"
