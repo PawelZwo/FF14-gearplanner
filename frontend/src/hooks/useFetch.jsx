@@ -1,4 +1,4 @@
-// React imports
+// React
 import { useState, useEffect } from "react";
 
 export function useFetch(endpoint) {

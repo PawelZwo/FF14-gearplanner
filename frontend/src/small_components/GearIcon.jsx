@@ -1,4 +1,4 @@
-// React-bootstrap imports
+// React-Bootstrap
 import Image from "react-bootstrap/Image";
 
 export default function GearIcon({ icon_path, piece_name, on_details }) {

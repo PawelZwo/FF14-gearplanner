@@ -36,7 +36,16 @@ strong {
 
 .category-list {
     margin-top: 2vh;
-    margin-bottom: 1vh;
+    margin-bottom: 15px;
+}
+
+.categories-tables {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px 10px;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-flow: row wrap;
 }
 
 .eorzeadb_link,
@@ -59,12 +68,6 @@ strong {
     display: inline-block;
 }
 
-.categories-tables {
-    margin-top: 10px;
-    display: inline-flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
 
 .td-none>* {
     text-decoration: none;

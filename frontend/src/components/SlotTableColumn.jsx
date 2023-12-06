@@ -8,11 +8,11 @@ import GearIcon from "../small_components/GearIcon";
 // React-Router
 import { NavLink } from "react-router-dom";
 
-export default function CategoryTableColumn({ data, category }) {
+export default function SlotTableColumn({ data, slot }) {
   // data: Object       - data coming from the parent element
-  // category: String   - by what category will the data be filtered
+  // slot: String       - by what slot will the data be filtered
 
-  if (data.filter((item) => item.category === category).length === 0) {
+  if (data.filter((item) => item.slot === slot).length === 0) {
     return null;
   }
 
@@ -28,13 +28,13 @@ export default function CategoryTableColumn({ data, category }) {
       <thead>
         <tr>
           <th>
-            <strong>{category}</strong>
+            <strong>{slot}</strong>
           </th>
         </tr>
       </thead>
       <tbody>
         {data
-          .filter((item) => item.category === category)
+          .filter((item) => item.slot === slot)
           .map((gearPiece) => {
             return (
               <tr key={gearPiece.slug}>

@@ -1,7 +1,7 @@
-// Other imports
+// React-Router
 import { NavLink } from "react-router-dom";
 
-// React-Icons imports
+// React-Icons
 import { FaHome } from "react-icons/fa";
 import {
   GiAncientSword,
@@ -11,7 +11,7 @@ import {
   GiAbdominalArmor,
 } from "react-icons/gi";
 
-// React-Bootstrap imports
+// React-Bootstrap
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Badge from "react-bootstrap/Badge";
