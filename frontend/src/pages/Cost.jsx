@@ -1,4 +1,4 @@
-// React-Bootstrap imports
+// React-Bootstrap
 import Table from "react-bootstrap/Table";
 
 // Custom hooks
@@ -42,134 +42,132 @@ function Cost() {
                   costName.cost_name !== "Exquisite Tomestone Weapon" &&
                   costName.cost_name !== "Relic Weapon"
               )
-              .map((cost) => {
-                return (
-                  <Table
-                    key={data.id}
-                    size="sm"
-                    bordered
-                    striped
-                    responsive
-                    variant="dark"
-                    style={{
-                      marginTop: 0,
-                      marginBottom: "10px",
-                      textAlign: "center",
-                    }}
-                  >
-                    <thead>
-                      <tr>
-                        <th colSpan={12}>
-                          <strong>{cost.cost_name}</strong>
-                        </th>
-                      </tr>
-                    </thead>
+              .map((cost) => (
+                <Table
+                  key={cost.id}
+                  size="sm"
+                  bordered
+                  striped
+                  responsive
+                  variant="dark"
+                  style={{
+                    marginTop: 0,
+                    marginBottom: "10px",
+                    textAlign: "center",
+                  }}
+                >
+                  <thead>
+                    <tr>
+                      <th colSpan={12}>
+                        <strong>{cost.cost_name}</strong>
+                      </th>
+                    </tr>
+                  </thead>
 
-                    <tbody>
-                      <tr>
-                        <td>Mythos I</td>
-                        <td>Mythos II</td>
-                        <td>Mythos III</td>
-                        <td>Mythos IV</td>
-                        <td>Unsung Head</td>
-                        <td>Unsung Body</td>
-                        <td>Unsung Legs</td>
-                        <td>Unsung Hands</td>
-                        <td>Unsung Feet</td>
-                        <td>Unsung Acc</td>
-                        <td>Tomestones</td>
-                        <td>Weapon token</td>
-                      </tr>
-                      <tr>
-                        {cost.mythos_1 !== 0 ? (
-                          <td>
-                            <strong>{cost.mythos_1}</strong>
-                          </td>
-                        ) : (
-                          <td>-</td>
-                        )}
-                        {cost.mythos_2 !== 0 ? (
-                          <td>
-                            <strong>{cost.mythos_2}</strong>
-                          </td>
-                        ) : (
-                          <td>-</td>
-                        )}
-                        {cost.mythos_3 !== 0 ? (
-                          <td>
-                            <strong>{cost.mythos_3}</strong>
-                          </td>
-                        ) : (
-                          <td>-</td>
-                        )}
-                        {cost.mythos_4 !== 0 ? (
-                          <td>
-                            <strong>{cost.mythos_4}</strong>
-                          </td>
-                        ) : (
-                          <td>-</td>
-                        )}
-                        {cost.unsung_head !== 0 ? (
-                          <td>
-                            <strong>{cost.unsung_head}</strong>
-                          </td>
-                        ) : (
-                          <td>-</td>
-                        )}
-                        {cost.unsung_body !== 0 ? (
-                          <td>
-                            <strong>{cost.unsung_body}</strong>
-                          </td>
-                        ) : (
-                          <td>-</td>
-                        )}
-                        {cost.unsung_legs !== 0 ? (
-                          <td>
-                            <strong>{cost.unsung_legs}</strong>
-                          </td>
-                        ) : (
-                          <td>-</td>
-                        )}
-                        {cost.unsung_hands !== 0 ? (
-                          <td>
-                            <strong>{cost.unsung_hands}</strong>
-                          </td>
-                        ) : (
-                          <td>-</td>
-                        )}
-                        {cost.unsung_feet !== 0 ? (
-                          <td>
-                            <strong>{cost.unsung_feet}</strong>
-                          </td>
-                        ) : (
-                          <td>-</td>
-                        )}
-                        {cost.unsung_acc !== 0 ? (
-                          <td>
-                            <strong>{cost.unsung_acc}</strong>
-                          </td>
-                        ) : (
-                          <td>-</td>
-                        )}
-                        {cost.tomestones !== 0 ? (
-                          <td>
-                            <strong>{cost.tomestones}</strong>
-                          </td>
-                        ) : (
-                          <td>-</td>
-                        )}
-                        {cost.weapon_token ? (
-                          <td>
-                            <strong>Yes</strong>
-                          </td>
-                        ) : (
-                          <td>-</td>
-                        )}
-                      </tr>
-                    </tbody>
-                  </Table>
-                );
-              })}
+                  <tbody>
+                    <tr>
+                      <td>Mythos I</td>
+                      <td>Mythos II</td>
+                      <td>Mythos III</td>
+                      <td>Mythos IV</td>
+                      <td>Unsung Head</td>
+                      <td>Unsung Body</td>
+                      <td>Unsung Legs</td>
+                      <td>Unsung Hands</td>
+                      <td>Unsung Feet</td>
+                      <td>Unsung Acc</td>
+                      <td>Tomestones</td>
+                      <td>Weapon token</td>
+                    </tr>
+                    <tr>
+                      {cost.mythos_1 !== 0 ? (
+                        <td>
+                          <strong>{cost.mythos_1}</strong>
+                        </td>
+                      ) : (
+                        <td>-</td>
+                      )}
+                      {cost.mythos_2 !== 0 ? (
+                        <td>
+                          <strong>{cost.mythos_2}</strong>
+                        </td>
+                      ) : (
+                        <td>-</td>
+                      )}
+                      {cost.mythos_3 !== 0 ? (
+                        <td>
+                          <strong>{cost.mythos_3}</strong>
+                        </td>
+                      ) : (
+                        <td>-</td>
+                      )}
+                      {cost.mythos_4 !== 0 ? (
+                        <td>
+                          <strong>{cost.mythos_4}</strong>
+                        </td>
+                      ) : (
+                        <td>-</td>
+                      )}
+                      {cost.unsung_head !== 0 ? (
+                        <td>
+                          <strong>{cost.unsung_head}</strong>
+                        </td>
+                      ) : (
+                        <td>-</td>
+                      )}
+                      {cost.unsung_body !== 0 ? (
+                        <td>
+                          <strong>{cost.unsung_body}</strong>
+                        </td>
+                      ) : (
+                        <td>-</td>
+                      )}
+                      {cost.unsung_legs !== 0 ? (
+                        <td>
+                          <strong>{cost.unsung_legs}</strong>
+                        </td>
+                      ) : (
+                        <td>-</td>
+                      )}
+                      {cost.unsung_hands !== 0 ? (
+                        <td>
+                          <strong>{cost.unsung_hands}</strong>
+                        </td>
+                      ) : (
+                        <td>-</td>
+                      )}
+                      {cost.unsung_feet !== 0 ? (
+                        <td>
+                          <strong>{cost.unsung_feet}</strong>
+                        </td>
+                      ) : (
+                        <td>-</td>
+                      )}
+                      {cost.unsung_acc !== 0 ? (
+                        <td>
+                          <strong>{cost.unsung_acc}</strong>
+                        </td>
+                      ) : (
+                        <td>-</td>
+                      )}
+                      {cost.tomestones !== 0 ? (
+                        <td>
+                          <strong>{cost.tomestones}</strong>
+                        </td>
+                      ) : (
+                        <td>-</td>
+                      )}
+                      {cost.weapon_token ? (
+                        <td>
+                          <strong>Yes</strong>
+                        </td>
+                      ) : (
+                        <td>-</td>
+                      )}
+                    </tr>
+                  </tbody>
+                </Table>
+              ))}
           </div>
         )}
 

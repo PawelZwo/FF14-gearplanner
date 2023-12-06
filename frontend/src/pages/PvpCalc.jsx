@@ -1,7 +1,7 @@
-// React imports
+// React
 import { useState } from "react";
 
-// React-Bootstrap imports
+// React-Bootstrap
 import Button from "react-bootstrap/Button";
 import Stack from "react-bootstrap/Stack";
 

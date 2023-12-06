@@ -1,4 +1,4 @@
-// React-router
+// React-Router
 import { useSearchParams } from "react-router-dom";
 
 // Custom hooks

@@ -1,11 +1,11 @@
-// React-bootstrap imports
+// React-Bootstrap
 import Table from "react-bootstrap/Table";
 import Badge from "react-bootstrap/Badge";
 
-// React-icons imports
+// React-Icons
 import { TbStatusChange } from "react-icons/tb";
 
-// React-router imports
+// React-Router
 import { Link } from "react-router-dom";
 
 // Custom functions

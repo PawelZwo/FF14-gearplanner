@@ -1,4 +1,4 @@
-// React-bootstrap components
+// React-Bootstrap
 import Button from "react-bootstrap/Button";
 
 export default function useFFdb({ item_index }) {

@@ -41,9 +41,11 @@ strong {
 
 .categories-tables {
     margin-top: 10px;
-    display: inline-flex;
-    gap: 10px;
-    flex-wrap: wrap;
+    display: flex;
+    gap: 10px 10px;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-flow: row wrap;
 }
 
 .eorzeadb_link,

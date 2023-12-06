@@ -1,4 +1,4 @@
-// React-Bootstrap imports
+// React-Bootstrap
 import Alert from "react-bootstrap/Alert";
 import Image from "react-bootstrap/Image";
 import Stack from "react-bootstrap/Stack";

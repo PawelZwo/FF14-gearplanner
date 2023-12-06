@@ -1,7 +1,7 @@
-// Reacx imports
+// React-Router
 import { Link } from "react-router-dom";
 
-// React-bootstrap components
+// React-bootstrap
 import Alert from "react-bootstrap/Alert";
 import Stack from "react-bootstrap/Stack";
 import Button from "react-bootstrap/Button";

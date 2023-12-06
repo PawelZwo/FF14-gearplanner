@@ -1,4 +1,4 @@
-// React imports
+// React
 import { useEffect } from "react";
 
 export default function PageTitle({ pageName }) {

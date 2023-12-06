@@ -1,4 +1,4 @@
-// React-Bootstrap imports
+// React-Bootstrap
 import Table from "react-bootstrap/Table";
 
 // Custom hooks

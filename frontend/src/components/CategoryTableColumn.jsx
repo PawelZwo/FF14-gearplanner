@@ -1,16 +1,20 @@
-// React-bootstrap imports
+// React-Bootstrap
 import Table from "react-bootstrap/Table";
 import Stack from "react-bootstrap/Stack";
 
 // Project's small components
 import GearIcon from "../small_components/GearIcon";
 
-// React-router imports
+// React-Router
 import { NavLink } from "react-router-dom";
 
 export default function CategoryTableColumn({ data, category }) {
   // data: Object       - data coming from the parent element
-  // category: String   - by what category will the data be
+  // category: String   - by what category will the data be filtered
+
+  if (data.filter((item) => item.category === category).length === 0) {
+    return null;
+  }
 
   return (
     <Table

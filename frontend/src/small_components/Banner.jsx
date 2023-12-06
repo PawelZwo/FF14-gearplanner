@@ -1,4 +1,4 @@
-// React-Bootstrap components
+// React-Bootstrap
 import Image from "react-bootstrap/Image";
 import { Outlet } from "react-router-dom";
 
