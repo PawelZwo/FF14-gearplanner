@@ -1,6 +1,5 @@
 // React-Bootstrap imports
 import Table from "react-bootstrap/Table";
-import Alert from "react-bootstrap/Alert";
 
 // Custom hooks
 import { useFetch } from "../hooks/useFetch";
@@ -8,6 +7,7 @@ import { useFetch } from "../hooks/useFetch";
 // Project's small components
 import Loading from "../small_components/Loading";
 import PageTitle from "../small_components/PageTitle";
+import ErrorMessage from "../small_components/ErrorMessage";
 
 function Race() {
   const { data, isPending, error } = useFetch("api/race/");
@@ -79,7 +79,7 @@ function Race() {
           </div>
         )}
 
-        {error && <Alert variant="danger">{error}</Alert>}
+        {error && <ErrorMessage error={error} variant="danger" />}
 
         {data && data.length === 0 && <h4>Nothing to see here... 🤷‍♂️</h4>}
       </div>

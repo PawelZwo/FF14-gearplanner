@@ -22,7 +22,7 @@ export function useFetch(endpoint) {
       }
     };
     fetchData();
-    
+
     return () => {
       new AbortController().abort();
     };

@@ -1,6 +1,3 @@
-// React-Bootstrap imports
-import Alert from "react-bootstrap/Alert";
-
 // Custom hooks
 import { useFetch } from "../hooks/useFetch";
 
@@ -10,6 +7,7 @@ import RoleTableColumn from "../components/RoleTableColumn";
 // Project's small components
 import Loading from "../small_components/Loading";
 import PageTitle from "../small_components/PageTitle";
+import ErrorMessage from "../small_components/ErrorMessage";
 
 function Job() {
   const { data, isPending, error } = useFetch("api/job/");
@@ -41,7 +39,7 @@ function Job() {
           </div>
         )}
 
-        {error && <Alert variant="danger">{error}</Alert>}
+        {error && <ErrorMessage error={error} variant="danger" />}
 
         {data && data.length === 0 && <h4>Nothing to see here... 🤷‍♂️</h4>}
       </div>

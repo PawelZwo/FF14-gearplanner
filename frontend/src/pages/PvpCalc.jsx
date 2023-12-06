@@ -4,10 +4,10 @@ import { useState } from "react";
 // React-Bootstrap imports
 import Button from "react-bootstrap/Button";
 import Stack from "react-bootstrap/Stack";
-import Alert from "react-bootstrap/Alert";
 
 // Project's small components
 import PageTitle from "../small_components/PageTitle";
+import ErrorMessage from "../small_components/ErrorMessage";
 
 export default function PvpCalc() {
   const seriesExp = {
@@ -227,7 +227,7 @@ export default function PvpCalc() {
       )}
 
       {displayControls.error && (
-        <Alert variant="info">{displayControls.error}</Alert>
+        <ErrorMessage error={displayControls.error} variant="info" />
       )}
     </>
   );

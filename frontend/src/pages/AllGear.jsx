@@ -7,7 +7,6 @@ import { useFetch } from "../hooks/useFetch";
 // React-Bootstrap imports
 import Button from "react-bootstrap/Button";
 import Stack from "react-bootstrap/Stack";
-import Alert from "react-bootstrap/Alert";
 
 // Project's components
 import CategoryTableColumn from "../components/CategoryTableColumn";
@@ -15,6 +14,7 @@ import CategoryTableColumn from "../components/CategoryTableColumn";
 // Project's small components
 import PageTitle from "../small_components/PageTitle";
 import Loading from "../small_components/Loading";
+import ErrorMessage from "../small_components/ErrorMessage";
 
 function AllGear() {
   const { data, isPending, error } = useFetch("api/gear/");
@@ -108,7 +108,7 @@ function AllGear() {
           ))}
         </div>
       )}
-      {error && <Alert variant="danger">{error}</Alert>}
+      {error && <ErrorMessage error={error} variant="danger" />}
 
       {data && data.length === 0 && <h4>Nothing to see here... 🤷‍♂️</h4>}
     </>

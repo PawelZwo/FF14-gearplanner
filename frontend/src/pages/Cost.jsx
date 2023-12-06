@@ -1,5 +1,4 @@
 // React-Bootstrap imports
-import Alert from "react-bootstrap/Alert";
 import Table from "react-bootstrap/Table";
 
 // Custom hooks
@@ -8,6 +7,7 @@ import { useFetch } from "../hooks/useFetch";
 // Project's small components
 import PageTitle from "../small_components/PageTitle";
 import Loading from "../small_components/Loading";
+import ErrorMessage from "../small_components/ErrorMessage";
 
 function Cost() {
   const { data, isPending, error } = useFetch("api/cost/");
@@ -173,7 +173,7 @@ function Cost() {
           </div>
         )}
 
-        {error && <Alert variant="danger">{error}</Alert>}
+        {error && <ErrorMessage error={error} variant="danger" />}
 
         {data && data.length === 0 && <h4>Nothing to see here... 🤷‍♂️</h4>}
       </div>
