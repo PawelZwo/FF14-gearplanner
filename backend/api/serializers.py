@@ -11,6 +11,12 @@ class JobSerializer(serializers.ModelSerializer):
         fields = ("id", "job_name", "role")
 
 
+class JobGearSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Job
+        exclude = ("role",)
+
+
 class CostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cost
@@ -27,7 +33,7 @@ class RaceSerializer(serializers.ModelSerializer):
 
 class GearSerializer(serializers.ModelSerializer):
     acquisition = serializers.CharField(source='get_acquisition_display')
-    job = JobSerializer(many=True)
+    job = JobGearSerializer(many=True)
     cost_name = serializers.CharField(source='cost')
 
     class Meta:

@@ -226,14 +226,10 @@ class Gear(models.Model):
         related_name="gears"
     )
     ff14_db_index = models.CharField(
-        max_length=20,
-        null=True,
-        blank=True
+        max_length=20
     )
     ff14_db_icon = models.CharField(
-        max_length=100,
-        null=True,
-        blank=True
+        max_length=100
     )
 
     # Gear actual stats

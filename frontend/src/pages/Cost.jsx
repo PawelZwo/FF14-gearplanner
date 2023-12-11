@@ -10,7 +10,7 @@ import Loading from "../small_components/Loading";
 import ErrorMessage from "../small_components/ErrorMessage";
 
 function Cost() {
-  const { data, isPending, error } = useFetch("api/cost/");
+  const { data, isPending, error } = useFetch("api/costs/");
 
   return (
     <>

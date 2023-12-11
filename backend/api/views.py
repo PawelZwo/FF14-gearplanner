@@ -23,8 +23,6 @@ class APIIndex(View):
 class JobList(generics.ListAPIView):
     queryset = Job.objects.all()
     serializer_class = JobSerializer
-    filter_backends = [DjangoFilterBackend]
-    filterset_fields = {'role': ['in']}
 
 
 class RaceList(generics.ListAPIView):
@@ -45,8 +43,6 @@ class GearsetList(generics.ListCreateAPIView):
 class GearList(generics.ListCreateAPIView):
     queryset = Gear.objects.all()
     serializer_class = GearSerializer
-    filter_backends = [DjangoFilterBackend]
-    filterset_fields = {'category': ['in']}
 
 
 class GearDetails(APIView):

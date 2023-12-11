@@ -7,7 +7,7 @@ import Loading from "../small_components/Loading";
 import ErrorMessage from "../small_components/ErrorMessage";
 
 function JobList() {
-  const { data, isPending, error } = useFetch("api/job/");
+  const { data, isPending, error } = useFetch("api/jobs/");
 
   return (
     <>

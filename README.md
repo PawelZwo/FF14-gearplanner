@@ -65,12 +65,13 @@ Naturally each backbone of this app has individual needs for dependencies. You c
 | django_restframwerok ^3.14.0 | react-bootstrap ^2.9.1   |
 | psycopng2-binary ^2.9.90     | bootstrap ^5.3.2         |
 | python-dotenv                | react-router-dom ^6.18.0 |
+| django-autoslug ^1.9.9       |                          |
 
 ## Api
 
 Using Django REST API, this project have the following endpoints which will return data in `json`:
 
-`[GET] /api/job/` list of jobs.
+`[GET] /api/jobs/` list of jobs.
 
 ```
 [
@@ -83,7 +84,7 @@ Using Django REST API, this project have the following endpoints which will retu
 ]
 ```
 
-`[GET] api/cost/` list of costs.
+`[GET] api/costs/` list of costs.
 
 ```
 [
@@ -108,7 +109,7 @@ Using Django REST API, this project have the following endpoints which will retu
 ]
 ```
 
-`[GET] api/race/` list of races.
+`[GET] api/races/` list of races.
 
 ```
 [
@@ -126,7 +127,7 @@ Using Django REST API, this project have the following endpoints which will retu
 ]
 ```
 
-`[GET, POST] api/gearset/`
+`[GET, POST] api/gearsets/`
 
 - `[GET]` list of gearsets,
 
@@ -148,22 +149,23 @@ Using Django REST API, this project have the following endpoints which will retu
     "bracelet": 10,
     "left_ring": 11,
     "right_ring": 12,
-    "attributes": {
-                    "defense": SUM_OF_ALL_GEAR_AS_INTEGER,
-                    "spell_speed": SUM_OF_ALL_GEAR_AS_INTEGER,
-                    "skill_speed": SUM_OF_ALL_GEAR_AS_INTEGER,
-                    "determination": SUM_OF_ALL_GEAR_AS_INTEGER,
-                    "direct_hit": SUM_OF_ALL_GEAR_AS_INTEGER,
-                    "critical_rate": SUM_OF_ALL_GEAR_AS_INTEGER,
-                    "tenacity": SUM_OF_ALL_GEAR_AS_INTEGER,
-                    "piety": SUM_OF_ALL_GEAR_AS_INTEGER,
-                    "mind": SUM_OF_ALL_GEAR_AS_INTEGER,
-                    "intelligence": SUM_OF_ALL_GEAR_AS_INTEGER,
-                    "dexterity": SUM_OF_ALL_GEAR_AS_INTEGER,
-                    "magic_defense": SUM_OF_ALL_GEAR_AS_INTEGER,
-                    "strength": SUM_OF_ALL_GEAR_AS_INTEGER,
-                    "vitality": SUM_OF_ALL_GEAR_AS_INTEGER
-                  }
+    "attributes":
+              {
+                "defense": SUM_OF_ALL_GEAR_AS_INTEGER,
+                "spell_speed": SUM_OF_ALL_GEAR_AS_INTEGER,
+                "skill_speed": SUM_OF_ALL_GEAR_AS_INTEGER,
+                "determination": SUM_OF_ALL_GEAR_AS_INTEGER,
+                "direct_hit": SUM_OF_ALL_GEAR_AS_INTEGER,
+                "critical_rate": SUM_OF_ALL_GEAR_AS_INTEGER,
+                "tenacity": SUM_OF_ALL_GEAR_AS_INTEGER,
+                "piety": SUM_OF_ALL_GEAR_AS_INTEGER,
+                "mind": SUM_OF_ALL_GEAR_AS_INTEGER,
+                "intelligence": SUM_OF_ALL_GEAR_AS_INTEGER,
+                "dexterity": SUM_OF_ALL_GEAR_AS_INTEGER,
+                "magic_defense": SUM_OF_ALL_GEAR_AS_INTEGER,
+                "strength": SUM_OF_ALL_GEAR_AS_INTEGER,
+                "vitality": SUM_OF_ALL_GEAR_AS_INTEGER
+              }
   },
   ...
 ]
@@ -190,7 +192,7 @@ Using Django REST API, this project have the following endpoints which will retu
 }
 ```
 
-`[GET, POST]  api/gear/`
+`[GET, POST] api/gears/`
 
 - `[GET]` list of gears,
 
@@ -198,36 +200,52 @@ Using Django REST API, this project have the following endpoints which will retu
 [
   {
     "id": 1,
-    "name": "Ascension Face Guard of Fending ",
+    "gear_name": "Ascension Mail of Fending",
+    "slug": "ascension-mail-of-fending",
     "category": "Fending",
-    "acquisition": "SR",
+    "acquisition": "Savage Raid",
     "added_in_patch": "x.4",
-    "slot": "Head",
-    "cost": 7,
+    "slot": "Body",
+    "cost_name": "Savage Raid Body",
     "job": [
-            1, 2, 3, 4
-            ],
-    "ff14_db_index": "744ac517967",
+        {
+            "id": 1,
+            "job_name": "Paladin"
+        },
+        {
+            "id": 2,
+            "job_name": "Warrior"
+        },
+        {
+            "id": 3,
+            "job_name": "Dark Knight"
+        },
+        {
+            "id": 4,
+            "job_name": "Gunbreaker"
+        }
+    ],
+    "ff14_db_index": "4e2611e60a3",
+    "ff14_db_icon": "a4/a43ce3ad18916cfffcb187b396d2f39e81a20873.png",
     "item_level": 660,
     "physical_dmg": 0,
     "magical_dmg": 0,
-    "auto_attack": "0",
-    "delay": "0",
-    "dps": "0",
+    "auto_attack": "0.00",
+    "delay": "0.00",
     "block_strength": 0,
     "block_rate": 0,
-    "defense": 892,
-    "magic_defense": 892,
-    "vitality": 277,
-    "strength": 248,
+    "defense": 1196,
+    "magic_defense": 1196,
+    "vitality": 440,
+    "strength": 394,
     "dexterity": 0,
-    "tenacity": 0,
+    "tenacity": 292,
     "intelligence": 0,
     "mind": 0,
     "piety": 0,
-    "critical_rate": 184,
+    "critical_rate": 0,
     "direct_hit": 0,
-    "determination": 129,
+    "determination": 204,
     "skill_speed": 0,
     "spell_speed": 0
   },
@@ -239,46 +257,95 @@ Using Django REST API, this project have the following endpoints which will retu
 
 ```
 {
-  "name": STR, -> unique=True
-  "category": STR,
-  "acquisition": STR,
-  "added_in_patch": STR,
-  "slot": STR,
-  "cost": COST.id: INT,
-  "job": [
-          JOB.id: INT,
-          ],
-  "ff14_db_index": STR, -> null=True, blank=True
-  "item_level": INT, -> null=True
-  "physical_dmg": INT, -> null=True
-  "magical_dmg": INT, -> null=True
-  "auto_attack": "FLOAT", -> null=True
-  "delay": "FLOAT", -> null=True
-  "dps": "FLOAT", -> null=True
-  "block_strength": INT, -> null=True
-  "block_rate": INT, -> null=True
-  "defense": INT, -> null=True
-  "magic_defense": INT, -> null=True
-  "vitality": INT, -> null=True
-  "strength": INT, -> null=True
-  "dexterity": INT, -> null=True
-  "tenacity": INT, -> null=True
-  "intelligence": INT, -> null=True
-  "mind": INT, -> null=True
-  "piety": INT, -> null=True
-  "critical_rate": INT, -> null=True
-  "direct_hit": INT, -> null=True
-  "determination": INT, -> null=True
-  "skill_speed": INT, -> null=True
-  "spell_speed": INT -> null=True
+    "gear_name": STR -> unique,
+    "slug": STR -> leave EMPTY,
+    "category": STR,
+    "acquisition": STR,
+    "added_in_patch": STR,
+    "slot": STR,
+    "cost_name": STR,
+    "job": [OBJECT] ,
+    "ff14_db_index": STR,
+    "ff14_db_icon": STR,
+    "item_level": INT,
+    "physical_dmg": INT -> null=True,
+    "magical_dmg": INT -> null=True,
+    "auto_attack": FLOAT -> null=True,
+    "delay": FLOAT -> null=True,
+    "block_strength": INT -> null=True,
+    "block_rate": INT -> null=True,
+    "defense": INT -> null=True,
+    "magic_defense": INT -> null=True,
+    "vitality": INT -> null=True,
+    "strength": INT -> null=True,
+    "dexterity": INT -> null=True,
+    "tenacity": INT -> null=True,
+    "intelligence": INT -> null=True,
+    "mind": INT -> null=True,
+    "piety": INT -> null=True,
+    "critical_rate": INT -> null=True,
+    "direct_hit": INT -> null=True,
+    "determination": INT -> null=True,
+    "skill_speed": INT -> null=True,
+    "spell_speed": INT -> null=True
 }
 ```
 
-The following endpoint return the same data structure as `[GET] api/gear/`:
+`[GET] api/gears/{slug}` single instance of Gear model
 
-- `[GET] api/dpsgear/` list of gear with `category` for DPS jobs,
-- `[GET] api/healergear/` list of gear with `category` for Healer jobs,
-- `[GET] api/tankgear/` list of gear with `category` for Tank jobs.
+```
+{
+    "id": 1,
+    "gear_name": "Ascension Mail of Fending",
+    "slug": "ascension-mail-of-fending",
+    "category": "Fending",
+    "acquisition": "Savage Raid",
+    "added_in_patch": "x.4",
+    "slot": "Body",
+    "cost_name": "Savage Raid Body",
+    "job": [
+        {
+            "id": 1,
+            "job_name": "Paladin"
+        },
+        {
+            "id": 2,
+            "job_name": "Warrior"
+        },
+        {
+            "id": 3,
+            "job_name": "Dark Knight"
+        },
+        {
+            "id": 4,
+            "job_name": "Gunbreaker"
+        }
+    ],
+    "ff14_db_index": "4e2611e60a3",
+    "ff14_db_icon": "a4/a43ce3ad18916cfffcb187b396d2f39e81a20873.png",
+    "item_level": 660,
+    "physical_dmg": 0,
+    "magical_dmg": 0,
+    "auto_attack": "0.00",
+    "delay": "0.00",
+    "block_strength": 0,
+    "block_rate": 0,
+    "defense": 1196,
+    "magic_defense": 1196,
+    "vitality": 440,
+    "strength": 394,
+    "dexterity": 0,
+    "tenacity": 292,
+    "intelligence": 0,
+    "mind": 0,
+    "piety": 0,
+    "critical_rate": 0,
+    "direct_hit": 0,
+    "determination": 204,
+    "skill_speed": 0,
+    "spell_speed": 0
+}
+```
 
 ## Inspiration
 

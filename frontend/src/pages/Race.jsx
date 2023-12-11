@@ -10,7 +10,7 @@ import PageTitle from "../small_components/PageTitle";
 import ErrorMessage from "../small_components/ErrorMessage";
 
 function Race() {
-  const { data, isPending, error } = useFetch("api/race/");
+  const { data, isPending, error } = useFetch("api/races/");
 
   return (
     <>

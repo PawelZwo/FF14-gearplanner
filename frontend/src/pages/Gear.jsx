@@ -18,7 +18,7 @@ import Loading from "../small_components/Loading";
 import ErrorMessage from "../small_components/ErrorMessage";
 
 export default function Gear() {
-  const { data, isPending, error } = useFetch("api/gear/");
+  const { data, isPending, error } = useFetch("api/gears/");
 
   const [categoryFilter, setCategoryFilter] = useSearchParams({ category: "" });
   const filteredCategory = categoryFilter.get("category");

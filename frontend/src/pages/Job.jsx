@@ -10,7 +10,7 @@ import PageTitle from "../small_components/PageTitle";
 import ErrorMessage from "../small_components/ErrorMessage";
 
 function Job() {
-  const { data, isPending, error } = useFetch("api/job/");
+  const { data, isPending, error } = useFetch("api/jobs/");
 
   return (
     <>
