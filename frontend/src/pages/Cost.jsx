@@ -2,7 +2,7 @@
 import Table from "react-bootstrap/Table";
 
 // Custom hooks
-import { useFetch } from "../hooks/useFetch";
+import { useFetchGet } from "../hooks/useFetchGet";
 
 // Project's small components
 import PageTitle from "../small_components/PageTitle";
@@ -10,7 +10,7 @@ import Loading from "../small_components/Loading";
 import ErrorMessage from "../small_components/ErrorMessage";
 
 function Cost() {
-  const { data, isPending, error } = useFetch("api/costs/");
+  const { data, isPending, error } = useFetchGet("api/costs/");
 
   return (
     <>

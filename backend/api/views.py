@@ -7,7 +7,7 @@ from rest_framework.views import APIView
 from django_filters.rest_framework import DjangoFilterBackend
 
 # Serializers
-from .serializers import JobSerializer, RaceSerializer, CostSerializer, GearSerializer, GearsetSerializer
+from .serializers import JobSerializer, RaceSerializer, CostSerializer, GearSerializer, GearListSerializer, GearAddSerializer, GearOptionsSerializer, GearsetSerializer
 
 # Models import
 from .models import Job, Race, Cost, Gear, Gearset
@@ -40,9 +40,31 @@ class GearsetList(generics.ListCreateAPIView):
     serializer_class = GearsetSerializer
 
 
-class GearList(generics.ListCreateAPIView):
+# Gear model endpoints
+class GearListAll(generics.ListCreateAPIView):
+    # For returning all instances of Gear model
     queryset = Gear.objects.all()
     serializer_class = GearSerializer
+
+
+class GearAdd(generics.ListCreateAPIView):
+    # For returning all instances of Gear model
+    queryset = Gear.objects.all()
+    serializer_class = GearAddSerializer
+
+
+class GearList(generics.ListAPIView):
+    # As above, but with much less informations
+    # Used to populate simple list of all Gear instances
+    queryset = Gear.objects.all()
+    serializer_class = GearListSerializer
+
+
+class GearOptions(generics.CreateAPIView):
+    # Returns even fewer informations.
+    # Used to receive data from OPTIONS to populate form.
+    queryset = Gear.objects.all()
+    serializer_class = GearOptionsSerializer
 
 
 class GearDetails(APIView):

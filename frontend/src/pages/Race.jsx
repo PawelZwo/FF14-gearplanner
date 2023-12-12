@@ -2,7 +2,7 @@
 import Table from "react-bootstrap/Table";
 
 // Custom hooks
-import { useFetch } from "../hooks/useFetch";
+import { useFetchGet } from "../hooks/useFetchGet";
 
 // Project's small components
 import Loading from "../small_components/Loading";
@@ -10,7 +10,7 @@ import PageTitle from "../small_components/PageTitle";
 import ErrorMessage from "../small_components/ErrorMessage";
 
 function Race() {
-  const { data, isPending, error } = useFetch("api/races/");
+  const { data, isPending, error } = useFetchGet("api/races/");
 
   return (
     <>

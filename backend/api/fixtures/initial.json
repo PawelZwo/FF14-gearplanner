@@ -1,721 +1,1225 @@
 [
-  {
-    "model": "api.job",
-    "pk": 1,
-    "fields": { "job_name": "Paladin", "role": "tank" }
-  },
-  {
-    "model": "api.job",
-    "pk": 2,
-    "fields": { "job_name": "Warrior", "role": "tank" }
-  },
-  {
-    "model": "api.job",
-    "pk": 3,
-    "fields": { "job_name": "Dark Knight", "role": "tank" }
-  },
-  {
-    "model": "api.job",
-    "pk": 4,
-    "fields": { "job_name": "Gunbreaker", "role": "tank" }
-  },
-  {
-    "model": "api.job",
-    "pk": 5,
-    "fields": { "job_name": "White Mage", "role": "healer" }
-  },
-  {
-    "model": "api.job",
-    "pk": 6,
-    "fields": { "job_name": "Scholar", "role": "healer" }
-  },
-  {
-    "model": "api.job",
-    "pk": 7,
-    "fields": { "job_name": "Astrologian", "role": "healer" }
-  },
-  {
-    "model": "api.job",
-    "pk": 8,
-    "fields": { "job_name": "Sage", "role": "healer" }
-  },
-  {
-    "model": "api.job",
-    "pk": 9,
-    "fields": { "job_name": "Monk", "role": "melee" }
-  },
-  {
-    "model": "api.job",
-    "pk": 10,
-    "fields": { "job_name": "Dragoon", "role": "melee" }
-  },
-  {
-    "model": "api.job",
-    "pk": 11,
-    "fields": { "job_name": "Ninja", "role": "melee" }
-  },
-  {
-    "model": "api.job",
-    "pk": 12,
-    "fields": { "job_name": "Samurai", "role": "melee" }
-  },
-  {
-    "model": "api.job",
-    "pk": 13,
-    "fields": { "job_name": "Reaper", "role": "melee" }
-  },
-  {
-    "model": "api.job",
-    "pk": 14,
-    "fields": { "job_name": "Bard", "role": "ranged" }
-  },
-  {
-    "model": "api.job",
-    "pk": 15,
-    "fields": { "job_name": "Machinist", "role": "ranged" }
-  },
-  {
-    "model": "api.job",
-    "pk": 16,
-    "fields": { "job_name": "Dancer", "role": "ranged" }
-  },
-  {
-    "model": "api.job",
-    "pk": 17,
-    "fields": { "job_name": "Black Mage", "role": "caster" }
-  },
-  {
-    "model": "api.job",
-    "pk": 18,
-    "fields": { "job_name": "Summoner", "role": "caster" }
-  },
-  {
-    "model": "api.job",
-    "pk": 19,
-    "fields": { "job_name": "Red Mage", "role": "caster" }
-  },
-  {
-    "model": "api.cost",
-    "pk": 1,
-    "fields": {
-      "cost_name": "Normal Raid Head",
-      "mythos_1": 0,
-      "mythos_2": 0,
-      "mythos_3": 0,
-      "mythos_4": 0,
-      "unsung_head": 2,
-      "unsung_body": 0,
-      "unsung_legs": 0,
-      "unsung_hands": 0,
-      "unsung_feet": 0,
-      "unsung_acc": 0,
-      "tomestones": 0,
-      "weapon_token": false,
-      "weapon_token_price": 0
+    {
+        "model": "api.job",
+        "pk": 1,
+        "fields": {
+            "job_name": "Paladin",
+            "role": "tank"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 2,
+        "fields": {
+            "job_name": "Warrior",
+            "role": "tank"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 3,
+        "fields": {
+            "job_name": "Dark Knight",
+            "role": "tank"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 4,
+        "fields": {
+            "job_name": "Gunbreaker",
+            "role": "tank"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 5,
+        "fields": {
+            "job_name": "White Mage",
+            "role": "healer"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 6,
+        "fields": {
+            "job_name": "Scholar",
+            "role": "healer"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 7,
+        "fields": {
+            "job_name": "Astrologian",
+            "role": "healer"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 8,
+        "fields": {
+            "job_name": "Sage",
+            "role": "healer"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 9,
+        "fields": {
+            "job_name": "Monk",
+            "role": "melee"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 10,
+        "fields": {
+            "job_name": "Dragoon",
+            "role": "melee"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 11,
+        "fields": {
+            "job_name": "Ninja",
+            "role": "melee"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 12,
+        "fields": {
+            "job_name": "Samurai",
+            "role": "melee"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 13,
+        "fields": {
+            "job_name": "Reaper",
+            "role": "melee"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 14,
+        "fields": {
+            "job_name": "Bard",
+            "role": "ranged"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 15,
+        "fields": {
+            "job_name": "Machinist",
+            "role": "ranged"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 16,
+        "fields": {
+            "job_name": "Dancer",
+            "role": "ranged"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 17,
+        "fields": {
+            "job_name": "Black Mage",
+            "role": "caster"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 18,
+        "fields": {
+            "job_name": "Summoner",
+            "role": "caster"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 19,
+        "fields": {
+            "job_name": "Red Mage",
+            "role": "caster"
+        }
+    },
+    {
+        "model": "api.race",
+        "pk": 1,
+        "fields": {
+            "race_name": "Hyur",
+            "base_vitality": 21,
+            "base_strength": 21,
+            "base_dexterity": 19,
+            "base_intelligence": 20,
+            "base_mind": 20,
+            "base_piety": 20
+        }
+    },
+    {
+        "model": "api.race",
+        "pk": 2,
+        "fields": {
+            "race_name": "Elezen",
+            "base_vitality": 20,
+            "base_strength": 19,
+            "base_dexterity": 23,
+            "base_intelligence": 22,
+            "base_mind": 21,
+            "base_piety": 19
+        }
+    },
+    {
+        "model": "api.race",
+        "pk": 3,
+        "fields": {
+            "race_name": "Lalafell",
+            "base_vitality": 19,
+            "base_strength": 18,
+            "base_dexterity": 20,
+            "base_intelligence": 23,
+            "base_mind": 22,
+            "base_piety": 23
+        }
+    },
+    {
+        "model": "api.race",
+        "pk": 4,
+        "fields": {
+            "race_name": "Miqo'te",
+            "base_vitality": 19,
+            "base_strength": 20,
+            "base_dexterity": 23,
+            "base_intelligence": 20,
+            "base_mind": 21,
+            "base_piety": 22
+        }
+    },
+    {
+        "model": "api.race",
+        "pk": 5,
+        "fields": {
+            "race_name": "Roegadyn",
+            "base_vitality": 23,
+            "base_strength": 23,
+            "base_dexterity": 20,
+            "base_intelligence": 17,
+            "base_mind": 19,
+            "base_piety": 17
+        }
+    },
+    {
+        "model": "api.race",
+        "pk": 6,
+        "fields": {
+            "race_name": "Au Ra",
+            "base_vitality": 20,
+            "base_strength": 23,
+            "base_dexterity": 20,
+            "base_intelligence": 21,
+            "base_mind": 19,
+            "base_piety": 21
+        }
+    },
+    {
+        "model": "api.race",
+        "pk": 7,
+        "fields": {
+            "race_name": "Hrothgar",
+            "base_vitality": 22,
+            "base_strength": 23,
+            "base_dexterity": 21,
+            "base_intelligence": 17,
+            "base_mind": 19,
+            "base_piety": 18
+        }
+    },
+    {
+        "model": "api.race",
+        "pk": 8,
+        "fields": {
+            "race_name": "Viera",
+            "base_vitality": 20,
+            "base_strength": 21,
+            "base_dexterity": 23,
+            "base_intelligence": 21,
+            "base_mind": 20,
+            "base_piety": 19
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 1,
+        "fields": {
+            "cost_name": "Normal Raid Head",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 2,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 2,
+        "fields": {
+            "cost_name": "Normal Raid Body",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 4,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 3,
+        "fields": {
+            "cost_name": "Normal Raid Legs",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 4,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 4,
+        "fields": {
+            "cost_name": "Normal Raid Hands",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 2,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 5,
+        "fields": {
+            "cost_name": "Normal Raid Feet",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 2,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 6,
+        "fields": {
+            "cost_name": "Normal Raid Accessory",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 1,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 7,
+        "fields": {
+            "cost_name": "Savage Raid Head",
+            "mythos_1": 0,
+            "mythos_2": 4,
+            "mythos_3": 0,
+            "mythos_4": 4,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 8,
+        "fields": {
+            "cost_name": "Savage Raid Body",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 6,
+            "mythos_4": 6,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 9,
+        "fields": {
+            "cost_name": "Savage Raid Legs",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 6,
+            "mythos_4": 6,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 10,
+        "fields": {
+            "cost_name": "Savage Raid Hands",
+            "mythos_1": 0,
+            "mythos_2": 4,
+            "mythos_3": 0,
+            "mythos_4": 4,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 11,
+        "fields": {
+            "cost_name": "Savage Raid Feet",
+            "mythos_1": 0,
+            "mythos_2": 4,
+            "mythos_3": 0,
+            "mythos_4": 4,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 12,
+        "fields": {
+            "cost_name": "Savage Raid Accessory",
+            "mythos_1": 3,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 3,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 13,
+        "fields": {
+            "cost_name": "Savage Raid Weapon",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 8,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 14,
+        "fields": {
+            "cost_name": "Savage Raid Paladin's Arm",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 5,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 15,
+        "fields": {
+            "cost_name": "Savage Shield",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 3,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 16,
+        "fields": {
+            "cost_name": "Tomestone Head",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 495,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 17,
+        "fields": {
+            "cost_name": "Tomestone Body",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 825,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 18,
+        "fields": {
+            "cost_name": "Tomestone Legs",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 825,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 19,
+        "fields": {
+            "cost_name": "Tomestone Hands",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 495,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 20,
+        "fields": {
+            "cost_name": "Tomestone Feet",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 495,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 21,
+        "fields": {
+            "cost_name": "Tomestone Accessory",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 375,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 22,
+        "fields": {
+            "cost_name": "Tomestone Weapon",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 500,
+            "weapon_token": true,
+            "weapon_token_price": 4
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 23,
+        "fields": {
+            "cost_name": "Tomestone Paladin's Arm",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 350,
+            "weapon_token": true,
+            "weapon_token_price": 4
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 24,
+        "fields": {
+            "cost_name": "Tomestone Shield",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 150,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 25,
+        "fields": {
+            "cost_name": "Exquisite Tomestone Weapon",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 26,
+        "fields": {
+            "cost_name": "Relic Weapon",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.gear",
+        "pk": 1,
+        "fields": {
+            "gear_name": "Sword of Ascension",
+            "slug": "sword-of-ascension",
+            "category": "Fending",
+            "acquisition": "SR",
+            "added_in_patch": "x.4",
+            "slot": "Weapon",
+            "cost": 14,
+            "ff14_db_index": "4453bfc7c54",
+            "ff14_db_icon": "d5/d5a9614a4940f5a72bcd66c87adbe1e5c1532978.png",
+            "item_level": 665,
+            "physical_dmg": 132,
+            "magical_dmg": 0,
+            "auto_attack": "98.56",
+            "delay": "2.24",
+            "block_strength": 0,
+            "block_rate": 0,
+            "defense": 0,
+            "magic_defense": 0,
+            "vitality": 327,
+            "strength": 297,
+            "dexterity": 0,
+            "tenacity": 0,
+            "intelligence": 0,
+            "mind": 0,
+            "piety": 0,
+            "critical_rate": 153,
+            "direct_hit": 0,
+            "determination": 219,
+            "skill_speed": 0,
+            "spell_speed": 0,
+            "job": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "api.gear",
+        "pk": 2,
+        "fields": {
+            "gear_name": "Ascension Mail of Fending",
+            "slug": "ascension-mail-of-fending",
+            "category": "Fending",
+            "acquisition": "SR",
+            "added_in_patch": "x.4",
+            "slot": "Body",
+            "cost": 8,
+            "ff14_db_index": "4e2611e60a3",
+            "ff14_db_icon": "a4/a43ce3ad18916cfffcb187b396d2f39e81a20873.png",
+            "item_level": 660,
+            "physical_dmg": 0,
+            "magical_dmg": 0,
+            "auto_attack": "0.00",
+            "delay": "0.00",
+            "block_strength": 0,
+            "block_rate": 0,
+            "defense": 1196,
+            "magic_defense": 1196,
+            "vitality": 440,
+            "strength": 394,
+            "dexterity": 0,
+            "tenacity": 292,
+            "intelligence": 0,
+            "mind": 0,
+            "piety": 0,
+            "critical_rate": 0,
+            "direct_hit": 0,
+            "determination": 204,
+            "skill_speed": 0,
+            "spell_speed": 0,
+            "job": [
+                1,
+                2,
+                3,
+                4
+            ]
+        }
+    },
+    {
+        "model": "api.gear",
+        "pk": 3,
+        "fields": {
+            "gear_name": "Kite Shield of Ascension",
+            "slug": "kite-shield-of-ascension",
+            "category": "Fending",
+            "acquisition": "SR",
+            "added_in_patch": "x.4",
+            "slot": "Shield",
+            "cost": 15,
+            "ff14_db_index": "0dbcff1bb60",
+            "ff14_db_icon": "e2/e28489d1af4795d5cc64c608551db86440653f72.png",
+            "item_level": 665,
+            "physical_dmg": 0,
+            "magical_dmg": 0,
+            "auto_attack": "0.00",
+            "delay": "0.00",
+            "block_strength": 1267,
+            "block_rate": 1267,
+            "defense": 0,
+            "magic_defense": 0,
+            "vitality": 131,
+            "strength": 119,
+            "dexterity": 0,
+            "tenacity": 0,
+            "intelligence": 0,
+            "mind": 0,
+            "piety": 0,
+            "critical_rate": 61,
+            "direct_hit": 0,
+            "determination": 87,
+            "skill_speed": 0,
+            "spell_speed": 0,
+            "job": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "api.gear",
+        "pk": 4,
+        "fields": {
+            "gear_name": "Augmented Credendum Cuirass of Fending",
+            "slug": "augmented-credendum-cuirass-of-fending",
+            "category": "Fending",
+            "acquisition": "ATG",
+            "added_in_patch": "x.4",
+            "slot": "Body",
+            "cost": 17,
+            "ff14_db_index": "c7118d8bad9",
+            "ff14_db_icon": "cc/ccc4fc8ae8deb84f60cfa02cc2c3868f0c6ea25c.png",
+            "item_level": 660,
+            "physical_dmg": 0,
+            "magical_dmg": 0,
+            "auto_attack": "0.00",
+            "delay": "0.00",
+            "block_strength": 0,
+            "block_rate": 0,
+            "defense": 1196,
+            "magic_defense": 1196,
+            "vitality": 440,
+            "strength": 394,
+            "dexterity": 0,
+            "tenacity": 0,
+            "intelligence": 0,
+            "mind": 0,
+            "piety": 0,
+            "critical_rate": 292,
+            "direct_hit": 0,
+            "determination": 204,
+            "skill_speed": 0,
+            "spell_speed": 0,
+            "job": [
+                1,
+                2,
+                3,
+                4
+            ]
+        }
+    },
+    {
+        "model": "api.gear",
+        "pk": 5,
+        "fields": {
+            "gear_name": "Augmented Polaris Point",
+            "slug": "augmented-polaris-point",
+            "category": "Fending",
+            "acquisition": "ATG",
+            "added_in_patch": "x.4",
+            "slot": "Weapon",
+            "cost": 23,
+            "ff14_db_index": "44b843c6e4e",
+            "ff14_db_icon": "df/dff6538f2aebef6d2164c5beab1532599d9a7ccc.png",
+            "item_level": 660,
+            "physical_dmg": 131,
+            "magical_dmg": 0,
+            "auto_attack": "97.81",
+            "delay": "2.24",
+            "block_strength": 0,
+            "block_rate": 0,
+            "defense": 0,
+            "magic_defense": 0,
+            "vitality": 326,
+            "strength": 292,
+            "dexterity": 0,
+            "tenacity": 0,
+            "intelligence": 0,
+            "mind": 0,
+            "piety": 0,
+            "critical_rate": 217,
+            "direct_hit": 0,
+            "determination": 0,
+            "skill_speed": 152,
+            "spell_speed": 0,
+            "job": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "api.gear",
+        "pk": 6,
+        "fields": {
+            "gear_name": "Greatsword of Ascension",
+            "slug": "greatsword-of-ascension",
+            "category": "Fending",
+            "acquisition": "SR",
+            "added_in_patch": "x.4",
+            "slot": "Weapon",
+            "cost": 13,
+            "ff14_db_index": "dbdf2ec7616",
+            "ff14_db_icon": "ac/acd4a9c9523336649e0b380f0363dc507ea8cbec.png",
+            "item_level": 665,
+            "physical_dmg": 132,
+            "magical_dmg": 0,
+            "auto_attack": "130.24",
+            "delay": "2.96",
+            "block_strength": 0,
+            "block_rate": 0,
+            "defense": 0,
+            "magic_defense": 0,
+            "vitality": 458,
+            "strength": 416,
+            "dexterity": 0,
+            "tenacity": 0,
+            "intelligence": 0,
+            "mind": 0,
+            "piety": 0,
+            "critical_rate": 214,
+            "direct_hit": 0,
+            "determination": 306,
+            "skill_speed": 0,
+            "spell_speed": 0,
+            "job": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "api.gear",
+        "pk": 7,
+        "fields": {
+            "gear_name": "Bardiche of Ascension",
+            "slug": "bardiche-of-ascension",
+            "category": "Fending",
+            "acquisition": "SR",
+            "added_in_patch": "x.4",
+            "slot": "Weapon",
+            "cost": 13,
+            "ff14_db_index": "9dd60d2ac4d",
+            "ff14_db_icon": "30/3036d90e2373082df99f8a9d605aa94e9c9134f6.png",
+            "item_level": 665,
+            "physical_dmg": 132,
+            "magical_dmg": 0,
+            "auto_attack": "147.84",
+            "delay": "3.36",
+            "block_strength": 0,
+            "block_rate": 0,
+            "defense": 0,
+            "magic_defense": 0,
+            "vitality": 458,
+            "strength": 416,
+            "dexterity": 0,
+            "tenacity": 0,
+            "intelligence": 0,
+            "mind": 0,
+            "piety": 0,
+            "critical_rate": 214,
+            "direct_hit": 0,
+            "determination": 306,
+            "skill_speed": 0,
+            "spell_speed": 0,
+            "job": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "api.gear",
+        "pk": 8,
+        "fields": {
+            "gear_name": "Ascension Face Guard of Fending",
+            "slug": "ascension-face-guard-of-fending",
+            "category": "Fending",
+            "acquisition": "SR",
+            "added_in_patch": "x.4",
+            "slot": "Head",
+            "cost": 7,
+            "ff14_db_index": "744ac517967",
+            "ff14_db_icon": "3d/3d7fe5dd05c0da8873dd3d76f481128dc599357a.png",
+            "item_level": 660,
+            "physical_dmg": 0,
+            "magical_dmg": 0,
+            "auto_attack": "0.00",
+            "delay": "0.00",
+            "block_strength": 0,
+            "block_rate": 0,
+            "defense": 892,
+            "magic_defense": 892,
+            "vitality": 277,
+            "strength": 248,
+            "dexterity": 0,
+            "tenacity": 0,
+            "intelligence": 0,
+            "mind": 0,
+            "piety": 0,
+            "critical_rate": 184,
+            "direct_hit": 0,
+            "determination": 129,
+            "skill_speed": 0,
+            "spell_speed": 0,
+            "job": [
+                1,
+                2,
+                3,
+                4
+            ]
+        }
+    },
+    {
+        "model": "api.gear",
+        "pk": 9,
+        "fields": {
+            "gear_name": "Ascension Hose of Fending",
+            "slug": "ascension-hose-of-fending",
+            "category": "Fending",
+            "acquisition": "SR",
+            "added_in_patch": "x.4",
+            "slot": "Legs",
+            "cost": 9,
+            "ff14_db_index": "8059765de2b",
+            "ff14_db_icon": "68/687195a05df82b4755e3391ae246f68c8050a959.png",
+            "item_level": 660,
+            "physical_dmg": 0,
+            "magical_dmg": 0,
+            "auto_attack": "0.00",
+            "delay": "0.00",
+            "block_strength": 0,
+            "block_rate": 0,
+            "defense": 1196,
+            "magic_defense": 1196,
+            "vitality": 440,
+            "strength": 394,
+            "dexterity": 0,
+            "tenacity": 0,
+            "intelligence": 0,
+            "mind": 0,
+            "piety": 0,
+            "critical_rate": 204,
+            "direct_hit": 0,
+            "determination": 292,
+            "skill_speed": 0,
+            "spell_speed": 0,
+            "job": [
+                1,
+                2,
+                3,
+                4
+            ]
+        }
+    },
+    {
+        "model": "api.gear",
+        "pk": 10,
+        "fields": {
+            "gear_name": "Ascension Sollerets of Fending",
+            "slug": "ascension-sollerets-of-fending",
+            "category": "Fending",
+            "acquisition": "SR",
+            "added_in_patch": "x.4",
+            "slot": "Feet",
+            "cost": 11,
+            "ff14_db_index": "de32afb5567",
+            "ff14_db_icon": "51/51192cf57ae4760eb88ee1fe9494d5bbc36b1964.png",
+            "item_level": 660,
+            "physical_dmg": 0,
+            "magical_dmg": 0,
+            "auto_attack": "0.00",
+            "delay": "0.00",
+            "block_strength": 0,
+            "block_rate": 0,
+            "defense": 892,
+            "magic_defense": 892,
+            "vitality": 277,
+            "strength": 248,
+            "dexterity": 0,
+            "tenacity": 0,
+            "intelligence": 0,
+            "mind": 0,
+            "piety": 0,
+            "critical_rate": 0,
+            "direct_hit": 0,
+            "determination": 129,
+            "skill_speed": 184,
+            "spell_speed": 0,
+            "job": [
+                1,
+                2,
+                3,
+                4
+            ]
+        }
+    },
+    {
+        "model": "api.gear",
+        "pk": 11,
+        "fields": {
+            "gear_name": "Ascension Gauntlets of Fending",
+            "slug": "ascension-gauntlets-of-fending",
+            "category": "Fending",
+            "acquisition": "SR",
+            "added_in_patch": "x.4",
+            "slot": "Hands",
+            "cost": 10,
+            "ff14_db_index": "cf354a6ebe7",
+            "ff14_db_icon": "c9/c91d454849eb3d2f64891e38f0dd42472ce8defe.png",
+            "item_level": 660,
+            "physical_dmg": 0,
+            "magical_dmg": 0,
+            "auto_attack": "0.00",
+            "delay": "0.00",
+            "block_strength": 0,
+            "block_rate": 0,
+            "defense": 892,
+            "magic_defense": 892,
+            "vitality": 277,
+            "strength": 248,
+            "dexterity": 0,
+            "tenacity": 129,
+            "intelligence": 0,
+            "mind": 0,
+            "piety": 0,
+            "critical_rate": 184,
+            "direct_hit": 0,
+            "determination": 0,
+            "skill_speed": 0,
+            "spell_speed": 0,
+            "job": [
+                1,
+                2,
+                3,
+                4
+            ]
+        }
     }
-  },
-  {
-    "model": "api.cost",
-    "pk": 2,
-    "fields": {
-      "cost_name": "Normal Raid Body",
-      "mythos_1": 0,
-      "mythos_2": 0,
-      "mythos_3": 0,
-      "mythos_4": 0,
-      "unsung_head": 0,
-      "unsung_body": 4,
-      "unsung_legs": 0,
-      "unsung_hands": 0,
-      "unsung_feet": 0,
-      "unsung_acc": 0,
-      "tomestones": 0,
-      "weapon_token": false,
-      "weapon_token_price": 0
-    }
-  },
-  {
-    "model": "api.cost",
-    "pk": 3,
-    "fields": {
-      "cost_name": "Normal Raid Legs",
-      "mythos_1": 0,
-      "mythos_2": 0,
-      "mythos_3": 0,
-      "mythos_4": 0,
-      "unsung_head": 0,
-      "unsung_body": 0,
-      "unsung_legs": 4,
-      "unsung_hands": 0,
-      "unsung_feet": 0,
-      "unsung_acc": 0,
-      "tomestones": 0,
-      "weapon_token": false,
-      "weapon_token_price": 0
-    }
-  },
-  {
-    "model": "api.cost",
-    "pk": 4,
-    "fields": {
-      "cost_name": "Normal Raid Hands",
-      "mythos_1": 0,
-      "mythos_2": 0,
-      "mythos_3": 0,
-      "mythos_4": 0,
-      "unsung_head": 0,
-      "unsung_body": 0,
-      "unsung_legs": 0,
-      "unsung_hands": 2,
-      "unsung_feet": 0,
-      "unsung_acc": 0,
-      "tomestones": 0,
-      "weapon_token": false,
-      "weapon_token_price": 0
-    }
-  },
-  {
-    "model": "api.cost",
-    "pk": 5,
-    "fields": {
-      "cost_name": "Normal Raid Feet",
-      "mythos_1": 0,
-      "mythos_2": 0,
-      "mythos_3": 0,
-      "mythos_4": 0,
-      "unsung_head": 0,
-      "unsung_body": 0,
-      "unsung_legs": 0,
-      "unsung_hands": 0,
-      "unsung_feet": 2,
-      "unsung_acc": 0,
-      "tomestones": 0,
-      "weapon_token": false,
-      "weapon_token_price": 0
-    }
-  },
-  {
-    "model": "api.cost",
-    "pk": 6,
-    "fields": {
-      "cost_name": "Normal Raid Accessory",
-      "mythos_1": 0,
-      "mythos_2": 0,
-      "mythos_3": 0,
-      "mythos_4": 0,
-      "unsung_head": 0,
-      "unsung_body": 0,
-      "unsung_legs": 0,
-      "unsung_hands": 0,
-      "unsung_feet": 0,
-      "unsung_acc": 1,
-      "tomestones": 0,
-      "weapon_token": false,
-      "weapon_token_price": 0
-    }
-  },
-  {
-    "model": "api.cost",
-    "pk": 7,
-    "fields": {
-      "cost_name": "Savage Raid Head",
-      "mythos_1": 0,
-      "mythos_2": 4,
-      "mythos_3": 0,
-      "mythos_4": 4,
-      "unsung_head": 0,
-      "unsung_body": 0,
-      "unsung_legs": 0,
-      "unsung_hands": 0,
-      "unsung_feet": 0,
-      "unsung_acc": 0,
-      "tomestones": 0,
-      "weapon_token": false,
-      "weapon_token_price": 0
-    }
-  },
-  {
-    "model": "api.cost",
-    "pk": 8,
-    "fields": {
-      "cost_name": "Savage Raid Body",
-      "mythos_1": 0,
-      "mythos_2": 0,
-      "mythos_3": 6,
-      "mythos_4": 6,
-      "unsung_head": 0,
-      "unsung_body": 0,
-      "unsung_legs": 0,
-      "unsung_hands": 0,
-      "unsung_feet": 0,
-      "unsung_acc": 0,
-      "tomestones": 0,
-      "weapon_token": false,
-      "weapon_token_price": 0
-    }
-  },
-  {
-    "model": "api.cost",
-    "pk": 9,
-    "fields": {
-      "cost_name": "Savage Raid Legs",
-      "mythos_1": 0,
-      "mythos_2": 0,
-      "mythos_3": 6,
-      "mythos_4": 6,
-      "unsung_head": 0,
-      "unsung_body": 0,
-      "unsung_legs": 0,
-      "unsung_hands": 0,
-      "unsung_feet": 0,
-      "unsung_acc": 0,
-      "tomestones": 0,
-      "weapon_token": false,
-      "weapon_token_price": 0
-    }
-  },
-  {
-    "model": "api.cost",
-    "pk": 10,
-    "fields": {
-      "cost_name": "Savage Raid Hands",
-      "mythos_1": 0,
-      "mythos_2": 4,
-      "mythos_3": 0,
-      "mythos_4": 4,
-      "unsung_head": 0,
-      "unsung_body": 0,
-      "unsung_legs": 0,
-      "unsung_hands": 0,
-      "unsung_feet": 0,
-      "unsung_acc": 0,
-      "tomestones": 0,
-      "weapon_token": false,
-      "weapon_token_price": 0
-    }
-  },
-  {
-    "model": "api.cost",
-    "pk": 11,
-    "fields": {
-      "cost_name": "Savage Raid Feet",
-      "mythos_1": 0,
-      "mythos_2": 4,
-      "mythos_3": 0,
-      "mythos_4": 4,
-      "unsung_head": 0,
-      "unsung_body": 0,
-      "unsung_legs": 0,
-      "unsung_hands": 0,
-      "unsung_feet": 0,
-      "unsung_acc": 0,
-      "tomestones": 0,
-      "weapon_token": false,
-      "weapon_token_price": 0
-    }
-  },
-  {
-    "model": "api.cost",
-    "pk": 12,
-    "fields": {
-      "cost_name": "Savage Raid Accessory",
-      "mythos_1": 3,
-      "mythos_2": 0,
-      "mythos_3": 0,
-      "mythos_4": 3,
-      "unsung_head": 0,
-      "unsung_body": 0,
-      "unsung_legs": 0,
-      "unsung_hands": 0,
-      "unsung_feet": 0,
-      "unsung_acc": 0,
-      "tomestones": 0,
-      "weapon_token": false,
-      "weapon_token_price": 0
-    }
-  },
-  {
-    "model": "api.cost",
-    "pk": 13,
-    "fields": {
-      "cost_name": "Savage Raid Weapon",
-      "mythos_1": 0,
-      "mythos_2": 0,
-      "mythos_3": 0,
-      "mythos_4": 8,
-      "unsung_head": 0,
-      "unsung_body": 0,
-      "unsung_legs": 0,
-      "unsung_hands": 0,
-      "unsung_feet": 0,
-      "unsung_acc": 0,
-      "tomestones": 0,
-      "weapon_token": false,
-      "weapon_token_price": 0
-    }
-  },
-  {
-    "model": "api.cost",
-    "pk": 14,
-    "fields": {
-      "cost_name": "Savage Raid Paladin's Arm",
-      "mythos_1": 0,
-      "mythos_2": 0,
-      "mythos_3": 0,
-      "mythos_4": 5,
-      "unsung_head": 0,
-      "unsung_body": 0,
-      "unsung_legs": 0,
-      "unsung_hands": 0,
-      "unsung_feet": 0,
-      "unsung_acc": 0,
-      "tomestones": 0,
-      "weapon_token": false,
-      "weapon_token_price": 0
-    }
-  },
-  {
-    "model": "api.cost",
-    "pk": 15,
-    "fields": {
-      "cost_name": "Savage Shield",
-      "mythos_1": 0,
-      "mythos_2": 0,
-      "mythos_3": 0,
-      "mythos_4": 3,
-      "unsung_head": 0,
-      "unsung_body": 0,
-      "unsung_legs": 0,
-      "unsung_hands": 0,
-      "unsung_feet": 0,
-      "unsung_acc": 0,
-      "tomestones": 0,
-      "weapon_token": false,
-      "weapon_token_price": 0
-    }
-  },
-  {
-    "model": "api.cost",
-    "pk": 16,
-    "fields": {
-      "cost_name": "Tomestone Head",
-      "mythos_1": 0,
-      "mythos_2": 0,
-      "mythos_3": 0,
-      "mythos_4": 0,
-      "unsung_head": 0,
-      "unsung_body": 0,
-      "unsung_legs": 0,
-      "unsung_hands": 0,
-      "unsung_feet": 0,
-      "unsung_acc": 0,
-      "tomestones": 495,
-      "weapon_token": false,
-      "weapon_token_price": 0
-    }
-  },
-  {
-    "model": "api.cost",
-    "pk": 17,
-    "fields": {
-      "cost_name": "Tomestone Body",
-      "mythos_1": 0,
-      "mythos_2": 0,
-      "mythos_3": 0,
-      "mythos_4": 0,
-      "unsung_head": 0,
-      "unsung_body": 0,
-      "unsung_legs": 0,
-      "unsung_hands": 0,
-      "unsung_feet": 0,
-      "unsung_acc": 0,
-      "tomestones": 825,
-      "weapon_token": false,
-      "weapon_token_price": 0
-    }
-  },
-  {
-    "model": "api.cost",
-    "pk": 18,
-    "fields": {
-      "cost_name": "Tomestone Legs",
-      "mythos_1": 0,
-      "mythos_2": 0,
-      "mythos_3": 0,
-      "mythos_4": 0,
-      "unsung_head": 0,
-      "unsung_body": 0,
-      "unsung_legs": 0,
-      "unsung_hands": 0,
-      "unsung_feet": 0,
-      "unsung_acc": 0,
-      "tomestones": 825,
-      "weapon_token": false,
-      "weapon_token_price": 0
-    }
-  },
-  {
-    "model": "api.cost",
-    "pk": 19,
-    "fields": {
-      "cost_name": "Tomestone Hands",
-      "mythos_1": 0,
-      "mythos_2": 0,
-      "mythos_3": 0,
-      "mythos_4": 0,
-      "unsung_head": 0,
-      "unsung_body": 0,
-      "unsung_legs": 0,
-      "unsung_hands": 0,
-      "unsung_feet": 0,
-      "unsung_acc": 0,
-      "tomestones": 495,
-      "weapon_token": false,
-      "weapon_token_price": 0
-    }
-  },
-  {
-    "model": "api.cost",
-    "pk": 20,
-    "fields": {
-      "cost_name": "Tomestone Feet",
-      "mythos_1": 0,
-      "mythos_2": 0,
-      "mythos_3": 0,
-      "mythos_4": 0,
-      "unsung_head": 0,
-      "unsung_body": 0,
-      "unsung_legs": 0,
-      "unsung_hands": 0,
-      "unsung_feet": 0,
-      "unsung_acc": 0,
-      "tomestones": 495,
-      "weapon_token": false,
-      "weapon_token_price": 0
-    }
-  },
-  {
-    "model": "api.cost",
-    "pk": 21,
-    "fields": {
-      "cost_name": "Tomestone Accessory",
-      "mythos_1": 0,
-      "mythos_2": 0,
-      "mythos_3": 0,
-      "mythos_4": 0,
-      "unsung_head": 0,
-      "unsung_body": 0,
-      "unsung_legs": 0,
-      "unsung_hands": 0,
-      "unsung_feet": 0,
-      "unsung_acc": 0,
-      "tomestones": 375,
-      "weapon_token": false,
-      "weapon_token_price": 0
-    }
-  },
-  {
-    "model": "api.cost",
-    "pk": 22,
-    "fields": {
-      "cost_name": "Tomestone Weapon",
-      "mythos_1": 0,
-      "mythos_2": 0,
-      "mythos_3": 0,
-      "mythos_4": 0,
-      "unsung_head": 0,
-      "unsung_body": 0,
-      "unsung_legs": 0,
-      "unsung_hands": 0,
-      "unsung_feet": 0,
-      "unsung_acc": 0,
-      "tomestones": 500,
-      "weapon_token": true,
-      "weapon_token_price": 4
-    }
-  },
-  {
-    "model": "api.cost",
-    "pk": 23,
-    "fields": {
-      "cost_name": "Tomestone Paladin's Arm",
-      "mythos_1": 0,
-      "mythos_2": 0,
-      "mythos_3": 0,
-      "mythos_4": 0,
-      "unsung_head": 0,
-      "unsung_body": 0,
-      "unsung_legs": 0,
-      "unsung_hands": 0,
-      "unsung_feet": 0,
-      "unsung_acc": 0,
-      "tomestones": 350,
-      "weapon_token": true,
-      "weapon_token_price": 4
-    }
-  },
-  {
-    "model": "api.cost",
-    "pk": 24,
-    "fields": {
-      "cost_name": "Tomestone Shield",
-      "mythos_1": 0,
-      "mythos_2": 0,
-      "mythos_3": 0,
-      "mythos_4": 0,
-      "unsung_head": 0,
-      "unsung_body": 0,
-      "unsung_legs": 0,
-      "unsung_hands": 0,
-      "unsung_feet": 0,
-      "unsung_acc": 0,
-      "tomestones": 150,
-      "weapon_token": false,
-      "weapon_token_price": 0
-    }
-  },
-  {
-    "model": "api.cost",
-    "pk": 25,
-    "fields": {
-      "cost_name": "Exquisite Tomestone Weapon",
-      "mythos_1": 0,
-      "mythos_2": 0,
-      "mythos_3": 0,
-      "mythos_4": 0,
-      "unsung_head": 0,
-      "unsung_body": 0,
-      "unsung_legs": 0,
-      "unsung_hands": 0,
-      "unsung_feet": 0,
-      "unsung_acc": 0,
-      "tomestones": 0,
-      "weapon_token": false,
-      "weapon_token_price": 0
-    }
-  },
-  {
-    "model": "api.cost",
-    "pk": 26,
-    "fields": {
-      "cost_name": "Relic Weapon",
-      "mythos_1": 0,
-      "mythos_2": 0,
-      "mythos_3": 0,
-      "mythos_4": 0,
-      "unsung_head": 0,
-      "unsung_body": 0,
-      "unsung_legs": 0,
-      "unsung_hands": 0,
-      "unsung_feet": 0,
-      "unsung_acc": 0,
-      "tomestones": 0,
-      "weapon_token": false,
-      "weapon_token_price": 0
-    }
-  },
-  {
-    "model": "api.race",
-    "pk": 1,
-    "fields": {
-      "race_name": "Hyur",
-      "base_vitality": 21,
-      "base_strength": 21,
-      "base_dexterity": 19,
-      "base_intelligence": 20,
-      "base_mind": 20,
-      "base_piety": 20
-    }
-  },
-  {
-    "model": "api.race",
-    "pk": 2,
-    "fields": {
-      "race_name": "Elezen",
-      "base_vitality": 20,
-      "base_strength": 19,
-      "base_dexterity": 23,
-      "base_intelligence": 22,
-      "base_mind": 21,
-      "base_piety": 19
-    }
-  },
-  {
-    "model": "api.race",
-    "pk": 3,
-    "fields": {
-      "race_name": "Lalafell",
-      "base_vitality": 19,
-      "base_strength": 18,
-      "base_dexterity": 20,
-      "base_intelligence": 23,
-      "base_mind": 22,
-      "base_piety": 23
-    }
-  },
-  {
-    "model": "api.race",
-    "pk": 4,
-    "fields": {
-      "race_name": "Miqo'te",
-      "base_vitality": 19,
-      "base_strength": 20,
-      "base_dexterity": 23,
-      "base_intelligence": 20,
-      "base_mind": 21,
-      "base_piety": 22
-    }
-  },
-  {
-    "model": "api.race",
-    "pk": 5,
-    "fields": {
-      "race_name": "Roegadyn",
-      "base_vitality": 23,
-      "base_strength": 23,
-      "base_dexterity": 20,
-      "base_intelligence": 17,
-      "base_mind": 19,
-      "base_piety": 17
-    }
-  },
-  {
-    "model": "api.race",
-    "pk": 6,
-    "fields": {
-      "race_name": "Au Ra",
-      "base_vitality": 20,
-      "base_strength": 23,
-      "base_dexterity": 20,
-      "base_intelligence": 21,
-      "base_mind": 19,
-      "base_piety": 21
-    }
-  },
-  {
-    "model": "api.race",
-    "pk": 7,
-    "fields": {
-      "race_name": "Hrothgar",
-      "base_vitality": 22,
-      "base_strength": 23,
-      "base_dexterity": 21,
-      "base_intelligence": 17,
-      "base_mind": 19,
-      "base_piety": 18
-    }
-  },
-  {
-    "model": "api.race",
-    "pk": 8,
-    "fields": {
-      "race_name": "Viera",
-      "base_vitality": 20,
-      "base_strength": 21,
-      "base_dexterity": 23,
-      "base_intelligence": 21,
-      "base_mind": 20,
-      "base_piety": 19
-    }
-  }
 ]

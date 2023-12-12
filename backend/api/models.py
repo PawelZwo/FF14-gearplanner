@@ -216,14 +216,13 @@ class Gear(models.Model):
         db_comment="Slot for the gear",
         max_length=50
     )
-    cost = models.OneToOneField(
+    cost = models.ForeignKey(
         Cost, on_delete=models.CASCADE,
-        db_comment="Costs of the gear",
-        max_length=50
+        related_name="costs"
     )
     job = models.ManyToManyField(
         Job,
-        related_name="gears"
+        related_name="jobs"
     )
     ff14_db_index = models.CharField(
         max_length=20

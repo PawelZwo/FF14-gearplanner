@@ -1,5 +1,5 @@
 // Custom hooks
-import { useFetch } from "../hooks/useFetch";
+import { useFetchGet } from "../hooks/useFetchGet";
 
 // Project's components
 import RoleTableColumn from "../components/RoleTableColumn";
@@ -7,7 +7,7 @@ import Loading from "../small_components/Loading";
 import ErrorMessage from "../small_components/ErrorMessage";
 
 function JobList() {
-  const { data, isPending, error } = useFetch("api/jobs/");
+  const { data, isPending, error } = useFetchGet("api/jobs/");
 
   return (
     <>

@@ -26,6 +26,7 @@ import Cost from "./pages/Cost";
 import PvpCalc from "./pages/PvpCalc";
 import NotFound from "./pages/NotFound";
 import GearDetails from "./pages/GearDetails";
+import AddGear from "./pages/AddGear";
 
 export default function App() {
   return (
@@ -47,6 +48,7 @@ export default function App() {
               <Route path="/gear" element={<Gear />} />
               <Route path="/gear/:gearSlug" element={<GearDetails />} />
               <Route path="/costs" element={<Cost />} />
+              <Route path="/add-gear" element={<AddGear />} />
               <Route element={<Banner />}>
                 <Route path="/" element={<Home />} />
                 <Route path="/jobs" element={<Job />} />

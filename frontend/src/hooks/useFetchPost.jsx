@@ -1,24 +1,34 @@
 // React
 import { useState, useEffect } from "react";
 
-export function useFetchPost(endpoint) {
-  const [data, setData] = useState(null);
-  const [isPending, setIsPending] = useState(true);
-  const [error, setError] = useState(null);
+export function useFetchPost(endpoint, objData) {
+  const [dataPost, setDataPost] = useState(null);
+  const [isPendingPost, setIsPendingPost] = useState(true);
+  const [errorPost, setErrorPost] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      setIsPending(true);
+      setIsPendingPost(true);
+      const postData = {
+        method: "POST",
+        body: JSON.stringify(objData),
+        headers: {
+          "Content-type": "application/json",
+        },
+      };
       try {
-        const response = await fetch("http://192.168.0.73:8000/" + endpoint);
+        const response = await fetch(
+          "http://192.168.0.73:8000/" + endpoint,
+          postData
+        );
         if (!response.ok) throw new Error(response.statusText);
         const json = await response.json();
-        setIsPending(false);
-        setData(json);
-        setError(null);
+        setIsPendingPost(false);
+        setDataPost(json);
+        setErrorPost(null);
       } catch (error) {
-        setError(`Could not Fetch Data (${error} )`);
-        setIsPending(false);
+        setErrorPost(`Could not Fetch Data (${error} )`);
+        setIsPendingPost(false);
       }
     };
     fetchData();
@@ -26,6 +36,6 @@ export function useFetchPost(endpoint) {
     return () => {
       new AbortController().abort();
     };
-  }, [endpoint]);
-  return { data, isPending, error };
+  }, [endpoint, objData]);
+  return { dataPost, isPendingPost, errorPost };
 }

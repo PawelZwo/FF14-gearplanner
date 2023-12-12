@@ -10,6 +10,7 @@ import {
   GiSwordsEmblem,
   GiAbdominalArmor,
 } from "react-icons/gi";
+import { IoMdAdd } from "react-icons/io";
 
 // React-Bootstrap
 import Container from "react-bootstrap/Container";
@@ -111,6 +112,21 @@ export default function SideBar() {
             <Navbar.Brand>
               <GiAbdominalArmor className="menu-link-icon ml5 mr10" />
               All gear
+            </Navbar.Brand>
+          </Container>
+        </Navbar>
+      </NavLink>
+
+      <NavLink to="add-gear/" className="menu-link">
+        <Navbar
+          bg="dark"
+          data-bs-theme="dark"
+          className="bg-body-tertiary mb10"
+        >
+          <Container>
+            <Navbar.Brand>
+              <IoMdAdd className="menu-link-icon ml5 mr10" />
+              Add gear
             </Navbar.Brand>
           </Container>
         </Navbar>

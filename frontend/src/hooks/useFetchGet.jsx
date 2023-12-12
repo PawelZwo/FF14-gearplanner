@@ -1,7 +1,7 @@
 // React
 import { useState, useEffect } from "react";
 
-export function useFetch(endpoint) {
+export function useFetchGet(endpoint) {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);

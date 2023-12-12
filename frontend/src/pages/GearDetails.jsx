@@ -1,7 +1,7 @@
 // React-Router
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-// React-bootstrap
+// React-Bootstrap
 import Alert from "react-bootstrap/Alert";
 import Stack from "react-bootstrap/Stack";
 import Button from "react-bootstrap/Button";
@@ -16,13 +16,14 @@ import GearIcon from "../small_components/GearIcon";
 import FinalFantasyDataBaseLink from "../small_components/FinalFantasyDataBaseLink";
 
 // Custom hooks
-import { useFetch } from "../hooks/useFetch";
-import { useParams } from "react-router-dom";
+import { useFetchGet } from "../hooks/useFetchGet";
 
 export default function GearDetails() {
   const { gearSlug } = useParams();
 
-  const { data, isPending, error } = useFetch(`api/gears/${gearSlug}`);
+  const { data, isPending, error } = useFetchGet(
+    `api/gears/details/${gearSlug}`
+  );
 
   return (
     <>
@@ -78,7 +79,9 @@ export default function GearDetails() {
                 </div>
 
                 <div className="strong20 mb10">
-                  Acquired from: <strong>{data.acquisition}</strong>
+                  Acquisition:
+                  <br />
+                  <strong>{data.acquisition}</strong>
                 </div>
 
                 <div className="strong20 mb10">

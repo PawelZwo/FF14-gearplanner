@@ -2,7 +2,7 @@
 import { useSearchParams } from "react-router-dom";
 
 // Custom hooks
-import { useFetch } from "../hooks/useFetch";
+import { useFetchGet } from "../hooks/useFetchGet";
 
 // React-Bootstrap
 import Button from "react-bootstrap/Button";
@@ -18,7 +18,7 @@ import Loading from "../small_components/Loading";
 import ErrorMessage from "../small_components/ErrorMessage";
 
 export default function Gear() {
-  const { data, isPending, error } = useFetch("api/gears/");
+  const { data, isPending, error } = useFetchGet("api/gears/list/");
 
   const [categoryFilter, setCategoryFilter] = useSearchParams({ category: "" });
   const filteredCategory = categoryFilter.get("category");
