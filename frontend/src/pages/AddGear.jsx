@@ -170,9 +170,6 @@ export default function AddGear() {
                   onInput={handleInputChange}
                 />
               </FloatingLabel>
-              {/* <Form.Text style={{ color: "white" }}>
-                Enter item level.
-              </Form.Text> */}
             </Form.Group>
           </Col>
         </Row>
@@ -246,9 +243,6 @@ export default function AddGear() {
                     ))}
                 </Form.Select>
               </FloatingLabel>
-              {/* <Form.Text style={{ color: "white" }}>
-                Choose in which patch this gear piece has been added.
-              </Form.Text> */}
             </Form.Group>
           </Col>
 
@@ -274,9 +268,6 @@ export default function AddGear() {
                     ))}
                 </Form.Select>
               </FloatingLabel>
-              {/* <Form.Text style={{ color: "white" }}>
-                Choose what gearset slot it uses.
-              </Form.Text> */}
             </Form.Group>
           </Col>
 
@@ -302,9 +293,6 @@ export default function AddGear() {
                     ))}
                 </Form.Select>
               </FloatingLabel>
-              {/* <Form.Text style={{ color: "white" }}>
-                Choose a category of this gear.
-              </Form.Text> */}
             </Form.Group>
           </Col>
         </Row>
@@ -332,9 +320,6 @@ export default function AddGear() {
                     ))}
                 </Form.Select>
               </FloatingLabel>
-              {/* <Form.Text style={{ color: "white" }}>
-                Choose aqusition of this gear piece.
-              </Form.Text> */}
             </Form.Group>
           </Col>
 
@@ -360,9 +345,6 @@ export default function AddGear() {
                     ))}
                 </Form.Select>
               </FloatingLabel>
-              {/* <Form.Text style={{ color: "white" }}>
-                What is this gear's cost?
-              </Form.Text> */}
             </Form.Group>
           </Col>
         </Row>
@@ -410,9 +392,6 @@ export default function AddGear() {
                   onInput={handleInputChange}
                 />
               </FloatingLabel>
-              {/* <Form.Text style={{ color: "white" }}>
-                Enter gear's physical damage.
-              </Form.Text> */}
             </Form.Group>
           </Col>
 
@@ -433,9 +412,6 @@ export default function AddGear() {
                   onInput={handleInputChange}
                 />
               </FloatingLabel>
-              {/* <Form.Text style={{ color: "white" }}>
-                Enter gear's magical damage.
-              </Form.Text> */}
             </Form.Group>
           </Col>
 
@@ -454,9 +430,6 @@ export default function AddGear() {
                   onInput={handleInputChange}
                 />
               </FloatingLabel>
-              {/* <Form.Text style={{ color: "white" }}>
-                Enter gear's auto attack.
-              </Form.Text> */}
             </Form.Group>
           </Col>
 
@@ -501,9 +474,6 @@ export default function AddGear() {
                   onInput={handleInputChange}
                 />
               </FloatingLabel>
-              {/* <Form.Text style={{ color: "white" }}>
-                Enter gear's block strength.
-              </Form.Text> */}
             </Form.Group>
           </Col>
 
@@ -524,9 +494,6 @@ export default function AddGear() {
                   onInput={handleInputChange}
                 />
               </FloatingLabel>
-              {/* <Form.Text style={{ color: "white" }}>
-                Enter gear's block rate.
-              </Form.Text> */}
             </Form.Group>
           </Col>
 
@@ -547,9 +514,6 @@ export default function AddGear() {
                   onInput={handleInputChange}
                 />
               </FloatingLabel>
-              {/* <Form.Text style={{ color: "white" }}>
-                Enter gear's defense.
-              </Form.Text> */}
             </Form.Group>
           </Col>
 
@@ -570,9 +534,6 @@ export default function AddGear() {
                   onInput={handleInputChange}
                 />
               </FloatingLabel>
-              {/* <Form.Text style={{ color: "white" }}>
-                Enter gear's magic defense.
-              </Form.Text> */}
             </Form.Group>
           </Col>
         </Row>
@@ -596,9 +557,6 @@ export default function AddGear() {
                   onInput={handleInputChange}
                 />
               </FloatingLabel>
-              {/* <Form.Text style={{ color: "white" }}>
-                Enter gear's vitality.
-              </Form.Text> */}
             </Form.Group>
           </Col>
 
@@ -619,9 +577,6 @@ export default function AddGear() {
                   onInput={handleInputChange}
                 />
               </FloatingLabel>
-              {/* <Form.Text style={{ color: "white" }}>
-                Enter gear's strength.
-              </Form.Text> */}
             </Form.Group>
           </Col>
 
@@ -642,9 +597,6 @@ export default function AddGear() {
                   onInput={handleInputChange}
                 />
               </FloatingLabel>
-              {/* <Form.Text style={{ color: "white" }}>
-                Enter gear's dexterity.
-              </Form.Text> */}
             </Form.Group>
           </Col>
 
@@ -665,9 +617,6 @@ export default function AddGear() {
                   onInput={handleInputChange}
                 />
               </FloatingLabel>
-              {/* <Form.Text style={{ color: "white" }}>
-                Enter gear's intelligence.
-              </Form.Text> */}
             </Form.Group>
           </Col>
 
@@ -688,9 +637,6 @@ export default function AddGear() {
                   onInput={handleInputChange}
                 />
               </FloatingLabel>
-              {/* <Form.Text style={{ color: "white" }}>
-                Enter gear's mind.
-              </Form.Text> */}
             </Form.Group>
           </Col>
         </Row>
@@ -714,9 +660,6 @@ export default function AddGear() {
                   onInput={handleInputChange}
                 />
               </FloatingLabel>
-              {/* <Form.Text style={{ color: "white" }}>
-                Enter gear's tenacity.
-              </Form.Text> */}
             </Form.Group>
           </Col>
 
@@ -737,9 +680,6 @@ export default function AddGear() {
                   onInput={handleInputChange}
                 />
               </FloatingLabel>
-              {/* <Form.Text style={{ color: "white" }}>
-                Enter gear's piety.
-              </Form.Text> */}
             </Form.Group>
           </Col>
 
@@ -760,9 +700,6 @@ export default function AddGear() {
                   onInput={handleInputChange}
                 />
               </FloatingLabel>
-              {/* <Form.Text style={{ color: "white" }}>
-                Enter gear's critical rate.
-              </Form.Text> */}
             </Form.Group>
           </Col>
 
@@ -783,9 +720,6 @@ export default function AddGear() {
                   onInput={handleInputChange}
                 />
               </FloatingLabel>
-              {/* <Form.Text style={{ color: "white" }}>
-                Enter gear's direct hit.
-              </Form.Text> */}
             </Form.Group>
           </Col>
 
@@ -806,9 +740,6 @@ export default function AddGear() {
                   onInput={handleInputChange}
                 />
               </FloatingLabel>
-              {/* <Form.Text style={{ color: "white" }}>
-                Enter gear's determination.
-              </Form.Text> */}
             </Form.Group>
           </Col>
 
@@ -829,9 +760,6 @@ export default function AddGear() {
                   onInput={handleInputChange}
                 />
               </FloatingLabel>
-              {/* <Form.Text style={{ color: "white" }}>
-                Enter gear's skill speed.
-              </Form.Text> */}
             </Form.Group>
           </Col>
 
@@ -852,9 +780,6 @@ export default function AddGear() {
                   onInput={handleInputChange}
                 />
               </FloatingLabel>
-              {/* <Form.Text style={{ color: "white" }}>
-                Enter gear's spell speed.
-              </Form.Text> */}
             </Form.Group>
           </Col>
         </Row>
