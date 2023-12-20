@@ -1,261 +1,5 @@
 [
     {
-        "model": "api.job",
-        "pk": 1,
-        "fields": {
-            "job_name": "Paladin",
-            "role": "tank"
-        }
-    },
-    {
-        "model": "api.job",
-        "pk": 2,
-        "fields": {
-            "job_name": "Warrior",
-            "role": "tank"
-        }
-    },
-    {
-        "model": "api.job",
-        "pk": 3,
-        "fields": {
-            "job_name": "Dark Knight",
-            "role": "tank"
-        }
-    },
-    {
-        "model": "api.job",
-        "pk": 4,
-        "fields": {
-            "job_name": "Gunbreaker",
-            "role": "tank"
-        }
-    },
-    {
-        "model": "api.job",
-        "pk": 5,
-        "fields": {
-            "job_name": "White Mage",
-            "role": "healer"
-        }
-    },
-    {
-        "model": "api.job",
-        "pk": 6,
-        "fields": {
-            "job_name": "Scholar",
-            "role": "healer"
-        }
-    },
-    {
-        "model": "api.job",
-        "pk": 7,
-        "fields": {
-            "job_name": "Astrologian",
-            "role": "healer"
-        }
-    },
-    {
-        "model": "api.job",
-        "pk": 8,
-        "fields": {
-            "job_name": "Sage",
-            "role": "healer"
-        }
-    },
-    {
-        "model": "api.job",
-        "pk": 9,
-        "fields": {
-            "job_name": "Monk",
-            "role": "melee"
-        }
-    },
-    {
-        "model": "api.job",
-        "pk": 10,
-        "fields": {
-            "job_name": "Dragoon",
-            "role": "melee"
-        }
-    },
-    {
-        "model": "api.job",
-        "pk": 11,
-        "fields": {
-            "job_name": "Ninja",
-            "role": "melee"
-        }
-    },
-    {
-        "model": "api.job",
-        "pk": 12,
-        "fields": {
-            "job_name": "Samurai",
-            "role": "melee"
-        }
-    },
-    {
-        "model": "api.job",
-        "pk": 13,
-        "fields": {
-            "job_name": "Reaper",
-            "role": "melee"
-        }
-    },
-    {
-        "model": "api.job",
-        "pk": 14,
-        "fields": {
-            "job_name": "Bard",
-            "role": "ranged"
-        }
-    },
-    {
-        "model": "api.job",
-        "pk": 15,
-        "fields": {
-            "job_name": "Machinist",
-            "role": "ranged"
-        }
-    },
-    {
-        "model": "api.job",
-        "pk": 16,
-        "fields": {
-            "job_name": "Dancer",
-            "role": "ranged"
-        }
-    },
-    {
-        "model": "api.job",
-        "pk": 17,
-        "fields": {
-            "job_name": "Black Mage",
-            "role": "caster"
-        }
-    },
-    {
-        "model": "api.job",
-        "pk": 18,
-        "fields": {
-            "job_name": "Summoner",
-            "role": "caster"
-        }
-    },
-    {
-        "model": "api.job",
-        "pk": 19,
-        "fields": {
-            "job_name": "Red Mage",
-            "role": "caster"
-        }
-    },
-    {
-        "model": "api.race",
-        "pk": 1,
-        "fields": {
-            "race_name": "Hyur",
-            "base_vitality": 21,
-            "base_strength": 21,
-            "base_dexterity": 19,
-            "base_intelligence": 20,
-            "base_mind": 20,
-            "base_piety": 20
-        }
-    },
-    {
-        "model": "api.race",
-        "pk": 2,
-        "fields": {
-            "race_name": "Elezen",
-            "base_vitality": 20,
-            "base_strength": 19,
-            "base_dexterity": 23,
-            "base_intelligence": 22,
-            "base_mind": 21,
-            "base_piety": 19
-        }
-    },
-    {
-        "model": "api.race",
-        "pk": 3,
-        "fields": {
-            "race_name": "Lalafell",
-            "base_vitality": 19,
-            "base_strength": 18,
-            "base_dexterity": 20,
-            "base_intelligence": 23,
-            "base_mind": 22,
-            "base_piety": 23
-        }
-    },
-    {
-        "model": "api.race",
-        "pk": 4,
-        "fields": {
-            "race_name": "Miqo'te",
-            "base_vitality": 19,
-            "base_strength": 20,
-            "base_dexterity": 23,
-            "base_intelligence": 20,
-            "base_mind": 21,
-            "base_piety": 22
-        }
-    },
-    {
-        "model": "api.race",
-        "pk": 5,
-        "fields": {
-            "race_name": "Roegadyn",
-            "base_vitality": 23,
-            "base_strength": 23,
-            "base_dexterity": 20,
-            "base_intelligence": 17,
-            "base_mind": 19,
-            "base_piety": 17
-        }
-    },
-    {
-        "model": "api.race",
-        "pk": 6,
-        "fields": {
-            "race_name": "Au Ra",
-            "base_vitality": 20,
-            "base_strength": 23,
-            "base_dexterity": 20,
-            "base_intelligence": 21,
-            "base_mind": 19,
-            "base_piety": 21
-        }
-    },
-    {
-        "model": "api.race",
-        "pk": 7,
-        "fields": {
-            "race_name": "Hrothgar",
-            "base_vitality": 22,
-            "base_strength": 23,
-            "base_dexterity": 21,
-            "base_intelligence": 17,
-            "base_mind": 19,
-            "base_piety": 18
-        }
-    },
-    {
-        "model": "api.race",
-        "pk": 8,
-        "fields": {
-            "race_name": "Viera",
-            "base_vitality": 20,
-            "base_strength": 21,
-            "base_dexterity": 23,
-            "base_intelligence": 21,
-            "base_mind": 20,
-            "base_piety": 19
-        }
-    },
-    {
         "model": "api.gear",
         "pk": 1,
         "fields": {
@@ -700,6 +444,910 @@
                 3,
                 4
             ]
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 1,
+        "fields": {
+            "job_name": "Paladin",
+            "role": "tank"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 2,
+        "fields": {
+            "job_name": "Warrior",
+            "role": "tank"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 3,
+        "fields": {
+            "job_name": "Dark Knight",
+            "role": "tank"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 4,
+        "fields": {
+            "job_name": "Gunbreaker",
+            "role": "tank"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 5,
+        "fields": {
+            "job_name": "White Mage",
+            "role": "healer"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 6,
+        "fields": {
+            "job_name": "Scholar",
+            "role": "healer"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 7,
+        "fields": {
+            "job_name": "Astrologian",
+            "role": "healer"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 8,
+        "fields": {
+            "job_name": "Sage",
+            "role": "healer"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 9,
+        "fields": {
+            "job_name": "Monk",
+            "role": "melee"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 10,
+        "fields": {
+            "job_name": "Dragoon",
+            "role": "melee"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 11,
+        "fields": {
+            "job_name": "Ninja",
+            "role": "melee"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 12,
+        "fields": {
+            "job_name": "Samurai",
+            "role": "melee"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 13,
+        "fields": {
+            "job_name": "Reaper",
+            "role": "melee"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 14,
+        "fields": {
+            "job_name": "Bard",
+            "role": "ranged"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 15,
+        "fields": {
+            "job_name": "Machinist",
+            "role": "ranged"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 16,
+        "fields": {
+            "job_name": "Dancer",
+            "role": "ranged"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 17,
+        "fields": {
+            "job_name": "Black Mage",
+            "role": "caster"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 18,
+        "fields": {
+            "job_name": "Summoner",
+            "role": "caster"
+        }
+    },
+    {
+        "model": "api.job",
+        "pk": 19,
+        "fields": {
+            "job_name": "Red Mage",
+            "role": "caster"
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 1,
+        "fields": {
+            "cost_name": "Normal Raid Head",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 2,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 2,
+        "fields": {
+            "cost_name": "Normal Raid Body",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 4,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 3,
+        "fields": {
+            "cost_name": "Normal Raid Legs",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 4,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 4,
+        "fields": {
+            "cost_name": "Normal Raid Hands",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 2,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 5,
+        "fields": {
+            "cost_name": "Normal Raid Feet",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 2,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 6,
+        "fields": {
+            "cost_name": "Normal Raid Accessory",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 1,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 7,
+        "fields": {
+            "cost_name": "Savage Raid Head",
+            "mythos_1": 0,
+            "mythos_2": 4,
+            "mythos_3": 0,
+            "mythos_4": 4,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 8,
+        "fields": {
+            "cost_name": "Savage Raid Body",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 6,
+            "mythos_4": 6,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 9,
+        "fields": {
+            "cost_name": "Savage Raid Legs",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 6,
+            "mythos_4": 6,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 10,
+        "fields": {
+            "cost_name": "Savage Raid Hands",
+            "mythos_1": 0,
+            "mythos_2": 4,
+            "mythos_3": 0,
+            "mythos_4": 4,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 11,
+        "fields": {
+            "cost_name": "Savage Raid Feet",
+            "mythos_1": 0,
+            "mythos_2": 4,
+            "mythos_3": 0,
+            "mythos_4": 4,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 12,
+        "fields": {
+            "cost_name": "Savage Raid Accessory",
+            "mythos_1": 3,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 3,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 13,
+        "fields": {
+            "cost_name": "Savage Raid Weapon",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 8,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 14,
+        "fields": {
+            "cost_name": "Savage Raid Paladin's Arm",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 5,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 15,
+        "fields": {
+            "cost_name": "Savage Shield",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 3,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 16,
+        "fields": {
+            "cost_name": "Tomestone Head",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 495,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 17,
+        "fields": {
+            "cost_name": "Tomestone Body",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 825,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 18,
+        "fields": {
+            "cost_name": "Tomestone Legs",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 825,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 19,
+        "fields": {
+            "cost_name": "Tomestone Hands",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 495,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 20,
+        "fields": {
+            "cost_name": "Tomestone Feet",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 495,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 21,
+        "fields": {
+            "cost_name": "Tomestone Accessory",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 375,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 22,
+        "fields": {
+            "cost_name": "Tomestone Weapon",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 500,
+            "weapon_token": true,
+            "weapon_token_price": 4
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 23,
+        "fields": {
+            "cost_name": "Tomestone Paladin's Arm",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 350,
+            "weapon_token": true,
+            "weapon_token_price": 4
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 24,
+        "fields": {
+            "cost_name": "Tomestone Shield",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 150,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 25,
+        "fields": {
+            "cost_name": "Exquisite Tomestone Weapon",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.cost",
+        "pk": 26,
+        "fields": {
+            "cost_name": "Relic Weapon",
+            "mythos_1": 0,
+            "mythos_2": 0,
+            "mythos_3": 0,
+            "mythos_4": 0,
+            "unsung_head": 0,
+            "unsung_body": 0,
+            "unsung_legs": 0,
+            "unsung_hands": 0,
+            "unsung_feet": 0,
+            "unsung_acc": 0,
+            "tomestones": 0,
+            "weapon_token": false,
+            "weapon_token_price": 0
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 1,
+        "fields": {
+            "gear": 1,
+            "job": 1
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 2,
+        "fields": {
+            "gear": 2,
+            "job": 1
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 3,
+        "fields": {
+            "gear": 2,
+            "job": 2
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 4,
+        "fields": {
+            "gear": 2,
+            "job": 3
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 5,
+        "fields": {
+            "gear": 2,
+            "job": 4
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 6,
+        "fields": {
+            "gear": 3,
+            "job": 1
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 7,
+        "fields": {
+            "gear": 4,
+            "job": 1
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 8,
+        "fields": {
+            "gear": 4,
+            "job": 2
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 9,
+        "fields": {
+            "gear": 4,
+            "job": 3
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 10,
+        "fields": {
+            "gear": 4,
+            "job": 4
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 11,
+        "fields": {
+            "gear": 5,
+            "job": 1
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 12,
+        "fields": {
+            "gear": 6,
+            "job": 3
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 15,
+        "fields": {
+            "gear": 7,
+            "job": 2
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 16,
+        "fields": {
+            "gear": 8,
+            "job": 1
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 17,
+        "fields": {
+            "gear": 8,
+            "job": 2
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 18,
+        "fields": {
+            "gear": 8,
+            "job": 3
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 19,
+        "fields": {
+            "gear": 8,
+            "job": 4
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 20,
+        "fields": {
+            "gear": 9,
+            "job": 1
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 21,
+        "fields": {
+            "gear": 9,
+            "job": 2
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 22,
+        "fields": {
+            "gear": 9,
+            "job": 3
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 23,
+        "fields": {
+            "gear": 9,
+            "job": 4
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 24,
+        "fields": {
+            "gear": 10,
+            "job": 1
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 25,
+        "fields": {
+            "gear": 10,
+            "job": 2
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 26,
+        "fields": {
+            "gear": 10,
+            "job": 3
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 27,
+        "fields": {
+            "gear": 10,
+            "job": 4
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 28,
+        "fields": {
+            "gear": 11,
+            "job": 1
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 29,
+        "fields": {
+            "gear": 11,
+            "job": 2
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 30,
+        "fields": {
+            "gear": 11,
+            "job": 3
+        }
+    },
+    {
+        "model": "api.gear_job",
+        "pk": 31,
+        "fields": {
+            "gear": 11,
+            "job": 4
         }
     }
 ]

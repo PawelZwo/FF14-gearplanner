@@ -59,7 +59,7 @@ export default function GearDetails() {
             <Stack direction="horizontal" className="mb10" gap={2}>
               <GearIcon
                 icon_path={data.ff14_db_icon}
-                piece_name={data.gear_nam}
+                piece_name={data.gear_name}
                 on_details
               />
               <h3>{data.gear_name}</h3>
