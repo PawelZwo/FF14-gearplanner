@@ -217,7 +217,7 @@ class Gear(models.Model):
         max_length=50
     )
     cost = models.ForeignKey(
-        Cost, on_delete=models.CASCADE,
+        Cost, on_delete=models.DO_NOTHING,
         related_name="costs"
     )
     job = models.ManyToManyField(
@@ -344,69 +344,69 @@ class Gearset(models.Model):
         editable=True, always_update=True,
         null=True, blank=True
     )
-    job = models.OneToOneField(
+    job = models.ForeignKey(
         Job,
-        on_delete=models.CASCADE
+        on_delete=models.DO_NOTHING
     )
-    weapon = models.OneToOneField(
+    weapon = models.ForeignKey(
         Gear,
-        on_delete=models.CASCADE,
+        on_delete=models.DO_NOTHING,
         related_name="gearset_weapon"
     )
-    shield = models.OneToOneField(
+    shield = models.ForeignKey(
         Gear,
-        on_delete=models.CASCADE,
+        on_delete=models.DO_NOTHING,
         null=True,
         related_name="gearset_shield"
     )
-    head = models.OneToOneField(
+    head = models.ForeignKey(
         Gear,
-        on_delete=models.CASCADE,
+        on_delete=models.DO_NOTHING,
         related_name="gearset_head"
     )
-    body = models.OneToOneField(
+    body = models.ForeignKey(
         Gear,
-        on_delete=models.CASCADE,
+        on_delete=models.DO_NOTHING,
         related_name="gearset_body"
     )
-    legs = models.OneToOneField(
+    legs = models.ForeignKey(
         Gear,
-        on_delete=models.CASCADE,
+        on_delete=models.DO_NOTHING,
         related_name="gearset_legs"
     )
-    hands = models.OneToOneField(
+    hands = models.ForeignKey(
         Gear,
-        on_delete=models.CASCADE,
+        on_delete=models.DO_NOTHING,
         related_name="gearset_hands"
     )
-    feet = models.OneToOneField(
+    feet = models.ForeignKey(
         Gear,
-        on_delete=models.CASCADE,
+        on_delete=models.DO_NOTHING,
         related_name="gearset_feet"
     )
-    earring = models.OneToOneField(
+    earring = models.ForeignKey(
         Gear,
-        on_delete=models.CASCADE,
+        on_delete=models.DO_NOTHING,
         related_name="gearset_earring"
     )
-    necklace = models.OneToOneField(
+    necklace = models.ForeignKey(
         Gear,
-        on_delete=models.CASCADE,
+        on_delete=models.DO_NOTHING,
         related_name="gearset_necklace"
     )
-    bracelet = models.OneToOneField(
+    bracelet = models.ForeignKey(
         Gear,
-        on_delete=models.CASCADE,
+        on_delete=models.DO_NOTHING,
         related_name="gearset_bracelet"
     )
-    left_ring = models.OneToOneField(
+    left_ring = models.ForeignKey(
         Gear,
-        on_delete=models.CASCADE,
+        on_delete=models.DO_NOTHING,
         related_name="gearset_left_ring"
     )
-    right_ring = models.OneToOneField(
+    right_ring = models.ForeignKey(
         Gear,
-        on_delete=models.CASCADE,
+        on_delete=models.DO_NOTHING,
         related_name="gearset_right_ring"
     )
     date_added = models.DateTimeField(
@@ -450,7 +450,7 @@ class Gearset(models.Model):
 
 
 class PlayerGearsets(models.Model):
-    account = models.OneToOneField(
+    account = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.DO_NOTHING,
         null=True,
