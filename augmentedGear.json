@@ -1,0 +1,902 @@
+[
+    {
+        "ID": 40090,
+        "Icon": "https://xivapi.com/i/030000/030669.png",
+        "Name": "Augmented Polaris Point",
+        "Url": "https://xivapi.com/Item/40090"
+    },
+    {
+        "ID": 40091,
+        "Icon": "https://xivapi.com/i/030000/030833.png",
+        "Name": "Augmented Dragon's Beard Fists",
+        "Url": "https://xivapi.com/Item/40091"
+    },
+    {
+        "ID": 40092,
+        "Icon": "https://xivapi.com/i/031000/031243.png",
+        "Name": "Augmented Wrathgrinder",
+        "Url": "https://xivapi.com/Item/40092"
+    },
+    {
+        "ID": 40093,
+        "Icon": "https://xivapi.com/i/031000/031645.png",
+        "Name": "Augmented Night's Wolf",
+        "Url": "https://xivapi.com/Item/40093"
+    },
+    {
+        "ID": 40094,
+        "Icon": "https://xivapi.com/i/032000/032033.png",
+        "Name": "Augmented Bluebird's Nest",
+        "Url": "https://xivapi.com/Item/40094"
+    },
+    {
+        "ID": 40095,
+        "Icon": "https://xivapi.com/i/033000/033619.png",
+        "Name": "Augmented Shinobi Knives",
+        "Url": "https://xivapi.com/Item/40095"
+    },
+    {
+        "ID": 40096,
+        "Icon": "https://xivapi.com/i/034000/034397.png",
+        "Name": "Augmented Blood Rapture",
+        "Url": "https://xivapi.com/Item/40096"
+    },
+    {
+        "ID": 40097,
+        "Icon": "https://xivapi.com/i/034000/034492.png",
+        "Name": "Augmented Vitória do Povo",
+        "Url": "https://xivapi.com/Item/40097"
+    },
+    {
+        "ID": 40098,
+        "Icon": "https://xivapi.com/i/032000/032463.png",
+        "Name": "Augmented Bunny's Crescent",
+        "Url": "https://xivapi.com/Item/40098"
+    },
+    {
+        "ID": 40099,
+        "Icon": "https://xivapi.com/i/032000/032878.png",
+        "Name": "Augmented Ignis Malus",
+        "Url": "https://xivapi.com/Item/40099"
+    },
+    {
+        "ID": 40100,
+        "Icon": "https://xivapi.com/i/033000/033390.png",
+        "Name": "Augmented Encounter in Lilies",
+        "Url": "https://xivapi.com/Item/40100"
+    },
+    {
+        "ID": 40101,
+        "Icon": "https://xivapi.com/i/033000/033389.png",
+        "Name": "Augmented Faerie Fancy",
+        "Url": "https://xivapi.com/Item/40101"
+    },
+    {
+        "ID": 40102,
+        "Icon": "https://xivapi.com/i/034000/034990.png",
+        "Name": "Augmented Star Gazer",
+        "Url": "https://xivapi.com/Item/40102"
+    },
+    {
+        "ID": 40103,
+        "Icon": "https://xivapi.com/i/036000/036547.png",
+        "Name": "Augmented Higan Shigan",
+        "Url": "https://xivapi.com/Item/40103"
+    },
+    {
+        "ID": 40104,
+        "Icon": "https://xivapi.com/i/036000/036846.png",
+        "Name": "Augmented Lamplight Crook",
+        "Url": "https://xivapi.com/Item/40104"
+    },
+    {
+        "ID": 40105,
+        "Icon": "https://xivapi.com/i/036000/036089.png",
+        "Name": "Augmented Cerberus Fang",
+        "Url": "https://xivapi.com/Item/40105"
+    },
+    {
+        "ID": 40106,
+        "Icon": "https://xivapi.com/i/036000/036288.png",
+        "Name": "Augmented Twin Moons",
+        "Url": "https://xivapi.com/Item/40106"
+    },
+    {
+        "ID": 40107,
+        "Icon": "https://xivapi.com/i/037000/037055.png",
+        "Name": "Augmented Isnae Phis",
+        "Url": "https://xivapi.com/Item/40107"
+    },
+    {
+        "ID": 40108,
+        "Icon": "https://xivapi.com/i/037000/037258.png",
+        "Name": "Augmented Avatar's Scythe",
+        "Url": "https://xivapi.com/Item/40108"
+    },
+    {
+        "ID": 40109,
+        "Icon": "https://xivapi.com/i/030000/030258.png",
+        "Name": "Augmented Vessel",
+        "Url": "https://xivapi.com/Item/40109"
+    },
+    {
+        "ID": 40110,
+        "Icon": "https://xivapi.com/i/056000/056572.png",
+        "Name": "Augmented Credendum Circlet of Fending",
+        "Url": "https://xivapi.com/Item/40110"
+    },
+    {
+        "ID": 40111,
+        "Icon": "https://xivapi.com/i/042000/042953.png",
+        "Name": "Augmented Credendum Cuirass of Fending",
+        "Url": "https://xivapi.com/Item/40111"
+    },
+    {
+        "ID": 40112,
+        "Icon": "https://xivapi.com/i/056000/056087.png",
+        "Name": "Augmented Credendum Gauntlets of Fending",
+        "Url": "https://xivapi.com/Item/40112"
+    },
+    {
+        "ID": 40113,
+        "Icon": "https://xivapi.com/i/047000/047983.png",
+        "Name": "Augmented Credendum Breeches of Fending",
+        "Url": "https://xivapi.com/Item/40113"
+    },
+    {
+        "ID": 40114,
+        "Icon": "https://xivapi.com/i/049000/049576.png",
+        "Name": "Augmented Credendum Sollerets of Fending",
+        "Url": "https://xivapi.com/Item/40114"
+    },
+    {
+        "ID": 40115,
+        "Icon": "https://xivapi.com/i/056000/056573.png",
+        "Name": "Augmented Credendum Circlet of Maiming",
+        "Url": "https://xivapi.com/Item/40115"
+    },
+    {
+        "ID": 40116,
+        "Icon": "https://xivapi.com/i/042000/042954.png",
+        "Name": "Augmented Credendum Cuirass of Maiming",
+        "Url": "https://xivapi.com/Item/40116"
+    },
+    {
+        "ID": 40117,
+        "Icon": "https://xivapi.com/i/056000/056088.png",
+        "Name": "Augmented Credendum Gauntlets of Maiming",
+        "Url": "https://xivapi.com/Item/40117"
+    },
+    {
+        "ID": 40118,
+        "Icon": "https://xivapi.com/i/047000/047984.png",
+        "Name": "Augmented Credendum Breeches of Maiming",
+        "Url": "https://xivapi.com/Item/40118"
+    },
+    {
+        "ID": 40119,
+        "Icon": "https://xivapi.com/i/049000/049577.png",
+        "Name": "Augmented Credendum Sollerets of Maiming",
+        "Url": "https://xivapi.com/Item/40119"
+    },
+    {
+        "ID": 40120,
+        "Icon": "https://xivapi.com/i/056000/056578.png",
+        "Name": "Augmented Credendum Blinder of Striking",
+        "Url": "https://xivapi.com/Item/40120"
+    },
+    {
+        "ID": 40121,
+        "Icon": "https://xivapi.com/i/042000/042959.png",
+        "Name": "Augmented Credendum Corselet of Striking",
+        "Url": "https://xivapi.com/Item/40121"
+    },
+    {
+        "ID": 40122,
+        "Icon": "https://xivapi.com/i/056000/056093.png",
+        "Name": "Augmented Credendum Armguards of Striking",
+        "Url": "https://xivapi.com/Item/40122"
+    },
+    {
+        "ID": 40123,
+        "Icon": "https://xivapi.com/i/047000/047989.png",
+        "Name": "Augmented Credendum Trousers of Striking",
+        "Url": "https://xivapi.com/Item/40123"
+    },
+    {
+        "ID": 40124,
+        "Icon": "https://xivapi.com/i/049000/049582.png",
+        "Name": "Augmented Credendum Longboots of Striking",
+        "Url": "https://xivapi.com/Item/40124"
+    },
+    {
+        "ID": 40125,
+        "Icon": "https://xivapi.com/i/056000/056576.png",
+        "Name": "Augmented Credendum Hat of Aiming",
+        "Url": "https://xivapi.com/Item/40125"
+    },
+    {
+        "ID": 40126,
+        "Icon": "https://xivapi.com/i/042000/042957.png",
+        "Name": "Augmented Credendum Mail of Aiming",
+        "Url": "https://xivapi.com/Item/40126"
+    },
+    {
+        "ID": 40127,
+        "Icon": "https://xivapi.com/i/056000/056091.png",
+        "Name": "Augmented Credendum Halfgloves of Aiming",
+        "Url": "https://xivapi.com/Item/40127"
+    },
+    {
+        "ID": 40128,
+        "Icon": "https://xivapi.com/i/047000/047987.png",
+        "Name": "Augmented Credendum Hose of Aiming",
+        "Url": "https://xivapi.com/Item/40128"
+    },
+    {
+        "ID": 40129,
+        "Icon": "https://xivapi.com/i/049000/049580.png",
+        "Name": "Augmented Credendum Shoes of Aiming",
+        "Url": "https://xivapi.com/Item/40129"
+    },
+    {
+        "ID": 40130,
+        "Icon": "https://xivapi.com/i/056000/056577.png",
+        "Name": "Augmented Credendum Blinder of Scouting",
+        "Url": "https://xivapi.com/Item/40130"
+    },
+    {
+        "ID": 40131,
+        "Icon": "https://xivapi.com/i/042000/042958.png",
+        "Name": "Augmented Credendum Corselet of Scouting",
+        "Url": "https://xivapi.com/Item/40131"
+    },
+    {
+        "ID": 40132,
+        "Icon": "https://xivapi.com/i/056000/056092.png",
+        "Name": "Augmented Credendum Armguards of Scouting",
+        "Url": "https://xivapi.com/Item/40132"
+    },
+    {
+        "ID": 40133,
+        "Icon": "https://xivapi.com/i/047000/047988.png",
+        "Name": "Augmented Credendum Trousers of Scouting",
+        "Url": "https://xivapi.com/Item/40133"
+    },
+    {
+        "ID": 40134,
+        "Icon": "https://xivapi.com/i/049000/049581.png",
+        "Name": "Augmented Credendum Longboots of Scouting",
+        "Url": "https://xivapi.com/Item/40134"
+    },
+    {
+        "ID": 40135,
+        "Icon": "https://xivapi.com/i/056000/056574.png",
+        "Name": "Augmented Credendum Circlet of Healing",
+        "Url": "https://xivapi.com/Item/40135"
+    },
+    {
+        "ID": 40136,
+        "Icon": "https://xivapi.com/i/042000/042955.png",
+        "Name": "Augmented Credendum Surcoat of Healing",
+        "Url": "https://xivapi.com/Item/40136"
+    },
+    {
+        "ID": 40137,
+        "Icon": "https://xivapi.com/i/056000/056089.png",
+        "Name": "Augmented Credendum Gauntlets of Healing",
+        "Url": "https://xivapi.com/Item/40137"
+    },
+    {
+        "ID": 40138,
+        "Icon": "https://xivapi.com/i/047000/047985.png",
+        "Name": "Augmented Credendum Hose of Healing",
+        "Url": "https://xivapi.com/Item/40138"
+    },
+    {
+        "ID": 40139,
+        "Icon": "https://xivapi.com/i/049000/049578.png",
+        "Name": "Augmented Credendum Sollerets of Healing",
+        "Url": "https://xivapi.com/Item/40139"
+    },
+    {
+        "ID": 40140,
+        "Icon": "https://xivapi.com/i/056000/056575.png",
+        "Name": "Augmented Credendum Circlet of Casting",
+        "Url": "https://xivapi.com/Item/40140"
+    },
+    {
+        "ID": 40141,
+        "Icon": "https://xivapi.com/i/042000/042956.png",
+        "Name": "Augmented Credendum Surcoat of Casting",
+        "Url": "https://xivapi.com/Item/40141"
+    },
+    {
+        "ID": 40142,
+        "Icon": "https://xivapi.com/i/056000/056090.png",
+        "Name": "Augmented Credendum Gauntlets of Casting",
+        "Url": "https://xivapi.com/Item/40142"
+    },
+    {
+        "ID": 40143,
+        "Icon": "https://xivapi.com/i/047000/047986.png",
+        "Name": "Augmented Credendum Hose of Casting",
+        "Url": "https://xivapi.com/Item/40143"
+    },
+    {
+        "ID": 40144,
+        "Icon": "https://xivapi.com/i/049000/049579.png",
+        "Name": "Augmented Credendum Sollerets of Casting",
+        "Url": "https://xivapi.com/Item/40144"
+    },
+    {
+        "ID": 40145,
+        "Icon": "https://xivapi.com/i/055000/055512.png",
+        "Name": "Augmented Credendum Earrings of Fending",
+        "Url": "https://xivapi.com/Item/40145"
+    },
+    {
+        "ID": 40146,
+        "Icon": "https://xivapi.com/i/055000/055512.png",
+        "Name": "Augmented Credendum Earrings of Slaying",
+        "Url": "https://xivapi.com/Item/40146"
+    },
+    {
+        "ID": 40147,
+        "Icon": "https://xivapi.com/i/055000/055512.png",
+        "Name": "Augmented Credendum Earrings of Aiming",
+        "Url": "https://xivapi.com/Item/40147"
+    },
+    {
+        "ID": 40148,
+        "Icon": "https://xivapi.com/i/055000/055512.png",
+        "Name": "Augmented Credendum Earrings of Healing",
+        "Url": "https://xivapi.com/Item/40148"
+    },
+    {
+        "ID": 40149,
+        "Icon": "https://xivapi.com/i/055000/055512.png",
+        "Name": "Augmented Credendum Earrings of Casting",
+        "Url": "https://xivapi.com/Item/40149"
+    },
+    {
+        "ID": 40150,
+        "Icon": "https://xivapi.com/i/055000/055069.png",
+        "Name": "Augmented Credendum Necklace of Fending",
+        "Url": "https://xivapi.com/Item/40150"
+    },
+    {
+        "ID": 40151,
+        "Icon": "https://xivapi.com/i/055000/055069.png",
+        "Name": "Augmented Credendum Necklace of Slaying",
+        "Url": "https://xivapi.com/Item/40151"
+    },
+    {
+        "ID": 40152,
+        "Icon": "https://xivapi.com/i/055000/055069.png",
+        "Name": "Augmented Credendum Necklace of Aiming",
+        "Url": "https://xivapi.com/Item/40152"
+    },
+    {
+        "ID": 40153,
+        "Icon": "https://xivapi.com/i/055000/055069.png",
+        "Name": "Augmented Credendum Necklace of Healing",
+        "Url": "https://xivapi.com/Item/40153"
+    },
+    {
+        "ID": 40154,
+        "Icon": "https://xivapi.com/i/055000/055069.png",
+        "Name": "Augmented Credendum Necklace of Casting",
+        "Url": "https://xivapi.com/Item/40154"
+    },
+    {
+        "ID": 40155,
+        "Icon": "https://xivapi.com/i/055000/055869.png",
+        "Name": "Augmented Credendum Bracelets of Fending",
+        "Url": "https://xivapi.com/Item/40155"
+    },
+    {
+        "ID": 40156,
+        "Icon": "https://xivapi.com/i/055000/055869.png",
+        "Name": "Augmented Credendum Bracelets of Slaying",
+        "Url": "https://xivapi.com/Item/40156"
+    },
+    {
+        "ID": 40157,
+        "Icon": "https://xivapi.com/i/055000/055869.png",
+        "Name": "Augmented Credendum Bracelets of Aiming",
+        "Url": "https://xivapi.com/Item/40157"
+    },
+    {
+        "ID": 40158,
+        "Icon": "https://xivapi.com/i/055000/055869.png",
+        "Name": "Augmented Credendum Bracelets of Healing",
+        "Url": "https://xivapi.com/Item/40158"
+    },
+    {
+        "ID": 40159,
+        "Icon": "https://xivapi.com/i/055000/055869.png",
+        "Name": "Augmented Credendum Bracelets of Casting",
+        "Url": "https://xivapi.com/Item/40159"
+    },
+    {
+        "ID": 40160,
+        "Icon": "https://xivapi.com/i/054000/054720.png",
+        "Name": "Augmented Credendum Ring of Fending",
+        "Url": "https://xivapi.com/Item/40160"
+    },
+    {
+        "ID": 40161,
+        "Icon": "https://xivapi.com/i/054000/054720.png",
+        "Name": "Augmented Credendum Ring of Slaying",
+        "Url": "https://xivapi.com/Item/40161"
+    },
+    {
+        "ID": 40162,
+        "Icon": "https://xivapi.com/i/054000/054720.png",
+        "Name": "Augmented Credendum Ring of Aiming",
+        "Url": "https://xivapi.com/Item/40162"
+    },
+    {
+        "ID": 40163,
+        "Icon": "https://xivapi.com/i/054000/054720.png",
+        "Name": "Augmented Credendum Ring of Healing",
+        "Url": "https://xivapi.com/Item/40163"
+    },
+    {
+        "ID": 40164,
+        "Icon": "https://xivapi.com/i/054000/054720.png",
+        "Name": "Augmented Credendum Ring of Casting",
+        "Url": "https://xivapi.com/Item/40164"
+    },
+    {
+        "ID": 40165,
+        "Icon": "https://xivapi.com/i/030000/030668.png",
+        "Name": "Sword of Ascension",
+        "Url": "https://xivapi.com/Item/40165"
+    },
+    {
+        "ID": 40166,
+        "Icon": "https://xivapi.com/i/030000/030832.png",
+        "Name": "Knuckles of Ascension",
+        "Url": "https://xivapi.com/Item/40166"
+    },
+    {
+        "ID": 40167,
+        "Icon": "https://xivapi.com/i/031000/031242.png",
+        "Name": "Bardiche of Ascension",
+        "Url": "https://xivapi.com/Item/40167"
+    },
+    {
+        "ID": 40168,
+        "Icon": "https://xivapi.com/i/031000/031644.png",
+        "Name": "Trident of Ascension",
+        "Url": "https://xivapi.com/Item/40168"
+    },
+    {
+        "ID": 40169,
+        "Icon": "https://xivapi.com/i/032000/032032.png",
+        "Name": "Harp Bow of Ascension",
+        "Url": "https://xivapi.com/Item/40169"
+    },
+    {
+        "ID": 40170,
+        "Icon": "https://xivapi.com/i/033000/033618.png",
+        "Name": "Knives of Ascension",
+        "Url": "https://xivapi.com/Item/40170"
+    },
+    {
+        "ID": 40171,
+        "Icon": "https://xivapi.com/i/034000/034396.png",
+        "Name": "Greatsword of Ascension",
+        "Url": "https://xivapi.com/Item/40171"
+    },
+    {
+        "ID": 40172,
+        "Icon": "https://xivapi.com/i/034000/034491.png",
+        "Name": "Knifelock of Ascension",
+        "Url": "https://xivapi.com/Item/40172"
+    },
+    {
+        "ID": 40173,
+        "Icon": "https://xivapi.com/i/032000/032462.png",
+        "Name": "Cane of Ascension",
+        "Url": "https://xivapi.com/Item/40173"
+    },
+    {
+        "ID": 40174,
+        "Icon": "https://xivapi.com/i/032000/032877.png",
+        "Name": "Rod of Ascension",
+        "Url": "https://xivapi.com/Item/40174"
+    },
+    {
+        "ID": 40175,
+        "Icon": "https://xivapi.com/i/033000/033388.png",
+        "Name": "Grimoire of Ascension",
+        "Url": "https://xivapi.com/Item/40175"
+    },
+    {
+        "ID": 40176,
+        "Icon": "https://xivapi.com/i/033000/033387.png",
+        "Name": "Codex of Ascension",
+        "Url": "https://xivapi.com/Item/40176"
+    },
+    {
+        "ID": 40177,
+        "Icon": "https://xivapi.com/i/034000/034989.png",
+        "Name": "Planisphere of Ascension",
+        "Url": "https://xivapi.com/Item/40177"
+    },
+    {
+        "ID": 40178,
+        "Icon": "https://xivapi.com/i/036000/036546.png",
+        "Name": "Samurai Blade of Ascension",
+        "Url": "https://xivapi.com/Item/40178"
+    },
+    {
+        "ID": 40179,
+        "Icon": "https://xivapi.com/i/036000/036845.png",
+        "Name": "Foil of Ascension",
+        "Url": "https://xivapi.com/Item/40179"
+    },
+    {
+        "ID": 40180,
+        "Icon": "https://xivapi.com/i/036000/036088.png",
+        "Name": "Bayonet of Ascension",
+        "Url": "https://xivapi.com/Item/40180"
+    },
+    {
+        "ID": 40181,
+        "Icon": "https://xivapi.com/i/036000/036287.png",
+        "Name": "War Quoits of Ascension",
+        "Url": "https://xivapi.com/Item/40181"
+    },
+    {
+        "ID": 40182,
+        "Icon": "https://xivapi.com/i/037000/037054.png",
+        "Name": "Wings of Ascension",
+        "Url": "https://xivapi.com/Item/40182"
+    },
+    {
+        "ID": 40183,
+        "Icon": "https://xivapi.com/i/037000/037257.png",
+        "Name": "War Scythe of Ascension",
+        "Url": "https://xivapi.com/Item/40183"
+    },
+    {
+        "ID": 40184,
+        "Icon": "https://xivapi.com/i/030000/030257.png",
+        "Name": "Kite Shield of Ascension",
+        "Url": "https://xivapi.com/Item/40184"
+    },
+    {
+        "ID": 40185,
+        "Icon": "https://xivapi.com/i/056000/056594.png",
+        "Name": "Ascension Face Guard of Fending",
+        "Url": "https://xivapi.com/Item/40185"
+    },
+    {
+        "ID": 40186,
+        "Icon": "https://xivapi.com/i/042000/042975.png",
+        "Name": "Ascension Mail of Fending",
+        "Url": "https://xivapi.com/Item/40186"
+    },
+    {
+        "ID": 40187,
+        "Icon": "https://xivapi.com/i/056000/056104.png",
+        "Name": "Ascension Gauntlets of Fending",
+        "Url": "https://xivapi.com/Item/40187"
+    },
+    {
+        "ID": 40188,
+        "Icon": "https://xivapi.com/i/057000/057503.png",
+        "Name": "Ascension Hose of Fending",
+        "Url": "https://xivapi.com/Item/40188"
+    },
+    {
+        "ID": 40189,
+        "Icon": "https://xivapi.com/i/049000/049597.png",
+        "Name": "Ascension Sollerets of Fending",
+        "Url": "https://xivapi.com/Item/40189"
+    },
+    {
+        "ID": 40190,
+        "Icon": "https://xivapi.com/i/056000/056595.png",
+        "Name": "Ascension Face Guard of Maiming",
+        "Url": "https://xivapi.com/Item/40190"
+    },
+    {
+        "ID": 40191,
+        "Icon": "https://xivapi.com/i/042000/042976.png",
+        "Name": "Ascension Mail of Maiming",
+        "Url": "https://xivapi.com/Item/40191"
+    },
+    {
+        "ID": 40192,
+        "Icon": "https://xivapi.com/i/056000/056105.png",
+        "Name": "Ascension Gauntlets of Maiming",
+        "Url": "https://xivapi.com/Item/40192"
+    },
+    {
+        "ID": 40193,
+        "Icon": "https://xivapi.com/i/057000/057504.png",
+        "Name": "Ascension Hose of Maiming",
+        "Url": "https://xivapi.com/Item/40193"
+    },
+    {
+        "ID": 40194,
+        "Icon": "https://xivapi.com/i/049000/049598.png",
+        "Name": "Ascension Sollerets of Maiming",
+        "Url": "https://xivapi.com/Item/40194"
+    },
+    {
+        "ID": 40195,
+        "Icon": "https://xivapi.com/i/056000/056598.png",
+        "Name": "Ascension Hat of Striking",
+        "Url": "https://xivapi.com/Item/40195"
+    },
+    {
+        "ID": 40196,
+        "Icon": "https://xivapi.com/i/042000/042979.png",
+        "Name": "Ascension Cloak of Striking",
+        "Url": "https://xivapi.com/Item/40196"
+    },
+    {
+        "ID": 40197,
+        "Icon": "https://xivapi.com/i/056000/056108.png",
+        "Name": "Ascension Gloves of Striking",
+        "Url": "https://xivapi.com/Item/40197"
+    },
+    {
+        "ID": 40198,
+        "Icon": "https://xivapi.com/i/057000/057507.png",
+        "Name": "Ascension Hose of Striking",
+        "Url": "https://xivapi.com/Item/40198"
+    },
+    {
+        "ID": 40199,
+        "Icon": "https://xivapi.com/i/049000/049601.png",
+        "Name": "Ascension Sabatons of Striking",
+        "Url": "https://xivapi.com/Item/40199"
+    },
+    {
+        "ID": 40200,
+        "Icon": "https://xivapi.com/i/056000/056599.png",
+        "Name": "Ascension Hat of Aiming",
+        "Url": "https://xivapi.com/Item/40200"
+    },
+    {
+        "ID": 40201,
+        "Icon": "https://xivapi.com/i/042000/042980.png",
+        "Name": "Ascension Cloak of Aiming",
+        "Url": "https://xivapi.com/Item/40201"
+    },
+    {
+        "ID": 40202,
+        "Icon": "https://xivapi.com/i/056000/056109.png",
+        "Name": "Ascension Gloves of Aiming",
+        "Url": "https://xivapi.com/Item/40202"
+    },
+    {
+        "ID": 40203,
+        "Icon": "https://xivapi.com/i/057000/057508.png",
+        "Name": "Ascension Hose of Aiming",
+        "Url": "https://xivapi.com/Item/40203"
+    },
+    {
+        "ID": 40204,
+        "Icon": "https://xivapi.com/i/049000/049602.png",
+        "Name": "Ascension Sabatons of Aiming",
+        "Url": "https://xivapi.com/Item/40204"
+    },
+    {
+        "ID": 40205,
+        "Icon": "https://xivapi.com/i/056000/056600.png",
+        "Name": "Ascension Hat of Scouting",
+        "Url": "https://xivapi.com/Item/40205"
+    },
+    {
+        "ID": 40206,
+        "Icon": "https://xivapi.com/i/042000/042981.png",
+        "Name": "Ascension Cloak of Scouting",
+        "Url": "https://xivapi.com/Item/40206"
+    },
+    {
+        "ID": 40207,
+        "Icon": "https://xivapi.com/i/056000/056110.png",
+        "Name": "Ascension Gloves of Scouting",
+        "Url": "https://xivapi.com/Item/40207"
+    },
+    {
+        "ID": 40208,
+        "Icon": "https://xivapi.com/i/057000/057509.png",
+        "Name": "Ascension Hose of Scouting",
+        "Url": "https://xivapi.com/Item/40208"
+    },
+    {
+        "ID": 40209,
+        "Icon": "https://xivapi.com/i/049000/049603.png",
+        "Name": "Ascension Sabatons of Scouting",
+        "Url": "https://xivapi.com/Item/40209"
+    },
+    {
+        "ID": 40210,
+        "Icon": "https://xivapi.com/i/056000/056596.png",
+        "Name": "Ascension Turban of Healing",
+        "Url": "https://xivapi.com/Item/40210"
+    },
+    {
+        "ID": 40211,
+        "Icon": "https://xivapi.com/i/042000/042977.png",
+        "Name": "Ascension Robe of Healing",
+        "Url": "https://xivapi.com/Item/40211"
+    },
+    {
+        "ID": 40212,
+        "Icon": "https://xivapi.com/i/056000/056106.png",
+        "Name": "Ascension Gloves of Healing",
+        "Url": "https://xivapi.com/Item/40212"
+    },
+    {
+        "ID": 40213,
+        "Icon": "https://xivapi.com/i/057000/057505.png",
+        "Name": "Ascension Longkilt of Healing",
+        "Url": "https://xivapi.com/Item/40213"
+    },
+    {
+        "ID": 40214,
+        "Icon": "https://xivapi.com/i/049000/049599.png",
+        "Name": "Ascension Sandals of Healing",
+        "Url": "https://xivapi.com/Item/40214"
+    },
+    {
+        "ID": 40215,
+        "Icon": "https://xivapi.com/i/056000/056597.png",
+        "Name": "Ascension Turban of Casting",
+        "Url": "https://xivapi.com/Item/40215"
+    },
+    {
+        "ID": 40216,
+        "Icon": "https://xivapi.com/i/042000/042978.png",
+        "Name": "Ascension Robe of Casting",
+        "Url": "https://xivapi.com/Item/40216"
+    },
+    {
+        "ID": 40217,
+        "Icon": "https://xivapi.com/i/056000/056107.png",
+        "Name": "Ascension Gloves of Casting",
+        "Url": "https://xivapi.com/Item/40217"
+    },
+    {
+        "ID": 40218,
+        "Icon": "https://xivapi.com/i/057000/057506.png",
+        "Name": "Ascension Longkilt of Casting",
+        "Url": "https://xivapi.com/Item/40218"
+    },
+    {
+        "ID": 40219,
+        "Icon": "https://xivapi.com/i/049000/049600.png",
+        "Name": "Ascension Sandals of Casting",
+        "Url": "https://xivapi.com/Item/40219"
+    },
+    {
+        "ID": 40220,
+        "Icon": "https://xivapi.com/i/055000/055515.png",
+        "Name": "Ascension Earring of Fending",
+        "Url": "https://xivapi.com/Item/40220"
+    },
+    {
+        "ID": 40221,
+        "Icon": "https://xivapi.com/i/055000/055515.png",
+        "Name": "Ascension Earring of Slaying",
+        "Url": "https://xivapi.com/Item/40221"
+    },
+    {
+        "ID": 40222,
+        "Icon": "https://xivapi.com/i/055000/055515.png",
+        "Name": "Ascension Earring of Aiming",
+        "Url": "https://xivapi.com/Item/40222"
+    },
+    {
+        "ID": 40223,
+        "Icon": "https://xivapi.com/i/055000/055515.png",
+        "Name": "Ascension Earring of Healing",
+        "Url": "https://xivapi.com/Item/40223"
+    },
+    {
+        "ID": 40224,
+        "Icon": "https://xivapi.com/i/055000/055515.png",
+        "Name": "Ascension Earring of Casting",
+        "Url": "https://xivapi.com/Item/40224"
+    },
+    {
+        "ID": 40225,
+        "Icon": "https://xivapi.com/i/055000/055073.png",
+        "Name": "Ascension Necklace of Fending",
+        "Url": "https://xivapi.com/Item/40225"
+    },
+    {
+        "ID": 40226,
+        "Icon": "https://xivapi.com/i/055000/055073.png",
+        "Name": "Ascension Necklace of Slaying",
+        "Url": "https://xivapi.com/Item/40226"
+    },
+    {
+        "ID": 40227,
+        "Icon": "https://xivapi.com/i/055000/055073.png",
+        "Name": "Ascension Necklace of Aiming",
+        "Url": "https://xivapi.com/Item/40227"
+    },
+    {
+        "ID": 40228,
+        "Icon": "https://xivapi.com/i/055000/055073.png",
+        "Name": "Ascension Necklace of Healing",
+        "Url": "https://xivapi.com/Item/40228"
+    },
+    {
+        "ID": 40229,
+        "Icon": "https://xivapi.com/i/055000/055073.png",
+        "Name": "Ascension Necklace of Casting",
+        "Url": "https://xivapi.com/Item/40229"
+    },
+    {
+        "ID": 40230,
+        "Icon": "https://xivapi.com/i/055000/055873.png",
+        "Name": "Ascension Bracelet of Fending",
+        "Url": "https://xivapi.com/Item/40230"
+    },
+    {
+        "ID": 40231,
+        "Icon": "https://xivapi.com/i/055000/055873.png",
+        "Name": "Ascension Bracelet of Slaying",
+        "Url": "https://xivapi.com/Item/40231"
+    },
+    {
+        "ID": 40232,
+        "Icon": "https://xivapi.com/i/055000/055873.png",
+        "Name": "Ascension Bracelet of Aiming",
+        "Url": "https://xivapi.com/Item/40232"
+    },
+    {
+        "ID": 40233,
+        "Icon": "https://xivapi.com/i/055000/055873.png",
+        "Name": "Ascension Bracelet of Healing",
+        "Url": "https://xivapi.com/Item/40233"
+    },
+    {
+        "ID": 40234,
+        "Icon": "https://xivapi.com/i/055000/055873.png",
+        "Name": "Ascension Bracelet of Casting",
+        "Url": "https://xivapi.com/Item/40234"
+    },
+    {
+        "ID": 40235,
+        "Icon": "https://xivapi.com/i/054000/054723.png",
+        "Name": "Ascension Ring of Fending",
+        "Url": "https://xivapi.com/Item/40235"
+    },
+    {
+        "ID": 40236,
+        "Icon": "https://xivapi.com/i/054000/054723.png",
+        "Name": "Ascension Ring of Slaying",
+        "Url": "https://xivapi.com/Item/40236"
+    },
+    {
+        "ID": 40237,
+        "Icon": "https://xivapi.com/i/054000/054723.png",
+        "Name": "Ascension Ring of Aiming",
+        "Url": "https://xivapi.com/Item/40237"
+    },
+    {
+        "ID": 40238,
+        "Icon": "https://xivapi.com/i/054000/054723.png",
+        "Name": "Ascension Ring of Healing",
+        "Url": "https://xivapi.com/Item/40238"
+    },
+    {
+        "ID": 40239,
+        "Icon": "https://xivapi.com/i/054000/054723.png",
+        "Name": "Ascension Ring of Casting",
+        "Url": "https://xivapi.com/Item/40239"
+    }
+]
