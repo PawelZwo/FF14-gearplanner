@@ -70,8 +70,8 @@ DATABASES = {
         'ENGINE': os.environ.get("ENGINE"),
         'USER': os.environ.get("DATABASE_USER"),
         'PASSWORD': os.environ.get("DATABASE_PASSWORD"),
-        'PORT': os.environ.get("PORT"),
-        'DATABASE_URL': os.environ.get("DATABASE_URL"),
+        # 'PORT': os.environ.get("PORT"),
+        # 'DATABASE_URL': os.environ.get("DATABASE_URL"),
     }
 }
 
