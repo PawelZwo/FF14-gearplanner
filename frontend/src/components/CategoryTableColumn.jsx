@@ -41,7 +41,7 @@ export default function CategoryTableColumn({ data, category }) {
                 <td>
                   <Stack direction="horizontal" gap={2}>
                     <GearIcon
-                      icon_path={gearPiece.ff14_db_icon}
+                      icon_path={gearPiece.xiv_api_icon}
                       piece_name={gearPiece.gear_name}
                     />
                     <NavLink

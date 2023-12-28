@@ -11,10 +11,12 @@ urlpatterns = [
     path('costs/', api_views.CostList.as_view(), name='cost'),
     path('races/', api_views.RaceList.as_view(), name='race'),
     path('gearsets/', api_views.GearsetList.as_view(), name='gearset'),
+    path('gearsets/add/', api_views.GearsetList.as_view(), name='gearset_add'),
     path('gears/', api_views.GearListAll.as_view(), name='gear'),
     path('gears/add/', api_views.GearAdd.as_view(), name='gear_add'),
     path('gears/list/', api_views.GearList.as_view(), name='gear_list'),
     path('gears/options/', api_views.GearOptions.as_view(), name='gear_options'),
     path('gears/details/<str:slug>/',
          api_views.GearDetails.as_view(), name='gear_details'),
+
 ]

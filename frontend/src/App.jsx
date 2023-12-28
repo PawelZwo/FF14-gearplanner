@@ -27,6 +27,7 @@ import PvpCalc from "./pages/PvpCalc";
 import NotFound from "./pages/NotFound";
 import GearDetails from "./pages/GearDetails";
 import AddGear from "./pages/AddGear";
+import AddGearset from "./pages/AddGearset";
 
 export default function App() {
   return (
@@ -49,6 +50,8 @@ export default function App() {
               <Route path="/gear/:gearSlug" element={<GearDetails />} />
               <Route path="/costs" element={<Cost />} />
               <Route path="/add-gear" element={<AddGear />} />
+              <Route path="/create-gearset" element={<AddGearset />} />
+
               <Route element={<Banner />}>
                 <Route path="/" element={<Home />} />
                 <Route path="/jobs" element={<Job />} />

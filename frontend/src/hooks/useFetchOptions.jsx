@@ -8,7 +8,7 @@ export function useFetchOptions(endpoint) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://192.168.0.73:8000/" + endpoint, {
+        const response = await fetch("http://localhost:8000/" + endpoint, {
           method: "OPTIONS",
         });
         if (!response.ok) throw new Error(response.statusText);

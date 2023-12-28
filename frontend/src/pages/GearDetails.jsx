@@ -75,6 +75,11 @@ export default function GearDetails() {
                 </div>
 
                 <div className="strong20 mb10">
+                  Requires level <strong>{data.required_level}</strong> to
+                  equip.
+                </div>
+
+                <div className="strong20 mb10">
                   Added in patch: <strong>{data.added_in_patch}</strong>
                 </div>
 

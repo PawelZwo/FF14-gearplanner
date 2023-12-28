@@ -131,6 +131,21 @@ export default function SideBar() {
           </Container>
         </Navbar>
       </NavLink>
+
+      <NavLink to="create-gearset/" className="menu-link">
+        <Navbar
+          bg="dark"
+          data-bs-theme="dark"
+          className="bg-body-tertiary mb10"
+        >
+          <Container>
+            <Navbar.Brand>
+              <IoMdAdd className="menu-link-icon ml5 mr10" />
+              Create gearset
+            </Navbar.Brand>
+          </Container>
+        </Navbar>
+      </NavLink>
     </>
   );
 }
