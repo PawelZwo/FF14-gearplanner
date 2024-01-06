@@ -58,7 +58,7 @@ export default function GearDetails() {
           <Row>
             <Stack direction="horizontal" className="mb10" gap={2}>
               <GearIcon
-                icon_path={data.ff14_db_icon}
+                icon_path={data.xiv_api_icon}
                 piece_name={data.gear_name}
                 on_details
               />
