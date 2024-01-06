@@ -10,8 +10,11 @@ urlpatterns = [
     path('jobs/', api_views.JobList.as_view(), name='job'),
     path('costs/', api_views.CostList.as_view(), name='cost'),
     path('races/', api_views.RaceList.as_view(), name='race'),
+
     path('gearsets/', api_views.GearsetList.as_view(), name='gearset'),
-    # path('gearsets/add/', api_views.GearsetList.as_view(), name='gearset_add'),
+    path('gearsets/details/<str:slug>',
+         api_views.GearsetDetails.as_view(), name='gearset_details'),
+
     path('gears/', api_views.GearListAll.as_view(), name='gear'),
     path('gears/add/', api_views.GearAdd.as_view(), name='gear_add'),
     path('gears/list/', api_views.GearList.as_view(), name='gear_list'),

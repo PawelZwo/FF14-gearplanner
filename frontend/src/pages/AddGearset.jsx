@@ -73,11 +73,12 @@ export default function AddGearset() {
 
   let jobHeader;
   const handleChosenJob = (e) => {
-    if (parseInt(e.target.value) !== 0) {
+    let targetJob = parseInt(e.target.value);
+    if (targetJob !== 0) {
       setShowForm(true);
-      setFormData({ ...formData, job: parseInt(e.target.value) });
+      setFormData({ ...formData, job: targetJob });
       jobHeader = jobs
-        .filter((item) => item.id === parseInt(e.target.value))
+        .filter((item) => item.id === targetJob)
         .map((job) => job.job_name);
       setDisplayedJobName(jobHeader[0]);
     } else {
@@ -112,8 +113,11 @@ export default function AddGearset() {
   return (
     <>
       <PageTitle pageName="Create a gearset" />
+
       {gearPending && <Loading />}
+
       {gearError && <ErrorMessage error={gearError} variant="danger" />}
+
       {gearData && (
         <Form onChange={handleFormCheck}>
           <Row>

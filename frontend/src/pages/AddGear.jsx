@@ -10,6 +10,7 @@ import { useFetchOptions } from "../hooks/useFetchOptions";
 
 // Project's small components
 import PageTitle from "../small_components/PageTitle";
+import Loading from "../small_components/Loading";
 
 // React-Bootstrap
 import Form from "react-bootstrap/Form";
@@ -22,7 +23,7 @@ import Alert from "react-bootstrap/Alert";
 export default function AddGear() {
   const { dataOptions } = useFetchOptions("api/gears/options/");
   const { data: costs } = useFetchGet("api/costs/");
-  const { data: jobs } = useFetchGet("api/jobs/");
+  const { data: jobs, isPending: jobsPending } = useFetchGet("api/jobs/");
 
   const [dataPost, setDataPost] = useState(null);
   const [isPendingPost, setIsPendingPost] = useState(true);
@@ -390,6 +391,7 @@ export default function AddGear() {
                 ))}
               </div>
             )}
+            {jobsPending && <Loading />}
           </Form.Group>
         </Row>
 

@@ -9,6 +9,7 @@ import {
   GiBanknote,
   GiSwordsEmblem,
   GiAbdominalArmor,
+  GiSpikedArmor,
 } from "react-icons/gi";
 import { IoMdAdd } from "react-icons/io";
 
@@ -117,7 +118,7 @@ export default function SideBar() {
         </Navbar>
       </NavLink>
 
-      <NavLink to="add-gear/" className="menu-link">
+      <NavLink to="gearset/" className="menu-link">
         <Navbar
           bg="dark"
           data-bs-theme="dark"
@@ -125,8 +126,8 @@ export default function SideBar() {
         >
           <Container>
             <Navbar.Brand>
-              <IoMdAdd className="menu-link-icon ml5 mr10" />
-              Add gear
+              <GiSpikedArmor className="menu-link-icon ml5 mr10" />
+              All gearsets
             </Navbar.Brand>
           </Container>
         </Navbar>
@@ -142,6 +143,21 @@ export default function SideBar() {
             <Navbar.Brand>
               <IoMdAdd className="menu-link-icon ml5 mr10" />
               Create gearset
+            </Navbar.Brand>
+          </Container>
+        </Navbar>
+      </NavLink>
+
+      <NavLink to="add-gear/" className="menu-link">
+        <Navbar
+          bg="dark"
+          data-bs-theme="dark"
+          className="bg-body-tertiary mb10"
+        >
+          <Container>
+            <Navbar.Brand>
+              <IoMdAdd className="menu-link-icon ml5 mr10" />
+              Add gear
             </Navbar.Brand>
           </Container>
         </Navbar>

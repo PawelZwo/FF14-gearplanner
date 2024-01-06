@@ -28,6 +28,8 @@ import NotFound from "./pages/NotFound";
 import GearDetails from "./pages/GearDetails";
 import AddGear from "./pages/AddGear";
 import AddGearset from "./pages/AddGearset";
+import Gearset from "./pages/Gearset";
+import GearsetDetails from "./pages/GearsetDetails";
 
 export default function App() {
   return (
@@ -51,6 +53,11 @@ export default function App() {
               <Route path="/costs" element={<Cost />} />
               <Route path="/add-gear" element={<AddGear />} />
               <Route path="/create-gearset" element={<AddGearset />} />
+              <Route path="/gearset" element={<Gearset />} />
+              <Route
+                path="/gearset/:gearsetSlug"
+                element={<GearsetDetails />}
+              />
 
               <Route element={<Banner />}>
                 <Route path="/" element={<Home />} />
