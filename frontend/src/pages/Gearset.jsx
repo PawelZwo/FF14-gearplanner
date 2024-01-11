@@ -14,7 +14,7 @@ import Loading from "../small_components/Loading";
 import ErrorMessage from "../small_components/ErrorMessage";
 
 export default function Gear() {
-  const { data, isPending, error } = useFetchGet("api/gearsets/");
+  const { data, isPending, error } = useFetchGet("api/gearsets/list/");
 
   return (
     <>

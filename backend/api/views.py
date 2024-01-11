@@ -35,7 +35,7 @@ class CostList(generics.ListAPIView):
     serializer_class = CostSerializer
 
 
-class GearsetList(generics.ListCreateAPIView):
+class GearsetList(generics.ListAPIView):
     queryset = Gearset.objects.all()
     serializer_class = GearsetSerializer
 
