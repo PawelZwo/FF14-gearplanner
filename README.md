@@ -6,6 +6,7 @@
 - [Installation](#installation)
 - [Technologies](#technologies)
 - [Requirements](#requirements)
+- [Features](#features)
 - [API](#api)
 - [Inspiration](#inspiration)
 - [Additional info](#additional-info)
@@ -65,6 +66,13 @@ Naturally each backbone of this app has individual needs for dependencies. You c
 | psycopng2-binary ^2.9.90     | bootstrap ^5.3.2         |
 | python-dotenv                | react-router-dom ^6.18.0 |
 | django-autoslug ^1.9.9       |                          |
+
+## Features
+
+As for now with this app you can:
+
+- [x] View Gear list and sort them by Category
+- [ ]
 
 ## API
 
