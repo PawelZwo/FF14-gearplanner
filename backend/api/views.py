@@ -35,17 +35,14 @@ class CostList(generics.ListAPIView):
     serializer_class = CostSerializer
 
 
+# Gearset model endpoints
+
 class GearsetList(generics.ListAPIView):
     queryset = Gearset.objects.all()
     serializer_class = GearsetSerializer
 
 
 # Gear model endpoints
-class GearListAll(generics.ListCreateAPIView):
-    # For returning all instances of Gear model
-    queryset = Gear.objects.all()
-    serializer_class = GearSerializer
-
 
 class GearAdd(generics.ListCreateAPIView):
     # For returning all instances of Gear model
