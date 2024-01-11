@@ -18,7 +18,7 @@ export function useFetchPost(endpoint, objData) {
       };
       try {
         const response = await fetch(
-          "http://192.168.0.73:8000/" + endpoint,
+          "http://localhost:8000/" + endpoint,
           postData
         );
         if (!response.ok) throw new Error(response.statusText);

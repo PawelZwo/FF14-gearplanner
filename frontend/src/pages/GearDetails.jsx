@@ -58,7 +58,7 @@ export default function GearDetails() {
           <Row>
             <Stack direction="horizontal" className="mb10" gap={2}>
               <GearIcon
-                icon_path={data.ff14_db_icon}
+                icon_path={data.xiv_api_icon}
                 piece_name={data.gear_name}
                 on_details
               />
@@ -72,6 +72,11 @@ export default function GearDetails() {
                 <div className="strong20 mb10">
                   <strong>{data.item_level}</strong> ilvl{" "}
                   <strong>{data.cost_name}</strong>
+                </div>
+
+                <div className="strong20 mb10">
+                  Requires level <strong>{data.required_level}</strong> to
+                  equip.
                 </div>
 
                 <div className="strong20 mb10">
@@ -212,6 +217,14 @@ export default function GearDetails() {
                       <td>Mind</td>
                       <td>
                         <strong>{data.mind}</strong>
+                      </td>
+                    </tr>
+                  )}
+                  {data.tenacity !== 0 && (
+                    <tr>
+                      <td>Tenacity</td>
+                      <td>
+                        <strong>{data.tenacity}</strong>
                       </td>
                     </tr>
                   )}

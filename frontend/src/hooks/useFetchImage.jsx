@@ -2,23 +2,19 @@
 import { useState, useEffect } from "react";
 
 export function useFetchGet(endpoint) {
-  const [data, setData] = useState(null);
-  const [isPending, setIsPending] = useState(true);
+  const [imageData, setImageData] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      setIsPending(true);
       try {
-        const response = await fetch("http://localhost:8000/" + endpoint);
+        const response = await fetch("https://xivapi.com/" + endpoint);
         if (!response.ok) throw new Error(response.statusText);
         const json = await response.json();
-        setIsPending(false);
-        setData(json);
+        setImageData(json);
         setError(null);
       } catch (error) {
-        setError(`Could not fetch data (${error} )`);
-        setIsPending(false);
+        setError(`Could not fetch the image (${error} )`);
       }
     };
     fetchData();
@@ -27,5 +23,5 @@ export function useFetchGet(endpoint) {
       new AbortController().abort();
     };
   }, [endpoint]);
-  return { data, isPending, error };
+  return { imageData, error };
 }

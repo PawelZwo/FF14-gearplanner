@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 // React-Router
-import { redirectm, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // Custom hooks
 import { useFetchGet } from "../hooks/useFetchGet";
@@ -10,6 +10,7 @@ import { useFetchOptions } from "../hooks/useFetchOptions";
 
 // Project's small components
 import PageTitle from "../small_components/PageTitle";
+import Loading from "../small_components/Loading";
 
 // React-Bootstrap
 import Form from "react-bootstrap/Form";
@@ -22,7 +23,7 @@ import Alert from "react-bootstrap/Alert";
 export default function AddGear() {
   const { dataOptions } = useFetchOptions("api/gears/options/");
   const { data: costs } = useFetchGet("api/costs/");
-  const { data: jobs } = useFetchGet("api/jobs/");
+  const { data: jobs, isPending: jobsPending } = useFetchGet("api/jobs/");
 
   const [dataPost, setDataPost] = useState(null);
   const [isPendingPost, setIsPendingPost] = useState(true);
@@ -38,8 +39,9 @@ export default function AddGear() {
     cost: "",
     job: [],
     ff14_db_index: "",
-    ff14_db_icon: "",
+    xiv_api_icon: "",
     item_level: null,
+    required_level: null,
     physical_dmg: null,
     magical_dmg: null,
     auto_attack: null,
@@ -102,7 +104,7 @@ export default function AddGear() {
     };
     try {
       const response = await fetch(
-        "http://192.168.0.73:8000/" + endpoint,
+        "http://localhost:8000/" + endpoint,
         postData
       );
       if (!response.ok) throw new Error(response.statusText);
@@ -111,7 +113,7 @@ export default function AddGear() {
       setDataPost(json);
       setErrorPost(null);
     } catch (error) {
-      setErrorPost(`Could not Fetch Data (${error} )`);
+      setErrorPost(`Could not Fetch Data (${error})`);
       setIsPendingPost(false);
     }
   };
@@ -137,7 +139,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearName"
                 label="Name"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Control
                   type="text"
@@ -158,7 +160,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearItemLevel"
                 label="Item level"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Control
                   type="number"
@@ -175,18 +177,38 @@ export default function AddGear() {
         </Row>
 
         <Row>
-          <Col sm={8}>
+          <Col sm={4}>
+            <Form.Group className="mb10" controlId="formGearRequiredLevel">
+              <FloatingLabel
+                controlId="floatingGearRequiredLevel"
+                label="Required level"
+                className="form__input_text"
+              >
+                <Form.Control
+                  type="number"
+                  min="1"
+                  max="120"
+                  placeholder=" "
+                  required
+                  name="required_level"
+                  onInput={handleInputChange}
+                />
+              </FloatingLabel>
+            </Form.Group>
+          </Col>
+
+          <Col sm={4}>
             <Form.Group className="mb10" controlId="formGearIconUrl">
               <FloatingLabel
                 controlId="floatingGearIconUrl"
                 label="Icon url"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Control
                   type="text"
                   placeholder=" "
                   required
-                  name="ff14_db_icon"
+                  name="xiv_api_icon"
                   onInput={handleInputChange}
                 />
               </FloatingLabel>
@@ -202,7 +224,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearDBIndex"
                 label="FF14 DB index"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Control
                   type="text"
@@ -226,7 +248,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearPatch"
                 label="Patch"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Select
                   required
@@ -251,7 +273,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearSlot"
                 label="Slot"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Select
                   required
@@ -276,7 +298,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearCategory"
                 label="Category"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Select
                   required
@@ -303,7 +325,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearAcquisition"
                 label="Acquisition"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Select
                   required
@@ -328,7 +350,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearCost"
                 label="Cost"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Select
                   required
@@ -369,6 +391,7 @@ export default function AddGear() {
                 ))}
               </div>
             )}
+            {jobsPending && <Loading />}
           </Form.Group>
         </Row>
 
@@ -380,7 +403,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearPhysicalDamage"
                 label="Physical damage"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Control
                   type="number"
@@ -400,7 +423,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearMagicalDamage"
                 label="Magical damage"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Control
                   type="number"
@@ -420,7 +443,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearAutoAttack"
                 label="Auto attack"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Control
                   type="text"
@@ -438,7 +461,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearDelay"
                 label="Delay"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Control
                   type="text"
@@ -462,7 +485,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearBlockStrength"
                 label="Block strength"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Control
                   type="number"
@@ -482,7 +505,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearBlockRate"
                 label="Block rate"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Control
                   type="number"
@@ -502,7 +525,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearDefense"
                 label="Defense"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Control
                   type="number"
@@ -522,7 +545,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearMagicDefense"
                 label="Magic defense"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Control
                   type="number"
@@ -545,7 +568,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearVitality"
                 label="Vitality"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Control
                   type="number"
@@ -565,7 +588,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearStrength"
                 label="Strength"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Control
                   type="number"
@@ -585,7 +608,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearDexterity"
                 label="Dexterity"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Control
                   type="number"
@@ -605,7 +628,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearIntelligence"
                 label="Intelligence"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Control
                   type="number"
@@ -625,7 +648,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearMind"
                 label="Mind"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Control
                   type="number"
@@ -648,7 +671,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearTenacity"
                 label="Tenacity"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Control
                   type="number"
@@ -668,7 +691,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearPiety"
                 label="Piety"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Control
                   type="number"
@@ -688,7 +711,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearCriticalRate"
                 label="Critical rate"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Control
                   type="number"
@@ -708,7 +731,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearDirectHit"
                 label="Direct hit"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Control
                   type="number"
@@ -728,7 +751,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearDetermination"
                 label="Determination"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Control
                   type="number"
@@ -748,7 +771,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearSkillSpeed"
                 label="Skill speed"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Control
                   type="number"
@@ -768,7 +791,7 @@ export default function AddGear() {
               <FloatingLabel
                 controlId="floatingGearSpellSpeed"
                 label="Spell speed"
-                style={{ color: "black" }}
+                className="form__input_text"
               >
                 <Form.Control
                   type="number"

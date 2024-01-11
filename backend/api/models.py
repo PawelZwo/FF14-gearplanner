@@ -227,13 +227,16 @@ class Gear(models.Model):
     ff14_db_index = models.CharField(
         max_length=20
     )
-    ff14_db_icon = models.CharField(
+    xiv_api_icon = models.CharField(
         max_length=100
     )
 
     # Gear actual stats
     item_level = models.PositiveSmallIntegerField(
         db_comment="Item level of the gear"
+    )
+    required_level = models.PositiveSmallIntegerField(
+        db_comment="Level needed to equip"
     )
     physical_dmg = models.PositiveSmallIntegerField(
         null=True,

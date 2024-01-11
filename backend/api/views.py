@@ -69,3 +69,10 @@ class GearDetails(APIView):
         instance = get_object_or_404(Gear, slug=slug)
         serializer = GearSerializer(instance)
         return Response(serializer.data)
+
+
+class GearsetDetails(APIView):
+    def get(self, request, slug, format=None):
+        instance = get_object_or_404(Gearset, slug=slug)
+        serializer = GearsetSerializer(instance)
+        return Response(serializer.data)

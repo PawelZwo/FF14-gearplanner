@@ -2,6 +2,7 @@
     --main-important-colour: #658bf5;
     --main-background: #212529;
     --main-link-text-colour: white;
+    --header-text-size: 24px;
 }
 
 strong {
@@ -9,7 +10,7 @@ strong {
 }
 
 .footer-legal {
-    font-size: 12px;
+    font-size: calc(var(--header-text-size) /2);
     position: sticky;
 }
 
@@ -30,7 +31,7 @@ strong {
 
 .header {
     color: var(--main-important-colour);
-    font-size: 24px;
+    font-size: var(--header-text-size);
     position: sticky;
 }
 
@@ -153,4 +154,30 @@ strong {
 .mtb0 {
     margin-top: 0px;
     margin-bottom: 0px;
+}
+
+.form__input_text {
+    color: black;
+}
+
+.form__input_label {
+    color: white;
+}
+
+.form__input_w80 {
+    width: 80%;
+}
+
+.job-header {
+    margin-left: 22%;
+    margin-bottom: 10%;
+    font-size: var(--header-text-size);
+}
+
+.left-side-slots {
+    margin-left: 40%;
+}
+
+div.items-rows {
+    padding: 10px;
 }
