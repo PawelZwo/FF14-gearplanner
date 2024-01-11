@@ -7,6 +7,7 @@
 - [Technologies](#technologies)
 - [Requirements](#requirements)
 - [Features](#features)
+- [Todo](#todo)
 - [API](#api)
 - [Inspiration](#inspiration)
 - [Additional info](#additional-info)
@@ -77,12 +78,16 @@ Naturally each backbone of this app has individual needs for dependencies. You c
 - [x] create a Gear instance
 - [x] browse Gearsets list
 
-Todo:
+## Todo:
 
-- [] creating Gearset instances
-- [] browsing Gearsets list and filtering them by Job or Category
-- [] register/login/logout
-- [] assigning a Gearset to a registered User
+- register/login/logout
+- creating Gearset instances
+- assigning a Gearset to a registered User
+- browsing Gearsets list and filtering them by Job or Category
+- `share` button for a Gear or Gearset instance
+- filtering Gears by Slot
+- `Landing Page` layout change
+- `Blog` section on the `Landing Page`
 
 ## API
 
