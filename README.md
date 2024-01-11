@@ -6,6 +6,7 @@
 - [Installation](#installation)
 - [Technologies](#technologies)
 - [Requirements](#requirements)
+- [Features](#features)
 - [API](#api)
 - [Inspiration](#inspiration)
 - [Additional info](#additional-info)
@@ -13,11 +14,10 @@
 ## Introduction
 
 As a Final Fantasy XIV player I noticed that every patch I create a new table sheet to make sure that I know, what I
-need to buy for my character. I found existing web apps confusing to use; they display informations in (to me) not clear
+need to buy for my character. I found existing web apps confusing to use; they display informations in not clear
 manner.
 
-My idea was to create a webapp that will in more clear and readable way present a User with ability to create
-gearsets.
+My idea was to create a webapp that will in more clear and readable way present a User with ability to create gearsets. Moreover, it will be a go-to app for not only that purpose, but also calculating PvP series experience, view each Gear piece in a simple and clear way.
 
 ## Installation
 
@@ -50,8 +50,8 @@ The app was created using:
 * Django 4.2.6
 * Django REST framework
 * React
-* Bootstrap-React
 * React-router
+* Bootstrap-React
 ```
 
 ## Requirements
@@ -67,7 +67,15 @@ Naturally each backbone of this app has individual needs for dependencies. You c
 | python-dotenv                | react-router-dom ^6.18.0 |
 | django-autoslug ^1.9.9       |                          |
 
-## Api
+## Features
+
+- [x] view Jobs list and use it to view its guide
+- [x] view Races list with their starting stats
+- [x] view Costs list for each Gear type
+- [x] calculate how much more PvP combats are ahead of you to achieve 25 Series Level
+- [x]
+
+## API
 
 Using Django REST API, this project have the following endpoints which will return data in `json`:
 
@@ -132,128 +140,51 @@ Using Django REST API, this project have the following endpoints which will retu
 - `[GET]` list of gearsets,
 
 ```
-[
-  {
-    "uuid": RANDOM.UUID4,
-    "name": "Paladin BiS",
-    "job": 1,
-    "weapon": 1,
-    "shield": 2,
-    "head": 3,
-    "body": 4,
-    "legs": 5,
-    "hands": 6,
-    "feet": 7,
-    "earring": 8,
-    "necklace": 9,
-    "bracelet": 10,
-    "left_ring": 11,
-    "right_ring": 12,
-    "attributes":
-              {
-                "defense": SUM_OF_ALL_GEAR_AS_INTEGER,
-                "spell_speed": SUM_OF_ALL_GEAR_AS_INTEGER,
-                "skill_speed": SUM_OF_ALL_GEAR_AS_INTEGER,
-                "determination": SUM_OF_ALL_GEAR_AS_INTEGER,
-                "direct_hit": SUM_OF_ALL_GEAR_AS_INTEGER,
-                "critical_rate": SUM_OF_ALL_GEAR_AS_INTEGER,
-                "tenacity": SUM_OF_ALL_GEAR_AS_INTEGER,
-                "piety": SUM_OF_ALL_GEAR_AS_INTEGER,
-                "mind": SUM_OF_ALL_GEAR_AS_INTEGER,
-                "intelligence": SUM_OF_ALL_GEAR_AS_INTEGER,
-                "dexterity": SUM_OF_ALL_GEAR_AS_INTEGER,
-                "magic_defense": SUM_OF_ALL_GEAR_AS_INTEGER,
-                "strength": SUM_OF_ALL_GEAR_AS_INTEGER,
-                "vitality": SUM_OF_ALL_GEAR_AS_INTEGER
-              }
-  },
-  ...
-]
+NOT YET IMPLEMENTED
 ```
 
 - `[POST]` creating a gearset.
 
 ```
 {
-  "name": STR,
+  "gearset_name": STR (max 100),
+  "slug": STR,
   "job": JOB.id: INT,
-  "weapon": GEAR.id: INT,
-  "shield": GEAR.id: INT,
-  "head": GEAR.id: INT,
-  "body": GEAR.id: INT,
-  "legs": GEAR.id: INT,
-  "hands": GEAR.id: INT,
-  "feet": GEAR.id: INT,
-  "earring": GEAR.id: INT,
-  "necklace": GEAR.id: INT,
-  "bracelet": GEAR.id: INT,
-  "left_ring": GEAR.id: INT,
-  "right_ring": GEAR.id: INT
+  "job_name": STR,
+  "weapon": INT,
+  "shield": INT,
+  "head": INT,
+  "body": INT,
+  "legs": INT,
+  "hands": INT,
+  "feet": INT,
+  "earring": INT,
+  "necklace": INT,
+  "bracelet": INT,
+  "left_ring": INT,
+  "right_ring": INT
 }
 ```
 
-`[GET, POST] api/gears/`
+`[GET, POST] api/gears/*`
 
-- `[GET]` list of gears,
+- `[GET] /list/` list of gears to be displayed as a simple list,
 
 ```
 [
   {
-    "id": 1,
-    "gear_name": "Ascension Mail of Fending",
-    "slug": "ascension-mail-of-fending",
-    "category": "Fending",
-    "acquisition": "Savage Raid",
-    "added_in_patch": "x.4",
-    "slot": "Body",
-    "cost_name": "Savage Raid Body",
-    "job": [
-        {
-            "id": 1,
-            "job_name": "Paladin"
-        },
-        {
-            "id": 2,
-            "job_name": "Warrior"
-        },
-        {
-            "id": 3,
-            "job_name": "Dark Knight"
-        },
-        {
-            "id": 4,
-            "job_name": "Gunbreaker"
-        }
-    ],
-    "ff14_db_index": "4e2611e60a3",
-    "ff14_db_icon": "a4/a43ce3ad18916cfffcb187b396d2f39e81a20873.png",
-    "item_level": 660,
-    "physical_dmg": 0,
-    "magical_dmg": 0,
-    "auto_attack": "0.00",
-    "delay": "0.00",
-    "block_strength": 0,
-    "block_rate": 0,
-    "defense": 1196,
-    "magic_defense": 1196,
-    "vitality": 440,
-    "strength": 394,
-    "dexterity": 0,
-    "tenacity": 292,
-    "intelligence": 0,
-    "mind": 0,
-    "piety": 0,
-    "critical_rate": 0,
-    "direct_hit": 0,
-    "determination": 204,
-    "skill_speed": 0,
-    "spell_speed": 0
+      "id": 1,
+      "gear_name": "Ascension Mail of Fending",
+      "slug": "ascension-mail-of-fending",
+      "category": "Fending",
+      "slot": "Body",
+      "xiv_api_icon": "042000/042975"
   },
   ...
 ]
 ```
 
-- `[POST]` creating a gear.
+- `[POST] /add/` creating a gear,
 
 ```
 {
@@ -264,10 +195,11 @@ Using Django REST API, this project have the following endpoints which will retu
     "added_in_patch": STR,
     "slot": STR,
     "cost_name": STR,
-    "job": [OBJECT] ,
+    "job": [] ,
     "ff14_db_index": STR,
-    "ff14_db_icon": STR,
+    "xiv_api_icon": STR,
     "item_level": INT,
+    "required_level": INT,
     "physical_dmg": INT -> null=True,
     "magical_dmg": INT -> null=True,
     "auto_attack": FLOAT -> null=True,
@@ -291,7 +223,7 @@ Using Django REST API, this project have the following endpoints which will retu
 }
 ```
 
-`[GET] api/gears/{slug}` single instance of Gear model
+`[GET] /details/{slug}` single instance of Gear model with its details,
 
 ```
 {
@@ -322,8 +254,9 @@ Using Django REST API, this project have the following endpoints which will retu
         }
     ],
     "ff14_db_index": "4e2611e60a3",
-    "ff14_db_icon": "a4/a43ce3ad18916cfffcb187b396d2f39e81a20873.png",
+    "xiv_api_icon": "042000/042975",
     "item_level": 660,
+    "required_level": 90,
     "physical_dmg": 0,
     "magical_dmg": 0,
     "auto_attack": "0.00",
@@ -344,6 +277,177 @@ Using Django REST API, this project have the following endpoints which will retu
     "determination": 204,
     "skill_speed": 0,
     "spell_speed": 0
+}
+```
+
+`/options/` options from model's text choices fields
+
+```
+{
+    "category": {
+        "required": true,
+        "label": "Category",
+        "choices": [
+            {
+                "value": "Fending",
+                "display_name": "Fending"
+            },
+            {
+                "value": "Healing",
+                "display_name": "Healing"
+            },
+            {
+                "value": "Striking",
+                "display_name": "Striking"
+            },
+            {
+                "value": "Maiming",
+                "display_name": "Maiming"
+            },
+            {
+                "value": "Scouting",
+                "display_name": "Scouting"
+            },
+            {
+                "value": "Aiming",
+                "display_name": "Aiming"
+            },
+            {
+                "value": "Casting",
+                "display_name": "Casting"
+            },
+            {
+                "value": "Slaying",
+                "display_name": "Slaying"
+            }
+        ]
+    },
+    "acquisition": {
+        "required": true,
+        "label": "Acquisition",
+        "choices": [
+            {
+                "value": "NR",
+                "display_name": "Normal Raid"
+            },
+            {
+                "value": "AR",
+                "display_name": "Alliance Raid"
+            },
+            {
+                "value": "SR",
+                "display_name": "Savage Raid"
+            },
+            {
+                "value": "TG",
+                "display_name": "Tomestone Gear"
+            },
+            {
+                "value": "ATG",
+                "display_name": "Augmented Tomestone Gear"
+            },
+            {
+                "value": "ETG",
+                "display_name": "Exquisite Tomestone Weapon"
+            },
+            {
+                "value": "C_Normal_Q",
+                "display_name": "Crafted Normal Quality"
+            },
+            {
+                "value": "C_High_Q",
+                "display_name": "Crafted High Quality"
+            },
+            {
+                "value": "DD",
+                "display_name": "Dungeon Drop"
+            },
+            {
+                "value": "RW",
+                "display_name": "Relic Weapon"
+            }
+        ]
+    },
+    "added_in_patch": {
+        "required": true,
+        "label": "Added in patch",
+        "choices": [
+            {
+                "value": "x.0",
+                "display_name": "x.0"
+            },
+            {
+                "value": "x.1",
+                "display_name": "x.1"
+            },
+            {
+                "value": "x.2",
+                "display_name": "x.2"
+            },
+            {
+                "value": "x.3",
+                "display_name": "x.3"
+            },
+            {
+                "value": "x.4",
+                "display_name": "x.4"
+            },
+            {
+                "value": "x.5",
+                "display_name": "x.5"
+            }
+        ]
+    },
+    "slot": {
+        "required": true,
+        "label": "Slot",
+        "choices": [
+            {
+                "value": "Head",
+                "display_name": "Head"
+            },
+            {
+                "value": "Body",
+                "display_name": "Body"
+            },
+            {
+                "value": "Legs",
+                "display_name": "Legs"
+            },
+            {
+                "value": "Hands",
+                "display_name": "Hands"
+            },
+            {
+                "value": "Feet",
+                "display_name": "Feet"
+            },
+            {
+                "value": "Earring",
+                "display_name": "Earring"
+            },
+            {
+                "value": "Necklace",
+                "display_name": "Necklace"
+            },
+            {
+                "value": "Bracelet",
+                "display_name": "Bracelet"
+            },
+            {
+                "value": "Ring",
+                "display_name": "Ring"
+            },
+            {
+                "value": "Shield",
+                "display_name": "Shield"
+            },
+            {
+                "value": "Weapon",
+                "display_name": "Weapon"
+            }
+        ]
+    }
 }
 ```
 
