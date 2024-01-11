@@ -73,7 +73,16 @@ Naturally each backbone of this app has individual needs for dependencies. You c
 - [x] view Races list with their starting stats
 - [x] view Costs list for each Gear type
 - [x] calculate how much more PvP combats are ahead of you to achieve 25 Series Level
-- [x]
+- [x] browse Gears list and filter them by Category
+- [x] create a Gear instance
+- [x] browse Gearsets list
+
+Todo:
+
+- [] creating Gearset instances
+- [] browsing Gearsets list and filtering them by Job or Category
+- [] register/login/logout
+- [] assigning a Gearset to a registered User
 
 ## API
 
