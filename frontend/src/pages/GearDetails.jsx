@@ -220,6 +220,14 @@ export default function GearDetails() {
                       </td>
                     </tr>
                   )}
+                  {data.tenacity !== 0 && (
+                    <tr>
+                      <td>Tenacity</td>
+                      <td>
+                        <strong>{data.tenacity}</strong>
+                      </td>
+                    </tr>
+                  )}
                   {data.piety !== 0 && (
                     <tr>
                       <td>Piety</td>

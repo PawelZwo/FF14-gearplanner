@@ -39,7 +39,7 @@ export default function AddGear() {
     cost: "",
     job: [],
     ff14_db_index: "",
-    ff14_db_icon: "",
+    xiv_api_icon: "",
     item_level: null,
     required_level: null,
     physical_dmg: null,
@@ -113,7 +113,7 @@ export default function AddGear() {
       setDataPost(json);
       setErrorPost(null);
     } catch (error) {
-      setErrorPost(`Could not Fetch Data (${error} )`);
+      setErrorPost(`Could not Fetch Data (${error})`);
       setIsPendingPost(false);
     }
   };
@@ -208,7 +208,7 @@ export default function AddGear() {
                   type="text"
                   placeholder=" "
                   required
-                  name="ff14_db_icon"
+                  name="xiv_api_icon"
                   onInput={handleInputChange}
                 />
               </FloatingLabel>

@@ -18,8 +18,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import Stack from "react-bootstrap/Stack";
-
-// import Button from "react-bootstrap/Button";
+import Button from "react-bootstrap/Button";
 
 /* TODO:
   - check the formData inputs;
@@ -33,14 +32,20 @@ export default function AddGearset() {
     error: gearError,
   } = useFetchGet("api/gears/list/");
 
+  const [filteredGearData, setFilteredGearData] = useState(null);
+
   const [showForm, setShowForm] = useState(false);
   const [displayedJobName, setDisplayedJobName] = useState("");
 
   const { data: jobs } = useFetchGet("api/jobs/");
 
+  // gearData && console.log("gearData: ", gearData);
+  // jobs && console.log("jobs: ", jobs);
+
   const [formData, setFormData] = useState({
     gearset_name: "",
     job: null,
+    job_name: "",
     weapon: null,
     shield: null,
     head: null,
@@ -71,22 +76,43 @@ export default function AddGearset() {
     }
   };
 
-  let jobHeader;
   const handleChosenJob = (e) => {
     let targetJob = parseInt(e.target.value);
     if (targetJob !== 0) {
       setShowForm(true);
-      setFormData({ ...formData, job: targetJob });
-      jobHeader = jobs
+      let jobHeader = jobs
         .filter((item) => item.id === targetJob)
         .map((job) => job.job_name);
       setDisplayedJobName(jobHeader[0]);
+      let filteredData = gearData.filter((gearPiece) =>
+        gearPiece.job.includes(targetJob)
+      );
+      setFilteredGearData(filteredData);
+      setFormData({ ...formData, job: targetJob, job_name: jobHeader[0] });
     } else {
       setShowForm(false);
+      // setFormData({
+      //   gearset_name: "",
+      //   job: null,
+      //   job_name: "",
+      //   weapon: null,
+      //   shield: null,
+      //   head: null,
+      //   body: null,
+      //   legs: null,
+      //   hands: null,
+      //   feet: null,
+      //   earring: null,
+      //   necklace: null,
+      //   bracelet: null,
+      //   left_ring: null,
+      //   right_ring: null,
+      // });
     }
   };
 
-  const handleFormCheck = (e) => {
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
     // Validation logic
     const isValid =
       Object.entries(formData).every(([key, value]) => {
@@ -103,10 +129,10 @@ export default function AddGearset() {
 
     if (isValid) {
       // Proceed with your action, the form data is valid
-      console.log("Form data is valid:", formData);
+      console.log("Form data is VALID:", formData);
     } else {
       // Handle the case when the form data is invalid
-      console.log("Form data is invalid");
+      console.log("Form data is INVALID:", formData);
     }
   };
 
@@ -119,7 +145,7 @@ export default function AddGearset() {
       {gearError && <ErrorMessage error={gearError} variant="danger" />}
 
       {gearData && (
-        <Form onChange={handleFormCheck}>
+        <Form onSubmit={handleFormSubmit}>
           <Row>
             <Col sm={6}>
               <Form.Group className="mb10" controlId="formGearsetName">
@@ -185,14 +211,13 @@ export default function AddGearset() {
                         onChange={handleInputChange}
                       >
                         <option>...</option>
-                        {gearData &&
-                          gearData
-                            .filter((gear) => gear.slot === "Weapon")
-                            .map((item) => (
-                              <option value={item.id} key={item.id}>
-                                {item.gear_name}
-                              </option>
-                            ))}
+                        {filteredGearData
+                          .filter((gear) => gear.slot === "Weapon")
+                          .map((item) => (
+                            <option value={item.id} key={item.id}>
+                              {item.gear_name}
+                            </option>
+                          ))}
                       </Form.Select>
                     </FloatingLabel>
                   </Form.Group>
@@ -213,14 +238,13 @@ export default function AddGearset() {
                         onChange={handleInputChange}
                       >
                         <option>...</option>
-                        {gearData &&
-                          gearData
-                            .filter((gear) => gear.slot === "Shield")
-                            .map((item) => (
-                              <option value={item.id} key={item.id}>
-                                {item.gear_name}
-                              </option>
-                            ))}
+                        {filteredGearData
+                          .filter((gear) => gear.slot === "Shield")
+                          .map((item) => (
+                            <option value={item.id} key={item.id}>
+                              {item.gear_name}
+                            </option>
+                          ))}
                       </Form.Select>
                     </FloatingLabel>
                   </Form.Group>
@@ -241,14 +265,13 @@ export default function AddGearset() {
                         onChange={handleInputChange}
                       >
                         <option>...</option>
-                        {gearData &&
-                          gearData
-                            .filter((gear) => gear.slot === "Head")
-                            .map((item) => (
-                              <option value={item.id} key={item.id}>
-                                {item.gear_name}
-                              </option>
-                            ))}
+                        {filteredGearData
+                          .filter((gear) => gear.slot === "Head")
+                          .map((item) => (
+                            <option value={item.id} key={item.id}>
+                              {item.gear_name}
+                            </option>
+                          ))}
                       </Form.Select>
                     </FloatingLabel>
                   </Form.Group>
@@ -269,14 +292,13 @@ export default function AddGearset() {
                         onChange={handleInputChange}
                       >
                         <option>...</option>
-                        {gearData &&
-                          gearData
-                            .filter((gear) => gear.slot === "Body")
-                            .map((item) => (
-                              <option value={item.id} key={item.id}>
-                                {item.gear_name}
-                              </option>
-                            ))}
+                        {filteredGearData
+                          .filter((gear) => gear.slot === "Body")
+                          .map((item) => (
+                            <option value={item.id} key={item.id}>
+                              {item.gear_name}
+                            </option>
+                          ))}
                       </Form.Select>
                     </FloatingLabel>
                   </Form.Group>
@@ -297,14 +319,13 @@ export default function AddGearset() {
                         onChange={handleInputChange}
                       >
                         <option>...</option>
-                        {gearData &&
-                          gearData
-                            .filter((gear) => gear.slot === "Hands")
-                            .map((item) => (
-                              <option value={item.id} key={item.id}>
-                                {item.gear_name}
-                              </option>
-                            ))}
+                        {filteredGearData
+                          .filter((gear) => gear.slot === "Hands")
+                          .map((item) => (
+                            <option value={item.id} key={item.id}>
+                              {item.gear_name}
+                            </option>
+                          ))}
                       </Form.Select>
                     </FloatingLabel>
                   </Form.Group>
@@ -325,14 +346,13 @@ export default function AddGearset() {
                         onChange={handleInputChange}
                       >
                         <option>...</option>
-                        {gearData &&
-                          gearData
-                            .filter((gear) => gear.slot === "Legs")
-                            .map((item) => (
-                              <option value={item.id} key={item.id}>
-                                {item.gear_name}
-                              </option>
-                            ))}
+                        {filteredGearData
+                          .filter((gear) => gear.slot === "Legs")
+                          .map((item) => (
+                            <option value={item.id} key={item.id}>
+                              {item.gear_name}
+                            </option>
+                          ))}
                       </Form.Select>
                     </FloatingLabel>
                   </Form.Group>
@@ -353,14 +373,13 @@ export default function AddGearset() {
                         onChange={handleInputChange}
                       >
                         <option>...</option>
-                        {gearData &&
-                          gearData
-                            .filter((gear) => gear.slot === "Feet")
-                            .map((item) => (
-                              <option value={item.id} key={item.id}>
-                                {item.gear_name}
-                              </option>
-                            ))}
+                        {filteredGearData
+                          .filter((gear) => gear.slot === "Feet")
+                          .map((item) => (
+                            <option value={item.id} key={item.id}>
+                              {item.gear_name}
+                            </option>
+                          ))}
                       </Form.Select>
                     </FloatingLabel>
                   </Form.Group>
@@ -381,14 +400,13 @@ export default function AddGearset() {
                         onChange={handleInputChange}
                       >
                         <option>...</option>
-                        {gearData &&
-                          gearData
-                            .filter((gear) => gear.slot === "Earring")
-                            .map((item) => (
-                              <option value={item.id} key={item.id}>
-                                {item.gear_name}
-                              </option>
-                            ))}
+                        {filteredGearData
+                          .filter((gear) => gear.slot === "Earring")
+                          .map((item) => (
+                            <option value={item.id} key={item.id}>
+                              {item.gear_name}
+                            </option>
+                          ))}
                       </Form.Select>
                     </FloatingLabel>
                   </Form.Group>
@@ -409,14 +427,13 @@ export default function AddGearset() {
                         onChange={handleInputChange}
                       >
                         <option>...</option>
-                        {gearData &&
-                          gearData
-                            .filter((gear) => gear.slot === "Necklace")
-                            .map((item) => (
-                              <option value={item.id} key={item.id}>
-                                {item.gear_name}
-                              </option>
-                            ))}
+                        {filteredGearData
+                          .filter((gear) => gear.slot === "Necklace")
+                          .map((item) => (
+                            <option value={item.id} key={item.id}>
+                              {item.gear_name}
+                            </option>
+                          ))}
                       </Form.Select>
                     </FloatingLabel>
                   </Form.Group>
@@ -437,14 +454,13 @@ export default function AddGearset() {
                         onChange={handleInputChange}
                       >
                         <option>...</option>
-                        {gearData &&
-                          gearData
-                            .filter((gear) => gear.slot === "Bracelet")
-                            .map((item) => (
-                              <option value={item.id} key={item.id}>
-                                {item.gear_name}
-                              </option>
-                            ))}
+                        {filteredGearData
+                          .filter((gear) => gear.slot === "Bracelet")
+                          .map((item) => (
+                            <option value={item.id} key={item.id}>
+                              {item.gear_name}
+                            </option>
+                          ))}
                       </Form.Select>
                     </FloatingLabel>
                   </Form.Group>
@@ -465,14 +481,13 @@ export default function AddGearset() {
                         onChange={handleInputChange}
                       >
                         <option>...</option>
-                        {gearData &&
-                          gearData
-                            .filter((gear) => gear.slot === "Ring")
-                            .map((item) => (
-                              <option value={item.id} key={item.id}>
-                                {item.gear_name}
-                              </option>
-                            ))}
+                        {filteredGearData
+                          .filter((gear) => gear.slot === "Ring")
+                          .map((item) => (
+                            <option value={item.id} key={item.id}>
+                              {item.gear_name}
+                            </option>
+                          ))}
                       </Form.Select>
                     </FloatingLabel>
                   </Form.Group>
@@ -493,14 +508,13 @@ export default function AddGearset() {
                         onChange={handleInputChange}
                       >
                         <option>...</option>
-                        {gearData &&
-                          gearData
-                            .filter((gear) => gear.slot === "Ring")
-                            .map((item) => (
-                              <option value={item.id} key={item.id}>
-                                {item.gear_name}
-                              </option>
-                            ))}
+                        {filteredGearData
+                          .filter((gear) => gear.slot === "Ring")
+                          .map((item) => (
+                            <option value={item.id} key={item.id}>
+                              {item.gear_name}
+                            </option>
+                          ))}
                       </Form.Select>
                     </FloatingLabel>
                   </Form.Group>
@@ -517,7 +531,16 @@ export default function AddGearset() {
                   <div className="items-rows">
                     <Stack direction="horizontal" gap={2}>
                       <Image
-                        src="/media/slots_icons/mainhand.png"
+                        src={
+                          formData.weapon === null ||
+                          formData.weapon === undefined
+                            ? "/media/slots_icons/mainhand.png"
+                            : `https://xivapi.com/i/${
+                                gearData.filter(
+                                  (item) => item.id === formData.weapon
+                                )[0]?.xiv_api_icon
+                              }_hr1.png`
+                        }
                         width={70}
                         height={70}
                         className="d-inline-block align-top"
@@ -525,7 +548,16 @@ export default function AddGearset() {
                         style={iconStyle}
                       />
                       <Image
-                        src="/media/slots_icons/offhand.png"
+                        src={
+                          formData.shield === null ||
+                          formData.shield === undefined
+                            ? "/media/slots_icons/offhand.png"
+                            : `https://xivapi.com/i/${
+                                gearData.filter(
+                                  (item) => item.id === formData.shield
+                                )[0]?.xiv_api_icon
+                              }_hr1.png`
+                        }
                         width={70}
                         height={70}
                         className="d-inline-block align-top left-side-slots"
@@ -538,7 +570,15 @@ export default function AddGearset() {
                   <div className="mt20 items-rows">
                     <Stack direction="horizontal" gap={1}>
                       <Image
-                        src="/media/slots_icons/head.png"
+                        src={
+                          formData.head === null || formData.head === undefined
+                            ? "/media/slots_icons/head.png"
+                            : `https://xivapi.com/i/${
+                                gearData.filter(
+                                  (item) => item.id === formData.head
+                                )[0]?.xiv_api_icon
+                              }_hr1.png`
+                        }
                         width={70}
                         height={70}
                         className="d-inline-block align-top"
@@ -546,7 +586,16 @@ export default function AddGearset() {
                         style={iconStyle}
                       />
                       <Image
-                        src="/media/slots_icons/ear.png"
+                        src={
+                          formData.earring === null ||
+                          formData.earring === undefined
+                            ? "/media/slots_icons/ear.png"
+                            : `https://xivapi.com/i/${
+                                gearData.filter(
+                                  (item) => item.id === formData.earring
+                                )[0]?.xiv_api_icon
+                              }_hr1.png`
+                        }
                         width={70}
                         height={70}
                         className="d-inline-block align-top left-side-slots"
@@ -559,7 +608,15 @@ export default function AddGearset() {
                   <div className="mt20 items-rows">
                     <Stack direction="horizontal" gap={1}>
                       <Image
-                        src="/media/slots_icons/body.png"
+                        src={
+                          formData.body === null || formData.body === undefined
+                            ? "/media/slots_icons/body.png"
+                            : `https://xivapi.com/i/${
+                                gearData.filter(
+                                  (item) => item.id === formData.body
+                                )[0]?.xiv_api_icon
+                              }_hr1.png`
+                        }
                         width={70}
                         height={70}
                         className="d-inline-block align-top "
@@ -568,7 +625,16 @@ export default function AddGearset() {
                       />
 
                       <Image
-                        src="/media/slots_icons/neck.png"
+                        src={
+                          formData.necklace === null ||
+                          formData.necklace === undefined
+                            ? "/media/slots_icons/neck.png"
+                            : `https://xivapi.com/i/${
+                                gearData.filter(
+                                  (item) => item.id === formData.necklace
+                                )[0]?.xiv_api_icon
+                              }_hr1.png`
+                        }
                         width={70}
                         height={70}
                         className="d-inline-block align-top left-side-slots"
@@ -581,7 +647,16 @@ export default function AddGearset() {
                   <div className="mt20 items-rows">
                     <Stack direction="horizontal" gap={1}>
                       <Image
-                        src="/media/slots_icons/hands.png"
+                        src={
+                          formData.hands === null ||
+                          formData.hands === undefined
+                            ? "/media/slots_icons/hands.png"
+                            : `https://xivapi.com/i/${
+                                gearData.filter(
+                                  (item) => item.id === formData.hands
+                                )[0]?.xiv_api_icon
+                              }_hr1.png`
+                        }
                         width={70}
                         height={70}
                         className="d-inline-block align-top "
@@ -589,7 +664,16 @@ export default function AddGearset() {
                         style={iconStyle}
                       />
                       <Image
-                        src="/media/slots_icons/wrist.png"
+                        src={
+                          formData.bracelet === null ||
+                          formData.bracelet === undefined
+                            ? "/media/slots_icons/wrist.png"
+                            : `https://xivapi.com/i/${
+                                gearData.filter(
+                                  (item) => item.id === formData.bracelet
+                                )[0]?.xiv_api_icon
+                              }_hr1.png`
+                        }
                         width={70}
                         height={70}
                         className="d-inline-block align-top left-side-slots"
@@ -602,7 +686,15 @@ export default function AddGearset() {
                   <div className="mt20 items-rows">
                     <Stack direction="horizontal" gap={1}>
                       <Image
-                        src="/media/slots_icons/legs.png"
+                        src={
+                          formData.legs === null || formData.legs === undefined
+                            ? "/media/slots_icons/legs.png"
+                            : `https://xivapi.com/i/${
+                                gearData.filter(
+                                  (item) => item.id === formData.legs
+                                )[0]?.xiv_api_icon
+                              }_hr1.png`
+                        }
                         width={70}
                         height={70}
                         className="d-inline-block align-top "
@@ -610,7 +702,16 @@ export default function AddGearset() {
                         style={iconStyle}
                       />
                       <Image
-                        src="/media/slots_icons/ring.png"
+                        src={
+                          formData.left_ring === null ||
+                          formData.left_ring === undefined
+                            ? "/media/slots_icons/ring.png"
+                            : `https://xivapi.com/i/${
+                                gearData.filter(
+                                  (item) => item.id === formData.left_ring
+                                )[0]?.xiv_api_icon
+                              }_hr1.png`
+                        }
                         width={70}
                         height={70}
                         className="d-inline-block align-top left-side-slots"
@@ -623,7 +724,15 @@ export default function AddGearset() {
                   <div className="mt20 items-rows">
                     <Stack direction="horizontal" gap={1}>
                       <Image
-                        src="/media/slots_icons/feet.png"
+                        src={
+                          formData.feet === null || formData.feet === undefined
+                            ? "/media/slots_icons/feet.png"
+                            : `https://xivapi.com/i/${
+                                gearData.filter(
+                                  (item) => item.id === formData.feet
+                                )[0]?.xiv_api_icon
+                              }_hr1.png`
+                        }
                         width={70}
                         height={70}
                         className="d-inline-block align-top "
@@ -631,7 +740,16 @@ export default function AddGearset() {
                         style={iconStyle}
                       />
                       <Image
-                        src="/media/slots_icons/ring.png"
+                        src={
+                          formData.right_ring === null ||
+                          formData.right_ring === undefined
+                            ? "/media/slots_icons/ring.png"
+                            : `https://xivapi.com/i/${
+                                gearData.filter(
+                                  (item) => item.id === formData.right_ring
+                                )[0]?.xiv_api_icon
+                              }_hr1.png`
+                        }
                         width={70}
                         height={70}
                         className="d-inline-block align-top left-side-slots"
@@ -642,6 +760,28 @@ export default function AddGearset() {
                   </div>
                 </>
               )}
+              <Row style={{ marginTop: "5vh" }}>
+                <Col sm={6}>
+                  <Button
+                    as="input"
+                    type="submit"
+                    value="Submit"
+                    size="sm"
+                    variant="outline-primary"
+                    style={{ width: "100%" }}
+                  />
+                </Col>
+                <Col sm={6}>
+                  <Button
+                    as="input"
+                    type="reset"
+                    value="Reset"
+                    size="sm"
+                    variant="outline-secondary"
+                    style={{ width: "100%" }}
+                  />
+                </Col>
+              </Row>
             </Col>
           </Row>
         </Form>

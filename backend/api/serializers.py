@@ -63,7 +63,7 @@ class GearListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Gear
         fields = ('id', 'gear_name', 'slug', 'category',
-                  'slot', 'xiv_api_icon',)
+                  'slot', 'xiv_api_icon', 'job')
 
 
 class GearOptionsSerializer(serializers.ModelSerializer):
